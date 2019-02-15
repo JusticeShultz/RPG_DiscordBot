@@ -1,0 +1,14 @@
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\bin\Release\RPGBotLauncher.exe.config
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\bin\Release\RPGBotLauncher.exe
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\bin\Release\RPGBotLauncher.pdb
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\obj\Release\MainWindow.g.cs
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\obj\Release\App.g.cs
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\obj\Release\RPGBotLauncher_MarkupCompile.cache
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\obj\Release\RPGBotLauncher_MarkupCompile.lref
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\obj\Release\MainWindow.baml
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\obj\Release\RPGBotLauncher.g.resources
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\obj\Release\RPGBotLauncher.Properties.Resources.resources
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\obj\Release\RPGBotLauncher.csproj.GenerateResource.cache
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\obj\Release\RPGBotLauncher.csproj.CoreCompileInputs.cache
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\obj\Release\RPGBotLauncher.exe
+C:\Users\s189081\source\repos\RPGBotLauncher\RPGBotLauncher\obj\Release\RPGBotLauncher.pdb
