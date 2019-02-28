@@ -17,9 +17,10 @@ I will continue to push changes up to here but minor bug fixes and small additio
 
 
 
-# Patch 1.3.2.2412 is live now! Note: These logs are directly from the home dev server(day by day logs) so sections may be wonky
+# Patch 1.3.2.2412 is live now! 
+#### Note: These logs are directly from the home dev server(day by day logs) so sections may be wonky
 
-### Leaderboard
+#### Leaderboard
              -Type -lb or -leaderboard see the leaderboard by who's richest
 
 ### Discord did an oopsie
