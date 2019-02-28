@@ -783,7 +783,7 @@ namespace RPG_Bot.Commands
 
             int result = rng.Next(1, 100);
 
-            if(result > 80)
+            if (result > 80)
             {
                 Embed.WithDescription("**Leather Brace** - ***Common*** - *+15 Health*");
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544024571779481600/latest.png");
@@ -907,7 +907,7 @@ namespace RPG_Bot.Commands
                 health = 5;
                 damage = 10;
 
-                for(int i = 0; i < 5; ++i)
+                for (int i = 0; i < 5; ++i)
                 {
                     await Context.Channel.SendMessageAsync(Context.User.Mention);
                 }
@@ -984,6 +984,54 @@ namespace RPG_Bot.Commands
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
             await Data.Data.SaveData(Context.User.Id, 0, 0, "", (uint)damage, (uint)health, 0, 0, 0);
+        }
+
+        [Command("report"), Alias("reportbug", "Report", "ReportBug"), Summary("Report a bug to the Bot Admins.")]
+        public async Task BugReport([Remainder]string txt = "None")
+        {
+            foreach(SocketGuild guild in Program.Client.Guilds)
+            {
+                if(guild.Id == EnemyTemplates.ServerID)
+                {
+                    foreach(SocketGuildChannel channel in guild.Channels)
+                    {
+                        if(channel.Name == "bug-reports")
+                        {
+                            EmbedBuilder Embed = new EmbedBuilder();
+                            Embed.WithAuthor("Bug report has been submitted - Thank you!", Context.User.GetAvatarUrl());
+                            Embed.WithDescription("Please note, submitting a false bug or abusing the command will result in a temporary or permanent ban of using the bot, after 1-2 offenses you will be added to the blacklist.");
+                            Embed.Color = Color.DarkMagenta;
+                            Embed.WithFooter(txt);
+                            var msg = await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                            EmbedBuilder Embed2 = new EmbedBuilder();
+                            Embed2.WithTitle("Bug report has been submitted");
+                            Embed2.WithAuthor("Bug reported by user: " + Context.User.Username);
+                            Embed2.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/550773144659427331/Test.png");
+                            Embed2.Color = Color.DarkMagenta;
+                            Embed2.WithTimestamp(Context.Message.Timestamp);
+                            Embed2.WithDescription
+                            (
+                                txt +
+                                "\n\nBug reported by:" +
+                                "\nId: " + Context.User.Id +
+                                "\nUsername: " + Context.User.Username +
+                                "\nDiscriminator: " + Context.User.Discriminator +
+                                "\nDiscriminator Value: " + Context.User.DiscriminatorValue +
+                                "\nMention: " + Context.User.Mention +
+                                "\nDiscord Tag: " + Context.User.Username + "#" + Context.User.DiscriminatorValue
+                            );
+
+                            var ch = channel as ISocketMessageChannel;
+                            await ch.SendMessageAsync("", false, Embed2.Build());
+
+                            await Task.Delay(15000);
+                            await Context.Message.DeleteAsync();
+                            await msg.DeleteAsync();
+                        }
+                    }
+                }
+            }
         }
     }
 }
