@@ -23,7 +23,8 @@ namespace RPG_Bot.Commands
 
             var vuser = Context.User as SocketGuildUser;
 
-            var bronze = Context.Guild.GetRole(EnemyTemplates.Bronze);
+            #region Deprecated ID system
+            /*var bronze = Context.Guild.GetRole(EnemyTemplates.Bronze);
             var silver = Context.Guild.GetRole(EnemyTemplates.Silver);
             var gold = Context.Guild.GetRole(EnemyTemplates.Gold);
             var quartz = Context.Guild.GetRole(EnemyTemplates.Quartz);
@@ -35,7 +36,14 @@ namespace RPG_Bot.Commands
 
             if (vuser.Roles.Contains(bronze) || vuser.Roles.Contains(silver) || vuser.Roles.Contains(quartz) || vuser.Roles.Contains(orichalcum) ||
                 vuser.Roles.Contains(platinum) || vuser.Roles.Contains(gold) || vuser.Roles.Contains(masterIII) || vuser.Roles.Contains(masterII) ||
-                vuser.Roles.Contains(masterI))
+                vuser.Roles.Contains(masterI))*/
+            #endregion
+
+            string UsersRank = Data.Data.GetRank(Context.User.Id);
+
+            if (UsersRank == "Bronze" || UsersRank == "Silver" || UsersRank == "Quartz" || UsersRank == "Orichalcum" ||
+                UsersRank == "Platinum" || UsersRank == "Gold" || UsersRank == "Master1" || UsersRank == "Master2" ||
+                UsersRank == "Master3")
             {
                 EmbedBuilder Embed = new EmbedBuilder();
                 Embed.WithAuthor("Error!");
@@ -76,63 +84,71 @@ namespace RPG_Bot.Commands
                     EmbedBuilder Embed = new EmbedBuilder();
                     var user = Context.User;
                     //Give bronze.
-                    var role = Context.Guild.GetRole(542123825370890250);
-                    await (user as IGuildUser).AddRoleAsync(role);
+
+                    //Deprecated
+                    //var role = Context.Guild.GetRole(542123825370890250);
+                    //await (user as IGuildUser).AddRoleAsync(role);
                     #endregion
 
                     if (input[0] == "Archer" || input[0] == "archer")
                     {
                         Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225760748961797/Archer.png");
-                        var role2 = Context.Guild.GetRole(542217745690001409);
-                        await (user as IGuildUser).AddRoleAsync(role2);
+                        //var role2 = Context.Guild.GetRole(542217745690001409);
+                        //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 550, x, input[1], 55, 20, 1, 0, 0);
+                        await Data.Data.SetClass(Context.User.Id, "Archer");
                     }
                     else if (input[0] == "Knight" || input[0] == "knight")
                     {
                         Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767107526676/Knight.png");
-                        var role2 = Context.Guild.GetRole(542217921246658610);
+                        //var role2 = Context.Guild.GetRole(542217921246658610);
                         //Console.WriteLine("\n[THIS HAPPENS BEFORE ADDROLEASYNC]\n");
-
-                        await (user as IGuildUser).AddRoleAsync(role2);
+                        //await (user as IGuildUser).AddRoleAsync(role2);
                         //Console.WriteLine("\n[THIS HAPPENS BEFORE SAVE]\n");
-
                         await Data.Data.SaveData(user.Id, 525, x, input[1], 20, 40, 1, 0, 0);
+                        await Data.Data.SetClass(Context.User.Id, "Knight");
                         //Console.WriteLine("\n[THIS HAPPENS AFTER SAVE]\n");
                     }
                     else if (input[0] == "Witch" || input[0] == "witch")
                     {
                         Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767770095619/Witch.png");
-                        var role2 = Context.Guild.GetRole(542217744805003264);
-                        await (user as IGuildUser).AddRoleAsync(role2);
+                        //var role2 = Context.Guild.GetRole(542217744805003264);
+                        //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 500, x, input[1], 45, 10, 1, 0, 0);
+                        await Data.Data.SetClass(Context.User.Id, "Witch");
                     }
                     else if (input[0] == "Rogue" || input[0] == "rogue")
                     {
                         Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767220641792/Rogue.png");
-                        var role2 = Context.Guild.GetRole(542217746440519681);
-                        await (user as IGuildUser).AddRoleAsync(role2);
+                        //var role2 = Context.Guild.GetRole(542217746440519681);
+                        //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 600, x, input[1], 50, 10, 1, 0, 0);
+                        await Data.Data.SetClass(Context.User.Id, "Rogue");
                     }
                     else if (input[0] == "Wizard" || input[0] == "wizard")
                     {
                         Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225769422913537/Wizard.png");
-                        var role2 = Context.Guild.GetRole(542217748009451551);
-                        await (user as IGuildUser).AddRoleAsync(role2);
+                        //var role2 = Context.Guild.GetRole(542217748009451551);
+                        //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 525, x, input[1], 40, 20, 1, 0, 0);
+                        await Data.Data.SetClass(Context.User.Id, "Wizard");
                     }
                     else if (input[0] == "Assassin" || input[0] == "assassin")
                     {
                         Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225760619069450/Assassin.png");
-                        var role2 = Context.Guild.GetRole(542217793601536010);
-                        await (user as IGuildUser).AddRoleAsync(role2);
+                        //var role2 = Context.Guild.GetRole(542217793601536010);
+                        //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 550, x, input[1], 65, 5, 1, 0, 0);
+                        await Data.Data.SetClass(Context.User.Id, "Assassin");
                     }
 
+                    await Data.Data.SetRank(Context.User.Id, "Bronze");
+                    await Gameplay.UpdateUserData();
                     #region Embed
                     Embed.WithAuthor("The Guild has accepted your signup form!", Context.User.GetAvatarUrl());
                     Embed.WithColor(40, 200, 150);
                     Embed.WithFooter("Congrats adventurer!");
-                    Embed.WithDescription("Class: " + input[0] + "\nName: " + input[1] + "\nAge: " + x + "\n\nNow that you are registered type -help");
+                    Embed.WithDescription("Class: " + Data.Data.GetClass(Context.User.Id) + "\nName: " + input[1] + "\nAge: " + x + "\n\nNow that you are registered type -help");
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
                     //New user in the database here:
@@ -155,7 +171,7 @@ namespace RPG_Bot.Commands
         public async Task GameClassList([Remainder]string Input = "None")
         {
             EmbedBuilder Embed = new EmbedBuilder();
-            Embed.WithAuthor("There is currently 6 classes available and they are: ");
+            Embed.WithAuthor("There are currently 6 classes available and they are: ");
             Embed.WithColor(40, 200, 150);
             Embed.WithFooter("");
             Embed.WithDescription("<:Archer:543112389579767828>Archer - High Damage, Very Vulnerable." +
@@ -163,7 +179,10 @@ namespace RPG_Bot.Commands
                                  "\n<:Knight:543112385498578967>Knight - Low Damage, Very Tanky" +
                                  "\n<:Rogue:543112385406304257>Rogue - High Damage, Very Vulnerable" +
                                  "\n<:Witch:543112316745416706>Witch - High Damage, Very Vulnerable" +
-                                 "\n<:Wizard:543112388774199297>Wizard - Medium Damage, Somewhat Durable");
+                                 "\n<:Wizard:543112388774199297>Wizard - Medium Damage, Somewhat Durable\n\n" +
+                                 "Note: Classes each have their own base stats, but after about level 10 the " +
+                                 "difference in stats isn't very noticeable and becomes more of a cosmetic." +
+                                 "\nYou may switch your class at any time for 500 Gold Coins, see ``-help`` for more info");
             Embed.Color = Color.Gold;
 
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
@@ -199,16 +218,30 @@ namespace RPG_Bot.Commands
                     "\n**10.)** Check the guilds gold leaderboard: `-leaderboard` or `-lb`" +
                     "\n**11.)** Go on a quest: `-quest` or `-q`" +
                     "\n**12.)** Fight a spawned monster: `-fight` or `-f`" +
+                    "\n**13.)** Change your class for 500<:Coins:543112388493312000>: `-SwitchClass` or `-ChangeClass`" +
                     "\n\n\n" +
-                    "**[Admin Only]**" +
+                    "**[Admin Only](Note: Admin only does not mean server administrator, it means bot administrators in this context)**" +
                     "\n**1.)** Prune/Remove mass messages: `-prune [Amount]`" +
                     "\n**2.)** Spam someone because they're dumb: `-spam [User] [Amount]`" +
                     "\n**3.)** Remove gold from a user: `-gold take [user]` or `-gold remove [user]`" +
                     "\n**4.)** Give yourself large amounts of damage: `-thanos`" +
-                    "\n**5.)** Send a server notice through the boss `-notice [Message]`");
+                    "\n**5.)** Send a server notice through the boss `-notice [Message]`" +
+                    "\n\n\n\nServer Admins & Owners:" +
+                    "\n1.) Initialize the bot with your server(this will generate about 20 new text channels): ``-StartServer``\n\n" +
+                    "See the full documentation of commands here: https://justiceshultz.github.io/pages/DiscordBotDocs.html");
                 Embed.WithColor(40, 200, 150);
                 Embed.Color = Color.Gold;
-                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                await Context.User.SendMessageAsync("", false, Embed.Build());
+
+                Embed.WithAuthor("Sounds good!");
+                Embed.WithDescription("I DM'd you the general help commands " + Context.User.Mention);
+                Embed.WithColor(40, 200, 150);
+                Embed.Color = Color.Gold;
+                var msg = await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                await Task.Delay(5500);
+                await msg.DeleteAsync();
+                await Context.Message.DeleteAsync();
             }
         }
 
@@ -252,7 +285,7 @@ namespace RPG_Bot.Commands
         [Command("ProfPic"), Alias("profpic", "pp", "PP"), Summary("Get a users profile picture.")]
         public async Task ProfilePic([Remainder]IUser Input = null)
         {
-            if(Input == null)
+            if (Input == null)
             {
                 Input = Context.User;
             }

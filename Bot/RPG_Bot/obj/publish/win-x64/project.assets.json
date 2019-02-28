@@ -6009,11 +6009,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s189081\\Desktop\\DiscordRPGBot\\RPG_Bot\\RPG_Bot\\RPG_Bot.csproj",
+      "projectUniqueName": "C:\\Users\\s189081\\Desktop\\DiscordR\\Bot\\RPG_Bot\\RPG_Bot.csproj",
       "projectName": "RPG_Bot",
-      "projectPath": "C:\\Users\\s189081\\Desktop\\DiscordRPGBot\\RPG_Bot\\RPG_Bot\\RPG_Bot.csproj",
+      "projectPath": "C:\\Users\\s189081\\Desktop\\DiscordR\\Bot\\RPG_Bot\\RPG_Bot.csproj",
       "packagesPath": "C:\\Users\\s189081\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s189081\\Desktop\\DiscordRPGBot\\RPG_Bot\\RPG_Bot\\obj\\publish\\win-x64\\",
+      "outputPath": "C:\\Users\\s189081\\Desktop\\DiscordR\\Bot\\RPG_Bot\\obj\\publish\\win-x64\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

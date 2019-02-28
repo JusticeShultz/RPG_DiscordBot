@@ -25,7 +25,11 @@ namespace RPG_Bot.Migrations
                     EventItem3 = table.Column<uint>(nullable: false),
                     Hour = table.Column<int>(nullable: false),
                     Minute = table.Column<int>(nullable: false),
-                    Second = table.Column<int>(nullable: false)
+                    Second = table.Column<int>(nullable: false),
+                    Day = table.Column<int>(nullable: false),
+                    DailyClaimed = table.Column<int>(nullable: false),
+                    Class = table.Column<string>(nullable: true),
+                    Rank = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

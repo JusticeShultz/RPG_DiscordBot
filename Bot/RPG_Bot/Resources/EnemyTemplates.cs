@@ -1,8 +1,11 @@
-﻿using System;
+﻿//This script is just a simple template for things. All that can be found here is the boundings
+//for how enemies spawn, such as max health and min health. The actual code behind it all is located
+//under Gameplay.cs
+
+using System;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-
 using Discord;
 using Discord.Commands;
 using System.Reflection;
@@ -63,7 +66,8 @@ namespace RPG_Bot.Resources
 
         public static ulong ChannelEventSpawn = 544041750008823829;
         public static ulong Questing = 542118422725656580;
-
+        public static ulong DailyQuesting = 547199675602829323;
+        
         //Roles
         public static ulong Bronze = 542123825370890250;
         public static ulong Silver = 542123823936438287;
@@ -80,22 +84,38 @@ namespace RPG_Bot.Resources
         public static ulong kenthros = 542120374456811530;
         public static ulong arkdul = 542120398775648266;
         public static ulong ServerID = 542118110774427659;
-        
+
         //This unit is not templated.
         public static Enemy Goblin = new Enemy
         (
-            "https://cdn.discordapp.com/attachments/542225685695954945/543139937948532778/Unit_ills_full_10050.png", 
-            25, 
-            10, 
-            25, 
-            5, 
-            5, 
-            1, 
-            25, 
-            1, 
-            2, 
-            1, 
+            "https://cdn.discordapp.com/attachments/542225685695954945/543139937948532778/Unit_ills_full_10050.png",
+            25,
+            10,
+            25,
+            5,
+            5,
+            1,
+            12,
+            1,
+            3,
+            1,
             "Goblin"
+        );
+
+        public static Enemy LogSpider = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/545322112257228820/Wooden_Spider.webp",
+            120,
+            105,
+            12,
+            3,
+            5,
+            3,
+            6,
+            2,
+            3,
+            2,
+            "Log Spider"
         );
 
         //This unit is templated.
@@ -115,6 +135,70 @@ namespace RPG_Bot.Resources
             "[ANOMALY] Mimic" //Unit Name
         );
 
+        public static Enemy SilverMimic = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/546870700296634368/Unit_ills_full_60224.webp", //URL
+            22500, //Max Health
+            15000, //Min Health
+            45, //Max Damage
+            30, //Min Damage
+            50, //Max Level
+            40, //Min Level
+            3000, //Max Gold Drop
+            1000, //Min Gold Drop
+            0, //Max XP Drop
+            0, //Min XP Drop
+            "[ANOMALY] Silver Mimic" //Unit Name
+        );
+
+        public static Enemy BronzePot = new Enemy
+        (
+            "https://vignette.wikia.nocookie.net/quiz-rpg-the-world-of-mystic-wiz/images/f/f3/Bronze_Pot_transparent.png/revision/latest?cb=20141025232029", //URL
+            22500, //Max Health
+            18000, //Min Health
+            45, //Max Damage
+            30, //Min Damage
+            50, //Max Level
+            40, //Min Level
+            3000, //Max Gold Drop
+            2000, //Min Gold Drop
+            30, //Max XP Drop
+            20, //Min XP Drop
+            "[EVENT ANOMALY] Bronze Pot" //Unit Name
+        );
+
+        public static Enemy SilverPot = new Enemy
+        (
+            "https://vignette.wikia.nocookie.net/quiz-rpg-the-world-of-mystic-wiz/images/f/fc/Silver_Pot_transparent.png/revision/latest?cb=20141025232037", //URL
+            32500, //Max Health
+            25000, //Min Health
+            45, //Max Damage
+            30, //Min Damage
+            50, //Max Level
+            40, //Min Level
+            4000, //Max Gold Drop
+            3000, //Min Gold Drop
+            50, //Max XP Drop
+            40, //Min XP Drop
+            "[EVENT ANOMALY] Silver Pot" //Unit Name
+        );
+
+        public static Enemy GoldenPot = new Enemy
+        (
+            "https://vignette.wikia.nocookie.net/quiz-rpg-the-world-of-mystic-wiz/images/f/f5/The_Golden_Pot_transparent.png/revision/latest?cb=20141025232107", //URL
+            42500, //Max Health
+            35000, //Min Health
+            45, //Max Damage
+            30, //Min Damage
+            80, //Max Level
+            80, //Min Level
+            7000, //Max Gold Drop
+            5000, //Min Gold Drop
+            60, //Max XP Drop
+            40, //Min XP Drop
+            "[EVENT ANOMALY] Golden Pot" //Unit Name
+        );
+
         public static Enemy Golem = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/543140066369863682/Unit_ills_full_30932.png", //URL
@@ -126,11 +210,42 @@ namespace RPG_Bot.Resources
             15, //Min Level
             45, //Max Gold Drop
             1, //Min Gold Drop
-            15, //Max XP Drop
-            3, //Min XP Drop
+            30, //Max XP Drop
+            15, //Min XP Drop
             "Golem" //Unit Name
         );
 
+        public static Enemy Mushroom = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/546855004120678400/Unit_BigMushroomFire_sprite.webp", //URL
+            600, //Max Health
+            400, //Min Health
+            40, //Max Damage
+            15, //Min Damage
+            20, //Max Level
+            15, //Min Level
+            45, //Max Gold Drop
+            1, //Min Gold Drop
+            20, //Max XP Drop
+            12, //Min XP Drop
+            "Shroomling" //Unit Name
+        );
+
+        public static Enemy Cyclops = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/546870728184823808/Unit_ills_full_40072.webp", //URL
+            350, //Max Health
+            125, //Min Health
+            50, //Max Damage
+            15, //Min Damage
+            20, //Max Level
+            15, //Min Level
+            40, //Max Gold Drop
+            10, //Min Gold Drop
+            10, //Max XP Drop
+            5, //Min XP Drop
+            "Cyclops" //Unit Name
+        );
 
         public static Enemy Imp = new Enemy
         (
@@ -143,7 +258,7 @@ namespace RPG_Bot.Resources
             1, //Min Level
             8, //Max Gold Drop
             1, //Min Gold Drop
-            5, //Max XP Drop
+            3, //Max XP Drop
             1, //Min XP Drop
             "Imp" //Unit Name
         );
@@ -159,8 +274,8 @@ namespace RPG_Bot.Resources
             15, //Min Level
             25, //Max Gold Drop
             10, //Min Gold Drop
-            18, //Max XP Drop
-            8, //Min XP Drop
+            55, //Max XP Drop
+            30, //Min XP Drop
             "Hob Goblin" //Unit Name
         );
 
@@ -196,6 +311,22 @@ namespace RPG_Bot.Resources
             "Upgraded Training Bot" //Unit Name
         );
 
+        public static Enemy Skeleton = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/546870697515810841/Unit_ills_full_60050.webp", //URL
+            130, //Max Health
+            95, //Min Health
+            10, //Max Damage
+            6, //Min Damage
+            10, //Max Level
+            5, //Min Level
+            35, //Max Gold Drop
+            1, //Min Gold Drop
+            4, //Max XP Drop
+            1, //Min XP Drop
+            "Skeleton" //Unit Name
+        );
+
         public static Enemy BigTrainingBot = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/543140266589159428/giphy_2.gif", //URL
@@ -210,6 +341,22 @@ namespace RPG_Bot.Resources
             8, //Max XP Drop
             3, //Min XP Drop
             "Armed Training Bot" //Unit Name
+        );
+
+        public static Enemy SkeletonFootSoldier = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/546870685839130634/Unit_ills_full_60051.webp", //URL
+            190, //Max Health
+            150, //Min Health
+            15, //Max Damage
+            8, //Min Damage
+            10, //Max Level
+            7, //Min Level
+            30, //Max Gold Drop
+            10, //Min Gold Drop
+            7, //Max XP Drop
+            3, //Min XP Drop
+            "Skeleton Foot Soldier" //Unit Name
         );
 
         public static Enemy BossTrainingBot = new Enemy
@@ -239,9 +386,73 @@ namespace RPG_Bot.Resources
             10, //Min Level
             35, //Max Gold Drop
             12, //Min Gold Drop
-            10, //Max XP Drop
-            5, //Min XP Drop
+            20, //Max XP Drop
+            10, //Min XP Drop
             "Haunted Tree" //Unit Name
+        );
+
+        public static Enemy GiantEnt = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/546870671947333652/Unit_ills_full_30051.webp", //URL
+            650, //Max Health
+            450, //Min Health
+            40, //Max Damage
+            20, //Min Damage
+            15, //Max Level
+            10, //Min Level
+            35, //Max Gold Drop
+            12, //Min Gold Drop
+            35, //Max XP Drop
+            15, //Min XP Drop
+            "Giant Tree Ent" //Unit Name
+        );
+
+        public static Enemy Hornet = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/546855056566255618/detail_monster_03.png", //URL
+            350, //Max Health
+            300, //Min Health
+            30, //Max Damage
+            10, //Min Damage
+            15, //Max Level
+            10, //Min Level
+            35, //Max Gold Drop
+            12, //Min Gold Drop
+            16, //Max XP Drop
+            10, //Min XP Drop
+            "Giant Hornet" //Unit Name
+        );
+
+        public static Enemy GiantRat = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/546855051558125589/Unit_RatLight_sprite.webp", //URL
+            500, //Max Health
+            350, //Min Health
+            20, //Max Damage
+            10, //Min Damage
+            15, //Max Level
+            10, //Min Level
+            35, //Max Gold Drop
+            12, //Min Gold Drop
+            20, //Max XP Drop
+            13, //Min XP Drop
+            "Giant Rat" //Unit Name
+        );
+
+        public static Enemy Treant = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/546870662715670529/NewTreant.webp", //URL
+            500, //Max Health
+            350, //Min Health
+            20, //Max Damage
+            10, //Min Damage
+            15, //Max Level
+            10, //Min Level
+            35, //Max Gold Drop
+            12, //Min Gold Drop
+            20, //Max XP Drop
+            13, //Min XP Drop
+            "Treant" //Unit Name
         );
 
         public static Enemy GoblinWolf = new Enemy
@@ -271,8 +482,8 @@ namespace RPG_Bot.Resources
             10, //Min Level
             20, //Max Gold Drop
             5, //Min Gold Drop
-            6, //Max XP Drop
-            1, //Min XP Drop
+            15, //Max XP Drop
+            8, //Min XP Drop
             "Tree Ent" //Unit Name
         );
 
@@ -295,8 +506,8 @@ namespace RPG_Bot.Resources
         public static Enemy EventTreeBoss = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/543139899109277696/image_1.webp", //URL
-            25000, //Max Health
-            19500, //Min Health
+            85000, //Max Health
+            69500, //Min Health
             35, //Max Damage
             15, //Min Damage
             160, //Max Level
@@ -311,223 +522,255 @@ namespace RPG_Bot.Resources
         public static Enemy GothkamulBoss = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/544670992786653193/Gothkamul.png", //URL
-            3500000, //Max Health
-            1850000, //Min Health
+            130000, //Max Health
+            109000, //Min Health
             80, //Max Damage
             15, //Min Damage
             500, //Max Level
             400, //Min Level
             35000, //Max Gold Drop
             20000, //Min Gold Drop
-            250, //Max XP Drop
-            200, //Min XP Drop
+            1250, //Max XP Drop
+            500, //Min XP Drop
             "[WORLD BOSS] Gothkamul the Death Lord" //Unit Name
         );
 
         public static Enemy RakdoroBoss = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/544670990957936641/Rakdoro.png", //URL
-            2500000, //Max Health
-            1850000, //Min Health
+            145900, //Max Health
+            108800, //Min Health
             120, //Max Damage
             40, //Min Damage
             500, //Max Level
             400, //Min Level
             35000, //Max Gold Drop
             20000, //Min Gold Drop
-            250, //Max XP Drop
-            200, //Min XP Drop
+            1250, //Max XP Drop
+            300, //Min XP Drop
             "[WORLD BOSS] Rakdoro the Flame Lord" //Unit Name
         );
 
         public static Enemy ArkdulBoss = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/544670996356136990/Arkdul.png", //URL
-            6000000, //Max Health
-            4550000, //Min Health
+            280000, //Max Health
+            230000, //Min Health
             50, //Max Damage
             10, //Min Damage
             500, //Max Level
             400, //Min Level
             35000, //Max Gold Drop
             20000, //Min Gold Drop
-            250, //Max XP Drop
-            200, //Min XP Drop
+            1250, //Max XP Drop
+            500, //Min XP Drop
             "[WORLD BOSS] Arkdul the Earth Lord" //Unit Name
         );
 
         public static Enemy KenthrosBoss = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/544670999648665600/Kenthros.png", //URL
-            2000000, //Max Health
-            1550000, //Min Health
+            189900, //Max Health
+            158000, //Min Health
             80, //Max Damage
             30, //Min Damage
             500, //Max Level
             400, //Min Level
             25000, //Max Gold Drop
             13000, //Min Gold Drop
-            225, //Max XP Drop
-            200, //Min XP Drop
+            1600, //Max XP Drop
+            600, //Min XP Drop
             "[WORLD BOSS] Kenthros the Sea Lord" //Unit Name
         );
 
         public static Enemy FrostWolf = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/543140199950188564/Unit_ills_full_20892.png", //URL
-            4500, //Max Health
-            3200, //Min Health
-            250, //Max Damage
-            40, //Min Damage
+            1500, //Max Health
+            1000, //Min Health
+            80, //Max Damage
+            10, //Min Damage
             40, //Max Level
             20, //Min Level
             35, //Max Gold Drop
             12, //Min Gold Drop
-            30, //Max XP Drop
+            45, //Max XP Drop
             5, //Min XP Drop
             "Frost Wolf" //Unit Name
+        );
+
+        public static Enemy FrostBear = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/546855010802204673/38294-56f49eca3077358022c5214d1a55aa46.png", //URL
+            2500, //Max Health
+            2000, //Min Health
+            90, //Max Damage
+            10, //Min Damage
+            40, //Max Level
+            35, //Min Level
+            35, //Max Gold Drop
+            12, //Min Gold Drop
+            60, //Max XP Drop
+            35, //Min XP Drop
+            "Frost Bear" //Unit Name
         );
 
         public static Enemy FrostKnight = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/543139940150804482/Unit_ills_full_20172.png", //URL
-            5000, //Max Health
-            3500, //Min Health
-            200, //Max Damage
-            75, //Min Damage
+            2500, //Max Health
+            2000, //Min Health
+            85, //Max Damage
+            10, //Min Damage
             40, //Max Level
             20, //Min Level
             55, //Max Gold Drop
             13, //Min Gold Drop
-            45, //Max XP Drop
-            10, //Min XP Drop
+            55, //Max XP Drop
+            25, //Min XP Drop
             "Frost Knights" //Unit Name
         );
 
         public static Enemy BossIceDragon = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/543139899109277697/image_5.png", //URL
-            15000, //Max Health
-            12500, //Min Health
-            200, //Max Damage
-            40, //Min Damage
+            20000, //Max Health
+            15500, //Min Health
+            100, //Max Damage
+            25, //Min Damage
             40, //Max Level
-            20, //Min Level
-            350, //Max Gold Drop
-            125, //Min Gold Drop
-            150, //Max XP Drop
-            70, //Min XP Drop
+            35, //Min Level
+            650, //Max Gold Drop
+            285, //Min Gold Drop
+            350, //Max XP Drop
+            185, //Min XP Drop
             "[BOSS] Frost Dragon" //Unit Name
         );
 
         public static Enemy BossFrostWolfPackLeader = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/543140114549833766/Unit_ills_full_21006.png", //URL
-            18000, //Max Health
-            14500, //Min Health
-            225, //Max Damage
+            30000, //Max Health
+            24500, //Min Health
+            100, //Max Damage
             50, //Min Damage
             40, //Max Level
             20, //Min Level
-            400, //Max Gold Drop
+            500, //Max Gold Drop
             180, //Min Gold Drop
-            200, //Max XP Drop
-            120, //Min XP Drop
+            400, //Max XP Drop
+            250, //Min XP Drop
             "[BOSS] Frost Wolf - Pack Leader" //Unit Name
         );
 
         public static Enemy Megaton = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308191978946610/Megaton.png", //URL
-            9000, //Max Health
-            7000, //Min Health
-            300, //Max Damage
-            70, //Min Damage
+            8500, //Max Health
+            6550, //Min Health
+            150, //Max Damage
+            5, //Min Damage
             60, //Max Level
             40, //Min Level
             75, //Max Gold Drop
             25, //Min Gold Drop
-            55, //Max XP Drop
-            20, //Min XP Drop
+            95, //Max XP Drop
+            45, //Min XP Drop
             "Megaton" //Unit Name
         );
 
         public static Enemy LizardMan = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/543139848987607051/image_6.png", //URL
-            12000, //Max Health
-            10000, //Min Health
-            320, //Max Damage
-            70, //Min Damage
+            9000, //Max Health
+            7000, //Min Health
+            150, //Max Damage
+            65, //Min Damage
             60, //Max Level
-            40, //Min Level
+            50, //Min Level
             75, //Max Gold Drop
             25, //Min Gold Drop
-            55, //Max XP Drop
-            20, //Min XP Drop
+            125, //Max XP Drop
+            85, //Min XP Drop
             "Lizard Man" //Unit Name
+        );
+
+        public static Enemy FishMan = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/546855015180926986/Unit_FishmanFire_sprite.webp", //URL
+            9000, //Max Health
+            6500, //Min Health
+            120, //Max Damage
+            65, //Min Damage
+            60, //Max Level
+            50, //Min Level
+            75, //Max Gold Drop
+            25, //Min Gold Drop
+            65, //Max XP Drop
+            40, //Min XP Drop
+            "Fish Man" //Unit Name
         );
 
         public static Enemy Leviathan = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308182235447305/Leviathan.png", //URL
-            40000, //Max Health
-            30000, //Min Health
-            320, //Max Damage
+            13000, //Max Health
+            11500, //Min Health
+            120, //Max Damage
             70, //Min Damage
             60, //Max Level
             40, //Min Level
             450, //Max Gold Drop
             225, //Min Gold Drop
-            120, //Max XP Drop
-            60, //Min XP Drop
+            250, //Max XP Drop
+            185, //Min XP Drop
             "Leviathan" //Unit Name
         );
 
         public static Enemy CetusBoss = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/543140200507899905/Gear-Cetus_Render.png", //URL
-            120000, //Max Health
-            85000, //Min Health
-            300, //Max Damage
+            85999, //Max Health
+            78111, //Min Health
+            85, //Max Damage
             30, //Min Damage
             60, //Max Level
             40, //Min Level
             650, //Max Gold Drop
             225, //Min Gold Drop
-            180, //Max XP Drop
-            90, //Min XP Drop
+            450, //Max XP Drop
+            350, //Min XP Drop
             "[BOSS] Cetus - Lord of Balance" //Unit Name
         );
 
         public static Enemy Phoenix = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308240682942464/Bennu.webp", //URL
-            165000, //Max Health
-            145000, //Min Health
-            500, //Max Damage
-            180, //Min Damage
+            18500, //Max Health
+            15500, //Min Health
+            180, //Max Damage
+            100, //Min Damage
             90, //Max Level
             60, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            180, //Max XP Drop
-            15, //Min XP Drop
+            350, //Max XP Drop
+            200, //Min XP Drop
             "Phoenix the Reborn" //Unit Name
         );
 
         public static Enemy Bergelmir = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308295053836301/Bergelmir.png", //URL
-            185000, //Max Health
-            145000, //Min Health
-            400, //Max Damage
-            230, //Min Damage
+            16500, //Max Health
+            13500, //Min Health
+            200, //Max Damage
+            130, //Min Damage
             90, //Max Level
             60, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            180, //Max XP Drop
+            385, //Max XP Drop
             15, //Min XP Drop
             "Bergelmir the Great" //Unit Name
         );
@@ -535,15 +778,15 @@ namespace RPG_Bot.Resources
         public static Enemy Hastur = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308179408355329/Hastur.png", //URL
-            555000, //Max Health
-            445000, //Min Health
+            18500, //Max Health
+            16500, //Min Health
             325, //Max Damage
             200, //Min Damage
             90, //Max Level
             60, //Min Level
             500, //Max Gold Drop
             65, //Min Gold Drop
-            225, //Max XP Drop
+            500, //Max XP Drop
             50, //Min XP Drop
             "Hastur, Keeper of Mana" //Unit Name
         );
@@ -551,40 +794,40 @@ namespace RPG_Bot.Resources
         public static Enemy Kirin = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308254318886913/Kirin.png", //URL
-            100000, //Max Health
-            95000, //Min Health
-            800, //Max Damage
-            400, //Min Damage
+            10000, //Max Health
+            8000, //Min Health
+            350, //Max Damage
+            10, //Min Damage
             90, //Max Level
             60, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
             180, //Max XP Drop
-            15, //Min XP Drop
+            100, //Min XP Drop
             "Kirin the Storm" //Unit Name
         );
 
         public static Enemy Haechi = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308258085240863/Haechi.png", //URL
-            195000, //Max Health
-            145000, //Min Health
-            750, //Max Damage
-            330, //Min Damage
+            25500, //Max Health
+            19450, //Min Health
+            150, //Max Damage
+            100, //Min Damage
             90, //Max Level
             60, //Min Level
             250, //Max Gold Drop
             50, //Min Gold Drop
-            180, //Max XP Drop
-            15, //Min XP Drop
+            350, //Max XP Drop
+            200, //Min XP Drop
             "Haechi, Son of Fire" //Unit Name
         );
 
         public static Enemy Orochi = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308244403290132/Eight-Headed_Orochi.png", //URL
-            185000, //Max Health
-            145000, //Min Health
+            19999, //Max Health
+            17777, //Min Health
             500, //Max Damage
             330, //Min Damage
             90, //Max Level
@@ -592,22 +835,22 @@ namespace RPG_Bot.Resources
             250, //Max Gold Drop
             25, //Min Gold Drop
             180, //Max XP Drop
-            15, //Min XP Drop
+            100, //Min XP Drop
             "Orochi, Head of Eight" //Unit Name
         );
 
         public static Enemy Eclipse = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308139965251584/Eclipse.webp", //URL
-            165000, //Max Health
-            145000, //Min Health
+            13500, //Max Health
+            11500, //Min Health
             500, //Max Damage
             180, //Min Damage
             90, //Max Level
             60, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            180, //Max XP Drop
+            480, //Max XP Drop
             15, //Min XP Drop
             "Eclipse of the Storm" //Unit Name
         );
@@ -615,40 +858,40 @@ namespace RPG_Bot.Resources
         public static Enemy Niflheim = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545321867477516298/Niflheim.webp", //URL
-            165000, //Max Health
-            145000, //Min Health
+            16000, //Max Health
+            14500, //Min Health
             500, //Max Damage
             180, //Min Damage
             90, //Max Level
             60, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            180, //Max XP Drop
-            15, //Min XP Drop
+            380, //Max XP Drop
+            100, //Min XP Drop
             "Niflheim of Hell" //Unit Name
         );
 
         public static Enemy Muspelheim = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545321830706315274/Muspelheim.webp", //URL
-            165000, //Max Health
-            145000, //Min Health
+            18500, //Max Health
+            15500, //Min Health
             500, //Max Damage
             180, //Min Damage
             90, //Max Level
             60, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            180, //Max XP Drop
-            15, //Min XP Drop
+            450, //Max XP Drop
+            150, //Min XP Drop
             "Muspelheim, Elemental of Heat" //Unit Name
         );
 
         public static Enemy AbyssDragon = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545322174001709129/Abyss_Dragon.webp", //URL
-            755000, //Max Health
-            713000, //Min Health
+            20500, //Max Health
+            18500, //Min Health
             900, //Max Damage
             380, //Min Damage
             100, //Max Level
@@ -663,8 +906,8 @@ namespace RPG_Bot.Resources
         public static Enemy Yamusichea = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545323895511711764/Yamusichea.webp", //URL
-            855000, //Max Health
-            785000, //Min Health
+            10550, //Max Health
+            7850, //Min Health
             600, //Max Damage
             400, //Min Damage
             100, //Max Level
@@ -679,8 +922,8 @@ namespace RPG_Bot.Resources
         public static Enemy Flare = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545323841715568640/Mega_Flare.webp", //URL
-            1500000, //Max Health
-            1000000, //Min Health
+            18000, //Max Health
+            10000, //Min Health
             800, //Max Damage
             600, //Min Damage
             100, //Max Level
@@ -695,8 +938,8 @@ namespace RPG_Bot.Resources
         public static Enemy Skeletor = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308131677306910/Skeletor_X.webp", //URL
-            1500000, //Max Health
-            1000000, //Min Health
+            19000, //Max Health
+            10000, //Min Health
             800, //Max Damage
             600, //Min Damage
             100, //Max Level
@@ -711,8 +954,8 @@ namespace RPG_Bot.Resources
         public static Enemy Khan = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545323665210867713/Khan.webp", //URL
-            1500000, //Max Health
-            1000000, //Min Health
+            20000, //Max Health
+            10000, //Min Health
             800, //Max Damage
             600, //Min Damage
             100, //Max Level
@@ -727,8 +970,8 @@ namespace RPG_Bot.Resources
         public static Enemy Crom = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308301089439754/Crom_Cruach.png", //URL
-            955000, //Max Health
-            885000, //Min Health
+            19550, //Max Health
+            8850, //Min Health
             600, //Max Damage
             400, //Min Damage
             100, //Max Level
@@ -743,8 +986,8 @@ namespace RPG_Bot.Resources
         public static Enemy Rex = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308291014721556/Bone_T._Rex.png", //URL
-            1205000, //Max Health
-            1000000, //Min Health
+            112050, //Max Health
+            10000, //Min Health
             300, //Max Damage
             200, //Min Damage
             100, //Max Level
@@ -759,8 +1002,8 @@ namespace RPG_Bot.Resources
         public static Enemy Vasuki = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545323686866059286/Vasuki.webp", //URL
-            1855000, //Max Health
-            1785000, //Min Health
+            118550, //Max Health
+            17850, //Min Health
             300, //Max Damage
             200, //Min Damage
             100, //Max Level
@@ -775,8 +1018,8 @@ namespace RPG_Bot.Resources
         public static Enemy Thunder = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545323709301260300/image.webp", //URL
-            855000, //Max Health
-            785000, //Min Health
+            18550, //Max Health
+            7850, //Min Health
             600, //Max Damage
             400, //Min Damage
             100, //Max Level
@@ -791,8 +1034,8 @@ namespace RPG_Bot.Resources
         public static Enemy Taigo = new Enemy
         (
            "https://cdn.discordapp.com/attachments/542225685695954945/545323826112888842/Taigon.webp", //URL
-           1000000, //Max Health
-           945000, //Min Health
+           21000, //Max Health
+           9450, //Min Health
            600, //Max Damage
            400, //Min Damage
            100, //Max Level
@@ -807,8 +1050,8 @@ namespace RPG_Bot.Resources
         public static Enemy Masamune = new Enemy
         (
            "https://cdn.discordapp.com/attachments/542225685695954945/545321849131892736/Masamune.webp", //URL
-           2000000, //Max Health
-           1945000, //Min Health
+           32000, //Max Health
+           19450, //Min Health
            800, //Max Damage
            600, //Min Damage
            100, //Max Level
@@ -823,8 +1066,8 @@ namespace RPG_Bot.Resources
         public static Enemy Rourtu = new Enemy
         (
            "https://cdn.discordapp.com/attachments/542225685695954945/545321889128644624/Destroyer.webp", //URL
-           2500000, //Max Health
-           1945000, //Min Health
+           22500, //Max Health
+           19450, //Min Health
            1000, //Max Damage
            600, //Min Damage
            100, //Max Level
@@ -839,24 +1082,24 @@ namespace RPG_Bot.Resources
         public static Enemy Duck = new Enemy
         (
            "https://cdn.discordapp.com/attachments/542225685695954945/544791450068713483/439083435961745409.gif", //URL
-           450000, //Max Health
-           125000, //Min Health
+           114500, //Max Health
+           111250, //Min Health
            1250, //Max Damage
            100, //Min Damage
            100, //Max Level
            100, //Min Level
            1000, //Max Gold Drop
            500, //Min Gold Drop
-           300, //Max XP Drop
-           150, //Min XP Drop
+           500, //Max XP Drop
+           350, //Min XP Drop
            "Mighty Duck" //Unit Name
         );
 
         public static Enemy Trikento = new Enemy
         (
            "https://cdn.discordapp.com/attachments/542225685695954945/545308191462785053/Sea_Dragon.png", //URL
-           2500000, //Max Health
-           1945000, //Min Health
+           25000, //Max Health
+           19450, //Min Health
            1000, //Max Damage
            600, //Min Damage
            100, //Max Level
@@ -871,8 +1114,8 @@ namespace RPG_Bot.Resources
         public static Enemy Blackout = new Enemy
         (
            "https://cdn.discordapp.com/attachments/542225685695954945/545321784577097745/Blackout.webp", //URL
-           2500000, //Max Health
-           1945000, //Min Health
+           25000, //Max Health
+           19450, //Min Health
            1000, //Max Damage
            600, //Min Damage
            100, //Max Level
@@ -887,8 +1130,8 @@ namespace RPG_Bot.Resources
         public static Enemy Yggdrasil = new Enemy
         (
            "https://cdn.discordapp.com/attachments/542225685695954945/545321805754269706/Yggdrasil.webp", //URL
-           2500000, //Max Health
-           1945000, //Min Health
+           30000, //Max Health
+           19450, //Min Health
            1000, //Max Damage
            600, //Min Damage
            100, //Max Level

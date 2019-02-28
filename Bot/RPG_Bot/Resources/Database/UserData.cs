@@ -20,6 +20,10 @@ namespace RPG_Bot.Resources.Database
         public int Hour { get; set; }
         public int Minute { get; set; }
         public int Second { get; set; }
+        public int Day { get; set; }
+        public int DailyClaimed { get; set; }
+        public string Class { get; set; }
+        public string Rank { get; set; }
     }
 }
 /*public string Weapon_Name { get; set; }

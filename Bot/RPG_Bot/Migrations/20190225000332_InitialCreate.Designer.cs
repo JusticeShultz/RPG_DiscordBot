@@ -8,7 +8,7 @@ using RPG_Bot.Resources.Database;
 namespace RPG_Bot.Migrations
 {
     [DbContext(typeof(SqliteDbContext))]
-    [Migration("20190212234408_InitialCreate")]
+    [Migration("20190225000332_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,9 +24,15 @@ namespace RPG_Bot.Migrations
 
                     b.Property<uint>("Age");
 
+                    b.Property<string>("Class");
+
                     b.Property<uint>("CurrentHealth");
 
+                    b.Property<int>("DailyClaimed");
+
                     b.Property<uint>("Damage");
+
+                    b.Property<int>("Day");
 
                     b.Property<uint>("EventItem1");
 
@@ -45,6 +51,8 @@ namespace RPG_Bot.Migrations
                     b.Property<int>("Minute");
 
                     b.Property<string>("Name");
+
+                    b.Property<string>("Rank");
 
                     b.Property<int>("Second");
 

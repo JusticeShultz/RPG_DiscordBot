@@ -18,14 +18,16 @@ namespace RPG_Bot.Currency
 
             if (User == null) vuser = Context.User as SocketGuildUser;
 
-            var knight = Context.Guild.GetRole(542217921246658610);
-            var witch = Context.Guild.GetRole(542217744805003264);
-            var wizard = Context.Guild.GetRole(542217748009451551);
-            var archer = Context.Guild.GetRole(542217745690001409);
-            var assassin = Context.Guild.GetRole(542217793601536010);
-            var rogue = Context.Guild.GetRole(542217746440519681);
-
+            #region Deprecated [rank ID system]
             /*
+            //ID system deprecated
+            var knight = Context.Guild.GetRole(542217921246658610);
+                var witch = Context.Guild.GetRole(542217744805003264);
+                var wizard = Context.Guild.GetRole(542217748009451551);
+                var archer = Context.Guild.GetRole(542217745690001409);
+                var assassin = Context.Guild.GetRole(542217793601536010);
+                var rogue = Context.Guild.GetRole(542217746440519681);
+
                 <@&542217921246658610 > -Knight
                 <@&542217744805003264 > -Witch
                 <@&542217748009451551 > -Wizard
@@ -33,47 +35,60 @@ namespace RPG_Bot.Currency
                 <@&542217793601536010 > -Assassin
                 <@&542217746440519681 > -Rogue
             */
+            #endregion
 
             EmbedBuilder Embed = new EmbedBuilder();
             var user = vuser;
             string classType = "";
             string classEmoji = "";
+            string UsersClass = Data.Data.GetClass(vuser.Id);
 
-            if (vuser.Roles.Contains(archer))
+            if (UsersClass == "Archer")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225760748961797/Archer.png");
                 classType = "Archer";
                 classEmoji = "<:Archer:543112389579767828>";
             }
-            else if (vuser.Roles.Contains(knight))
+            else if (UsersClass == "Knight")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767107526676/Knight.png");
                 classType = "Knight";
                 classEmoji = "<:Knight:543112385498578967>";
             }
-            else if (vuser.Roles.Contains(witch))
+            else if (UsersClass == "Witch")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767770095619/Witch.png");
                 classType = "Witch";
                 classEmoji = "<:Witch:543112316745416706>";
             }
-            else if (vuser.Roles.Contains(rogue))
+            else if (UsersClass == "Rogue")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767220641792/Rogue.png");
                 classType = "Rogue";
                 classEmoji = "<:Rogue:543112385406304257>";
             }
-            else if (vuser.Roles.Contains(wizard))
+            else if (UsersClass == "Wizard")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225769422913537/Wizard.png");
                 classType = "Wizard";
                 classEmoji = "<:Wizard:543112388774199297>";
             }
-            else if (vuser.Roles.Contains(assassin))
+            else if (UsersClass == "Assassin")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225760619069450/Assassin.png");
                 classType = "Assassin";
                 classEmoji = "<:Assassin:543112389109874719>";
+            }
+            else
+            {
+                Embed.WithAuthor("Error!");
+                Embed.WithFooter("Please make an account and try again!");
+                Embed.WithDescription("Sorry but you have not registered with the guild yet! To register you must " +
+                    "do ``-begin [Class] [Name] [Age]``, type ``-help`` if you need additional guidance!");
+                Embed.Color = Color.Red;
+
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                return;
             }
 
             //Console.WriteLine("Context User: " + Context.User.Id + " - User: " + vuser.Id);
@@ -89,11 +104,12 @@ namespace RPG_Bot.Currency
             uint guildGems = Data.Data.GetData_Event3(vuser.Id);
             uint neededXP = (Data.Data.GetData_Level(vuser.Id) * Data.Data.GetData_Level(vuser.Id));
 
+            Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
             Embed.WithAuthor("Profile of: " + user.Username, user.GetAvatarUrl());
             Embed.WithColor(40, 200, 150);
             Embed.WithFooter("XP until level up: " + currentXp + " / " + neededXP);
             Embed.WithDescription("Class: " + classType + " " + classEmoji + "\nName: " + name + " <:freedomdove:543112388996497419>\nAge: " + age + " <:Age:543112389160337408>\n" + "\nGold Coins: " + coins + " <:Coins:543112388493312000>\n" +
-                "You have " + guildGems + " <:GuildGem:545341213004529725>\n\n" + 
+                "You have " + guildGems + " <:GuildGem:545341213004529725>\n\n" +
                 "Level: " + level + " <:Level:543112387989995521>\n" + "Health: " + health + " <:Health:543112384848461832>\n" + "Damage: " + damage + " <:Damage:543112387763503124>\n\n" +
                 "You have " + eventItem + " Mystic Logs (Event Item)<:MysticLog:545341226556325893>");
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
@@ -144,7 +160,7 @@ namespace RPG_Bot.Currency
                 {
                     //A user is provided and amount is valid.
                     SocketGuildUser User1 = Context.User as SocketGuildUser;
-                    if (!User1.GuildPermissions.Administrator)
+                    if (Context.User.Id != 228344819422855168 || Context.User.Id != 409566463658033173)
                     {
                         if (User1 == User)
                         {
@@ -208,8 +224,8 @@ namespace RPG_Bot.Currency
                     else
                     {
                         Embed.WithAuthor("Gift has been sent to " + User.Username);
-                        Embed.WithFooter("Admin fund transfer.");
-                        Embed.WithDescription("An Administrator sent " + User.Username + " " + Amount + " Gold Coins!");
+                        Embed.WithFooter("Bot Admin fund transfer.");
+                        Embed.WithDescription("A Bot Administrator sent " + User.Username + " " + Amount + " Gold Coins!");
                         Embed.Color = Color.Gold;
                         await Data.Data.SaveData(User.Id, Amount, 0, "", 0, 0, 0, 0, 0);
                         await Context.Channel.SendMessageAsync("", false, Embed.Build());
@@ -236,18 +252,18 @@ namespace RPG_Bot.Currency
                 //A user is provided and amount is valid.
                 SocketGuildUser User1 = Context.User as SocketGuildUser;
 
-                if (!User1.GuildPermissions.Administrator)
+                if (Context.User.Id != 228344819422855168)
                 {
                     Embed.WithAuthor("Error!");
                     Embed.WithFooter("Funds not removed.");
-                    Embed.WithDescription("You are not an admin!");
+                    Embed.WithDescription("You are not a Bot Admin!");
                     Embed.Color = Color.Red;
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
                     return;
                 }
                 else
                 {
-                    await Context.Channel.SendMessageAsync($"{User.Mention}, **{Amount}** gold coins have been removed from your account by admin {Context.User.Mention}");
+                    await Context.Channel.SendMessageAsync($"{User.Mention}, **{Amount}** gold coins have been removed from your account by Bot Admin {Context.User.Mention}");
                     await Data.Data.SaveData(User.Id, (uint)-Amount, 0, "", 0, 0, 0, 0, 0);
                 }
             }
@@ -257,43 +273,194 @@ namespace RPG_Bot.Currency
         {
             public ulong ID;
             public uint GoldValue;
+            public uint Level;
+            public uint Damage;
+            public uint Health;
+            public uint Gems;
+            public uint Age;
+            public uint Event;
             public string Name;
 
-            public SimpleDataContainer(ulong iD, uint goldValue, string name)
+            public SimpleDataContainer(ulong iD, uint goldValue, string name, uint level, uint damage, uint health, uint gems, uint age, uint eventD)
             {
                 ID = iD;
                 GoldValue = goldValue;
                 Name = name;
+                Level = level;
+                Damage = damage;
+                Health = health;
+                Gems = gems;
+                Age = age;
+                Event = eventD;
             }
 
             ~SimpleDataContainer()
             {
                 GC.Collect();
             }
-
         }
 
         [Command("Leaderboard"), Alias("leaderboard", "Lb", "lb"), Summary("See a list of the richest users.")]
-        public async Task Leaderboard()
+        public async Task Leaderboard(string txt = "")
         {
-            List<SimpleDataContainer> list = new List<SimpleDataContainer> { };
-
-            foreach(SocketGuildUser users in Context.Guild.Users)
-                list.Add(new SimpleDataContainer(users.Id, Data.Data.GetData_GoldAmount(users.Id), users.Username));
-
-            list.Sort((s2, s1) => s1.GoldValue.CompareTo(s2.GoldValue));
-
-            string output = "";
-            for(int i = 0; i < 5; ++i)
+            if(Context.Guild.Id != 542118110774427659)
             {
-                output = output + "\n" + (i+1) + ".) " + list[i].Name + " - " + list[i].GoldValue + " Gold Coins";
+                EmbedBuilder Embeder = new EmbedBuilder();
+                Embeder.WithAuthor("Error!");
+                Embeder.WithDescription("This command may only be activated in the home guild. Join us here for a top leaderboard of users in the home server: https://discord.gg/jnFfqhm");
+                Embeder.WithColor(40, 200, 150);
+                Embeder.Color = Color.Red;
+                await Context.Channel.SendMessageAsync("", false, Embeder.Build());
+                return;
             }
 
+            if(txt == "" || txt == null)
+            {
+                EmbedBuilder Embeder = new EmbedBuilder();
+                Embeder.WithAuthor("Error!");
+                Embeder.WithDescription("You must use the command as ``-leaderboard [Sort Method]``!" +
+                    "\n\nValid sorting methods:" +
+                    "\n<:Coins:543112388493312000> - **Gold**" +
+                    "\n<:Level:543112387989995521> - **Level**" +
+                    "\n<:Damage:543112387763503124> - **Damage**" +
+                    "\n<:Health:543112384848461832> - **Health**" +
+                    "\n<:GuildGem:545341213004529725> - **Gems**" +
+                    "\n<:Age:543112389160337408> - **Age**" +
+                    "\n<:MysticLog:545341226556325893> - **Event**");
+                Embeder.WithColor(40, 200, 150);
+                Embeder.Color = Color.Red;
+                await Context.Channel.SendMessageAsync("", false, Embeder.Build());
+                return;
+            }
+
+            List<SimpleDataContainer> list = new List<SimpleDataContainer> { };
             EmbedBuilder Embed = new EmbedBuilder();
-            Embed.WithAuthor("Serverwide Leaderboard by Gold Coins");
+            string output = "";
+
+            if (txt == "Gold" || txt == "gold" || txt == "Coins" || txt == "coins" || txt == "<:Coins:543112388493312000>")
+            {
+                foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, Data.Data.GetData_GoldAmount(users.Id), users.Username, 0, 0, 0, 0, 0, 0));
+                list.Sort((s2, s1) => s1.GoldValue.CompareTo(s2.GoldValue));
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Gold: " + list[i].GoldValue + "<:Coins:543112388493312000>";
+                Embed.WithAuthor("Serverwide Leaderboard by Gold Coins");
+                Embed.Color = Color.Gold;
+                Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
+            }
+            else if (txt == "Level" || txt == "level" || txt == "Xp" || txt == "XP" || txt == "xp" || txt == "<:Level:543112387989995521>")
+            {
+                foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, Data.Data.GetData_Level(users.Id), 0, 0, 0, 0, 0));
+                list.Sort((s2, s1) => s1.Level.CompareTo(s2.Level));
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Level: " + list[i].Level + "<:Level:543112387989995521>";
+                Embed.WithAuthor("Serverwide Leaderboard by Levels");
+                Embed.Color = Color.DarkTeal;
+                Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
+            }
+            else if (txt == "Damage" || txt == "damage" || txt == "Strength" || txt == "strength" || txt == "<:Damage:543112387763503124>")
+            {
+                foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, Data.Data.GetData_Damage(users.Id), 0, 0, 0, 0));
+                list.Sort((s2, s1) => s1.Damage.CompareTo(s2.Damage));
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Damage: " + list[i].Damage + "<:Damage:543112387763503124>";
+                Embed.WithAuthor("Serverwide Leaderboard by Damage");
+                Embed.Color = Color.DarkRed;
+                Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
+            }
+            else if (txt == "Health" || txt == "health" || txt == "Life" || txt == "life" || txt == "<:Health:543112384848461832>")
+            {
+                foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, 0, Data.Data.GetData_Health(users.Id), 0, 0, 0));
+                list.Sort((s2, s1) => s1.Health.CompareTo(s2.Health));
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Health: " + list[i].Health + "<:Health:543112384848461832>";
+                Embed.WithAuthor("Serverwide Leaderboard by Health");
+                Embed.Color = Color.Green;
+                Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
+            }
+            else if (txt == "Gems" || txt == "gems" || txt == "GuildGems" || txt == "guildgems" || txt == "<:GuildGem:545341213004529725>")
+            {
+                foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, 0, 0, Data.Data.GetData_Event3(users.Id), 0, 0));
+                list.Sort((s2, s1) => s1.Gems.CompareTo(s2.Gems));
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Guild Gems: " + list[i].Gems + "<:GuildGem:545341213004529725>";
+                Embed.WithAuthor("Serverwide Leaderboard by Guild Gems");
+                Embed.Color = Color.Purple;
+                Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
+            }
+            else if (txt == "Age" || txt == "age" || txt == "<:Age:543112389160337408>")
+            {
+                foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, 0, 0, 0, Data.Data.GetData_Age(users.Id), 0));
+                list.Sort((s2, s1) => s1.Age.CompareTo(s2.Age));
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Age: " + list[i].Age + "<:Age:543112389160337408>";
+                Embed.WithAuthor("Serverwide Leaderboard by Age");
+                Embed.Color = Color.Orange;
+                Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
+            }
+            else if (txt == "Event" || txt == "event" || txt == "<:MysticLog:545341226556325893>")
+            {
+                foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, 0, 0, 0, 0, Data.Data.GetData_Event1(users.Id)));
+                list.Sort((s2, s1) => s1.Event.CompareTo(s2.Event));
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Mystic Logs: " + list[i].Event + "<:MysticLog:545341226556325893>";
+                Embed.WithAuthor("Serverwide Leaderboard by Mystic Logs");
+                Embed.Color = Color.DarkGreen;
+                Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
+            }
+            else
+            {
+                EmbedBuilder Embeder = new EmbedBuilder();
+                Embeder.WithAuthor("Error!");
+                Embeder.WithDescription("You must use the command as ``-leaderboard [Sort Method]``!" +
+                    "\n\nValid sorting methods:" +
+                    "\n<:Coins:543112388493312000> - **Gold**" +
+                    "\n<:Level:543112387989995521> - **Level**" +
+                    "\n<:Damage:543112387763503124> - **Damage**" +
+                    "\n<:Health:543112384848461832> - **Health**" +
+                    "\n<:GuildGem:545341213004529725> - **Gems**" +
+                    "\n<:Age:543112389160337408> - **Age**" +
+                    "\n<:MysticLog:545341226556325893> - **Event**");
+                Embeder.WithColor(40, 200, 150);
+                Embeder.Color = Color.Red;
+                await Context.Channel.SendMessageAsync("", false, Embeder.Build());
+                return;
+            }
+
             Embed.WithDescription(output);
             Embed.WithFooter("List includes top 5 in the server.");
-            Embed.Color = Color.Orange;
+            await Context.Channel.SendMessageAsync("", false, Embed.Build());
+        }
+
+        [Command("Gems"), Alias("gems", "gem", "Gem", "GuildGem", "guildgem", "GuildGems", "guildgems"), Summary("List your guild gems.")]
+        public async Task GemCount()
+        {
+            EmbedBuilder Embed = new EmbedBuilder();
+            Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544059986582437891/latest.png");
+            Embed.WithTitle("You have " + Data.Data.GetData_Event3(Context.User.Id) + "<:GuildGem:545341213004529725>'s");
+            Embed.Color = Color.Purple;
+            Embed.WithFooter("Use your gems in the shop to rank up!");
+            await Context.Channel.SendMessageAsync("", false, Embed.Build());
+        }
+
+        [Command("Pe"), Alias("pe", "PE"), Summary("Make a petition.")]
+        public async Task Petition([Remainder]string Words)
+        {
+            EmbedBuilder Embed = new EmbedBuilder();
+            Embed.WithTitle("Petition started, react to add to it:");
+            Embed.WithDescription(Words + "");
+            Embed.Color = Color.Gold;
+            Embed.WithFooter("React with an up or down emoji!");
+            await Context.Channel.SendMessageAsync("", false, Embed.Build());
+        }
+
+        [Command("TestEmbed"), Alias("testem"), Summary("Test embedded message.")]
+        public async Task TestEmbed()
+        {
+            EmbedBuilder Embed = new EmbedBuilder();
+            Embed.WithAuthor("This is a test.", Context.User.GetAvatarUrl());
+            Embed.WithDescription("Reee");
+            Embed.WithTimestamp(Context.Message.Timestamp);
+            Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+            Embed.WithUrl(Context.User.GetAvatarUrl());
+            Embed.WithCurrentTimestamp();
+            Embed.WithFooter("Test", Context.User.GetAvatarUrl());
+            Embed.WithDescription("This embed is a test...");
+            Embed.WithTitle("Test embed");
+            Embed.Color = Color.Gold;
+            Embed.WithFooter("Hi", Context.User.GetAvatarUrl());
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
         }
     }

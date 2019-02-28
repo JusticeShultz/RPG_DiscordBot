@@ -45,3 +45,15 @@ C:\Users\s189081\Desktop\DiscordRPGBot\RPG_Bot\RPG_Bot\obj\Debug\netcoreapp2.1\R
 C:\Users\s189081\Desktop\DiscordRPGBot\RPG_Bot\RPG_Bot\obj\Debug\netcoreapp2.1\RPG_Bot.AssemblyInfo.cs
 C:\Users\s189081\Desktop\DiscordRPGBot\RPG_Bot\RPG_Bot\obj\Debug\netcoreapp2.1\RPG_Bot.dll
 C:\Users\s189081\Desktop\DiscordRPGBot\RPG_Bot\RPG_Bot\obj\Debug\netcoreapp2.1\RPG_Bot.pdb
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\bin\Debug\netcoreapp2.1\RPG_Bot.dllDatabase.sqlite
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\bin\Debug\netcoreapp2.1\RPG_Bot.deps.json
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\bin\Debug\netcoreapp2.1\RPG_Bot.runtimeconfig.json
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\bin\Debug\netcoreapp2.1\RPG_Bot.runtimeconfig.dev.json
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\bin\Debug\netcoreapp2.1\RPG_Bot.dll
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\bin\Debug\netcoreapp2.1\RPG_Bot.pdb
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\obj\Debug\netcoreapp2.1\RPG_Bot.csprojAssemblyReference.cache
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\obj\Debug\netcoreapp2.1\RPG_Bot.csproj.CoreCompileInputs.cache
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\obj\Debug\netcoreapp2.1\RPG_Bot.AssemblyInfoInputs.cache
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\obj\Debug\netcoreapp2.1\RPG_Bot.AssemblyInfo.cs
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\obj\Debug\netcoreapp2.1\RPG_Bot.dll
+C:\Users\Justice\Desktop\DiscordBot\RPG_DiscordBot\Bot\RPG_Bot\obj\Debug\netcoreapp2.1\RPG_Bot.pdb

@@ -9,6 +9,7 @@ namespace RPG_Bot.Data
 {
     public static class Data
     {
+        #region [GETTERS]
         public static uint GetData_GoldAmount(ulong UserID)
         {
             using (var DbContext = new SqliteDbContext())
@@ -141,6 +142,71 @@ namespace RPG_Bot.Data
             }
         }
 
+        public static int GetData_Hour(ulong UserID)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return 0;
+                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Hour).FirstOrDefault();
+            }
+        }
+
+        public static int GetData_Minute(ulong UserID)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return 0;
+                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Minute).FirstOrDefault();
+            }
+        }
+
+        public static int GetData_Second(ulong UserID)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return 0;
+                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Second).FirstOrDefault();
+            }
+        }
+
+        public static int GetData_Day(ulong UserID)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return 0;
+                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Day).FirstOrDefault();
+            }
+        }
+
+        public static int GetLastDaily(ulong UserID)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return 0;
+                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.DailyClaimed).FirstOrDefault();
+            }
+        }
+
+        public static string GetRank(ulong UserID)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return "No Rank";
+                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Rank).FirstOrDefault();
+            }
+        }
+
+        public static string GetClass(ulong UserID)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return "No Class Selected";
+                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Class).FirstOrDefault();
+            }
+        }
+        #endregion
+
+        #region [SETTERS]
         public static async Task SetXP(ulong UserID, uint XP)
         {
             using (var DbContext = new SqliteDbContext())
@@ -334,7 +400,7 @@ namespace RPG_Bot.Data
             }
         }
 
-        public static async Task UpdateTime(ulong UserID, int Hour, int Minute, int Second)
+        public static async Task UpdateTime(ulong UserID, int Hour, int Minute, int Second, int Day)
         {
             using (var DbContext = new SqliteDbContext())
             {
@@ -343,38 +409,51 @@ namespace RPG_Bot.Data
                 if (query == null || query.Count() < 1) { return; }
 
                 UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
-                Current.Hour = Hour; Current.Minute = Minute; Current.Second = Second;
+                Current.Hour = Hour; Current.Minute = Minute; Current.Second = Second; Current.Day = Day;
                 DbContext.Data.Update(Current);
 
                 await DbContext.SaveChangesAsync();
             }
         }
 
-        public static int GetData_Hour(ulong UserID)
+        public static async Task SetDailyClaimed(ulong UserID, int Date)
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return 0;
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Hour).FirstOrDefault();
+                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                if (query == null || query.Count() < 1) { return; }
+                UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                Current.DailyClaimed = Date;
+                DbContext.Data.Update(Current);
+                await DbContext.SaveChangesAsync();
             }
         }
 
-        public static int GetData_Minute(ulong UserID)
+        public static async Task SetRank(ulong UserID, string SetRank)
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return 0;
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Minute).FirstOrDefault();
+                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                if (query == null || query.Count() < 1) { return; }
+                UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                Current.Rank = SetRank;
+                DbContext.Data.Update(Current);
+                await DbContext.SaveChangesAsync();
             }
         }
 
-        public static int GetData_Second(ulong UserID)
+        public static async Task SetClass(ulong UserID, string SetClass)
         {
             using (var DbContext = new SqliteDbContext())
             {
-                if (DbContext.Data.Where(x => x.UserID == UserID) == null) return 0;
-                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Second).FirstOrDefault();
+                var query = DbContext.Data.Where(x => x.UserID == UserID);
+                if (query == null || query.Count() < 1) { return; }
+                UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+                Current.Class = SetClass;
+                DbContext.Data.Update(Current);
+                await DbContext.SaveChangesAsync();
             }
         }
+        #endregion
     }
 }
