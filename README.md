@@ -12,7 +12,8 @@ This bot is now publicly invitable. Read the user documentation here and find a 
 https://justiceshultz.github.io/pages/DiscordBotDocs.html
 
 # Unstable Builds
-Looking for unstable builds of the bot? As you may have noticed I only push fully working states to GitHub. This is due to how my publish system for the bot is and for security reasons with my bots API Token. If you would like a build of the most recent build of the bot please DM me on Discord @ Robin#1000
+Looking for unstable builds of the bot? As you may have noticed I only push fully working states to GitHub. This is due to how my publish system for the bot is and for security reasons with my bots API Token. If you would like a build of the most recent build of the bot please DM me on Discord @ Robin#1000 and I'll get back to you.
+
 I will continue to push changes up to here but minor bug fixes and small additions will not be committed until all large broken features are updated.
 
 
