@@ -26,7 +26,6 @@ I will continue to push changes up to here but minor bug fixes and small additio
              -Discord had an outage causing player data in the database to disappear - this issue was resolved
 ##### Bug Fixes
              -Leveling up no longer broken 
-             -Fixed time display with questing, I'm aware there are time related bugs but I'm not yet sure why
 ##### Quality of Life
              -Added #announcements for important stuff
              -Admins can now do -notice "message" and the bot will embed it as an announcement
