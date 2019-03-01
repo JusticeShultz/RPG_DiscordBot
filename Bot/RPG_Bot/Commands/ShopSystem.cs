@@ -571,7 +571,7 @@ namespace RPG_Bot.Commands
             SocketGuildUser user = Context.User as SocketGuildUser;
 
             //if (!user.GuildPermissions.Administrator) return;
-            if (Context.User.Id != 228344819422855168 || Context.User.Id != 409566463658033173) return;
+            if (Context.User.Id != 228344819422855168 && Context.User.Id != 409566463658033173) return;
 
             if (target != null) user = target as SocketGuildUser;
 

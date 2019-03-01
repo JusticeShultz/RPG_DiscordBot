@@ -160,7 +160,7 @@ namespace RPG_Bot.Currency
                 {
                     //A user is provided and amount is valid.
                     SocketGuildUser User1 = Context.User as SocketGuildUser;
-                    if (Context.User.Id != 228344819422855168 || Context.User.Id != 409566463658033173)
+                    if (Context.User.Id != 228344819422855168 && Context.User.Id != 409566463658033173)
                     {
                         if (User1 == User)
                         {
@@ -252,7 +252,7 @@ namespace RPG_Bot.Currency
                 //A user is provided and amount is valid.
                 SocketGuildUser User1 = Context.User as SocketGuildUser;
 
-                if (Context.User.Id != 228344819422855168)
+                if (Context.User.Id != 228344819422855168 && Context.User.Id != 409566463658033173)
                 {
                     Embed.WithAuthor("Error!");
                     Embed.WithFooter("Funds not removed.");
