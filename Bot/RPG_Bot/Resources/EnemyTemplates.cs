@@ -508,14 +508,14 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543139899109277696/image_1.webp", //URL
             85000, //Max Health
             69500, //Min Health
-            35, //Max Damage
-            15, //Min Damage
+            155, //Max Damage
+            95, //Min Damage
             160, //Max Level
             100, //Min Level
             7500, //Max Gold Drop
             4500, //Min Gold Drop
-            120, //Max XP Drop
-            60, //Min XP Drop
+            180, //Max XP Drop
+            110, //Min XP Drop
             "[EVENT BOSS] Trelia the Mystic Tree" //Unit Name
         );
 

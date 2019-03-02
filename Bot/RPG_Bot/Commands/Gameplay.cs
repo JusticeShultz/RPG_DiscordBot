@@ -273,7 +273,8 @@ namespace RPG_Bot.Commands
                     var messages = await Context.Channel.GetMessagesAsync(1).FlattenAsync();
                     await (Context.Channel as SocketTextChannel).DeleteMessagesAsync(messages);
 
-                    await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.EventTreeBoss, 35);
+                    await SpawnWorldBoss(RPG_Bot.Resources.EnemyTemplates.EventTreeBoss, 35);
+                    //await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.EventTreeBoss, 35);
                 }
                 else
                 if (remaining == "testboss" && user.GuildPermissions.Administrator && Context.Guild.Id == EnemyTemplates.ServerID)
@@ -1328,7 +1329,7 @@ namespace RPG_Bot.Commands
                         await SpawnWorldBoss(RPG_Bot.Resources.EnemyTemplates.ArkdulBoss, 43);
                         break;
                     case 5:
-                        await SpawnWorldBoss(RPG_Bot.Resources.EnemyTemplates.EventTreeBoss, 44);
+                        await SpawnWorldBoss(RPG_Bot.Resources.EnemyTemplates.EventTreeBoss, 35);
                         break;
                     default:
                         Console.WriteLine("Error spawning a boss! Num Error: " + boss);
