@@ -735,6 +735,134 @@ namespace RPG_Bot.Commands
                     return;
                 }
             }
+            if (txt == "Berserker" || txt == "berserker" || txt == "berzerker" || txt == "Berzerker")
+            {
+                if (Data.Data.GetClass(Context.User.Id) != "Berserker")
+                {
+                    await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+
+                    EmbedBuilder E = new EmbedBuilder();
+                    E.WithTitle("You are now a Berserker!");
+                    E.WithFooter("500 Gold Coins have been taken from your account.");
+                    E.Color = Color.Teal;
+                    await Context.Channel.SendMessageAsync("", false, E.Build());
+                    await Data.Data.SetClass(Context.User.Id, "Berserker");
+                    await Gameplay.UpdateUserData();
+                    return;
+                }
+            }
+            if (txt == "Tamer" || txt == "tamer")
+            {
+                if (Data.Data.GetClass(Context.User.Id) != "Tamer")
+                {
+                    await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+
+                    EmbedBuilder E = new EmbedBuilder();
+                    E.WithTitle("You are now a Tamer!");
+                    E.WithFooter("500 Gold Coins have been taken from your account.");
+                    E.Color = Color.Teal;
+                    await Context.Channel.SendMessageAsync("", false, E.Build());
+                    await Data.Data.SetClass(Context.User.Id, "Tamer");
+                    await Gameplay.UpdateUserData();
+                    return;
+                }
+            }
+            if (txt == "Monk" || txt == "monk")
+            {
+                if (Data.Data.GetClass(Context.User.Id) != "Monk")
+                {
+                    await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+
+                    EmbedBuilder E = new EmbedBuilder();
+                    E.WithTitle("You are now a Monk!");
+                    E.WithFooter("500 Gold Coins have been taken from your account.");
+                    E.Color = Color.Teal;
+                    await Context.Channel.SendMessageAsync("", false, E.Build());
+                    await Data.Data.SetClass(Context.User.Id, "Monk");
+                    await Gameplay.UpdateUserData();
+                    return;
+                }
+            }
+            if (txt == "Nechromancer" || txt == "nechromancer")
+            {
+                if (Data.Data.GetClass(Context.User.Id) != "Nechromancer")
+                {
+                    await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+
+                    EmbedBuilder E = new EmbedBuilder();
+                    E.WithTitle("You are now a Nechromancer!");
+                    E.WithFooter("500 Gold Coins have been taken from your account.");
+                    E.Color = Color.Teal;
+                    await Context.Channel.SendMessageAsync("", false, E.Build());
+                    await Data.Data.SetClass(Context.User.Id, "Nechromancer");
+                    await Gameplay.UpdateUserData();
+                    return;
+                }
+            }
+            if (txt == "Paladin" || txt == "paladin")
+            {
+                if (Data.Data.GetClass(Context.User.Id) != "Paladin")
+                {
+                    await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+
+                    EmbedBuilder E = new EmbedBuilder();
+                    E.WithTitle("You are now a Paladin!");
+                    E.WithFooter("500 Gold Coins have been taken from your account.");
+                    E.Color = Color.Teal;
+                    await Context.Channel.SendMessageAsync("", false, E.Build());
+                    await Data.Data.SetClass(Context.User.Id, "Paladin");
+                    await Gameplay.UpdateUserData();
+                    return;
+                }
+            }
+            if (txt == "Swordsman" || txt == "swordsman")
+            {
+                if (Data.Data.GetClass(Context.User.Id) != "Swordsman")
+                {
+                    await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+
+                    EmbedBuilder E = new EmbedBuilder();
+                    E.WithTitle("You are now a Swordsman!");
+                    E.WithFooter("500 Gold Coins have been taken from your account.");
+                    E.Color = Color.Teal;
+                    await Context.Channel.SendMessageAsync("", false, E.Build());
+                    await Data.Data.SetClass(Context.User.Id, "Swordsman");
+                    await Gameplay.UpdateUserData();
+                    return;
+                }
+            }
+            if (txt == "Evangel" || txt == "evangel")
+            {
+                if (Data.Data.GetClass(Context.User.Id) != "Evangel")
+                {
+                    await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+
+                    EmbedBuilder E = new EmbedBuilder();
+                    E.WithTitle("You are now a Evangel!");
+                    E.WithFooter("500 Gold Coins have been taken from your account.");
+                    E.Color = Color.Teal;
+                    await Context.Channel.SendMessageAsync("", false, E.Build());
+                    await Data.Data.SetClass(Context.User.Id, "Evangel");
+                    await Gameplay.UpdateUserData();
+                    return;
+                }
+            }
+            if (txt == "Kitsune" || txt == "kitsune")
+            {
+                if (Data.Data.GetClass(Context.User.Id) != "Kitsune")
+                {
+                    await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+
+                    EmbedBuilder E = new EmbedBuilder();
+                    E.WithTitle("You are now a Kitsune!");
+                    E.WithFooter("500 Gold Coins have been taken from your account.");
+                    E.Color = Color.Teal;
+                    await Context.Channel.SendMessageAsync("", false, E.Build());
+                    await Data.Data.SetClass(Context.User.Id, "Kitsune");
+                    await Gameplay.UpdateUserData();
+                    return;
+                }
+            }
 
             EmbedBuilder EmbedFail = new EmbedBuilder();
             EmbedFail.WithTitle("Failed to switch class");

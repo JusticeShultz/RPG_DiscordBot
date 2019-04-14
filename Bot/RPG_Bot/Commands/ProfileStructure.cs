@@ -79,6 +79,60 @@ namespace RPG_Bot.Currency
                 classType = "Assassin";
                 classEmoji = "<:Assassin:543112389109874719>";
             }
+            else if (UsersClass == "Berserker")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904669427859456/Berserker.png");
+                classType = "Berserker";
+                classEmoji = "<:Berserker:566917750140960768>";
+            }
+            else if (UsersClass == "Nechromancer")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904652009046026/Nechromancer.webp");
+                classType = "Nechromancer";
+                classEmoji = "<:Nechromancer:566917752640503809>";
+            }
+            else if (UsersClass == "Trickster")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904660275757066/Trickster.png");
+                classType = "Trickster";
+                classEmoji = "<:Trickster:566917752875384834>";
+            }
+            else if (UsersClass == "Kitsune")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904663740252161/Kitsune.webp");
+                classType = "Kitsune";
+                classEmoji = "<:Kitsune:566917752380719139>";
+            }
+            else if (UsersClass == "Paladin")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904668891119627/Paladin.png");
+                classType = "Paladin";
+                classEmoji = "<:Paladin:566917753081036800>";
+            }
+            else if (UsersClass == "Monk")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904672250626048/Monk.png");
+                classType = "Monk";
+                classEmoji = "<:Monk:566917753009602570>";
+            }
+            else if (UsersClass == "Evangel")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904680668725258/Evangel.png");
+                classType = "Evangel";
+                classEmoji = "<:Evangel:566917753450266645>";
+            }
+            else if (UsersClass == "Tamer")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904678713917445/Cat_Tamer.png");
+                classType = "Tamer";
+                classEmoji = "<:Tamer:566918308218273792>";
+            }
+            else if (UsersClass == "Swordsman")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904710016139265/Swordsman.png");
+                classType = "Swordsman";
+                classEmoji = "<:Swordsman:566917753085362186>";
+            }
             else
             {
                 Embed.WithAuthor("Error!");

@@ -144,7 +144,7 @@ namespace RPG_Bot.Commands
             int genType = rng.Next(1, 60);
 
             //If time replace spawn zones with spawn tables
-            if (Context.Channel.Name == "lv1-5")//EnemyTemplates.Channel1)
+            if (Context.Channel.Name == "lv1-5")
             {
                 await ClearChat();
 
@@ -154,7 +154,7 @@ namespace RPG_Bot.Commands
                 else if(genType < 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.LogSpider, 1);
                 else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.TrainingBot, 1);
             }
-            else if (Context.Channel.Name == "lv5-10")//EnemyTemplates.Channel2)
+            else if (Context.Channel.Name == "lv5-10")
             {
                 await ClearChat();
 
@@ -165,7 +165,7 @@ namespace RPG_Bot.Commands
                 else if (genType == 10) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.BronzePot, 2);
                 else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.SkeletonFootSoldier, 2);
             }
-            else if (Context.Channel.Name == "lv10-15")//EnemyTemplates.Channel3)
+            else if (Context.Channel.Name == "lv10-15")
             {
                 await ClearChat();
 
@@ -174,7 +174,8 @@ namespace RPG_Bot.Commands
                 {
                     if (genType == 55) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.SilverPot, 3);
                     else if (genType > 50) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GiantEnt, 3);
-                    else if (genType > 40) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.TreeEnt, 3);
+                    else if (genType > 43) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.TreeEnt, 3);
+                    else if (genType > 40) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GigaEnt, 3);
                     else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GiantRat, 3);
                 }
                 else
@@ -184,7 +185,7 @@ namespace RPG_Bot.Commands
                     else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Hornet, 3);
                 }
             }
-            else if (Context.Channel.Name == "lv15-20")//EnemyTemplates.Channel4)
+            else if (Context.Channel.Name == "lv15-20")
             {
                 await ClearChat();
 
@@ -200,7 +201,7 @@ namespace RPG_Bot.Commands
                 else if (genType > 15) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Golem, 4);
                 else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Mushroom, 4);
             }
-            else if (Context.Channel.Name == "lv20-40")//EnemyTemplates.Channel5)
+            else if (Context.Channel.Name == "lv20-30")
             {
                 await ClearChat();
                 if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.BossFrostWolfPackLeader, 5);
@@ -211,57 +212,125 @@ namespace RPG_Bot.Commands
                 else if (genType == 4) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GoldenPot, 5);
                 else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.FrostBear, 5);
             }
-            else if (Context.Channel.Name == "lv40-60")//EnemyTemplates.Channel6)
+            else if (Context.Channel.Name == "lv30-40")
             {
+                //Lava theme
                 await ClearChat();
-                if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Leviathan, 6);
-                else if (genType == 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.CetusBoss, 6);
-                else if (genType > 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Megaton, 6);
-                else if (genType == 15) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GoldenPot, 6);
-                else if (genType > 10) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.LizardMan, 6);
-                else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.FishMan, 6);
+                if (genType < 10) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.HarpyCaster, 6);
+                else if (genType < 20) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.RoyalPelican, 6);
+                else if (genType == 15) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.BronzePot, 6);
+                else if (genType < 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.HarpyShaman, 6);
+                else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Harpy, 6);
             }
-            else if (Context.Channel.Name == "lv60-90")//EnemyTemplates.Channel7)
+            else if (Context.Channel.Name == "lv40-50")
             {
                 await ClearChat();
-                if (genType < 6) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Phoenix, 7);
-                else if (genType < 12) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Bergelmir, 7);
-                else if (genType < 19) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Hastur, 7);
-                else if (genType < 25) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Kirin, 7);
-                else if (genType < 32) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Haechi, 7);
-                else if (genType < 38) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Orochi, 7);
-                else if (genType < 45) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Eclipse, 7);
-                else if (genType < 52) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Niflheim, 7);
-                else if (genType < 61) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Muspelheim, 7);
+                if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Leviathan, 7);
+                else if (genType == 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.CetusBoss, 7);
+                else if (genType > 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Megaton, 7);
+                else if (genType == 15) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GoldenPot, 7);
+                else if (genType > 10) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.LizardMan, 7);
+                else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.FishMan, 7);
             }
-            else if (Context.Channel.Name == "lv90-100")//EnemyTemplates.Channel8)
+            else if (Context.Channel.Name == "lv50-60")
             {
                 await ClearChat();
-                if (genType < 6) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.AbyssDragon, 8);
-                else if (genType < 12) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Yamusichea, 8);
-                else if (genType < 18) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Flare, 8);
-                else if (genType < 24) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Skeletor, 8);
-                else if (genType < 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Khan, 8);
-                else if (genType < 36) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Crom, 8);
-                else if (genType < 42) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Rex, 8);
-                else if (genType < 48) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Vasuki, 8);
-                else if (genType < 54) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Thunder, 8);
-                else if (genType < 61) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Taigo, 8);
+                if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.LavaDragon, 8);
+                else if (genType == 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.SalamanderDragonAdult, 8);
+                else if (genType > 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.SalamanderDragon, 8);
+                else if (genType == 15) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GoldenPot, 8);
+                else if (genType > 10) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.SalamanderAdult, 8);
+                else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Salamander, 8);
             }
-            else if (Context.Channel.Name == "the-aurora")//EnemyTemplates.Channel9)
+            else if (Context.Channel.Name == "lv60-70")
             {
                 await ClearChat();
-                if (genType < 4) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Duck, 9);
-                else if (genType < 8) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Flare, 9);
-                else if (genType < 14) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Khan, 9);
-                else if (genType < 22) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Skeletor, 9);
-                else if (genType < 27) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Rex, 9);
-                else if (genType < 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Vasuki, 9);
-                else if (genType < 38) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Masamune, 9);
-                else if (genType < 43) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Rourtu, 9);
-                else if (genType < 49) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Trikento, 9);
-                else if (genType < 54) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Blackout, 9);
-                else if (genType < 61) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Yggdrasil, 9);
+                if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Hydra, 9);
+                else if (genType == 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.SeaDragon, 9);
+                else if (genType > 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Reaver, 9);
+                else if (genType == 15) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GoldenPot, 9);
+                else if (genType > 10) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GreaterLeech, 9);
+                else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Leech, 9);
+            }
+            else if (Context.Channel.Name == "lv70-80")
+            {
+                await ClearChat();
+                if (genType < 6) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Phoenix, 10);
+                else if (genType < 12) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Bergelmir, 10);
+                else if (genType < 19) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Hastur, 10);
+                else if (genType < 25) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Kirin, 10);
+                else if (genType < 32) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Haechi, 10);
+                else if (genType < 38) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Orochi, 10);
+                else if (genType < 45) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Eclipse, 10);
+                else if (genType < 52) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Niflheim, 10);
+                else if (genType < 61) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Muspelheim, 10);
+            }
+            else if (Context.Channel.Name == "lv80-90")
+            {
+                await ClearChat();
+                if (genType < 6) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Phoenix, 11);
+                else if (genType < 12) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Bergelmir, 11);
+                else if (genType < 19) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Hastur, 11);
+                else if (genType < 25) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Kirin, 11);
+                else if (genType < 32) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Haechi, 11);
+                else if (genType < 38) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Orochi, 11);
+                else if (genType < 45) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Eclipse, 11);
+                else if (genType < 52) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Niflheim, 11);
+                else if (genType < 61) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Muspelheim, 11);
+            }
+            else if (Context.Channel.Name == "lv90-100")
+            {
+                await ClearChat();
+                if (genType < 6) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.AbyssDragon, 12);
+                else if (genType < 12) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Yamusichea, 12);
+                else if (genType < 18) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Flare, 12);
+                else if (genType < 24) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Skeletor, 12);
+                else if (genType < 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Khan, 12);
+                else if (genType < 36) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Crom, 12);
+                else if (genType < 42) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Rex, 12);
+                else if (genType < 48) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Vasuki, 12);
+                else if (genType < 54) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Thunder, 12);
+                else if (genType < 61) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Taigo, 12);
+            }
+            else if (Context.Channel.Name == "lv100-150")
+            {
+                await ClearChat();
+                await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Pepe, 14);
+            }
+            else if (Context.Channel.Name == "lv150-200")
+            {
+                await ClearChat();
+                await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Pepe, 15);
+            }
+            else if (Context.Channel.Name == "lv200-400")
+            {
+                await ClearChat();
+                await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Pepe, 16);
+            }
+            else if (Context.Channel.Name == "lv400-800")
+            {
+                await ClearChat();
+                await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Pepe, 17);
+            }
+            else if (Context.Channel.Name == "lv800-1000")
+            {
+                await ClearChat();
+                await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Pepe, 18);
+            }
+            else if (Context.Channel.Name == "the-aurora")
+            {
+                await ClearChat();
+                if (genType < 4) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Duck, 13);
+                else if (genType < 8) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Flare, 13);
+                else if (genType < 14) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Khan, 13);
+                else if (genType < 22) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Skeletor, 13);
+                else if (genType < 27) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Rex, 13);
+                else if (genType < 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Vasuki, 13);
+                else if (genType < 38) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Masamune, 13);
+                else if (genType < 43) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Rourtu, 13);
+                else if (genType < 49) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Trikento, 13);
+                else if (genType < 54) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Blackout, 13);
+                else if (genType < 61) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Yggdrasil, 13);
             }
             else
             {
@@ -306,11 +375,20 @@ namespace RPG_Bot.Commands
             else if (Context.Channel.Name == "lv5-10") server = 2;
             else if (Context.Channel.Name == "lv10-15") server = 3;
             else if (Context.Channel.Name == "lv15-20") server = 4;
-            else if (Context.Channel.Name == "lv20-40") server = 5;
-            else if (Context.Channel.Name == "lv40-60") server = 6;
-            else if (Context.Channel.Name == "lv60-90") server = 7;
-            else if (Context.Channel.Name == "lv90-100") server = 8;
-            else if (Context.Channel.Name == "the-aurora") server = 9;
+            else if (Context.Channel.Name == "lv20-30") server = 5;
+            else if (Context.Channel.Name == "lv30-40") server = 6;
+            else if (Context.Channel.Name == "lv40-50") server = 7;
+            else if (Context.Channel.Name == "lv50-60") server = 8;
+            else if (Context.Channel.Name == "lv60-70") server = 9;
+            else if (Context.Channel.Name == "lv70-80") server = 10;
+            else if (Context.Channel.Name == "lv80-90") server = 11;
+            else if (Context.Channel.Name == "lv90-100") server = 12;
+            else if (Context.Channel.Name == "lv100-150") server = 14;
+            else if (Context.Channel.Name == "lv150-200") server = 15;
+            else if (Context.Channel.Name == "lv200-400") server = 16;
+            else if (Context.Channel.Name == "lv400-800") server = 17;
+            else if (Context.Channel.Name == "lv800-1000") server = 18;
+            else if (Context.Channel.Name == "the-aurora") server = 13;
             else if (Context.Channel.Name == "event-bosses") server = 35;
             else if (Context.Channel.Name == "gothkamul") server = 40;
             else if (Context.Channel.Name == "rakdoro") server = 41;
@@ -372,11 +450,20 @@ namespace RPG_Bot.Commands
                 else if (Context.Channel.Name == "lv5-10") server = 2;
                 else if (Context.Channel.Name == "lv10-15") server = 3;
                 else if (Context.Channel.Name == "lv15-20") server = 4;
-                else if (Context.Channel.Name == "lv20-40") server = 5;
-                else if (Context.Channel.Name == "lv40-60") server = 6;
-                else if (Context.Channel.Name == "lv60-90") server = 7;
-                else if (Context.Channel.Name == "lv90-100") server = 8;
-                else if (Context.Channel.Name == "the-aurora") server = 9;
+                else if (Context.Channel.Name == "lv20-30") server = 5;
+                else if (Context.Channel.Name == "lv30-40") server = 6;
+                else if (Context.Channel.Name == "lv40-50") server = 7;
+                else if (Context.Channel.Name == "lv50-60") server = 8;
+                else if (Context.Channel.Name == "lv60-70") server = 9;
+                else if (Context.Channel.Name == "lv70-80") server = 10;
+                else if (Context.Channel.Name == "lv80-90") server = 11;
+                else if (Context.Channel.Name == "lv90-100") server = 12;
+                else if (Context.Channel.Name == "lv100-150") server = 14;
+                else if (Context.Channel.Name == "lv150-200") server = 15;
+                else if (Context.Channel.Name == "lv200-400") server = 16;
+                else if (Context.Channel.Name == "lv400-800") server = 17;
+                else if (Context.Channel.Name == "lv800-1000") server = 18;
+                else if (Context.Channel.Name == "the-aurora") server = 13;
                 else if (Context.Channel.Name == "event-bosses") server = 35;
                 else if (Context.Channel.Name == "gothkamul")
                 {
@@ -1345,7 +1432,7 @@ namespace RPG_Bot.Commands
         {
             IGuildUser user = Context.User as IGuildUser;
 
-            if (!user.GuildPermissions.Administrator)
+            if (!user.GuildPermissions.Administrator && user.Id != 228344819422855168)
             {
                 EmbedBuilder Embed = new EmbedBuilder();
                 Embed.WithAuthor("Thanks for inviting RPG Bot!");
@@ -1366,7 +1453,7 @@ namespace RPG_Bot.Commands
             //This will handle a first time join of a guild. It will create the necessary channels
             //and provide an instructions pop up.
 
-            bool[] channels = new bool[20];
+            bool[] channels = new bool[30];
             for (int q = 0; q < 20; ++q) channels[q] = false;
 
             foreach (IGuildChannel channel in Context.Guild.Channels)
@@ -1375,38 +1462,56 @@ namespace RPG_Bot.Commands
                 else if (channel.Name == "lv5-10") channels[1] = true;
                 else if (channel.Name == "lv10-15") channels[2] = true;
                 else if (channel.Name == "lv15-20") channels[3] = true;
-                else if (channel.Name == "lv20-40") channels[4] = true;
-                else if (channel.Name == "lv40-60") channels[5] = true;
-                else if (channel.Name == "lv60-90") channels[6] = true;
-                else if (channel.Name == "lv90-100") channels[7] = true;
-                else if (channel.Name == "the-aurora") channels[8] = true;
-                else if (channel.Name == "questing") channels[9] = true;
-                else if (channel.Name == "daily-blessings") channels[10] = true;
-                else if (channel.Name == "guild-shop") channels[11] = true;
-                else if (channel.Name == "event-bosses") channels[12] = true;
-                else if (channel.Name == "gothkamul") channels[13] = true;
-                else if (channel.Name == "rakdoro") channels[14] = true;
-                else if (channel.Name == "kenthros") channels[15] = true;
-                else if (channel.Name == "arkdul") channels[16] = true;
+                else if (channel.Name == "lv20-30") channels[4] = true;
+                else if (channel.Name == "lv30-40") channels[5] = true;
+                else if (channel.Name == "lv40-50") channels[6] = true;
+                else if (channel.Name == "lv50-60") channels[7] = true;
+                else if (channel.Name == "lv60-70") channels[8] = true;
+                else if (channel.Name == "lv70-80") channels[9] = true;
+                else if (channel.Name == "lv80-90") channels[10] = true;
+                else if (channel.Name == "lv90-100") channels[11] = true;
+                else if (channel.Name == "lv100-150") channels[12] = true;
+                else if (channel.Name == "lv150-200") channels[13] = true;
+                else if (channel.Name == "lv200-400") channels[14] = true;
+                else if (channel.Name == "lv400-800") channels[15] = true;
+                else if (channel.Name == "lv800-1000") channels[16] = true;
+                else if (channel.Name == "the-aurora") channels[17] = true;
+                else if (channel.Name == "questing") channels[18] = true;
+                else if (channel.Name == "daily-blessings") channels[19] = true;
+                else if (channel.Name == "guild-shop") channels[20] = true;
+                else if (channel.Name == "event-bosses") channels[21] = true;
+                else if (channel.Name == "gothkamul") channels[22] = true;
+                else if (channel.Name == "rakdoro") channels[23] = true;
+                else if (channel.Name == "kenthros") channels[24] = true;
+                else if (channel.Name == "arkdul") channels[25] = true;
             }
 
             if (!channels[0]) await Context.Guild.CreateTextChannelAsync("lv1-5");
             if (!channels[1]) await Context.Guild.CreateTextChannelAsync("lv5-10");
             if (!channels[2]) await Context.Guild.CreateTextChannelAsync("lv10-15");
             if (!channels[3]) await Context.Guild.CreateTextChannelAsync("lv15-20");
-            if (!channels[4]) await Context.Guild.CreateTextChannelAsync("lv20-40");
-            if (!channels[5]) await Context.Guild.CreateTextChannelAsync("lv40-60");
-            if (!channels[6]) await Context.Guild.CreateTextChannelAsync("lv60-90");
-            if (!channels[7]) await Context.Guild.CreateTextChannelAsync("lv90-100");
-            if (!channels[8]) await Context.Guild.CreateTextChannelAsync("the-aurora");
-            if (!channels[9]) await Context.Guild.CreateTextChannelAsync("questing");
-            if (!channels[10]) await Context.Guild.CreateTextChannelAsync("daily-blessings");
-            if (!channels[11]) await Context.Guild.CreateTextChannelAsync("guild-shop");
-            if (!channels[12]) await Context.Guild.CreateTextChannelAsync("event-bosses");
-            if (!channels[13]) await Context.Guild.CreateTextChannelAsync("gothkamul");
-            if (!channels[14]) await Context.Guild.CreateTextChannelAsync("rakdoro");
-            if (!channels[15]) await Context.Guild.CreateTextChannelAsync("kenthros");
-            if (!channels[16]) await Context.Guild.CreateTextChannelAsync("arkdul");
+            if (!channels[4]) await Context.Guild.CreateTextChannelAsync("lv20-30");
+            if (!channels[5]) await Context.Guild.CreateTextChannelAsync("lv30-40");
+            if (!channels[6]) await Context.Guild.CreateTextChannelAsync("lv40-50");
+            if (!channels[7]) await Context.Guild.CreateTextChannelAsync("lv50-60");
+            if (!channels[8]) await Context.Guild.CreateTextChannelAsync("lv60-70");
+            if (!channels[9]) await Context.Guild.CreateTextChannelAsync("lv70-80");
+            if (!channels[10]) await Context.Guild.CreateTextChannelAsync("lv80-90");
+            if (!channels[11]) await Context.Guild.CreateTextChannelAsync("lv90-100");
+            if (!channels[12]) await Context.Guild.CreateTextChannelAsync("lv100-150");
+            if (!channels[13]) await Context.Guild.CreateTextChannelAsync("lv150-200");
+            if (!channels[14]) await Context.Guild.CreateTextChannelAsync("lv200-400");
+            if (!channels[15]) await Context.Guild.CreateTextChannelAsync("lv400-800");
+            if (!channels[16]) await Context.Guild.CreateTextChannelAsync("lv800-1000");
+            if (!channels[17]) await Context.Guild.CreateTextChannelAsync("the-aurora");
+            if (!channels[18]) await Context.Guild.CreateTextChannelAsync("questing");
+            if (!channels[19]) await Context.Guild.CreateTextChannelAsync("daily-blessings");
+            if (!channels[20]) await Context.Guild.CreateTextChannelAsync("guild-shop");
+            if (!channels[21]) await Context.Guild.CreateTextChannelAsync("event-bosses");
+            if (!channels[22]) await Context.Guild.CreateTextChannelAsync("gothkamul");
+            if (!channels[23]) await Context.Guild.CreateTextChannelAsync("rakdoro");
+            if (!channels[24]) await Context.Guild.CreateTextChannelAsync("kenthros");
+            if (!channels[25]) await Context.Guild.CreateTextChannelAsync("arkdul");
 
             foreach (IGuildChannel channel in Context.Guild.Channels)
             {
@@ -1429,54 +1534,71 @@ namespace RPG_Bot.Commands
                 }
             }
 
-            bool[] Ranks = new bool[20];
+            bool[] Ranks = new bool[30];
 
             for (int a = 0; a < Ranks.Count(); ++a)
                 Ranks[a] = false;
 
             foreach(SocketRole roles in Context.Guild.Roles)
             {
-                if (roles.Name == "Knight") Ranks[0] = true;
-                if (roles.Name == "Assassin") Ranks[1] = true;
-                if (roles.Name == "Wizard") Ranks[2] = true;
-                if (roles.Name == "Rogue") Ranks[3] = true;
-                if (roles.Name == "Archer") Ranks[4] = true;
-                if (roles.Name == "Witch") Ranks[5] = true;
-                if (roles.Name == "Slayer of Arkdul") Ranks[6] = true;
-                if (roles.Name == "Slayer of Kenthros") Ranks[7] = true;
-                if (roles.Name == "Slayer of Rakdoro") Ranks[8] = true;
-                if (roles.Name == "Slayer of Gothkamul") Ranks[9] = true;
-                if (roles.Name == "Rank - Bronze") Ranks[10] = true;
-                if (roles.Name == "Rank - Silver") Ranks[11] = true;
-                if (roles.Name == "Rank - Gold") Ranks[12] = true;
-                if (roles.Name == "Rank - Quartz") Ranks[13] = true;
-                if (roles.Name == "Rank - Orichalcum") Ranks[14] = true;
-                if (roles.Name == "Rank - Platinum") Ranks[15] = true;
-                if (roles.Name == "Rank - Master III") Ranks[16] = true;
-                if (roles.Name == "Rank - Master II") Ranks[17] = true;
-                if (roles.Name == "Rank - Master I") Ranks[18] = true;
+                if (roles.Name == "Rank - Master I") Ranks[1] = true;
+                if (roles.Name == "Rank - Master II") Ranks[2] = true;
+                if (roles.Name == "Rank - Master III") Ranks[3] = true;
+                if (roles.Name == "Rank - Platinum") Ranks[4] = true;
+                if (roles.Name == "Rank - Orichalcum") Ranks[5] = true;
+                if (roles.Name == "Rank - Quartz") Ranks[6] = true;
+                if (roles.Name == "Rank - Gold") Ranks[7] = true;
+                if (roles.Name == "Rank - Silver") Ranks[8] = true;
+                if (roles.Name == "Rank - Bronze") Ranks[9] = true;
+                if (roles.Name == "Knight") Ranks[10] = true;
+                if (roles.Name == "Assassin") Ranks[11] = true;
+                if (roles.Name == "Wizard") Ranks[12] = true;
+                if (roles.Name == "Rogue") Ranks[13] = true;
+                if (roles.Name == "Archer") Ranks[14] = true;
+                if (roles.Name == "Witch") Ranks[15] = true;
+                if (roles.Name == "Berserker") Ranks[16] = true;
+                if (roles.Name == "Tamer") Ranks[17] = true;
+                if (roles.Name == "Monk") Ranks[18] = true;
+                if (roles.Name == "Nechromancer") Ranks[19] = true;
+                if (roles.Name == "Paladin") Ranks[20] = true;
+                if (roles.Name == "Swordsman") Ranks[21] = true;
+                if (roles.Name == "Trickster") Ranks[22] = true;
+                if (roles.Name == "Evangel") Ranks[23] = true;
+                if (roles.Name == "Kitsune") Ranks[24] = true;
+                if (roles.Name == "Slayer of Arkdul") Ranks[25] = true;
+                if (roles.Name == "Slayer of Kenthros") Ranks[26] = true;
+                if (roles.Name == "Slayer of Rakdoro") Ranks[27] = true;
+                if (roles.Name == "Slayer of Gothkamul") Ranks[28] = true;
             }
 
-            if (!Ranks[18]) await Context.Guild.CreateRoleAsync("Rank - Master I", Discord.GuildPermissions.None, new Discord.Color(255, 0, 0));
-            if (!Ranks[17]) await Context.Guild.CreateRoleAsync("Rank - Master II", Discord.GuildPermissions.None, new Discord.Color(255, 79, 0));
-            if (!Ranks[16]) await Context.Guild.CreateRoleAsync("Rank - Master III", Discord.GuildPermissions.None, new Discord.Color(255, 150, 32));
-            if (!Ranks[15]) await Context.Guild.CreateRoleAsync("Rank - Platinum", Discord.GuildPermissions.None, new Discord.Color(186, 192, 255));
-            if (!Ranks[14]) await Context.Guild.CreateRoleAsync("Rank - Orichalcum", Discord.GuildPermissions.None, new Discord.Color(0, 232, 255));
-            if (!Ranks[13]) await Context.Guild.CreateRoleAsync("Rank - Quartz", Discord.GuildPermissions.None, new Discord.Color(255, 255, 255));
-            if (!Ranks[12]) await Context.Guild.CreateRoleAsync("Rank - Gold", Discord.GuildPermissions.None, new Discord.Color(255, 181, 0));
-            if (!Ranks[11]) await Context.Guild.CreateRoleAsync("Rank - Silver", Discord.GuildPermissions.None, new Discord.Color(131, 131, 131));
-            if (!Ranks[10]) await Context.Guild.CreateRoleAsync("Rank - Bronze", Discord.GuildPermissions.None, new Discord.Color(156, 71, 0));
-            
-            if (!Ranks[0]) await Context.Guild.CreateRoleAsync("Knight", Discord.GuildPermissions.None, new Discord.Color(87, 87, 87));
-            if (!Ranks[1]) await Context.Guild.CreateRoleAsync("Assassin", Discord.GuildPermissions.None, new Discord.Color(97, 97, 97));
-            if (!Ranks[2]) await Context.Guild.CreateRoleAsync("Wizard", Discord.GuildPermissions.None, new Discord.Color(162, 135, 0));
-            if (!Ranks[3]) await Context.Guild.CreateRoleAsync("Rogue", Discord.GuildPermissions.None, new Discord.Color(79, 102, 73));
-            if (!Ranks[4]) await Context.Guild.CreateRoleAsync("Archer", Discord.GuildPermissions.None, new Discord.Color(71, 149, 156));
-            if (!Ranks[5]) await Context.Guild.CreateRoleAsync("Witch", Discord.GuildPermissions.None, new Discord.Color(184, 65, 65));
-            if (!Ranks[6]) await Context.Guild.CreateRoleAsync("Slayer of Arkdul", Discord.GuildPermissions.None, new Discord.Color(213, 105, 255));
-            if (!Ranks[7]) await Context.Guild.CreateRoleAsync("Slayer of Kenthros", Discord.GuildPermissions.None, new Discord.Color(0, 103, 231));
-            if (!Ranks[8]) await Context.Guild.CreateRoleAsync("Slayer of Rakdoro", Discord.GuildPermissions.None, new Discord.Color(189, 75, 75));
-            if (!Ranks[9]) await Context.Guild.CreateRoleAsync("Slayer of Gothkamul", Discord.GuildPermissions.None, new Discord.Color(41, 255, 197));
+            if (!Ranks[1]) await Context.Guild.CreateRoleAsync("Rank - Master I", Discord.GuildPermissions.None, new Discord.Color(255, 0, 0));
+            if (!Ranks[2]) await Context.Guild.CreateRoleAsync("Rank - Master II", Discord.GuildPermissions.None, new Discord.Color(255, 79, 0));
+            if (!Ranks[3]) await Context.Guild.CreateRoleAsync("Rank - Master III", Discord.GuildPermissions.None, new Discord.Color(255, 150, 32));
+            if (!Ranks[4]) await Context.Guild.CreateRoleAsync("Rank - Platinum", Discord.GuildPermissions.None, new Discord.Color(186, 192, 255));
+            if (!Ranks[5]) await Context.Guild.CreateRoleAsync("Rank - Orichalcum", Discord.GuildPermissions.None, new Discord.Color(0, 232, 255));
+            if (!Ranks[6]) await Context.Guild.CreateRoleAsync("Rank - Quartz", Discord.GuildPermissions.None, new Discord.Color(255, 255, 255));
+            if (!Ranks[7]) await Context.Guild.CreateRoleAsync("Rank - Gold", Discord.GuildPermissions.None, new Discord.Color(255, 181, 0));
+            if (!Ranks[8]) await Context.Guild.CreateRoleAsync("Rank - Silver", Discord.GuildPermissions.None, new Discord.Color(131, 131, 131));
+            if (!Ranks[9]) await Context.Guild.CreateRoleAsync("Rank - Bronze", Discord.GuildPermissions.None, new Discord.Color(156, 71, 0));
+            if (!Ranks[10]) await Context.Guild.CreateRoleAsync("Knight", Discord.GuildPermissions.None, new Discord.Color(87, 87, 87));
+            if (!Ranks[11]) await Context.Guild.CreateRoleAsync("Assassin", Discord.GuildPermissions.None, new Discord.Color(97, 97, 97));
+            if (!Ranks[12]) await Context.Guild.CreateRoleAsync("Wizard", Discord.GuildPermissions.None, new Discord.Color(162, 135, 0));
+            if (!Ranks[13]) await Context.Guild.CreateRoleAsync("Rogue", Discord.GuildPermissions.None, new Discord.Color(79, 102, 73));
+            if (!Ranks[14]) await Context.Guild.CreateRoleAsync("Archer", Discord.GuildPermissions.None, new Discord.Color(71, 149, 156));
+            if (!Ranks[15]) await Context.Guild.CreateRoleAsync("Witch", Discord.GuildPermissions.None, new Discord.Color(184, 65, 65));
+            if (!Ranks[16]) await Context.Guild.CreateRoleAsync("Berserker", Discord.GuildPermissions.None, new Discord.Color(145, 4, 4));
+            if (!Ranks[17]) await Context.Guild.CreateRoleAsync("Tamer", Discord.GuildPermissions.None, new Discord.Color(152, 168, 74));
+            if (!Ranks[18]) await Context.Guild.CreateRoleAsync("Monk", Discord.GuildPermissions.None, new Discord.Color(160, 112, 233));
+            if (!Ranks[19]) await Context.Guild.CreateRoleAsync("Nechromancer", Discord.GuildPermissions.None, new Discord.Color(73, 73, 73));
+            if (!Ranks[20]) await Context.Guild.CreateRoleAsync("Paladin", Discord.GuildPermissions.None, new Discord.Color(10, 146, 153));
+            if (!Ranks[21]) await Context.Guild.CreateRoleAsync("Swordsman", Discord.GuildPermissions.None, new Discord.Color(206, 31, 31));
+            if (!Ranks[22]) await Context.Guild.CreateRoleAsync("Trickster", Discord.GuildPermissions.None, new Discord.Color(5, 141, 9));
+            if (!Ranks[23]) await Context.Guild.CreateRoleAsync("Evangel", Discord.GuildPermissions.None, new Discord.Color(45, 103, 179));
+            if (!Ranks[24]) await Context.Guild.CreateRoleAsync("Kitsune", Discord.GuildPermissions.None, new Discord.Color(255, 148, 225));
+            if (!Ranks[25]) await Context.Guild.CreateRoleAsync("Slayer of Arkdul", Discord.GuildPermissions.None, new Discord.Color(213, 105, 255));
+            if (!Ranks[26]) await Context.Guild.CreateRoleAsync("Slayer of Kenthros", Discord.GuildPermissions.None, new Discord.Color(0, 103, 231));
+            if (!Ranks[27]) await Context.Guild.CreateRoleAsync("Slayer of Rakdoro", Discord.GuildPermissions.None, new Discord.Color(189, 75, 75));
+            if (!Ranks[28]) await Context.Guild.CreateRoleAsync("Slayer of Gothkamul", Discord.GuildPermissions.None, new Discord.Color(41, 255, 197));
             //new Discord.Color(0xff0000);
 
             Console.WriteLine("Server was initialized!");
@@ -1523,7 +1645,7 @@ namespace RPG_Bot.Commands
             foreach (SocketGuild guilds in Program.Client.Guilds)
             {
                 //Check to make sure the guild has been started up and has the valid roles.
-                bool[] contains = new bool[20];
+                bool[] contains = new bool[30];
 
                 foreach (SocketRole role in guilds.Roles)
                 {
@@ -1542,9 +1664,17 @@ namespace RPG_Bot.Commands
                     if (role.Name == "Rogue") contains[12] = true;
                     if (role.Name == "Archer") contains[13] = true;
                     if (role.Name == "Witch") contains[14] = true;
-                    if (role.Name == "Slayer of Arkdul") contains[15] = true;
-                    if (role.Name == "Slayer of Kenthros") contains[16] = true;
-                    if (role.Name == "Slayer of Rakdoro") contains[17] = true;
+                    if (role.Name == "Berserker") contains[15] = true;
+                    if (role.Name == "Tamer") contains[16] = true;
+                    if (role.Name == "Monk") contains[17] = true;
+                    if (role.Name == "Nechromancer") contains[18] = true;
+                    if (role.Name == "Paladin") contains[19] = true;
+                    if (role.Name == "Swordsman") contains[20] = true;
+                    if (role.Name == "Evangel") contains[21] = true;
+                    if (role.Name == "Kitsune") contains[22] = true;
+                    if (role.Name == "Slayer of Arkdul") contains[23] = true;
+                    if (role.Name == "Slayer of Kenthros") contains[24] = true;
+                    if (role.Name == "Slayer of Rakdoro") contains[25] = true;
                 }
 
                 if (!contains[0]) continue;
@@ -1565,6 +1695,14 @@ namespace RPG_Bot.Commands
                 else if (!contains[15]) continue;
                 else if (!contains[16]) continue;
                 else if (!contains[17]) continue;
+                else if (!contains[18]) continue;
+                else if (!contains[19]) continue;
+                else if (!contains[20]) continue;
+                else if (!contains[21]) continue;
+                else if (!contains[22]) continue;
+                else if (!contains[23]) continue;
+                else if (!contains[24]) continue;
+                else if (!contains[25]) continue;
                 else
                 {
                     Console.WriteLine("Guild: " + guilds.Name);
@@ -1576,9 +1714,17 @@ namespace RPG_Bot.Commands
                         var Knight = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Knight");
                         var Assassin = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Assassin");
                         var Wizard = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Wizard");
-                        var Rogue = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Archer");
+                        var Rogue = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Rogue");
                         var Archer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Archer");
                         var Witch = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Witch");
+                        var Berserker = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Berserker");
+                        var Tamer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Tamer");
+                        var Monk = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Monk");
+                        var Nechromancer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Nechromancer");
+                        var Paladin = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Paladin");
+                        var Swordsman = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Swordsman");
+                        var Evangel = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Evangel");
+                        var Kitsune = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Kitsune");
                         var Slayer_Arkdul = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Slayer of Arkdul");
                         var Slayer_Kenthros = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Slayer of Kenthros");
                         var Slayer_Rakdoro = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Slayer of Rakdoro");
@@ -1597,94 +1743,142 @@ namespace RPG_Bot.Commands
                         string Rank = Data.Data.GetRank(user.Id);
 
                         if (Rank == "Bronze") if (!user.Roles.Contains(Rank_Bronze))
-                            {
-                                await RemoveUsersRank(user);
-                                await user.AddRoleAsync(Rank_Bronze);
-                            }
+                        {
+                            await RemoveUsersRank(user);
+                            await user.AddRoleAsync(Rank_Bronze);
+                        }
 
                         if (Rank == "Silver") if (!user.Roles.Contains(Rank_Silver))
-                            {
-                                await RemoveUsersRank(user);
-                                await user.AddRoleAsync(Rank_Silver);
-                            }
+                        {
+                            await RemoveUsersRank(user);
+                            await user.AddRoleAsync(Rank_Silver);
+                        }
 
                         if (Rank == "Gold") if (!user.Roles.Contains(Rank_Gold))
-                            {
-                                await RemoveUsersRank(user);
-                                await user.AddRoleAsync(Rank_Gold);
-                            }
+                        {
+                            await RemoveUsersRank(user);
+                            await user.AddRoleAsync(Rank_Gold);
+                        }
 
                         if (Rank == "Quartz") if (!user.Roles.Contains(Rank_Quartz))
-                            {
-                                await RemoveUsersRank(user);
-                                await user.AddRoleAsync(Rank_Quartz);
-                            }
+                        {
+                            await RemoveUsersRank(user);
+                            await user.AddRoleAsync(Rank_Quartz);
+                        }
 
                         if (Rank == "Orichalcum") if (!user.Roles.Contains(Rank_Orichalcum))
-                            {
-                                await RemoveUsersRank(user);
-                                await user.AddRoleAsync(Rank_Orichalcum);
-                            }
+                        {
+                            await RemoveUsersRank(user);
+                            await user.AddRoleAsync(Rank_Orichalcum);
+                        }
 
                         if (Rank == "Platinum") if (!user.Roles.Contains(Rank_Platinum))
-                            {
-                                await RemoveUsersRank(user);
-                                await user.AddRoleAsync(Rank_Platinum);
-                            }
+                        {
+                            await RemoveUsersRank(user);
+                            await user.AddRoleAsync(Rank_Platinum);
+                        }
 
                         if (Rank == "Master3") if (!user.Roles.Contains(Rank_Master3))
-                            {
-                                await RemoveUsersRank(user);
-                                await user.AddRoleAsync(Rank_Master3);
-                            }
+                        {
+                            await RemoveUsersRank(user);
+                            await user.AddRoleAsync(Rank_Master3);
+                        }
 
                         if (Rank == "Master2") if (!user.Roles.Contains(Rank_Master2))
-                            {
-                                await RemoveUsersRank(user);
-                                await user.AddRoleAsync(Rank_Master2);
-                            }
+                        {
+                            await RemoveUsersRank(user);
+                            await user.AddRoleAsync(Rank_Master2);
+                        }
 
                         if (Rank == "Master1") if (!user.Roles.Contains(Rank_Master1))
-                            {
-                                await RemoveUsersRank(user);
-                                await user.AddRoleAsync(Rank_Master1);
-                            }
+                        {
+                            await RemoveUsersRank(user);
+                            await user.AddRoleAsync(Rank_Master1);
+                        }
 
                         if (Class == "Knight") if (!user.Roles.Contains(Knight))
-                            {
-                                await RemoveUsersClass(user);
-                                await user.AddRoleAsync(Knight);
-                            }
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Knight);
+                        }
 
                         if (Class == "Assassin") if (!user.Roles.Contains(Assassin))
-                            {
-                                await RemoveUsersClass(user);
-                                await user.AddRoleAsync(Assassin);
-                            }
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Assassin);
+                        }
 
                         if (Class == "Wizard") if (!user.Roles.Contains(Wizard))
-                            {
-                                await RemoveUsersClass(user);
-                                await user.AddRoleAsync(Wizard);
-                            }
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Wizard);
+                        }
 
                         if (Class == "Rogue") if (!user.Roles.Contains(Rogue))
-                            {
-                                await RemoveUsersClass(user);
-                                await user.AddRoleAsync(Rogue);
-                            }
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Rogue);
+                        }
 
                         if (Class == "Archer") if (!user.Roles.Contains(Archer))
-                            {
-                                await RemoveUsersClass(user);
-                                await user.AddRoleAsync(Archer);
-                            }
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Archer);
+                        }
 
                         if (Class == "Witch") if (!user.Roles.Contains(Witch))
-                            {
-                                await RemoveUsersClass(user);
-                                await user.AddRoleAsync(Witch);
-                            }
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Witch);
+                        }
+
+                        if (Class == "Berserker") if (!user.Roles.Contains(Berserker))
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Berserker);
+                        }
+
+                        if (Class == "Tamer") if (!user.Roles.Contains(Tamer))
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Tamer);
+                        }
+
+                        if (Class == "Monk") if (!user.Roles.Contains(Monk))
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Monk);
+                        }
+
+                        if (Class == "Nechromancer") if (!user.Roles.Contains(Nechromancer))
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Nechromancer);
+                        }
+
+                        if (Class == "Paladin") if (!user.Roles.Contains(Paladin))
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Paladin);
+                        }
+
+                        if (Class == "Swordsman") if (!user.Roles.Contains(Swordsman))
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Swordsman);
+                        }
+
+                        if (Class == "Evangel") if (!user.Roles.Contains(Evangel))
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Evangel);
+                        }
+
+                        if (Class == "Kitsune") if (!user.Roles.Contains(Kitsune))
+                        {
+                            await RemoveUsersClass(user);
+                            await user.AddRoleAsync(Kitsune);
+                        }
                     }
                 }
             }
@@ -1697,9 +1891,17 @@ namespace RPG_Bot.Commands
             var Knight = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Knight");
             var Assassin = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Assassin");
             var Wizard = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Wizard");
-            var Rogue = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Archer");
+            var Rogue = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Rogue");
             var Archer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Archer");
             var Witch = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Witch");
+            var Berserker = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Berserker");
+            var Tamer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Tamer");
+            var Monk = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Monk");
+            var Nechromancer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Nechromancer");
+            var Paladin = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Paladin");
+            var Swordsman = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Swordsman");
+            var Evangel = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Evangel");
+            var Kitsune = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Kitsune");
 
             if (user.Roles.Contains(Knight)) await user.RemoveRoleAsync(Knight);
             if (user.Roles.Contains(Assassin)) await user.RemoveRoleAsync(Assassin);

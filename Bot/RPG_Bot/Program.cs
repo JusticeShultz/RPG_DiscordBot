@@ -22,6 +22,9 @@ namespace RPG_Bot
 
         static void Main(string[] args)
         {
+            //for (int i = 0; i < 1000; ++i)
+            //    Console.WriteLine(i + ": " + i * i);
+
             //Open the file that contains the bot login token, this txt file is set up with the launcher.
             System.IO.StreamReader file = new System.IO.StreamReader(@"Resources\BotKey.txt");
             //Read the opened file and set its contents to the token string.
