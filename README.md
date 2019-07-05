@@ -1,5 +1,7 @@
 # RPG Discord Bot
 
+I have decided to stop updating the changelog here due to how consistently updates are done and that I'm going solo development, I will continue to post updates about large changes in the home server, until support grows more I think the feature changes will be kept small.
+
 Wanna see what this is all about? 
 The bot uses Discord ID's to function so it will only work in the home server, which can be joined off of this link:
 https://discord.gg/jnFfqhm
