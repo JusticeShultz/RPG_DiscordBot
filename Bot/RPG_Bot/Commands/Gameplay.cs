@@ -64,7 +64,6 @@ namespace RPG_Bot.Commands
             public Joiner[] BossEventJoiner = new Joiner[100];
             public ulong ServerID { get; set; } = 0;
 
-
             public BossJoiningSystem()
             {
                 for(int i = 0; i < 100; ++i)
@@ -96,7 +95,7 @@ namespace RPG_Bot.Commands
 
         static Random rng = new Random();
 
-        //Channel 1-15 reserved for zones
+        //Channel 1-25 reserved for zones
         //Channel 35 reserved for event bosses
         //Channel 40 - 45 reserved for world bosses
 
@@ -320,23 +319,18 @@ namespace RPG_Bot.Commands
             else if (Context.Channel.Name == "the-aurora")
             {
                 await ClearChat();
-                if (genType < 4) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Duck, 13);
-                else if (genType < 8) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Flare, 13);
-                else if (genType < 14) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Khan, 13);
-                else if (genType < 22) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Skeletor, 13);
-                else if (genType < 27) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Rex, 13);
-                else if (genType < 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Vasuki, 13);
-                else if (genType < 38) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Masamune, 13);
-                else if (genType < 43) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Rourtu, 13);
-                else if (genType < 49) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Trikento, 13);
-                else if (genType < 54) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Blackout, 13);
+                if (genType < 3) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Duck, 13);
+                else if (genType < 15) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Masamune, 13);
+                else if (genType < 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Rourtu, 13);
+                else if (genType < 40) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Trikento, 13);
+                else if (genType < 50) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Blackout, 13);
                 else if (genType < 61) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Yggdrasil, 13);
             }
             else
             {
                 SocketGuildUser user = Context.User as SocketGuildUser;
 
-                if (remaining == "eventboss" && user.GuildPermissions.Administrator && Context.Guild.Id == EnemyTemplates.ServerID)
+                if (remaining == "eventboss" && (Context.User.Id == 228344819422855168 || Context.User.Id != 409566463658033173))
                 {
                     await ClearChat();
                     var messages = await Context.Channel.GetMessagesAsync(1).FlattenAsync();
@@ -346,13 +340,13 @@ namespace RPG_Bot.Commands
                     //await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.EventTreeBoss, 35);
                 }
                 else
-                if (remaining == "testboss" && user.GuildPermissions.Administrator && Context.Guild.Id == EnemyTemplates.ServerID)
+                if (remaining == "testboss" && (Context.User.Id == 228344819422855168 || Context.User.Id != 409566463658033173))
                 {
                     await ClearChat();
                     var messages = await Context.Channel.GetMessagesAsync(1).FlattenAsync();
                     await (Context.Channel as SocketTextChannel).DeleteMessagesAsync(messages);
 
-                    await SpawnWorldBoss(RPG_Bot.Resources.EnemyTemplates.KenthrosBoss, 42);
+                    await SpawnWorldBoss(RPG_Bot.Resources.EnemyTemplates.MySon, 35);
                 }
                 else
                 {
@@ -629,7 +623,7 @@ namespace RPG_Bot.Commands
                                 if (CurrentBossJoiners[spot].Boss4Joiner[i].UserID == Context.User.Id)
                                     CurrentBossJoiners[spot].Boss4Joiner[i].Damage += userdmg;
 
-                            if (gg < 2)
+                            if (gg >= times - 1 || gg <= 1)
                             {
                                 if (ServerMessages[spot].FightMessages[server] != null)
                                 {
@@ -1271,7 +1265,7 @@ namespace RPG_Bot.Commands
 
             uint health = (uint)rng.Next((int)enemy.MinHealth, (int)enemy.MaxHealth);
             uint level = (uint)rng.Next((int)enemy.MinLevel, (int)enemy.MaxLevel);
-
+            
             CurrentSpawn[serverId].currentSpawn[channel] = enemy;
             CurrentSpawn[serverId].currentSpawn[channel].MaxHealth = health;
             CurrentSpawn[serverId].currentSpawn[channel].CurrentHealth = health;
@@ -1370,24 +1364,24 @@ namespace RPG_Bot.Commands
         public async Task FindEventItem()
         {
             EmbedBuilder Embed = new EmbedBuilder();
-            Embed.WithTitle("You found a piece of Mystic Log!");
+            Embed.WithTitle("You found an Essence!");
             Embed.WithDescription("This item may be traded in with the shop keeper! Use `-event shop` in the guild store to see what you can recieve!");
-            Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544026827837014017/latest.png");
+            Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566850283670601749/Unit_ills_full_50801.webp");
             Embed.Color = Color.Teal;
             Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
-            Embed.WithFooter("Special event runs until March 20th");
+            Embed.WithFooter("Special event runs until May 20th");
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
         }
 
         public async Task FindBossEventItem()
         {
             EmbedBuilder Embed = new EmbedBuilder();
-            Embed.WithTitle("You harvest the fallen boss and gather 35 Mystic Logs!");
+            Embed.WithTitle("You harvest the fallen boss and gather 35 Essence!");
             Embed.WithDescription("This item may be traded in with the shop keeper! Use `-event shop` in the guild store to see what you can recieve!");
             Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
-            Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544026827837014017/latest.png");
+            Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566850283670601749/Unit_ills_full_50801.webp");
             Embed.Color = Color.Teal;
-            Embed.WithFooter("Special event runs until March 20th");
+            Embed.WithFooter("Special event runs until May 20th");
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
         }
 
@@ -1470,11 +1464,11 @@ namespace RPG_Bot.Commands
                 else if (channel.Name == "lv70-80") channels[9] = true;
                 else if (channel.Name == "lv80-90") channels[10] = true;
                 else if (channel.Name == "lv90-100") channels[11] = true;
-                else if (channel.Name == "lv100-150") channels[12] = true;
-                else if (channel.Name == "lv150-200") channels[13] = true;
-                else if (channel.Name == "lv200-400") channels[14] = true;
-                else if (channel.Name == "lv400-800") channels[15] = true;
-                else if (channel.Name == "lv800-1000") channels[16] = true;
+                //else if (channel.Name == "lv100-150") channels[12] = true;
+                //else if (channel.Name == "lv150-200") channels[13] = true;
+                //else if (channel.Name == "lv200-400") channels[14] = true;
+                //else if (channel.Name == "lv400-800") channels[15] = true;
+                //else if (channel.Name == "lv800-1000") channels[16] = true;
                 else if (channel.Name == "the-aurora") channels[17] = true;
                 else if (channel.Name == "questing") channels[18] = true;
                 else if (channel.Name == "daily-blessings") channels[19] = true;
@@ -1498,11 +1492,11 @@ namespace RPG_Bot.Commands
             if (!channels[9]) await Context.Guild.CreateTextChannelAsync("lv70-80");
             if (!channels[10]) await Context.Guild.CreateTextChannelAsync("lv80-90");
             if (!channels[11]) await Context.Guild.CreateTextChannelAsync("lv90-100");
-            if (!channels[12]) await Context.Guild.CreateTextChannelAsync("lv100-150");
-            if (!channels[13]) await Context.Guild.CreateTextChannelAsync("lv150-200");
-            if (!channels[14]) await Context.Guild.CreateTextChannelAsync("lv200-400");
-            if (!channels[15]) await Context.Guild.CreateTextChannelAsync("lv400-800");
-            if (!channels[16]) await Context.Guild.CreateTextChannelAsync("lv800-1000");
+            //if (!channels[12]) await Context.Guild.CreateTextChannelAsync("lv100-150");
+            //if (!channels[13]) await Context.Guild.CreateTextChannelAsync("lv150-200");
+            //if (!channels[14]) await Context.Guild.CreateTextChannelAsync("lv200-400");
+            //if (!channels[15]) await Context.Guild.CreateTextChannelAsync("lv400-800");
+            //if (!channels[16]) await Context.Guild.CreateTextChannelAsync("lv800-1000");
             if (!channels[17]) await Context.Guild.CreateTextChannelAsync("the-aurora");
             if (!channels[18]) await Context.Guild.CreateTextChannelAsync("questing");
             if (!channels[19]) await Context.Guild.CreateTextChannelAsync("daily-blessings");
@@ -1909,6 +1903,14 @@ namespace RPG_Bot.Commands
             if (user.Roles.Contains(Rogue)) await user.RemoveRoleAsync(Rogue);
             if (user.Roles.Contains(Archer)) await user.RemoveRoleAsync(Archer);
             if (user.Roles.Contains(Witch)) await user.RemoveRoleAsync(Witch);
+            if (user.Roles.Contains(Berserker)) await user.RemoveRoleAsync(Berserker);
+            if (user.Roles.Contains(Tamer)) await user.RemoveRoleAsync(Tamer);
+            if (user.Roles.Contains(Monk)) await user.RemoveRoleAsync(Monk);
+            if (user.Roles.Contains(Nechromancer)) await user.RemoveRoleAsync(Nechromancer);
+            if (user.Roles.Contains(Paladin)) await user.RemoveRoleAsync(Paladin);
+            if (user.Roles.Contains(Swordsman)) await user.RemoveRoleAsync(Swordsman);
+            if (user.Roles.Contains(Evangel)) await user.RemoveRoleAsync(Evangel);
+            if (user.Roles.Contains(Kitsune)) await user.RemoveRoleAsync(Kitsune);
 
             Console.WriteLine("Removed " + user.Username + "'s class");
             return;
@@ -1951,6 +1953,98 @@ namespace RPG_Bot.Commands
             var online = guild.Users.Where((x) => x.Status == UserStatus.Online).Count();
             var offline = guild.Users.Where((x) => x.Status == UserStatus.Offline).Count();
             await ReplyAsync($"User count: {guild.Users.Count()}      Online: {online}, Offline: {offline}");
+        }
+
+        [Command("Cleanup"), Alias("cleanup", "Clean", "clean"), Summary("Remove every channel and rank made by the bot.")]
+        public async Task CleanServer()
+        {
+            IGuildUser user = Context.User as IGuildUser;
+
+            if (!user.GuildPermissions.Administrator && user.Id != 228344819422855168)
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithAuthor("Sorry about that :(");
+                Embed.WithDescription("Hey there, I noticed you tried to use the ``-cleanup`` command but have invalid " +
+                                      "permissions... Only administrators may use this command as it will clear the " +
+                                      "entire servers channels and ranks that are associated with the bot. If you are " +
+                                      "having issues and need help, please DM Robin#1000 and help will be granted.");
+                Embed.Color = Color.DarkRed;
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                return;
+            }
+
+            //Send us some details so me may snoop if we like.
+            Console.WriteLine("Guild: " + Context.Guild.Name +
+                " has killed the bot :( (" + Context.Guild.Id + "-" + Context.Guild.IconUrl + ")");
+
+            //Delete every channel.
+            foreach (IGuildChannel channel in Context.Guild.Channels)
+            {
+                if(channel.Name == "lv1-5") await channel.DeleteAsync();
+                if(channel.Name == "lv5-10") await channel.DeleteAsync();
+                if(channel.Name == "lv10-15") await channel.DeleteAsync();
+                if(channel.Name == "lv15-20") await channel.DeleteAsync();
+                if(channel.Name == "lv20-30") await channel.DeleteAsync();
+                if(channel.Name == "lv30-40") await channel.DeleteAsync();
+                if(channel.Name == "lv40-50") await channel.DeleteAsync();
+                if(channel.Name == "lv50-60") await channel.DeleteAsync();
+                if(channel.Name == "lv60-70") await channel.DeleteAsync();
+                if(channel.Name == "lv70-80") await channel.DeleteAsync();
+                if(channel.Name == "lv80-90") await channel.DeleteAsync();
+                if(channel.Name == "lv90-100") await channel.DeleteAsync();
+                if(channel.Name == "lv100-150") await channel.DeleteAsync();
+                if(channel.Name == "lv150-200") await channel.DeleteAsync();
+                if(channel.Name == "lv200-400") await channel.DeleteAsync();
+                if(channel.Name == "lv400-800") await channel.DeleteAsync();
+                if(channel.Name == "lv800-1000") await channel.DeleteAsync();
+                if(channel.Name == "the-aurora") await channel.DeleteAsync();
+                if(channel.Name == "questing") await channel.DeleteAsync();
+                if(channel.Name == "daily-blessings") await channel.DeleteAsync();
+                if(channel.Name == "guild-shop") await channel.DeleteAsync();
+                if(channel.Name == "event-bosses") await channel.DeleteAsync();
+                if(channel.Name == "gothkamul") await channel.DeleteAsync();
+                if(channel.Name == "rakdoro") await channel.DeleteAsync();
+                if(channel.Name == "kenthros") await channel.DeleteAsync();
+                if(channel.Name == "arkdul") await channel.DeleteAsync();
+            }
+
+            foreach (SocketRole roles in Context.Guild.Roles)
+            {
+                if (roles.Name == "Rank - Master I") await roles.DeleteAsync();
+                if (roles.Name == "Rank - Master II") await roles.DeleteAsync();
+                if (roles.Name == "Rank - Master III") await roles.DeleteAsync();
+                if (roles.Name == "Rank - Platinum") await roles.DeleteAsync();
+                if (roles.Name == "Rank - Orichalcum") await roles.DeleteAsync();
+                if (roles.Name == "Rank - Quartz") await roles.DeleteAsync();
+                if (roles.Name == "Rank - Gold") await roles.DeleteAsync();
+                if (roles.Name == "Rank - Silver") await roles.DeleteAsync();
+                if (roles.Name == "Rank - Bronze") await roles.DeleteAsync();
+                if (roles.Name == "Knight") await roles.DeleteAsync();
+                if (roles.Name == "Assassin") await roles.DeleteAsync();
+                if (roles.Name == "Wizard") await roles.DeleteAsync();
+                if (roles.Name == "Rogue") await roles.DeleteAsync();
+                if (roles.Name == "Archer") await roles.DeleteAsync();
+                if (roles.Name == "Witch") await roles.DeleteAsync();
+                if (roles.Name == "Berserker") await roles.DeleteAsync();
+                if (roles.Name == "Tamer") await roles.DeleteAsync();
+                if (roles.Name == "Monk") await roles.DeleteAsync();
+                if (roles.Name == "Nechromancer") await roles.DeleteAsync();
+                if (roles.Name == "Paladin") await roles.DeleteAsync();
+                if (roles.Name == "Swordsman") await roles.DeleteAsync();
+                if (roles.Name == "Trickster") await roles.DeleteAsync();
+                if (roles.Name == "Evangel") await roles.DeleteAsync();
+                if (roles.Name == "Kitsune") await roles.DeleteAsync();
+                if (roles.Name == "Slayer of Arkdul") await roles.DeleteAsync();
+                if (roles.Name == "Slayer of Kenthros") await roles.DeleteAsync();
+                if (roles.Name == "Slayer of Rakdoro") await roles.DeleteAsync();
+                if (roles.Name == "Slayer of Gothkamul") await roles.DeleteAsync();
+            }
+            
+            Console.WriteLine("Server was cleaned up");
+            Console.WriteLine("---------------------------------------------------------------");
+            Console.WriteLine("Server connection has ended");
+            Console.WriteLine("Server disconnected...");
+            Console.WriteLine("---------------------------------------------------------------");
         }
     }
 }

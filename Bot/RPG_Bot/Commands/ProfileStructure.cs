@@ -165,7 +165,7 @@ namespace RPG_Bot.Currency
             Embed.WithDescription("Class: " + classType + " " + classEmoji + "\nName: " + name + " <:freedomdove:543112388996497419>\nAge: " + age + " <:Age:543112389160337408>\n" + "\nGold Coins: " + coins + " <:Coins:543112388493312000>\n" +
                 "You have " + guildGems + " <:GuildGem:545341213004529725>\n\n" +
                 "Level: " + level + " <:Level:543112387989995521>\n" + "Health: " + health + " <:Health:543112384848461832>\n" + "Damage: " + damage + " <:Damage:543112387763503124>\n\n" +
-                "You have " + eventItem + " Mystic Logs (Event Item)<:MysticLog:545341226556325893>");
+                "You have " + eventItem + " Essence (Event Item)<:Essence:567480672344866867>");
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
         }
 
@@ -357,7 +357,7 @@ namespace RPG_Bot.Currency
         [Command("Leaderboard"), Alias("leaderboard", "Lb", "lb"), Summary("See a list of the richest users.")]
         public async Task Leaderboard(string txt = "")
         {
-            if(Context.Guild.Id != 542118110774427659)
+            if (Context.Guild.Id != 542118110774427659)
             {
                 EmbedBuilder Embeder = new EmbedBuilder();
                 Embeder.WithAuthor("Error!");
@@ -368,7 +368,7 @@ namespace RPG_Bot.Currency
                 return;
             }
 
-            if(txt == "" || txt == null)
+            if (txt == "" || txt == null)
             {
                 EmbedBuilder Embeder = new EmbedBuilder();
                 Embeder.WithAuthor("Error!");
@@ -380,7 +380,7 @@ namespace RPG_Bot.Currency
                     "\n<:Health:543112384848461832> - **Health**" +
                     "\n<:GuildGem:545341213004529725> - **Gems**" +
                     "\n<:Age:543112389160337408> - **Age**" +
-                    "\n<:MysticLog:545341226556325893> - **Event**");
+                    "\n<:Essence:567480672344866867> - **Event**");
                 Embeder.WithColor(40, 200, 150);
                 Embeder.Color = Color.Red;
                 await Context.Channel.SendMessageAsync("", false, Embeder.Build());
@@ -445,12 +445,12 @@ namespace RPG_Bot.Currency
                 Embed.Color = Color.Orange;
                 Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
             }
-            else if (txt == "Event" || txt == "event" || txt == "<:MysticLog:545341226556325893>")
+            else if (txt == "Event" || txt == "event" || txt == "<:Essence:567480672344866867>")
             {
                 foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, 0, 0, 0, 0, Data.Data.GetData_Event1(users.Id)));
                 list.Sort((s2, s1) => s1.Event.CompareTo(s2.Event));
-                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Mystic Logs: " + list[i].Event + "<:MysticLog:545341226556325893>";
-                Embed.WithAuthor("Serverwide Leaderboard by Mystic Logs");
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Essence: " + list[i].Event + "<:Essence:567480672344866867>";
+                Embed.WithAuthor("Serverwide Leaderboard by Essence");
                 Embed.Color = Color.DarkGreen;
                 Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
             }
@@ -466,7 +466,7 @@ namespace RPG_Bot.Currency
                     "\n<:Health:543112384848461832> - **Health**" +
                     "\n<:GuildGem:545341213004529725> - **Gems**" +
                     "\n<:Age:543112389160337408> - **Age**" +
-                    "\n<:MysticLog:545341226556325893> - **Event**");
+                    "\n<:Essence:567480672344866867> - **Event**");
                 Embeder.WithColor(40, 200, 150);
                 Embeder.Color = Color.Red;
                 await Context.Channel.SendMessageAsync("", false, Embeder.Build());
@@ -517,5 +517,132 @@ namespace RPG_Bot.Currency
             Embed.WithFooter("Hi", Context.User.GetAvatarUrl());
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
         }
+
+        [Command("info"), Alias("Info"), Summary("Info about something...")]
+        public async Task Info(string check)
+        {
+            EmbedBuilder Embed = new EmbedBuilder();
+
+            string classEmoji = "";
+            string baseStats = "";
+
+            if (check == "Archer" || check == "archer")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225760748961797/Archer.png");
+                classEmoji = "<:Archer:543112389579767828>";
+                baseStats = "50 Damage, 20 Health";
+            }
+            else if (check == "Knight" || check == "knight")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767107526676/Knight.png");
+                classEmoji = "<:Knight:543112385498578967>";
+                baseStats = "20 Damage, 50 Health";
+            }
+            else if (check == "Witch" || check == "witch")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767770095619/Witch.png");
+                classEmoji = "<:Witch:543112316745416706>";
+                baseStats = "45 Damage, 25 Health";
+            }
+            else if (check == "Rogue" || check == "rogue")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767220641792/Rogue.png");
+                classEmoji = "<:Rogue:543112385406304257>";
+                baseStats = "60 Damage, 10 Health";
+            }
+            else if (check == "Wizard" || check == "wizard")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225769422913537/Wizard.png");
+                classEmoji = "<:Wizard:543112388774199297>";
+                baseStats = "48 Damage, 22 Health";
+            }
+            else if (check == "Assassin" || check == "assassin")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225760619069450/Assassin.png");
+                classEmoji = "<:Assassin:543112389109874719>";
+                baseStats = "65 Damage, 5 Health";
+            }
+            else if (check == "Berserker" || check == "berserker" || check == "Berzerker" || check == "berzerker")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904669427859456/Berserker.png");
+                classEmoji = "<:Berserker:566917750140960768>";
+                baseStats = "40 Damage, 30 Health";
+            }
+            else if (check == "Nechromancer" || check == "nechromancer")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904652009046026/Nechromancer.webp");
+                classEmoji = "<:Nechromancer:566917752640503809>";
+                baseStats = "65 Damage, 5 Health";
+            }
+            else if (check == "Trickster" || check == "trickster")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904660275757066/Trickster.png");
+                classEmoji = "<:Trickster:566917752875384834>";
+                baseStats = "55 Damage, 15 Health";
+            }
+            else if (check == "Kitsune" || check == "kitsune")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904663740252161/Kitsune.webp");
+                classEmoji = "<:Kitsune:566917752380719139>";
+                baseStats = "65 Damage, 5 Health";
+            }
+            else if (check == "Paladin" || check == "paladin")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904668891119627/Paladin.png");
+                classEmoji = "<:Paladin:566917753081036800>";
+                baseStats = "55 Damage, 20 Health";
+            }
+            else if (check == "Monk" || check == "monk")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904672250626048/Monk.png");
+                classEmoji = "<:Monk:566917753009602570>";
+                baseStats = "35 Damage, 35 Health";
+            }
+            else if (check == "Evangel" || check == "evangel")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904680668725258/Evangel.png");
+                classEmoji = "<:Evangel:566917753450266645>";
+                baseStats = "65 Damage, 5 Health";
+            }
+            else if (check == "Tamer" || check == "tamer")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904678713917445/Cat_Tamer.png");
+                classEmoji = "<:Tamer:566918308218273792>";
+                baseStats = "65 Damage, 5 Health";
+            }
+            else if (check == "Swordsman" || check == "swordsman")
+            {
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904710016139265/Swordsman.png");
+                classEmoji = "<:Swordsman:566917753085362186>";
+                baseStats = "40 Damage, 30 Health";
+            }
+            else
+            {
+                Embed = new EmbedBuilder();
+                Embed.WithAuthor("Whoops!");
+                Embed.WithDescription("Sorry but that does not have any info currently about it! If you would like info about this or would " +
+                    "like to have it included in this command please message Robin#1000 over Discord!");
+                return;
+            }
+
+            Embed.WithTitle(classEmoji + " " + check + " Info");
+            Embed.WithDescription("Class symbol: " + classEmoji + "\nBase stats: " + baseStats);
+            await Context.Channel.SendMessageAsync("", false, Embed.Build());
+        }
+
+        /* Fun times
+        [Command("GibRobMuni"), Alias("gibRobMuni"), Summary("uwu")]
+        public async Task Gimme()
+        {
+            SocketGuildUser user = Context.User as SocketGuildUser;
+
+            foreach (SocketRole roles in Context.Guild.Roles)
+            {
+                if(roles.Name == "Watermelonium")
+                {
+                    await user.AddRoleAsync(roles);
+                }
+            }
+        }*/
     }
 }

@@ -10,7 +10,8 @@ using RPG_Bot.Commands;
 namespace RPG_Bot
 {
     class Program
-    { 
+    {
+        public static int UserCount = 462;
         //The bots token.
         private static string TOKEN = "";
         //The bots client.
@@ -95,8 +96,16 @@ namespace RPG_Bot
         //This will handle the client being ready!
         private async Task Client_Ready()
         {
+            foreach (SocketGuild guilds in RPG_Bot.Program.Client.Guilds)
+            {
+                foreach (SocketUser users in guilds.Users)
+                {
+                    ++Program.UserCount;
+                }
+            }
+
             //This creates a little activity message in discord that says we are "Playing RPG Bot - Game Master".
-            await Client.SetGameAsync("RPG Bot - Game Master", "https://discord.gg/jnFfqhm", ActivityType.Streaming);
+           await Client.SetGameAsync("RPG Bot - " + Program.UserCount + " connected users.", "https://discord.gg/jnFfqhm", ActivityType.Streaming);
             //Write to the console we have called the boss spawning loop, this is used to make sure everything is not broken.
             Console.WriteLine($"{DateTime.Now}] Boss spawning loop has started.");
             //Call the boss chance task, this is a one time call that will start a looping task that continues until the program is ended.

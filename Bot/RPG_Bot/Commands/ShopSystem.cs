@@ -204,7 +204,7 @@ namespace RPG_Bot.Commands
                 Embed.Color = Color.Gold;
                 Embed.WithFooter("Thanks for your business!");
                 uint health = Data.Data.GetData_Health(Context.User.Id);
-                Embed.WithDescription("You traded the shop keeper 5 Mystic Logs for 50 Gold Coins!");
+                Embed.WithDescription("You traded the shop keeper 5 Essence for 50 Gold Coins!");
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
                 await Data.Data.SaveData(Context.User.Id, 50, 0, "", 0, 0, 0, 0, 0);
                 await Data.Data.TakeEventData(Context.User.Id, 5, 0, 0);
@@ -217,7 +217,7 @@ namespace RPG_Bot.Commands
                 Embed.Color = Color.Gold;
                 Embed.WithFooter("Thanks for your business!");
                 uint health = Data.Data.GetData_Health(Context.User.Id);
-                Embed.WithDescription("You traded the shop keeper 5 Mystic Logs for 50 Gold Coins!");
+                Embed.WithDescription("You traded the shop keeper 5 Essence for 50 Gold Coins!");
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
                 await Data.Data.SaveData(Context.User.Id, 50, 0, "", 0, 0, 0, 0, 0);
                 await Data.Data.TakeEventData(Context.User.Id, 5, 0, 0);
@@ -230,7 +230,7 @@ namespace RPG_Bot.Commands
                 Embed.Color = Color.Gold;
                 Embed.WithFooter("Thanks for your business!");
                 uint health = Data.Data.GetData_Health(Context.User.Id);
-                Embed.WithDescription("You traded the shop keeper 35 Mystic Logs for 700 Gold Coins!");
+                Embed.WithDescription("You traded the shop keeper 35 Essence for 700 Gold Coins!");
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
                 await Data.Data.SaveData(Context.User.Id, 700, 0, "", 0, 0, 0, 0, 0);
                 await Data.Data.TakeEventData(Context.User.Id, 35, 0, 0);
@@ -243,7 +243,7 @@ namespace RPG_Bot.Commands
                 Embed.Color = Color.Gold;
                 Embed.WithFooter("Thanks for your business!");
                 uint health = Data.Data.GetData_Health(Context.User.Id);
-                Embed.WithDescription("You traded the shop keeper 55 Mystic Logs for 1500 Gold Coins!");
+                Embed.WithDescription("You traded the shop keeper 55 Essence for 1500 Gold Coins!");
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
                 await Data.Data.SaveData(Context.User.Id, 1500, 0, "", 0, 0, 0, 0, 0);
                 await Data.Data.TakeEventData(Context.User.Id, 55, 0, 0);
@@ -252,11 +252,11 @@ namespace RPG_Bot.Commands
             {
                 EmbedBuilder Embed = new EmbedBuilder();
                 Embed.WithAuthor("Trade was Successful.");
-                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544024762402340864/latest.png");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544024948029653042/latest.png");
                 Embed.Color = Color.Gold;
                 Embed.WithFooter("Thanks for your business!");
                 uint health = Data.Data.GetData_Health(Context.User.Id);
-                Embed.WithDescription("You traded the shop keeper 65 Mystic Logs for a rare Mystic Pendant! (+30 Damage, +50 Health)");
+                Embed.WithDescription("You traded the shop keeper 65 Essence for a rare Essence Helm! (+50 Damage, +80 Health)");
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
                 await Data.Data.SaveData(Context.User.Id, 0, 0, "", 30, 50, 0, 0, 0);
                 await Data.Data.TakeEventData(Context.User.Id, 65, 0, 0);
@@ -472,18 +472,18 @@ namespace RPG_Bot.Commands
             if (remainder == "Help" || remainder == "help")
             {
                 EmbedBuilder Embed = new EmbedBuilder();
-                Embed.WithTitle("Serverwide Event #1");
-                Embed.WithAuthor("The Mystic Woods.");
-                Embed.WithDescription("Fight monsters and get a chance to gather a Mystic Log.\n\n" +
+                Embed.WithTitle("Serverwide Event #3");
+                Embed.WithAuthor("The Essence Moon.");
+                Embed.WithDescription("Fight monsters and get a chance to gather an Essence.\n\n" +
                     "Event Commands:" +
                     "\n-event shop - Use this command in the guild shop to display the trade in rates." +
                     "\n-event count - Show your current log count. You may also do -profile to see the value." +
                     "\n\n\nAdmin Commands:" +
                     "\n-event - Display the current servers event info inside the events tab.\n\n" +
                     "There is currently a rare unlockable in the event shop, check it out!");
-                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544026827837014017/latest.png");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566850283670601749/Unit_ills_full_50801.webp");
                 Embed.Color = Color.Teal;
-                Embed.WithFooter("Special event runs until March 20th");
+                Embed.WithFooter("Special event runs until May 20th");
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
             }
             else
@@ -492,13 +492,13 @@ namespace RPG_Bot.Commands
                 EmbedBuilder Embed = new EmbedBuilder();
                 Embed.WithAuthor("Greetings adventurer!");
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/543948020505640981/ShopKeep.png");
-                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544024762402340864/latest.png");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544024948029653042/latest.png");
                 Embed.Color = Color.LightOrange;
-                Embed.WithFooter("You have " + Data.Data.GetData_Event1(Context.User.Id) + " Mystic Logs");
+                Embed.WithFooter("You have " + Data.Data.GetData_Event1(Context.User.Id) + " Essence");
                 Embed.WithTitle("How to use:");
 
-                Embed.AddField("\n\nIn Stock:\n\nGold", "[105] - 5 Mystic Logs - 50 Gold Coins\n[210] - 35 Mystic Logs - 700 Gold Coins\n[215] - 55 Mystic Logs - 1500 Gold Coins", false);
-                Embed.AddField("\n\nItems:", "[385] - 65 Mystic Logs - Mystic Pendant (+30 Damage, +50 Health)", false);
+                Embed.AddField("\n\nIn Stock:\n\nGold", "[105] - 5 Essence - 50 Gold Coins\n[210] - 35 Essence - 700 Gold Coins\n[215] - 55 Essence - 1500 Gold Coins", false);
+                Embed.AddField("\n\nItems:", "[385] - 65 Essence - Essence Helm (+50 Damage, +80 Health)", false);
 
                 Embed.WithDescription("To buy items you must type `-buy [ItemID]` - Item ID's are the numbers in [] on each item!");
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
@@ -506,12 +506,12 @@ namespace RPG_Bot.Commands
             else if (remainder == "count" || remainder == "Count")
             {
                 EmbedBuilder Embed = new EmbedBuilder();
-                Embed.WithTitle("Serverwide Event #1");
-                Embed.WithAuthor("The Mystic Woods.");
-                Embed.WithDescription("You have " + Data.Data.GetData_Event1(Context.User.Id) + " Mystic Logs");
-                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544026827837014017/latest.png");
+                Embed.WithTitle("Serverwide Event #3");
+                Embed.WithAuthor("The Essence Moon.");
+                Embed.WithDescription("You have " + Data.Data.GetData_Event1(Context.User.Id) + " Essence");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566850283670601749/Unit_ills_full_50801.webp");
                 Embed.Color = Color.Teal;
-                Embed.WithFooter("Special event runs until March 20th");
+                Embed.WithFooter("Special event runs until May 10th");
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
             }
             else
@@ -521,19 +521,22 @@ namespace RPG_Bot.Commands
                 if (user.GuildPermissions.Administrator)
                 {
                     EmbedBuilder Embed = new EmbedBuilder();
-                    Embed.WithTitle("Serverwide Event #1");
-                    Embed.WithAuthor("The Mystic Woods.");
-                    Embed.WithDescription("Monsters have recently been seen holding some form of glowing log. These logs are infused with huge sums of magical power and the " +
+                    Embed.WithTitle("Serverwide Event #3");
+                    Embed.WithAuthor("The Essence Moon.");
+                    /*Embed.WithDescription("Monsters have recently been seen holding some form of glowing log. These logs are infused with huge sums of magical power and the " +
                         "shopkeeper would be more than happy to trade gold and powerful items for them. Check out the `-event shop` command over in the shop keepers store for " +
                         "limited time! Nearing the final days a legend says a mystic tree is said to appear that might be made of this newly found resource, keep your watch up!" +
                         "\n\nType `-event help` to view relevant commands for this event!");
-                    Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545308296463122442/Will_O_Wisp.webp");
-                    Embed.Color = Color.Teal;
-                    Embed.WithFooter("Special event runs until March 20th");
+                    Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545308296463122442/Will_O_Wisp.webp");*/
+                    Embed.WithDescription("The essence moon is rising and the demon king awakens with it. Collect essence " +
+                        "and gain ultimate power. (All previous event items will be transfered into this event, I will reset them next time if this doesn't work well)");
+                    Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545308301089439754/Crom_Cruach.png");
+                    Embed.Color = Color.Purple;
+                    Embed.WithFooter("Special event runs until May 20th");
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
                     EmbedBuilder Embed1 = new EmbedBuilder();
-                    Embed1.WithTitle("Serverwide Event #2");
+                    Embed1.WithTitle("Serverwide Event #4");
                     Embed1.WithAuthor("The Gold Filled Pots.");
                     Embed1.WithDescription("A new monster is roaming throughout the plains and it's full of gold! For limited time fight these gold filled enemies" +
                         " for huge amounts of gold! Low ranking areas will have Bronze Pots, medium areas will contain Silver Pots and high ranking areas will spawn " +
@@ -541,7 +544,7 @@ namespace RPG_Bot.Commands
                         "zones 60+ will not spawn them and their spawn tables will not have been affected by this event.");
                     Embed1.WithImageUrl("https://vignette.wikia.nocookie.net/quiz-rpg-the-world-of-mystic-wiz/images/f/f5/The_Golden_Pot_transparent.png/revision/latest?cb=20141025232107");
                     Embed1.Color = Color.Gold;
-                    Embed1.WithFooter("Special event runs until March 5th");
+                    Embed1.WithFooter("Special event runs until May 20th");
                     await Context.Channel.SendMessageAsync("", false, Embed1.Build());
                 }
             }
@@ -859,6 +862,22 @@ namespace RPG_Bot.Commands
                     E.Color = Color.Teal;
                     await Context.Channel.SendMessageAsync("", false, E.Build());
                     await Data.Data.SetClass(Context.User.Id, "Kitsune");
+                    await Gameplay.UpdateUserData();
+                    return;
+                }
+            }
+            if (txt == "Trickster" || txt == "trickster")
+            {
+                if (Data.Data.GetClass(Context.User.Id) != "Trickster")
+                {
+                    await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+
+                    EmbedBuilder E = new EmbedBuilder();
+                    E.WithTitle("You are now a Trickster!");
+                    E.WithFooter("500 Gold Coins have been taken from your account.");
+                    E.Color = Color.Teal;
+                    await Context.Channel.SendMessageAsync("", false, E.Build());
+                    await Data.Data.SetClass(Context.User.Id, "Trickster");
                     await Gameplay.UpdateUserData();
                     return;
                 }

@@ -8,7 +8,7 @@ using RPG_Bot.Resources.Database;
 namespace RPG_Bot.Migrations
 {
     [DbContext(typeof(SqliteDbContext))]
-    [Migration("20190225000332_InitialCreate")]
+    [Migration("20190601221803_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
