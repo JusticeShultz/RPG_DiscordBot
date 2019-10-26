@@ -103,6 +103,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 550, x, input[1], 50, 20, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Archer");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Knight" || input[0] == "knight")
                     {
@@ -113,6 +142,35 @@ namespace RPG_Bot.Commands
                         //Console.WriteLine("\n[THIS HAPPENS BEFORE SAVE]\n");
                         await Data.Data.SaveData(user.Id, 525, x, input[1], 20, 50, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Knight");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                         //Console.WriteLine("\n[THIS HAPPENS AFTER SAVE]\n");
                     }
                     else if (input[0] == "Witch" || input[0] == "witch")
@@ -122,6 +180,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 500, x, input[1], 45, 25, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Witch");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Rogue" || input[0] == "rogue")
                     {
@@ -130,6 +217,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 600, x, input[1], 60, 10, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Rogue");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Wizard" || input[0] == "wizard")
                     {
@@ -138,6 +254,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 525, x, input[1], 48, 22, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Wizard");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Assassin" || input[0] == "assassin")
                     {
@@ -146,6 +291,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 550, x, input[1], 65, 5, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Assassin");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Trickster" || input[0] == "trickster")
                     {
@@ -154,6 +328,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 550, x, input[1], 55, 15, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Trickster");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Swordsman" || input[0] == "swordsman")
                     {
@@ -162,6 +365,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 525, x, input[1], 40, 30, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Swordsman");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Paladin" || input[0] == "paladin")
                     {
@@ -170,6 +402,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 525, x, input[1], 15, 55, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Paladin");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Nechromancer" || input[0] == "nechromancer")
                     {
@@ -178,6 +439,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 550, x, input[1], 65, 5, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Nechromancer");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Monk" || input[0] == "monk")
                     {
@@ -186,6 +476,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 525, x, input[1], 35, 35, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Monk");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Kitsune" || input[0] == "kitsune")
                     {
@@ -194,6 +513,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 550, x, input[1], 65, 5, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Kitsune");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Evangel" || input[0] == "evangel")
                     {
@@ -202,6 +550,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 550, x, input[1], 65, 5, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Evangel");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Berserker" || input[0] == "berserker" || input[0] == "Berzerker" || input[0] == "berzerker")
                     {
@@ -210,6 +587,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 525, x, input[1], 40, 30, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Berserker");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
                     else if (input[0] == "Tamer" || input[0] == "tamer")
                     {
@@ -218,6 +624,35 @@ namespace RPG_Bot.Commands
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 550, x, input[1], 65, 5, 1, 0, 0);
                         await Data.Data.SetClass(Context.User.Id, "Tamer");
+                        await Data.Data.DeleteHelmet(Context.User.Id);
+                        await Data.Data.DeleteChestplate(Context.User.Id);
+                        await Data.Data.DeleteGauntlets(Context.User.Id);
+                        await Data.Data.DeleteBelt(Context.User.Id);
+                        await Data.Data.DeleteLeggings(Context.User.Id);
+                        await Data.Data.DeleteBoots(Context.User.Id);
+                        await Data.Data.SetSkillPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
+                        await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
+                        await Data.Data.SetLargePotionCount(Context.User.Id, 2);
+                        await Data.Data.SetDragonPotionCount(Context.User.Id, 1);
+                        await Data.Data.SetAngelPotionCount(Context.User.Id, 0);
+                        await Data.Data.SetCommonBoxCount(Context.User.Id, 2);
+                        await Data.Data.SetUncommonBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetVeryRareBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEpicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetLegendaryBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetMythicBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetGodlyBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetEventBoxCount(Context.User.Id, 0);
+                        await Data.Data.SetWinCount(Context.User.Id, 0);
+                        await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
 
                     await Data.Data.SetRank(Context.User.Id, "Bronze");

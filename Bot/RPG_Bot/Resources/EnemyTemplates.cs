@@ -364,7 +364,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140272213852219/r9zecHs.gif", //URL
             2000, //Max Health
             1500, //Min Health
-            40, //Max Damage
+            275, //Max Damage
             15, //Min Damage
             10, //Max Level
             5, //Min Level
@@ -380,7 +380,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140199379501077/Unit_ills_full_30082.png", //URL
             400, //Max Health
             300, //Min Health
-            25, //Max Damage
+            250, //Max Damage
             10, //Min Damage
             15, //Max Level
             10, //Min Level
@@ -396,7 +396,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/546870671947333652/Unit_ills_full_30051.webp", //URL
             650, //Max Health
             450, //Min Health
-            40, //Max Damage
+            340, //Max Damage
             20, //Min Damage
             15, //Max Level
             10, //Min Level
@@ -412,7 +412,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850170684309514/Unit_ills_full_30052.webp", //URL
             1500, //Max Health
             950, //Min Health
-            80, //Max Damage
+            250, //Max Damage
             40, //Min Damage
             15, //Max Level
             10, //Min Level
@@ -428,7 +428,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/546855056566255618/detail_monster_03.png", //URL
             350, //Max Health
             300, //Min Health
-            30, //Max Damage
+            130, //Max Damage
             10, //Min Damage
             15, //Max Level
             10, //Min Level
@@ -444,7 +444,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/546855051558125589/Unit_RatLight_sprite.webp", //URL
             500, //Max Health
             350, //Min Health
-            20, //Max Damage
+            120, //Max Damage
             10, //Min Damage
             15, //Max Level
             10, //Min Level
@@ -460,7 +460,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/546870662715670529/NewTreant.webp", //URL
             500, //Max Health
             350, //Min Health
-            20, //Max Damage
+            80, //Max Damage
             10, //Min Damage
             15, //Max Level
             10, //Min Level
@@ -476,7 +476,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140112301817857/Unit_ills_full_40112.png", //URL
             300, //Max Health
             150, //Min Health
-            20, //Max Damage
+            820, //Max Damage
             10, //Min Damage
             15, //Max Level
             10, //Min Level
@@ -492,7 +492,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543139848987607050/Unit_ills_full_30050.png", //URL
             250, //Max Health
             150, //Min Health
-            25, //Max Damage
+            725, //Max Damage
             15, //Min Damage
             15, //Max Level
             10, //Min Level
@@ -508,7 +508,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543139896827707402/Unit_ills_full_30083.png", //URL
             4500, //Max Health
             3500, //Min Health
-            15, //Max Damage
+            715, //Max Damage
             5, //Min Damage
             15, //Max Level
             10, //Min Level
@@ -540,7 +540,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850213533188135/Unit_ills_full_30515.webp", //URL
             185000, //Max Health
             149500, //Min Health
-            285, //Max Damage
+            5285, //Max Damage
             155, //Min Damage
             200, //Max Level
             140, //Min Level
@@ -556,7 +556,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/544670992786653193/Gothkamul.png", //URL
             130000, //Max Health
             109000, //Min Health
-            80, //Max Damage
+            6480, //Max Damage
             15, //Min Damage
             500, //Max Level
             400, //Min Level
@@ -572,7 +572,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/544670990957936641/Rakdoro.png", //URL
             145900, //Max Health
             108800, //Min Health
-            120, //Max Damage
+            6320, //Max Damage
             40, //Min Damage
             500, //Max Level
             400, //Min Level
@@ -588,7 +588,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/544670996356136990/Arkdul.png", //URL
             280000, //Max Health
             230000, //Min Health
-            50, //Max Damage
+            5350, //Max Damage
             10, //Min Damage
             500, //Max Level
             400, //Min Level
@@ -604,7 +604,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/544670999648665600/Kenthros.png", //URL
             189900, //Max Health
             158000, //Min Health
-            80, //Max Damage
+            6580, //Max Damage
             30, //Min Damage
             500, //Max Level
             400, //Min Level
@@ -636,8 +636,8 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140199950188564/Unit_ills_full_20892.png", //URL
             1500, //Max Health
             1000, //Min Health
-            80, //Max Damage
-            10, //Min Damage
+            580, //Max Damage
+            110, //Min Damage
             30, //Max Level
             20, //Min Level
             35, //Max Gold Drop
@@ -652,8 +652,8 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/546855010802204673/38294-56f49eca3077358022c5214d1a55aa46.png", //URL
             2500, //Max Health
             2000, //Min Health
-            90, //Max Damage
-            10, //Min Damage
+            960, //Max Damage
+            310, //Min Damage
             30, //Max Level
             25, //Min Level
             35, //Max Gold Drop
@@ -668,8 +668,8 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543139940150804482/Unit_ills_full_20172.png", //URL
             2500, //Max Health
             2000, //Min Health
-            85, //Max Damage
-            10, //Min Damage
+            885, //Max Damage
+            510, //Min Damage
             30, //Max Level
             20, //Min Level
             55, //Max Gold Drop
@@ -684,9 +684,9 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543139899109277697/image_5.png", //URL
             20000, //Max Health
             15500, //Min Health
-            100, //Max Damage
+            1800, //Max Damage
             25, //Min Damage
-            30, //Max Level
+            830, //Max Level
             25, //Min Level
             650, //Max Gold Drop
             285, //Min Gold Drop
@@ -700,9 +700,9 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140114549833766/Unit_ills_full_21006.png", //URL
             30000, //Max Health
             24500, //Min Health
-            100, //Max Damage
-            50, //Min Damage
-            30, //Max Level
+            1100, //Max Damage
+            575, //Min Damage
+            730, //Max Level
             20, //Min Level
             500, //Max Gold Drop
             180, //Min Gold Drop
@@ -716,8 +716,8 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850229903556608/Unit_ills_full_40050.webp", //URL
             3500, //Max Health
             2800, //Min Health
-            120, //Max Damage
-            30, //Min Damage
+            720, //Max Damage
+            150, //Min Damage
             40, //Max Level
             30, //Min Level
             45, //Max Gold Drop
@@ -732,8 +732,8 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850218801233920/Unit_ills_full_40083.webp", //URL
             4500, //Max Health
             3800, //Min Health
-            150, //Max Damage
-            50, //Min Damage
+            850, //Max Damage
+            650, //Min Damage
             40, //Max Level
             35, //Min Level
             65, //Max Gold Drop
@@ -748,8 +748,8 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850231686266886/Unit_ills_full_40081.webp", //URL
             4300, //Max Health
             3400, //Min Health
-            80, //Max Damage
-            60, //Min Damage
+            980, //Max Damage
+            560, //Min Damage
             38, //Max Level
             33, //Min Level
             60, //Max Gold Drop
@@ -764,8 +764,8 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850167874256900/Unit_ills_full_20661.webp", //URL
             6500, //Max Health
             5500, //Min Health
-            120, //Max Damage
-            100, //Min Damage
+            720, //Max Damage
+            600, //Min Damage
             40, //Max Level
             37, //Min Level
             85, //Max Gold Drop
@@ -781,7 +781,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545308191978946610/Megaton.png", //URL
             8500, //Max Health
             6550, //Min Health
-            150, //Max Damage
+            750, //Max Damage
             5, //Min Damage
             50, //Max Level
             45, //Min Level
@@ -797,7 +797,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543139848987607051/image_6.png", //URL
             9000, //Max Health
             7000, //Min Health
-            150, //Max Damage
+            450, //Max Damage
             65, //Min Damage
             48, //Max Level
             40, //Min Level

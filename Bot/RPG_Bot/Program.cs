@@ -11,7 +11,7 @@ namespace RPG_Bot
 {
     class Program
     {
-        public static int UserCount = 462;
+        public static int UserCount = 0;
         //The bots token.
         private static string TOKEN = "";
         //The bots client.

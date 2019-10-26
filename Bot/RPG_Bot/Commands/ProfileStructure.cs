@@ -157,6 +157,39 @@ namespace RPG_Bot.Currency
             uint eventItem = Data.Data.GetData_Event1(vuser.Id);
             uint guildGems = Data.Data.GetData_Event3(vuser.Id);
             uint neededXP = (Data.Data.GetData_Level(vuser.Id) * Data.Data.GetData_Level(vuser.Id));
+            uint currentArmor = 0;
+            uint currentRegen = 0;
+
+            if (Data.Data.GetHelmet(vuser.Id) != null)
+            {
+                currentArmor += Data.Data.GetHelmet(vuser.Id).Armor;
+                currentRegen += Data.Data.GetHelmet(vuser.Id).HealthGainOnDamage;
+            }
+            if (Data.Data.GetChestplate(vuser.Id) != null)
+            {
+                currentArmor += Data.Data.GetChestplate(vuser.Id).Armor;
+                currentRegen += Data.Data.GetChestplate(vuser.Id).HealthGainOnDamage;
+            }
+            if (Data.Data.GetGauntlet(vuser.Id) != null)
+            {
+                currentArmor += Data.Data.GetGauntlet(vuser.Id).Armor;
+                currentRegen += Data.Data.GetGauntlet(vuser.Id).HealthGainOnDamage;
+            }
+            if (Data.Data.GetBelt(vuser.Id) != null)
+            {
+                currentArmor += Data.Data.GetBelt(vuser.Id).Armor;
+                currentRegen += Data.Data.GetBelt(vuser.Id).HealthGainOnDamage;
+            }
+            if (Data.Data.GetLeggings(vuser.Id) != null)
+            {
+                currentArmor += Data.Data.GetLeggings(vuser.Id).Armor;
+                currentRegen += Data.Data.GetLeggings(vuser.Id).HealthGainOnDamage;
+            }
+            if (Data.Data.GetBoots(vuser.Id) != null)
+            {
+                currentArmor += Data.Data.GetBoots(vuser.Id).Armor;
+                currentRegen += Data.Data.GetBoots(vuser.Id).HealthGainOnDamage;
+            }
 
             Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
             Embed.WithAuthor("Profile of: " + user.Username, user.GetAvatarUrl());
@@ -164,7 +197,7 @@ namespace RPG_Bot.Currency
             Embed.WithFooter("XP until level up: " + currentXp + " / " + neededXP);
             Embed.WithDescription("Class: " + classType + " " + classEmoji + "\nName: " + name + " <:freedomdove:543112388996497419>\nAge: " + age + " <:Age:543112389160337408>\n" + "\nGold Coins: " + coins + " <:Coins:543112388493312000>\n" +
                 "You have " + guildGems + " <:GuildGem:545341213004529725>\n\n" +
-                "Level: " + level + " <:Level:543112387989995521>\n" + "Health: " + health + " <:Health:543112384848461832>\n" + "Damage: " + damage + " <:Damage:543112387763503124>\n\n" +
+                "Level: " + level + " <:Level:543112387989995521>\n" + "Health: " + currentHealth + "/" + health + " <:Health:543112384848461832>\nArmor: " + currentArmor + " <:Armor:637402506992812042>\nHealth Regeneration: " + currentRegen + " <:Regeneration:637403443744735253>\nDamage: " + damage + " <:Damage:543112387763503124>\n\n" +
                 "You have " + eventItem + " Essence (Event Item)<:Essence:567480672344866867>");
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
         }
