@@ -171,7 +171,7 @@ namespace RPG_Bot.Resources
         {
             "Sturdy", "Heavy", "Enchanted", "Infused", "Light", "Iron", "Steel", "Bronze", "Copper", "Cloth", "Magic", "Wizards", "Witchdoctors",
             "Knights", "Kings", "Berserkers", "Kitsunes", "Archers", "Assassins", "Rogues", "Witches", "Wizards", "Tricksters", "Swordsman",
-            "Paladins", "Nechromancers", "Monks", "Evangels", "Tamers", "Imps", "Wisps", "Misty", "Cloudy", "Shadowed", "Flaming", "Slime Gel",
+            "Paladins", "Necromancers", "Monks", "Evangels", "Tamers", "Imps", "Wisps", "Misty", "Cloudy", "Shadowed", "Flaming", "Slime Gel",
             "Goblin Cloth", "Skeleton Bone", "Rat Hide", "Living Tree Wood", "Ent Bark", "Hornet Chitin", "Haunted Wood", "Golem Stone", "Shroomling Flesh",
             "Cyclops Chain", "Hob Goblins", "Frost Crystal", "Frost Bear Hide", "Frost Knight Plated", "Frost Wolf Fur", "Enchanted Wood", "Silver Mimic Plated",
             "Silver", "Frost Dragon Scale", "Frost Essence", "Flame Essence", "Dark Essence", "Light Essence", "Earth Essence", "Life Essence", "Living Essence",

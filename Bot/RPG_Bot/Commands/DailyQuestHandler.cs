@@ -197,14 +197,17 @@ namespace RPG_Bot.Commands
                 godTitle = "Ingrit, God of the Hunt";
             }
 
-            Embed.WithDescription(godTitle + " grants you " + coins + " Gold Coins and " + gems + "<:GuildGem:545341213004529725> as a blessing!");
+            uint candies = (uint)rng.Next(1, 15);
+
+            Embed.WithDescription(godTitle + " grants you " + coins + " Gold Coins and " + gems + "<:GuildGem:545341213004529725> as a blessing!" +
+                /* Event addition */ "\nAdditionally you are blessed with " + candies + "<:Candy:637578758986924035>!");
             Embed.WithColor(40, 200, 150);
             Embed.Color = Color.Gold;
             Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
             Embed.WithFooter("A new daily blessing will be available at 4:00 PM PST.");
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
             await Data.Data.SaveData(Context.User.Id, (uint)coins, 0, "", 0, 0, 0, 0, 0);
-            await Data.Data.SaveEventData(Context.User.Id, 0, 0, (uint)gems);
+            await Data.Data.SaveEventData(Context.User.Id, 0, candies, (uint)gems);
             await Data.Data.SetDailyClaimed(Context.User.Id, date);
         }
     }

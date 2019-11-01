@@ -77,7 +77,7 @@ namespace RPG_Bot.Commands
                     input[0] == "archer" || input[0] == "knight" || input[0] == "rogue" ||
                     input[0] == "wizard" || input[0] == "witch" || input[0] == "assassin" ||
                     input[0] == "Swordsman" || input[0] == "swordsman") || input[0] == "Paladin" ||
-                    input[0] == "paladin" || input[0] == "Nechromancer" || input[0] == "nechromancer" ||
+                    input[0] == "paladin" || input[0] == "Necromancer" || input[0] == "Necromancer" ||
                     input[0] == "Monk" || input[0] == "monk" || input[0] == "Kitsune" || input[0] == "kitsune" ||
                     input[0] == "Evangel" || input[0] == "evangel" || input[0] == "Berserker" || input[0] == "berserker" ||
                     input[0] == "Tamer" || input[0] == "tamer" || input[0] == "Berzerker" || input[0] == "berzerker")
@@ -432,13 +432,13 @@ namespace RPG_Bot.Commands
                         await Data.Data.SetWinCount(Context.User.Id, 0);
                         await Data.Data.SetLoseCount(Context.User.Id, 0);
                     }
-                    else if (input[0] == "Nechromancer" || input[0] == "nechromancer")
+                    else if (input[0] == "Necromancer" || input[0] == "Necromancer")
                     {
                         Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904652009046026/Nechromancer.webp");
                         //var role2 = Context.Guild.GetRole(542217793601536010);
                         //await (user as IGuildUser).AddRoleAsync(role2);
                         await Data.Data.SaveData(user.Id, 550, x, input[1], 65, 5, 1, 0, 0);
-                        await Data.Data.SetClass(Context.User.Id, "Nechromancer");
+                        await Data.Data.SetClass(Context.User.Id, "Necromancer");
                         await Data.Data.DeleteHelmet(Context.User.Id);
                         await Data.Data.DeleteChestplate(Context.User.Id);
                         await Data.Data.DeleteGauntlets(Context.User.Id);
@@ -696,7 +696,7 @@ namespace RPG_Bot.Commands
                                  "\n<:Trickster:566917752875384834>Trickster - High Damage, Very Vulnerable" +
                                  "\n<:Swordsman:566917753085362186>Swordsman - Medium Damage, Somewhat Durable" +
                                  "\n<:Paladin:566917753081036800>Paladin - Low Damage, Very Tanky" +
-                                 "\n<:Nechromancer:566917752640503809>Nechromancer - Extreme Damage, Very Fragile" +
+                                 "\n<:Nechromancer:566917752640503809>Necromancer - Extreme Damage, Very Fragile" +
                                  "\n<:Monk:566917753009602570>Monk - Medium Damage, Somewhat Durable" +
                                  "\n<:Kitsune:566917752380719139>Kitsune - Extreme Damage, Very Fragile" +
                                  "\n<:Evangel:566917753450266645>Evangel - Medium Damage, Somewhat Durable" +
@@ -732,26 +732,27 @@ namespace RPG_Bot.Commands
                     "\n**2.)** Begin/Signup: `-begin [Class] [Name] [Age]`." +
                     "\n**3.)** List available classes: `-class` or `-classes`." +
                     "\n**4.)** Spawn an enemy: `-spawn` or `-s` (See `-help spawn` for more details." +
-                    "\n**5.)** View your profile: `-profile` or `-p`" +
-                    "\n**6.)** View another users profile: `-profile [@user]` or `-p [@user]`" +
-                    "\n**7.)** Give another user gold: `-gold give [@user] [amount]`" +
-                    "\n**8.)** View how much gold you have: `-profile` or `-gold` or `-gold me`" +
-                    "\n**9.)** Check how many users are in the server: `-current`" +
-                    "\n**10.)** Check the guilds gold leaderboard: `-leaderboard` or `-lb`" +
-                    "\n**11.)** Go on a quest: `-quest` or `-q`" +
-                    "\n**12.)** Fight a spawned monster: `-fight` or `-f`" +
-                    "\n**13.)** Change your class for 500<:Coins:543112388493312000>: `-SwitchClass` or `-ChangeClass`" +
-                    "\n**14.)** Preview the starting stats of a class and the profile image of it: `-info [ClassName]`" +
-                    "\n\n\n" +
-                    "**[Admin Only](Note: Admin only does not mean server administrator, it means bot administrators in this context)**" +
-                    "\n**1.)** Prune/Remove mass messages: `-prune [Amount]`" +
-                    "\n**2.)** Spam someone because they're dumb: `-spam [User] [Amount]`" +
-                    "\n**3.)** Remove gold from a user: `-gold take [user]` or `-gold remove [user]`" +
-                    "\n**4.)** Give yourself large amounts of damage: `-thanos`" +
-                    "\n**5.)** Send a server notice through the boss `-notice [Message]`" +
+                    "\n**5.)** View your profile: `-profile` or `-p`." +
+                    "\n**6.)** View another users profile: `-profile [@user]` or `-p [@user]`." +
+                    "\n**7.)** Give another user gold: `-gold give [@user] [amount]`." +
+                    "\n**8.)** View how much gold you have: `-profile` or `-gold` or `-gold me`." +
+                    "\n**9.)** Check how many users are in the server: `-current`." +
+                    "\n**10.)** Check the guilds gold leaderboard: `-leaderboard` or `-lb`." +
+                    "\n**11.)** Go on a quest: `-quest` or `-q`." +
+                    "\n**12.)** Fight a spawned monster: `-fight` or `-f`. Additionally you may do -f [x] to simulate x turns.." +
+                    "\n**13.)** Change your class for 500<:Coins:543112388493312000>: `-SwitchClass` or `-ChangeClass`." +
+                    "\n**14.)** Preview the starting stats of a class and the profile image of it: `-info [ClassName]`." +
+                    "\n**15.)** Preview your current equipment: `-Equipment [Helmet, Gauntlets, Chestplate, Leggings, Boots]`." +
+                    "\n**16.)** Equip a dropped item: `-Equip`." +
+                    "\n**17.)** Sell an item you have equipped, or sell a dropped item: `-Sell [Helmet, Gauntlets, Chestplate, Leggings, Boots, Drop]`." +
+                    "\n**18.)** See your current lootbox inventory: `-Lootbox`." +
+                    "\n**19.)** Open up a lootbox you own: `-Lootbox [Common, Uncommon, Rare, VeryRare, Legendary, Mythic, Godly]`." +
+                    "\n**20.)** See the current candy event shop: `-Event CandyShop`." +
+                    "\n**21.)** See your current skill points: `-skills`." +
+                    "\n**22.)** Upgrade a certain skill with a skill point: `-skills [Stamina, Stability, Dexterity, Strength, Charisma, Luck]`." +
                     "\n\n\n\nServer Admins & Owners:" +
-                    "\n1.) Initialize the bot with your server(this will generate about 20 new text channels): ``-StartServer``" +
-                    "\n2.) Delete all channels and roles the bot generated upon being started: ``-Cleanup``\n\n" +
+                    "\n1.) Initialize the bot with your server(this will generate about 20 new text channels): ``-StartServer``." +
+                    "\n2.) Delete all channels and roles the bot generated upon being started: ``-Cleanup``.\n\n" +
                     "See the full documentation of commands here: https://justiceshultz.github.io/pages/DiscordBotDocs.html");
                 Embed.WithColor(40, 200, 150);
                 Embed.Color = Color.Gold;

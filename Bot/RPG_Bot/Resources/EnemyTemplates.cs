@@ -30,8 +30,10 @@ namespace RPG_Bot.Resources
         public uint MaxXpDrop { get; set; }
         public uint MinXpDrop { get; set; }
         public string Name { get; set; }
+        public bool IsDead { get; set; }
+        public bool IsInCombat { get; set; }
 
-        public Enemy(string url, uint maxHealth, uint minHealth, uint maxDamage, uint minDamage, uint maxLevel, uint minLevel, uint maxGoldDrop, uint minGoldDrop, uint maxXPDrop, uint minXPDrop, string name)
+        public Enemy(string url, uint maxHealth, uint minHealth, uint maxDamage, uint minDamage, uint maxLevel, uint minLevel, uint maxGoldDrop, uint minGoldDrop, uint maxXPDrop, uint minXPDrop, string name, bool isDead = false, bool isInCombat = false)
         {
             WebURL = url;
             MaxHealth = maxHealth;
@@ -46,6 +48,8 @@ namespace RPG_Bot.Resources
             MaxXpDrop = maxXPDrop;
             MinXpDrop = minXPDrop;
             Name = name;
+            IsDead = isDead;
+            IsInCombat = isInCombat;
         }
     }
 
@@ -204,14 +208,14 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140066369863682/Unit_ills_full_30932.png", //URL
             800, //Max Health
             500, //Min Health
-            50, //Max Damage
+            80, //Max Damage
             15, //Min Damage
             20, //Max Level
             15, //Min Level
             45, //Max Gold Drop
             1, //Min Gold Drop
-            30, //Max XP Drop
-            15, //Min XP Drop
+            50, //Max XP Drop
+            30, //Min XP Drop
             "Golem" //Unit Name
         );
 
@@ -220,14 +224,14 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/546855004120678400/Unit_BigMushroomFire_sprite.webp", //URL
             600, //Max Health
             400, //Min Health
-            40, //Max Damage
+            70, //Max Damage
             15, //Min Damage
             20, //Max Level
             15, //Min Level
             45, //Max Gold Drop
             1, //Min Gold Drop
-            20, //Max XP Drop
-            12, //Min XP Drop
+            60, //Max XP Drop
+            22, //Min XP Drop
             "Shroomling" //Unit Name
         );
 
@@ -235,15 +239,15 @@ namespace RPG_Bot.Resources
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/546870728184823808/Unit_ills_full_40072.webp", //URL
             900, //Max Health
-            700, //Min Health
+            125, //Min Health
             70, //Max Damage
             25, //Min Damage
             20, //Max Level
             15, //Min Level
             45, //Max Gold Drop
             1, //Min Gold Drop
-            40, //Max XP Drop
-            22, //Min XP Drop
+            80, //Max XP Drop
+            12, //Min XP Drop
             "Cyclops" //Unit Name
         );
 
@@ -258,8 +262,8 @@ namespace RPG_Bot.Resources
             1, //Min Level
             8, //Max Gold Drop
             1, //Min Gold Drop
-            3, //Max XP Drop
-            1, //Min XP Drop
+            7, //Max XP Drop
+            3, //Min XP Drop
             "Imp" //Unit Name
         );
 
@@ -274,7 +278,7 @@ namespace RPG_Bot.Resources
             15, //Min Level
             25, //Max Gold Drop
             10, //Min Gold Drop
-            55, //Max XP Drop
+            125, //Max XP Drop
             30, //Min XP Drop
             "Hob Goblin" //Unit Name
         );
@@ -306,8 +310,8 @@ namespace RPG_Bot.Resources
             5, //Min Level
             35, //Max Gold Drop
             1, //Min Gold Drop
-            5, //Max XP Drop
-            1, //Min XP Drop
+            10, //Max XP Drop
+            3, //Min XP Drop
             "Upgraded Training Bot" //Unit Name
         );
 
@@ -322,7 +326,7 @@ namespace RPG_Bot.Resources
             5, //Min Level
             35, //Max Gold Drop
             1, //Min Gold Drop
-            4, //Max XP Drop
+            13, //Max XP Drop
             1, //Min XP Drop
             "Skeleton" //Unit Name
         );
@@ -338,7 +342,7 @@ namespace RPG_Bot.Resources
             7, //Min Level
             35, //Max Gold Drop
             10, //Min Gold Drop
-            8, //Max XP Drop
+            18, //Max XP Drop
             3, //Min XP Drop
             "Armed Training Bot" //Unit Name
         );
@@ -354,7 +358,7 @@ namespace RPG_Bot.Resources
             7, //Min Level
             30, //Max Gold Drop
             10, //Min Gold Drop
-            7, //Max XP Drop
+            17, //Max XP Drop
             3, //Min XP Drop
             "Skeleton Foot Soldier" //Unit Name
         );
@@ -364,13 +368,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140272213852219/r9zecHs.gif", //URL
             2000, //Max Health
             1500, //Min Health
-            275, //Max Damage
+            150, //Max Damage
             15, //Min Damage
             10, //Max Level
             5, //Min Level
             250, //Max Gold Drop
             120, //Min Gold Drop
-            25, //Max XP Drop
+            225, //Max XP Drop
             10, //Min XP Drop
             "[BOSS] Kerthgore the Mad Scientist" //Unit Name
         );
@@ -380,14 +384,14 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140199379501077/Unit_ills_full_30082.png", //URL
             400, //Max Health
             300, //Min Health
-            250, //Max Damage
+            150, //Max Damage
             10, //Min Damage
             15, //Max Level
             10, //Min Level
             35, //Max Gold Drop
             12, //Min Gold Drop
             20, //Max XP Drop
-            10, //Min XP Drop
+            15, //Min XP Drop
             "Haunted Tree" //Unit Name
         );
 
@@ -396,13 +400,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/546870671947333652/Unit_ills_full_30051.webp", //URL
             650, //Max Health
             450, //Min Health
-            340, //Max Damage
+            230, //Max Damage
             20, //Min Damage
             15, //Max Level
             10, //Min Level
             35, //Max Gold Drop
             12, //Min Gold Drop
-            35, //Max XP Drop
+            40, //Max XP Drop
             15, //Min XP Drop
             "Giant Tree Ent" //Unit Name
         );
@@ -412,13 +416,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850170684309514/Unit_ills_full_30052.webp", //URL
             1500, //Max Health
             950, //Min Health
-            250, //Max Damage
+            210, //Max Damage
             40, //Min Damage
             15, //Max Level
             10, //Min Level
             55, //Max Gold Drop
             32, //Min Gold Drop
-            45, //Max XP Drop
+            125, //Max XP Drop
             25, //Min XP Drop
             "Giga Tree Ent" //Unit Name
         );
@@ -428,13 +432,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/546855056566255618/detail_monster_03.png", //URL
             350, //Max Health
             300, //Min Health
-            130, //Max Damage
+            110, //Max Damage
             10, //Min Damage
             15, //Max Level
             10, //Min Level
             35, //Max Gold Drop
             12, //Min Gold Drop
-            16, //Max XP Drop
+            45, //Max XP Drop
             10, //Min XP Drop
             "Giant Hornet" //Unit Name
         );
@@ -444,13 +448,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/546855051558125589/Unit_RatLight_sprite.webp", //URL
             500, //Max Health
             350, //Min Health
-            120, //Max Damage
+            90, //Max Damage
             10, //Min Damage
             15, //Max Level
             10, //Min Level
             35, //Max Gold Drop
             12, //Min Gold Drop
-            20, //Max XP Drop
+            40, //Max XP Drop
             13, //Min XP Drop
             "Giant Rat" //Unit Name
         );
@@ -460,13 +464,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/546870662715670529/NewTreant.webp", //URL
             500, //Max Health
             350, //Min Health
-            80, //Max Damage
+            70, //Max Damage
             10, //Min Damage
             15, //Max Level
             10, //Min Level
             35, //Max Gold Drop
             12, //Min Gold Drop
-            20, //Max XP Drop
+            30, //Max XP Drop
             13, //Min XP Drop
             "Treant" //Unit Name
         );
@@ -476,13 +480,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140112301817857/Unit_ills_full_40112.png", //URL
             300, //Max Health
             150, //Min Health
-            820, //Max Damage
+            400, //Max Damage
             10, //Min Damage
             15, //Max Level
             10, //Min Level
             25, //Max Gold Drop
             5, //Min Gold Drop
-            8, //Max XP Drop
+            16, //Max XP Drop
             1, //Min XP Drop
             "Goblin Wolf" //Unit Name
         );
@@ -492,7 +496,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543139848987607050/Unit_ills_full_30050.png", //URL
             250, //Max Health
             150, //Min Health
-            725, //Max Damage
+            120, //Max Damage
             15, //Min Damage
             15, //Max Level
             10, //Min Level
@@ -508,14 +512,14 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543139896827707402/Unit_ills_full_30083.png", //URL
             4500, //Max Health
             3500, //Min Health
-            715, //Max Damage
-            5, //Min Damage
+            400, //Max Damage
+            205, //Min Damage
             15, //Max Level
             10, //Min Level
             250, //Max Gold Drop
             45, //Min Gold Drop
-            35, //Max XP Drop
-            15, //Min XP Drop
+            160, //Max XP Drop
+            100, //Min XP Drop
             "[BOSS] Trenthola the Living Tree" //Unit Name
         );
 
@@ -556,7 +560,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/544670992786653193/Gothkamul.png", //URL
             130000, //Max Health
             109000, //Min Health
-            6480, //Max Damage
+            2650, //Max Damage
             15, //Min Damage
             500, //Max Level
             400, //Min Level
@@ -572,7 +576,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/544670990957936641/Rakdoro.png", //URL
             145900, //Max Health
             108800, //Min Health
-            6320, //Max Damage
+            3025, //Max Damage
             40, //Min Damage
             500, //Max Level
             400, //Min Level
@@ -588,7 +592,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/544670996356136990/Arkdul.png", //URL
             280000, //Max Health
             230000, //Min Health
-            5350, //Max Damage
+            3500, //Max Damage
             10, //Min Damage
             500, //Max Level
             400, //Min Level
@@ -604,7 +608,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/544670999648665600/Kenthros.png", //URL
             189900, //Max Health
             158000, //Min Health
-            6580, //Max Damage
+            5450, //Max Damage
             30, //Min Damage
             500, //Max Level
             400, //Min Level
@@ -636,13 +640,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140199950188564/Unit_ills_full_20892.png", //URL
             1500, //Max Health
             1000, //Min Health
-            580, //Max Damage
+            380, //Max Damage
             110, //Min Damage
             30, //Max Level
             20, //Min Level
             35, //Max Gold Drop
             12, //Min Gold Drop
-            45, //Max XP Drop
+            185, //Max XP Drop
             5, //Min XP Drop
             "Frost Wolf" //Unit Name
         );
@@ -650,15 +654,15 @@ namespace RPG_Bot.Resources
         public static Enemy FrostBear = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/546855010802204673/38294-56f49eca3077358022c5214d1a55aa46.png", //URL
-            2500, //Max Health
-            2000, //Min Health
-            960, //Max Damage
-            310, //Min Damage
+            1900, //Max Health
+            1400, //Min Health
+            550, //Max Damage
+            50, //Min Damage
             30, //Max Level
             25, //Min Level
             35, //Max Gold Drop
             12, //Min Gold Drop
-            60, //Max XP Drop
+            150, //Max XP Drop
             35, //Min XP Drop
             "Frost Bear" //Unit Name
         );
@@ -666,17 +670,17 @@ namespace RPG_Bot.Resources
         public static Enemy FrostKnight = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/543139940150804482/Unit_ills_full_20172.png", //URL
-            2500, //Max Health
-            2000, //Min Health
-            885, //Max Damage
-            510, //Min Damage
+            2000, //Max Health
+            1800, //Min Health
+            365, //Max Damage
+            50, //Min Damage
             30, //Max Level
             20, //Min Level
             55, //Max Gold Drop
             13, //Min Gold Drop
-            55, //Max XP Drop
+            185, //Max XP Drop
             25, //Min XP Drop
-            "Frost Knights" //Unit Name
+            "Frost Knight" //Unit Name
         );
 
         public static Enemy BossIceDragon = new Enemy
@@ -684,14 +688,14 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543139899109277697/image_5.png", //URL
             20000, //Max Health
             15500, //Min Health
-            1800, //Max Damage
+            450, //Max Damage
             25, //Min Damage
-            830, //Max Level
+            30, //Max Level
             25, //Min Level
             650, //Max Gold Drop
             285, //Min Gold Drop
-            350, //Max XP Drop
-            185, //Min XP Drop
+            750, //Max XP Drop
+            285, //Min XP Drop
             "[BOSS] Frost Dragon" //Unit Name
         );
 
@@ -700,13 +704,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140114549833766/Unit_ills_full_21006.png", //URL
             30000, //Max Health
             24500, //Min Health
-            1100, //Max Damage
+            1000, //Max Damage
             575, //Min Damage
-            730, //Max Level
+            30, //Max Level
             20, //Min Level
             500, //Max Gold Drop
             180, //Min Gold Drop
-            400, //Max XP Drop
+            1200, //Max XP Drop
             250, //Min XP Drop
             "[BOSS] Frost Wolf - Pack Leader" //Unit Name
         );
@@ -714,15 +718,15 @@ namespace RPG_Bot.Resources
         public static Enemy Harpy = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/566850229903556608/Unit_ills_full_40050.webp", //URL
-            3500, //Max Health
-            2800, //Min Health
-            720, //Max Damage
-            150, //Min Damage
+            2200, //Max Health
+            1600, //Min Health
+            620, //Max Damage
+            50, //Min Damage
             40, //Max Level
             30, //Min Level
             45, //Max Gold Drop
             12, //Min Gold Drop
-            80, //Max XP Drop
+            380, //Max XP Drop
             45, //Min XP Drop
             "Harpy" //Unit Name
         );
@@ -730,15 +734,15 @@ namespace RPG_Bot.Resources
         public static Enemy HarpyShaman = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/566850218801233920/Unit_ills_full_40083.webp", //URL
-            4500, //Max Health
-            3800, //Min Health
-            850, //Max Damage
-            650, //Min Damage
+            3500, //Max Health
+            2800, //Min Health
+            550, //Max Damage
+            50, //Min Damage
             40, //Max Level
             35, //Min Level
             65, //Max Gold Drop
             32, //Min Gold Drop
-            95, //Max XP Drop
+            395, //Max XP Drop
             55, //Min XP Drop
             "Harpy Shaman" //Unit Name
         );
@@ -746,15 +750,15 @@ namespace RPG_Bot.Resources
         public static Enemy HarpyCaster = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/566850231686266886/Unit_ills_full_40081.webp", //URL
-            4300, //Max Health
-            3400, //Min Health
-            980, //Max Damage
-            560, //Min Damage
+            2300, //Max Health
+            1300, //Min Health
+            680, //Max Damage
+            60, //Min Damage
             38, //Max Level
             33, //Min Level
             60, //Max Gold Drop
             30, //Min Gold Drop
-            90, //Max XP Drop
+            390, //Max XP Drop
             50, //Min XP Drop
             "Harpy Caster" //Unit Name
         );
@@ -762,15 +766,15 @@ namespace RPG_Bot.Resources
         public static Enemy RoyalPelican = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/566850167874256900/Unit_ills_full_20661.webp", //URL
-            6500, //Max Health
-            5500, //Min Health
-            720, //Max Damage
-            600, //Min Damage
+            3500, //Max Health
+            2900, //Min Health
+            420, //Max Damage
+            20, //Min Damage
             40, //Max Level
             37, //Min Level
             85, //Max Gold Drop
             45, //Min Gold Drop
-            100, //Max XP Drop
+            300, //Max XP Drop
             65, //Min XP Drop
             "Royal Pelican" //Unit Name
         );
@@ -779,15 +783,15 @@ namespace RPG_Bot.Resources
         public static Enemy Megaton = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308191978946610/Megaton.png", //URL
-            8500, //Max Health
-            6550, //Min Health
-            750, //Max Damage
+            10500, //Max Health
+            9550, //Min Health
+            550, //Max Damage
             5, //Min Damage
             50, //Max Level
             45, //Min Level
             75, //Max Gold Drop
             25, //Min Gold Drop
-            95, //Max XP Drop
+            375, //Max XP Drop
             45, //Min XP Drop
             "Megaton" //Unit Name
         );
@@ -795,15 +799,15 @@ namespace RPG_Bot.Resources
         public static Enemy LizardMan = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/543139848987607051/image_6.png", //URL
-            9000, //Max Health
-            7000, //Min Health
-            450, //Max Damage
+            11000, //Max Health
+            8500, //Min Health
+            750, //Max Damage
             65, //Min Damage
             48, //Max Level
             40, //Min Level
             75, //Max Gold Drop
             25, //Min Gold Drop
-            125, //Max XP Drop
+            425, //Max XP Drop
             85, //Min XP Drop
             "Lizard Man" //Unit Name
         );
@@ -811,15 +815,15 @@ namespace RPG_Bot.Resources
         public static Enemy FishMan = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/546855015180926986/Unit_FishmanFire_sprite.webp", //URL
-            9000, //Max Health
-            6500, //Min Health
-            120, //Max Damage
+            11000, //Max Health
+            8500, //Min Health
+            620, //Max Damage
             65, //Min Damage
             45, //Max Level
             40, //Min Level
             75, //Max Gold Drop
             25, //Min Gold Drop
-            65, //Max XP Drop
+            480, //Max XP Drop
             40, //Min XP Drop
             "Fish Man" //Unit Name
         );
@@ -827,15 +831,15 @@ namespace RPG_Bot.Resources
         public static Enemy Leviathan = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/545308182235447305/Leviathan.png", //URL
-            13000, //Max Health
-            11500, //Min Health
-            120, //Max Damage
+            73000, //Max Health
+            61500, //Min Health
+            520, //Max Damage
             70, //Min Damage
             50, //Max Level
             48, //Min Level
             450, //Max Gold Drop
             225, //Min Gold Drop
-            250, //Max XP Drop
+            1250, //Max XP Drop
             185, //Min XP Drop
             "Leviathan" //Unit Name
         );
@@ -846,15 +850,15 @@ namespace RPG_Bot.Resources
         public static Enemy Salamander = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/566849954492973099/Unit_ills_full_10081.webp", //URL
-            33500, //Max Health
-            24500, //Min Health
-            460, //Max Damage
+            63500, //Max Health
+            44500, //Min Health
+            1460, //Max Damage
             120, //Min Damage
             60, //Max Level
             50, //Min Level
             112, //Max Gold Drop
             75, //Min Gold Drop
-            350, //Max XP Drop
+            650, //Max XP Drop
             100, //Min XP Drop
             "Salamander" //Unit Name
         );
@@ -862,15 +866,15 @@ namespace RPG_Bot.Resources
         public static Enemy SalamanderAdult = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/566849956623810560/Unit_ills_full_10082.webp", //URL
-            48500, //Max Health
-            25500, //Min Health
-            400, //Max Damage
+            78500, //Max Health
+            55500, //Min Health
+            1400, //Max Damage
             230, //Min Damage
             60, //Max Level
             56, //Min Level
             160, //Max Gold Drop
             105, //Min Gold Drop
-            450, //Max XP Drop
+            650, //Max XP Drop
             165, //Min XP Drop
             "Adult Salamander" //Unit Name
         );
@@ -878,15 +882,15 @@ namespace RPG_Bot.Resources
         public static Enemy SalamanderDragon = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/566849960126185504/Unit_ills_full_10092.webp", //URL
-            55500, //Max Health
-            33500, //Min Health
-            460, //Max Damage
+            155500, //Max Health
+            93500, //Min Health
+            660, //Max Damage
             120, //Min Damage
             60, //Max Level
             50, //Min Level
             112, //Max Gold Drop
             75, //Min Gold Drop
-            500, //Max XP Drop
+            700, //Max XP Drop
             120, //Min XP Drop
             "Salamander Dragon" //Unit Name
         );
@@ -894,9 +898,9 @@ namespace RPG_Bot.Resources
         public static Enemy SalamanderDragonAdult = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/566849963288428555/Unit_ills_full_10094.webp", //URL
-            223500, //Max Health
-            185500, //Min Health
-            480, //Max Damage
+            323500, //Max Health
+            285500, //Min Health
+            1480, //Max Damage
             40, //Min Damage
             60, //Max Level
             58, //Min Level
@@ -912,7 +916,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566849967055044611/Unit_ills_full_10095.webp", //URL
             233500, //Max Health
             180500, //Min Health
-            580, //Max Damage
+            1980, //Max Damage
             30, //Min Damage
             60, //Max Level
             59, //Min Level
@@ -930,13 +934,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850121745039371/Unit_ills_full_20261.webp", //URL
             63500, //Max Health
             47500, //Min Health
-            485, //Max Damage
+            2485, //Max Damage
             200, //Min Damage
             70, //Max Level
             60, //Min Level
             200, //Max Gold Drop
             135, //Min Gold Drop
-            550, //Max XP Drop
+            950, //Max XP Drop
             450, //Min XP Drop
             "Leech" //Unit Name
         );
@@ -946,7 +950,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850122890215425/Unit_ills_full_20262.webp", //URL
             99850, //Max Health
             57800, //Min Health
-            300, //Max Damage
+            2300, //Max Damage
             200, //Min Damage
             70, //Max Level
             60, //Min Level
@@ -962,13 +966,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850075100446721/Unit_ills_full_20081.webp", //URL
             89850, //Max Health
             57800, //Min Health
-            300, //Max Damage
+            2300, //Max Damage
             200, //Min Damage
             70, //Max Level
             60, //Min Level
             220, //Max Gold Drop
             145, //Min Gold Drop
-            750, //Max XP Drop
+            950, //Max XP Drop
             400, //Min XP Drop
             "Reaver" //Unit Name
         );
@@ -978,7 +982,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850058394271754/Unit_ills_full_20112.webp", //URL
             423500, //Max Health
             380500, //Min Health
-            440, //Max Damage
+            2440, //Max Damage
             180, //Min Damage
             70, //Max Level
             65, //Min Level
@@ -994,7 +998,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/566850073279856650/Unit_ills_full_20072.webp", //URL
             425000, //Max Health
             305500, //Min Health
-            320, //Max Damage
+            2320, //Max Damage
             240, //Min Damage
             70, //Max Level
             68, //Min Level
@@ -1010,13 +1014,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/543140200507899905/Gear-Cetus_Render.png", //URL
             245999, //Max Health
             178111, //Min Health
-            85, //Max Damage
+            2085, //Max Damage
             30, //Min Damage
-            50, //Max Level
-            40, //Min Level
+            80, //Max Level
+            70, //Min Level
             650, //Max Gold Drop
             225, //Min Gold Drop
-            450, //Max XP Drop
+            1650, //Max XP Drop
             350, //Min XP Drop
             "[BOSS] Cetus - Lord of Balance" //Unit Name
         );
@@ -1044,13 +1048,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545308240682942464/Bennu.webp", //URL
             165000, //Max Health
             50000, //Min Health
-            580, //Max Damage
+            5580, //Max Damage
             100, //Min Damage
             80, //Max Level
             70, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            1000, //Max XP Drop
+            2000, //Max XP Drop
             200, //Min XP Drop
             "Phoenix the Reborn" //Unit Name
         );
@@ -1060,13 +1064,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545308295053836301/Bergelmir.png", //URL
             186500, //Max Health
             63500, //Min Health
-            200, //Max Damage
+            6200, //Max Damage
             330, //Min Damage
             80, //Max Level
             70, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            1200, //Max XP Drop
+            2200, //Max XP Drop
             120, //Min XP Drop
             "Bergelmir the Great" //Unit Name
         );
@@ -1076,13 +1080,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545308179408355329/Hastur.png", //URL
             198500, //Max Health
             66500, //Min Health
-            225, //Max Damage
+            5225, //Max Damage
             100, //Min Damage
             80, //Max Level
             70, //Min Level
             500, //Max Gold Drop
             65, //Min Gold Drop
-            1200, //Max XP Drop
+            2200, //Max XP Drop
             100, //Min XP Drop
             "Hastur, Keeper of Mana" //Unit Name
         );
@@ -1092,13 +1096,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545308254318886913/Kirin.png", //URL
             174000, //Max Health
             51000, //Min Health
-            850, //Max Damage
+            6850, //Max Damage
             10, //Min Damage
             80, //Max Level
             70, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            1800, //Max XP Drop
+            2800, //Max XP Drop
             650, //Min XP Drop
             "Kirin the Storm" //Unit Name
         );
@@ -1108,13 +1112,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545308258085240863/Haechi.png", //URL
             195500, //Max Health
             79450, //Min Health
-            150, //Max Damage
+            5150, //Max Damage
             100, //Min Damage
             80, //Max Level
             70, //Min Level
             250, //Max Gold Drop
             50, //Min Gold Drop
-            950, //Max XP Drop
+            2950, //Max XP Drop
             300, //Min XP Drop
             "Haechi, Son of Fire" //Unit Name
         );
@@ -1124,13 +1128,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545308244403290132/Eight-Headed_Orochi.png", //URL
             120000, //Max Health
             77777, //Min Health
-            500, //Max Damage
+            6500, //Max Damage
             330, //Min Damage
             80, //Max Level
             90, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            1200, //Max XP Drop
+            2200, //Max XP Drop
             600, //Min XP Drop
             "Orochi, Head of Eight" //Unit Name
         );
@@ -1140,13 +1144,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545308139965251584/Eclipse.webp", //URL
             113500, //Max Health
             91150, //Min Health
-            500, //Max Damage
+            5500, //Max Damage
             180, //Min Damage
             80, //Max Level
             70, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            1250, //Max XP Drop
+            2250, //Max XP Drop
             250, //Min XP Drop
             "Eclipse of the Storm" //Unit Name
         );
@@ -1156,13 +1160,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545321867477516298/Niflheim.webp", //URL
             170000, //Max Health
             74500, //Min Health
-            500, //Max Damage
+            6500, //Max Damage
             180, //Min Damage
             80, //Max Level
             70, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            1360, //Max XP Drop
+            2360, //Max XP Drop
             100, //Min XP Drop
             "Niflheim of Hell" //Unit Name
         );
@@ -1172,13 +1176,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545321830706315274/Muspelheim.webp", //URL
             100500, //Max Health
             80500, //Min Health
-            500, //Max Damage
+            5500, //Max Damage
             180, //Min Damage
             80, //Max Level
             70, //Min Level
             250, //Max Gold Drop
             25, //Min Gold Drop
-            1500, //Max XP Drop
+            2500, //Max XP Drop
             150, //Min XP Drop
             "Muspelheim, Elemental of Heat" //Unit Name
         );
@@ -1190,13 +1194,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545322174001709129/Abyss_Dragon.webp", //URL
             200500, //Max Health
             180500, //Min Health
-            900, //Max Damage
+            7900, //Max Damage
             380, //Min Damage
             100, //Max Level
             90, //Min Level
             450, //Max Gold Drop
             45, //Min Gold Drop
-            2000, //Max XP Drop
+            4000, //Max XP Drop
             160, //Min XP Drop
             "Abyss Dragon" //Unit Name
         );
@@ -1206,13 +1210,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545323895511711764/Yamusichea.webp", //URL
             100550, //Max Health
             78050, //Min Health
-            600, //Max Damage
+            7600, //Max Damage
             400, //Min Damage
             100, //Max Level
             90, //Min Level
             480, //Max Gold Drop
             45, //Min Gold Drop
-            2120, //Max XP Drop
+            4120, //Max XP Drop
             25, //Min XP Drop
             "Yamusichea, the Almighty" //Unit Name
         );
@@ -1222,13 +1226,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545323841715568640/Mega_Flare.webp", //URL
             180000, //Max Health
             100000, //Min Health
-            800, //Max Damage
+            8800, //Max Damage
             600, //Min Damage
             100, //Max Level
             98, //Min Level
             750, //Max Gold Drop
             500, //Min Gold Drop
-            2650, //Max XP Drop
+            4650, //Max XP Drop
             200, //Min XP Drop
             "Flare, Lord of Power" //Unit Name
         );
@@ -1238,13 +1242,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545308131677306910/Skeletor_X.webp", //URL
             190000, //Max Health
             100000, //Min Health
-            800, //Max Damage
+            9800, //Max Damage
             600, //Min Damage
             100, //Max Level
             98, //Min Level
             750, //Max Gold Drop
             500, //Min Gold Drop
-            2805, //Max XP Drop
+            4805, //Max XP Drop
             1200, //Min XP Drop
             "Skeletor, Lord of the Abyss" //Unit Name
         );
@@ -1254,13 +1258,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545323665210867713/Khan.webp", //URL
             200000, //Max Health
             100000, //Min Health
-            800, //Max Damage
+            10800, //Max Damage
             600, //Min Damage
             100, //Max Level
             98, //Min Level
             750, //Max Gold Drop
             500, //Min Gold Drop
-            1800, //Max XP Drop
+            4800, //Max XP Drop
             200, //Min XP Drop
             "Khan, Lord of the Undead" //Unit Name
         );
@@ -1270,13 +1274,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545308301089439754/Crom_Cruach.png", //URL
             195500, //Max Health
             88500, //Min Health
-            600, //Max Damage
+            10600, //Max Damage
             400, //Min Damage
             100, //Max Level
             90, //Min Level
             520, //Max Gold Drop
             85, //Min Gold Drop
-            1780, //Max XP Drop
+            4780, //Max XP Drop
             25, //Min XP Drop
             "Crom the Lich King" //Unit Name
         );
@@ -1286,13 +1290,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545308291014721556/Bone_T._Rex.png", //URL
             312050, //Max Health
             250000, //Min Health
-            300, //Max Damage
+            12300, //Max Damage
             200, //Min Damage
             100, //Max Level
             98, //Min Level
             480, //Max Gold Drop
             45, //Min Gold Drop
-            2800, //Max XP Drop
+            4800, //Max XP Drop
             125, //Min XP Drop
             "Rex, Lord of the Underworld" //Unit Name
         );
@@ -1302,13 +1306,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545323686866059286/Vasuki.webp", //URL
             318550, //Max Health
             27850, //Min Health
-            300, //Max Damage
+            14300, //Max Damage
             200, //Min Damage
             100, //Max Level
             99, //Min Level
             650, //Max Gold Drop
             250, //Min Gold Drop
-            2650, //Max XP Drop
+            4650, //Max XP Drop
             1250, //Min XP Drop
             "Vasuki, Goddess of the Lakes" //Unit Name
         );
@@ -1318,13 +1322,13 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/545323709301260300/image.webp", //URL
             308550, //Max Health
             207850, //Min Health
-            600, //Max Damage
+            16600, //Max Damage
             400, //Min Damage
             100, //Max Level
             90, //Min Level
             480, //Max Gold Drop
             45, //Min Gold Drop
-            2500, //Max XP Drop
+            4500, //Max XP Drop
             125, //Min XP Drop
             "Thunder, King of Hurricanes" //Unit Name
         );
@@ -1334,13 +1338,13 @@ namespace RPG_Bot.Resources
            "https://cdn.discordapp.com/attachments/542225685695954945/545323826112888842/Taigon.webp", //URL
            210000, //Max Health
            94500, //Min Health
-           600, //Max Damage
+           17600, //Max Damage
            400, //Min Damage
            100, //Max Level
            90, //Min Level
            480, //Max Gold Drop
            45, //Min Gold Drop
-           2300, //Max XP Drop
+           4300, //Max XP Drop
            125, //Min XP Drop
            "Taigon, Lord of Beasts" //Unit Name
         );
@@ -1352,13 +1356,13 @@ namespace RPG_Bot.Resources
            "https://cdn.discordapp.com/attachments/542225685695954945/544791450068713483/439083435961745409.gif", //URL
            1145000, //Max Health
            1112500, //Min Health
-           1250, //Max Damage
+           9250, //Max Damage
            100, //Min Damage
            100, //Max Level
            100, //Min Level
            1000, //Max Gold Drop
            500, //Min Gold Drop
-           5000, //Max XP Drop
+           9000, //Max XP Drop
            3500, //Min XP Drop
            "Mighty Duck" //Unit Name
         );
@@ -1368,13 +1372,13 @@ namespace RPG_Bot.Resources
            "https://cdn.discordapp.com/attachments/542225685695954945/545321849131892736/Masamune.webp", //URL
            3200000, //Max Health
            1940050, //Min Health
-           800, //Max Damage
+           7900, //Max Damage
            600, //Min Damage
            100, //Max Level
            100, //Min Level
            1000, //Max Gold Drop
            800, //Min Gold Drop
-           6000, //Max XP Drop
+           9000, //Max XP Drop
            3205, //Min XP Drop
            "Masamune the Spirit Lord" //Unit Name
         );
@@ -1384,13 +1388,13 @@ namespace RPG_Bot.Resources
            "https://cdn.discordapp.com/attachments/542225685695954945/545321889128644624/Destroyer.webp", //URL
            2250000, //Max Health
            1945000, //Min Health
-           1000, //Max Damage
+           8800, //Max Damage
            600, //Min Damage
            100, //Max Level
            100, //Min Level
            1450, //Max Gold Drop
            900, //Min Gold Drop
-           7000, //Max XP Drop
+           9000, //Max XP Drop
            4205, //Min XP Drop
            "Rourtu the Punisher" //Unit Name
         );
@@ -1400,13 +1404,13 @@ namespace RPG_Bot.Resources
            "https://cdn.discordapp.com/attachments/542225685695954945/545308191462785053/Sea_Dragon.png", //URL
            2500000, //Max Health
            1945000, //Min Health
-           1000, //Max Damage
+           7890, //Max Damage
            600, //Min Damage
            100, //Max Level
            100, //Min Level
            1450, //Max Gold Drop
            900, //Min Gold Drop
-           7000, //Max XP Drop
+           9000, //Max XP Drop
            4250, //Min XP Drop
            "Trikento the Sea Dragon" //Unit Name
         );
@@ -1416,13 +1420,13 @@ namespace RPG_Bot.Resources
            "https://cdn.discordapp.com/attachments/542225685695954945/545321784577097745/Blackout.webp", //URL
            2500000, //Max Health
            1945000, //Min Health
-           1000, //Max Damage
+           11000, //Max Damage
            600, //Min Damage
            100, //Max Level
            100, //Min Level
            1450, //Max Gold Drop
            900, //Min Gold Drop
-           7000, //Max XP Drop
+           9000, //Max XP Drop
            4250, //Min XP Drop
            "Blackout, Lord of Light" //Unit Name
         );
@@ -1432,15 +1436,113 @@ namespace RPG_Bot.Resources
            "https://cdn.discordapp.com/attachments/542225685695954945/545321805754269706/Yggdrasil.webp", //URL
            3000000, //Max Health
            1900450, //Min Health
-           1000, //Max Damage
-           600, //Min Damage
+           10000, //Max Damage
+           10, //Min Damage
            100, //Max Level
            100, //Min Level
            1450, //Max Gold Drop
            900, //Min Gold Drop
-           7000, //Max XP Drop
+           9000, //Max XP Drop
            4250, //Min XP Drop
            "Yggdrasil, Queen of Life" //Unit Name
+        );
+        #endregion
+
+        #region Halloween Spooktober Enemies
+        public static Enemy Pumpkinling = new Enemy
+        (
+           "https://cdn.discordapp.com/attachments/542225685695954945/637578405860081666/Unit_ills_full_18830.webp", //URL
+           60, //Max Health
+           20, //Min Health
+           10, //Max Damage
+           4, //Min Damage
+           5, //Max Level
+           1, //Min Level
+           3, //Max Gold Drop
+           1, //Min Gold Drop
+           13, //Max XP Drop
+           5, //Min XP Drop
+           "Pumpkinling" //Unit Name
+        );
+
+        public static Enemy GiantSpider = new Enemy
+        (
+           "https://cdn.discordapp.com/attachments/542225685695954945/637578395064205334/Unit_ills_full_60261.webp", //URL
+           1895, //Max Health
+           1500, //Min Health
+           165, //Max Damage
+           50, //Min Damage
+           15, //Max Level
+           10, //Min Level
+           200, //Max Gold Drop
+           50, //Min Gold Drop
+           60, //Max XP Drop
+           2, //Min XP Drop
+           "Giant Spider" //Unit Name
+        );
+
+        public static Enemy GiantArachne = new Enemy
+        (
+           "https://cdn.discordapp.com/attachments/542225685695954945/637578405344182282/Unit_ills_full_60262.webp", //URL
+           3895, //Max Health
+           2500, //Min Health
+           235, //Max Damage
+           100, //Min Damage
+           30, //Max Level
+           25, //Min Level
+           300, //Max Gold Drop
+           250, //Min Gold Drop
+           130, //Max XP Drop
+           10, //Min XP Drop
+           "Giant Arachne" //Unit Name
+        );
+
+        public static Enemy Wraith = new Enemy
+        (
+           "https://cdn.discordapp.com/attachments/542225685695954945/637578405033934864/Unit_ills_full_60103.webp", //URL
+           4895, //Max Health
+           3500, //Min Health
+           535, //Max Damage
+           300, //Min Damage
+           40, //Max Level
+           35, //Min Level
+           400, //Max Gold Drop
+           350, //Min Gold Drop
+           280, //Max XP Drop
+           45, //Min XP Drop
+           "Wraith" //Unit Name
+        );
+
+        public static Enemy GreaterWraith = new Enemy
+        (
+           "https://cdn.discordapp.com/attachments/542225685695954945/637578400445235260/Unit_ills_full_60104.webp", //URL
+           14895, //Max Health
+           13500, //Min Health
+           1535, //Max Damage
+           1300, //Min Damage
+           70, //Max Level
+           65, //Min Level
+           1400, //Max Gold Drop
+           1350, //Min Gold Drop
+           480, //Max XP Drop
+           245, //Min XP Drop
+           "Greater Wraith" //Unit Name
+        );
+
+        public static Enemy Lodaga = new Enemy
+        (
+           "https://cdn.discordapp.com/attachments/542225685695954945/637578404539006987/Unit_ills_full_60105.webp", //URL
+           226895, //Max Health
+           143500, //Min Health
+           3535, //Max Damage
+           500, //Min Damage
+           111, //Max Level
+           105, //Min Level
+           27400, //Max Gold Drop
+           18350, //Min Gold Drop
+           6000, //Max XP Drop
+           245, //Min XP Drop
+           "[EVENT BOSS] Lodaga - Lord of Halloween" //Unit Name
         );
         #endregion
 

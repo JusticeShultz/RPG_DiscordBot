@@ -95,7 +95,8 @@ namespace RPG_Bot.Commands
             if (itemID != 100 && itemID != 200 && itemID != 105 && itemID != 210 && itemID != 215 && itemID != 385 &&
                 itemID != 265 && itemID != 266 && itemID != 267 && itemID != 268 && itemID != 269 && itemID != 270 &&
                 itemID != 271 && itemID != 272 && itemID != 300 && itemID != 400 && itemID != 500 && itemID != 600 &&
-                itemID != 450 && itemID != 650)
+                itemID != 450 && itemID != 650 && itemID != 851 && itemID != 852 && itemID != 853 && itemID != 854 &&
+                itemID != 855 && itemID != 856 && itemID != 857 && itemID != 850)
             {
                 EmbedBuilder Embed = new EmbedBuilder();
                 Embed.WithTitle("Sorry but that item isn't available!");
@@ -110,6 +111,7 @@ namespace RPG_Bot.Commands
 
             uint UsersMoney = Data.Data.GetData_GoldAmount(Context.User.Id);
             uint UsersGems = Data.Data.GetData_Event3(Context.User.Id);
+            uint UsersCandies = Data.Data.GetData_Event2(Context.User.Id);
             uint UsersEvents1 = Data.Data.GetData_Event1(Context.User.Id);
 
             if (itemID == 300 && UsersMoney >= 8000)
@@ -285,6 +287,102 @@ namespace RPG_Bot.Commands
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
                 await Data.Data.SubtractSaveData(Context.User.Id, 8500, 0, "", 0, 0, 0, 0, 0);
                 await OpenPepeChest();
+            }
+            else if (itemID == 850 && UsersCandies >= 3)
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithAuthor("Common Loot Chest Purchased!");
+                Embed.Color = Color.LighterGrey;
+                Embed.WithFooter("Use -lootbox common to open up your new lootbox or -lootbox to see your current loot boxes!");
+                Embed.WithDescription("You traded the shop keeper **3** <:Candy:637578758986924035>");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240876719210501/locked-chest.png");
+                await Data.Data.TakeEventData(Context.User.Id, 0, 3, 0);
+                await Data.Data.AddCommonBoxCount(Context.User.Id, 1);
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
+            else if (itemID == 851 && UsersCandies >= 8)
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithAuthor("Uncommon Loot Chest Purchased!");
+                Embed.Color = Color.Green;
+                Embed.WithFooter("Use -lootbox uncommon to open up your new lootbox or -lootbox to see your current loot boxes!");
+                Embed.WithDescription("You traded the shop keeper **8** <:Candy:637578758986924035>");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240878015381516/locked-chest_1.png");
+                await Data.Data.TakeEventData(Context.User.Id, 0, 8, 0);
+                await Data.Data.AddUncommonBoxCount(Context.User.Id, 1);
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
+            else if (itemID == 852 && UsersCandies >= 15)
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithAuthor("Rare Loot Chest Purchased!");
+                Embed.Color = Color.Blue;
+                Embed.WithFooter("Use -lootbox rare to open up your new lootbox or -lootbox to see current loot boxes!");
+                Embed.WithDescription("You traded the shop keeper **15** <:Candy:637578758986924035>");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240879382462475/locked-chest_2.png");
+                await Data.Data.TakeEventData(Context.User.Id, 0, 15, 0);
+                await Data.Data.AddRareBoxCount(Context.User.Id, 1);
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
+            else if (itemID == 853 && UsersCandies >= 22)
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithAuthor("Very Rare Loot Chest Purchased!");
+                Embed.Color = Color.Magenta;
+                Embed.WithFooter("Use -lootbox veryrare to open up your new lootbox or -lootbox to see current loot boxes!");
+                Embed.WithDescription("You traded the shop keeper **22** <:Candy:637578758986924035>");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240880749805568/locked-chest_3.png");
+                await Data.Data.TakeEventData(Context.User.Id, 0, 22, 0);
+                await Data.Data.AddVeryRareBoxCount(Context.User.Id, 1);
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
+            else if (itemID == 854 && UsersCandies >= 30)
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithAuthor("Epic Loot Chest Purchased!");
+                Embed.Color = Color.Purple;
+                Embed.WithFooter("Use -lootbox epic to open up your new lootbox or -lootbox to see current loot boxes!");
+                Embed.WithDescription("You traded the shop keeper **30** <:Candy:637578758986924035>");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240881794449437/locked-chest_4.png");
+                await Data.Data.TakeEventData(Context.User.Id, 0, 30, 0);
+                await Data.Data.AddEpicBoxCount(Context.User.Id, 1);
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
+            else if (itemID == 855 && UsersCandies >= 50)
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithAuthor("Legendary Loot Chest Purchased!");
+                Embed.Color = Color.Red;
+                Embed.WithFooter("Use -lootbox legendary to open up your new lootbox or -lootbox to see current loot boxes!");
+                Embed.WithDescription("You traded the shop keeper **50** <:Candy:637578758986924035>");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240883669172237/locked-chest_5.png");
+                await Data.Data.TakeEventData(Context.User.Id, 0, 50, 0);
+                await Data.Data.AddLegendaryBoxCount(Context.User.Id, 1);
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
+            else if (itemID == 856 && UsersCandies >= 100)
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithAuthor("Mythic Loot Chest Purchased!");
+                Embed.Color = Color.Teal;
+                Embed.WithFooter("Use -lootbox mythic to open up your new lootbox or -lootbox to see current loot boxes!");
+                Embed.WithDescription("You traded the shop keeper **100** <:Candy:637578758986924035>");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240886613704772/locked-chest_6.png");
+                await Data.Data.TakeEventData(Context.User.Id, 0, 100, 0);
+                await Data.Data.AddMythicBoxCount(Context.User.Id, 1);
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
+            else if (itemID == 857 && UsersCandies >= 125)
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithAuthor("Godly Loot Chest Purchased!");
+                Embed.Color = Color.LighterGrey;
+                Embed.WithFooter("Use -lootbox godly to open up your new lootbox or -lootbox to see current loot boxes!");
+                Embed.WithDescription("You traded the shop keeper **125** <:Candy:637578758986924035>");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240875452661791/locked-chest_7.png");
+                await Data.Data.TakeEventData(Context.User.Id, 0, 125, 0);
+                await Data.Data.AddGodlyBoxCount(Context.User.Id, 1);
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
             }
             else
             {
@@ -503,6 +601,20 @@ namespace RPG_Bot.Commands
                 Embed.WithDescription("To buy items you must type `-buy [ItemID]` - Item ID's are the numbers in [] on each item!");
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
             }
+            if (remainder == "candyshop" || remainder == "CandyShop")
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithAuthor("Happy Halloween!");
+                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545322196872986641/Wendy.webp");
+                Embed.Color = Color.Orange;
+                Embed.WithFooter("You have " + Data.Data.GetData_Event2(Context.User.Id) + " Candies");
+                Embed.WithTitle("How to use:");
+
+                Embed.AddField("\n\nIn Stock:\n\nLoot Boxes", "[850] - 3 Candies - Common Loot Chest\n[851] - 8 Candies - Uncommon Loot Chest\n[852] - 15 Candies - Rare Loot Chest\n[853] - 22 Candies - Very Rare Loot Chest\n[854] - 30 Candies - Epic Loot Chest\n[855] - 50 Candies - Legendary Loot Chest\n[856] - 100 Candies - Mythic Loot Chest\n[857] - 125 Candies - Godly Loot Chest", false);
+
+                Embed.WithDescription("To buy items you must type `-buy [ItemID]` - Item ID's are the numbers in [] on each item!");
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
             else if (remainder == "count" || remainder == "Count")
             {
                 EmbedBuilder Embed = new EmbedBuilder();
@@ -521,30 +633,42 @@ namespace RPG_Bot.Commands
                 if (user.GuildPermissions.Administrator)
                 {
                     EmbedBuilder Embed = new EmbedBuilder();
-                    Embed.WithTitle("Serverwide Event #3");
-                    Embed.WithAuthor("The Essence Moon.");
-                    /*Embed.WithDescription("Monsters have recently been seen holding some form of glowing log. These logs are infused with huge sums of magical power and the " +
-                        "shopkeeper would be more than happy to trade gold and powerful items for them. Check out the `-event shop` command over in the shop keepers store for " +
-                        "limited time! Nearing the final days a legend says a mystic tree is said to appear that might be made of this newly found resource, keep your watch up!" +
-                        "\n\nType `-event help` to view relevant commands for this event!");
-                    Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545308296463122442/Will_O_Wisp.webp");*/
-                    Embed.WithDescription("The essence moon is rising and the demon king awakens with it. Collect essence " +
-                        "and gain ultimate power. (All previous event items will be transfered into this event, I will reset them next time if this doesn't work well)");
-                    Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545308301089439754/Crom_Cruach.png");
-                    Embed.Color = Color.Purple;
-                    Embed.WithFooter("Special event runs until May 20th");
-                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                    //Embed.WithTitle("Serverwide Event #3");
+                    //Embed.WithAuthor("The Essence Moon.");
+                    ///*Embed.WithDescription("Monsters have recently been seen holding some form of glowing log. These logs are infused with huge sums of magical power and the " +
+                    //    "shopkeeper would be more than happy to trade gold and powerful items for them. Check out the `-event shop` command over in the shop keepers store for " +
+                    //    "limited time! Nearing the final days a legend says a mystic tree is said to appear that might be made of this newly found resource, keep your watch up!" +
+                    //    "\n\nType `-event help` to view relevant commands for this event!");
+                    //Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545308296463122442/Will_O_Wisp.webp");*/
+                    //Embed.WithDescription("The essence moon is rising and the demon king awakens with it. Collect essence " +
+                    //    "and gain ultimate power. (All previous event items will be transfered into this event, I will reset them next time if this doesn't work well)");
+                    //Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545308301089439754/Crom_Cruach.png");
+                    //Embed.Color = Color.Purple;
+                    //Embed.WithFooter("Special event runs until May 20th");
+                    //await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                    //EmbedBuilder Embed1 = new EmbedBuilder();
+                    //Embed1.WithTitle("Serverwide Event #4");
+                    //Embed1.WithAuthor("The Gold Filled Pots.");
+                    //Embed1.WithDescription("A new monster is roaming throughout the plains and it's full of gold! For limited time fight these gold filled enemies" +
+                    //    " for huge amounts of gold! Low ranking areas will have Bronze Pots, medium areas will contain Silver Pots and high ranking areas will spawn " +
+                    //    "Golden Pots! Good luck adventurer, may luck be in your favor.\n\nNote: the event monsters will not spawn in master rank zones, this means " +
+                    //    "zones 60+ will not spawn them and their spawn tables will not have been affected by this event.");
+                    //Embed1.WithImageUrl("https://vignette.wikia.nocookie.net/quiz-rpg-the-world-of-mystic-wiz/images/f/f5/The_Golden_Pot_transparent.png/revision/latest?cb=20141025232107");
+                    //Embed1.Color = Color.Gold;
+                    //Embed1.WithFooter("Special event runs until May 20th");
+                    //await Context.Channel.SendMessageAsync("", false, Embed1.Build());
 
                     EmbedBuilder Embed1 = new EmbedBuilder();
-                    Embed1.WithTitle("Serverwide Event #4");
-                    Embed1.WithAuthor("The Gold Filled Pots.");
-                    Embed1.WithDescription("A new monster is roaming throughout the plains and it's full of gold! For limited time fight these gold filled enemies" +
-                        " for huge amounts of gold! Low ranking areas will have Bronze Pots, medium areas will contain Silver Pots and high ranking areas will spawn " +
-                        "Golden Pots! Good luck adventurer, may luck be in your favor.\n\nNote: the event monsters will not spawn in master rank zones, this means " +
-                        "zones 60+ will not spawn them and their spawn tables will not have been affected by this event.");
-                    Embed1.WithImageUrl("https://vignette.wikia.nocookie.net/quiz-rpg-the-world-of-mystic-wiz/images/f/f5/The_Golden_Pot_transparent.png/revision/latest?cb=20141025232107");
+                    Embed1.WithTitle("Holiday Event #1");
+                    Embed1.WithAuthor("Spooktober");
+                    Embed1.WithDescription("The mist is growing heavier!\n" +
+                        "Spooktober kicks off starting now, visit the ``spooktober`` zone and fight event monsters to earn candies. Candies can be used to unlock special " +
+                        "items during the Spooktober event, more details on that can be found soon! Additionally item drop rate will be doubled within this zone and there is" +
+                        " a variety of different leveled monsters! Happy hunting and keep an eye out for the lord of halloween, he may just crush you if you aren't strong enough!");
+                    Embed1.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/637578405281529858/EventIcon.webp");
                     Embed1.Color = Color.Gold;
-                    Embed1.WithFooter("Special event runs until May 20th");
+                    Embed1.WithFooter("Special event runs until November 15th");
                     await Context.Channel.SendMessageAsync("", false, Embed1.Build());
                 }
             }
@@ -786,18 +910,18 @@ namespace RPG_Bot.Commands
                     return;
                 }
             }
-            if (txt == "Nechromancer" || txt == "nechromancer")
+            if (txt == "Necromancer" || txt == "Necromancer")
             {
-                if (Data.Data.GetClass(Context.User.Id) != "Nechromancer")
+                if (Data.Data.GetClass(Context.User.Id) != "Necromancer")
                 {
                     await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
 
                     EmbedBuilder E = new EmbedBuilder();
-                    E.WithTitle("You are now a Nechromancer!");
+                    E.WithTitle("You are now a Necromancer!");
                     E.WithFooter("500 Gold Coins have been taken from your account.");
                     E.Color = Color.Teal;
                     await Context.Channel.SendMessageAsync("", false, E.Build());
-                    await Data.Data.SetClass(Context.User.Id, "Nechromancer");
+                    await Data.Data.SetClass(Context.User.Id, "Necromancer");
                     await Gameplay.UpdateUserData();
                     return;
                 }

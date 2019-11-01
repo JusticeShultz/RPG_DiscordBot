@@ -85,10 +85,10 @@ namespace RPG_Bot.Currency
                 classType = "Berserker";
                 classEmoji = "<:Berserker:566917750140960768>";
             }
-            else if (UsersClass == "Nechromancer")
+            else if (UsersClass == "Necromancer")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904652009046026/Nechromancer.webp");
-                classType = "Nechromancer";
+                classType = "Necromancer";
                 classEmoji = "<:Nechromancer:566917752640503809>";
             }
             else if (UsersClass == "Trickster")
@@ -155,6 +155,7 @@ namespace RPG_Bot.Currency
             uint currentHealth = Data.Data.GetData_CurrentHealth(vuser.Id);
             uint currentXp = Data.Data.GetData_XP(vuser.Id);
             uint eventItem = Data.Data.GetData_Event1(vuser.Id);
+            uint eventItem2 = Data.Data.GetData_Event2(vuser.Id);
             uint guildGems = Data.Data.GetData_Event3(vuser.Id);
             uint neededXP = (Data.Data.GetData_Level(vuser.Id) * Data.Data.GetData_Level(vuser.Id));
             uint currentArmor = 0;
@@ -196,9 +197,15 @@ namespace RPG_Bot.Currency
             Embed.WithColor(40, 200, 150);
             Embed.WithFooter("XP until level up: " + currentXp + " / " + neededXP);
             Embed.WithDescription("Class: " + classType + " " + classEmoji + "\nName: " + name + " <:freedomdove:543112388996497419>\nAge: " + age + " <:Age:543112389160337408>\n" + "\nGold Coins: " + coins + " <:Coins:543112388493312000>\n" +
-                "You have " + guildGems + " <:GuildGem:545341213004529725>\n\n" +
+                "Guild Gems: " + guildGems + " <:GuildGem:545341213004529725>\nEssence (Event Item): " + eventItem + " <:Essence:567480672344866867>\nCandies (Spooktober Event Item): " + eventItem2 + " <:Candy:637578758986924035>\n\n" +
                 "Level: " + level + " <:Level:543112387989995521>\n" + "Health: " + currentHealth + "/" + health + " <:Health:543112384848461832>\nArmor: " + currentArmor + " <:Armor:637402506992812042>\nHealth Regeneration: " + currentRegen + " <:Regeneration:637403443744735253>\nDamage: " + damage + " <:Damage:543112387763503124>\n\n" +
-                "You have " + eventItem + " Essence (Event Item)<:Essence:567480672344866867>");
+                "<:Skill:638241457752506368> " + Data.Data.GetData_SkillPoints(vuser.Id) + " Skill Points" + " <:Skill:638241457752506368>\n" +
+                "Stamina: " + Data.Data.GetData_Stamina(vuser.Id) +
+                "\nStability: " + Data.Data.GetData_Stability(vuser.Id) +
+                "\nDexterity: " + Data.Data.GetData_Dexterity(vuser.Id) +
+                "\nStrength: " + Data.Data.GetData_Strength(vuser.Id) +
+                "\nCharisma: " + Data.Data.GetData_Charisma(vuser.Id) +
+                "\nLuck: " + Data.Data.GetData_Luck(vuser.Id));
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
         }
 
@@ -601,7 +608,7 @@ namespace RPG_Bot.Currency
                 classEmoji = "<:Berserker:566917750140960768>";
                 baseStats = "40 Damage, 30 Health";
             }
-            else if (check == "Nechromancer" || check == "nechromancer")
+            else if (check == "Necromancer" || check == "Necromancer")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904652009046026/Nechromancer.webp");
                 classEmoji = "<:Nechromancer:566917752640503809>";
@@ -679,3 +686,5 @@ namespace RPG_Bot.Currency
         }*/
     }
 }
+
+//⟨╲⸜(⧹⸜▾⸝⧸)⸝╱⟩

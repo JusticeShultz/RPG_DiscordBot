@@ -20,7 +20,7 @@ namespace RPG_Bot.Commands
         //Handles every server having their own enemies.
         public class ServerIntegratedEnemy
         {
-            public Enemy[] currentSpawn { get; set; } = new Enemy[50];
+            public Enemy[] currentSpawn { get; set; } = new Enemy[200];
             public ulong ServerID { get; set; } = 0;
 
 
@@ -81,7 +81,7 @@ namespace RPG_Bot.Commands
         //Handles all editable objects in every single server.
         public class ServerEditMessages
         {
-            public Discord.Rest.RestUserMessage[] FightMessages = new Discord.Rest.RestUserMessage[100];
+            public Discord.Rest.RestUserMessage[] FightMessages = new Discord.Rest.RestUserMessage[200];
             public ulong ServerID { get; set; } = 0;
 
 
@@ -89,9 +89,9 @@ namespace RPG_Bot.Commands
             ~ServerEditMessages() { }
         }
 
-        static ServerIntegratedEnemy[] CurrentSpawn = new ServerIntegratedEnemy[250];
-        static BossJoiningSystem[] CurrentBossJoiners = new BossJoiningSystem[250];
-        static ServerEditMessages[] ServerMessages = new ServerEditMessages[250];
+        static ServerIntegratedEnemy[] CurrentSpawn = new ServerIntegratedEnemy[2500];
+        static BossJoiningSystem[] CurrentBossJoiners = new BossJoiningSystem[2500];
+        static ServerEditMessages[] ServerMessages = new ServerEditMessages[2500];
 
         static Random rng = new Random();
 
@@ -150,9 +150,19 @@ namespace RPG_Bot.Commands
             int genType = rng.Next(1, 60);
 
             //If time replace spawn zones with spawn tables
+            if (Context.Channel.Name == "spooktober")
+            {
+                if (genType == 15) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Lodaga, 125);
+                else if (genType < 10) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GiantArachne, 125);
+                else if (genType < 15) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Wraith, 125);
+                else if (genType < 20) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GreaterWraith, 125);
+                else if (genType < 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GiantSpider, 125);
+                else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Pumpkinling, 125);
+            }
+            else
             if (Context.Channel.Name == "lv1-5")
             {
-                await ClearChat();
+                //await ClearChat();
 
                 if (genType < 10) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Goblin, 1);
                 else if (genType < 20) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Imp, 1);
@@ -162,7 +172,7 @@ namespace RPG_Bot.Commands
             }
             else if (Context.Channel.Name == "lv5-10")
             {
-                await ClearChat();
+                //await ClearChat();
 
                 if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.BossTrainingBot, 2);
                 else if (genType > 45) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Skeleton, 2);
@@ -173,7 +183,7 @@ namespace RPG_Bot.Commands
             }
             else if (Context.Channel.Name == "lv10-15")
             {
-                await ClearChat();
+                //await ClearChat();
 
                 if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.TreeBoss, 3);
                 else if (genType > 30)
@@ -181,7 +191,8 @@ namespace RPG_Bot.Commands
                     if (genType == 55) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.SilverPot, 3);
                     else if (genType > 50) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GiantEnt, 3);
                     else if (genType > 43) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.TreeEnt, 3);
-                    else if (genType > 40) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GigaEnt, 3);
+                    else if (genType > 36) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GoblinWolf, 3);
+                    else if (genType > 34) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GigaEnt, 3);
                     else await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.GiantRat, 3);
                 }
                 else
@@ -193,7 +204,7 @@ namespace RPG_Bot.Commands
             }
             else if (Context.Channel.Name == "lv15-20")
             {
-                await ClearChat();
+                //await ClearChat();
 
                 if (genType == 50) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.SilverPot, 4);
                 else if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Mimic, 4);
@@ -209,7 +220,7 @@ namespace RPG_Bot.Commands
             }
             else if (Context.Channel.Name == "lv20-30")
             {
-                await ClearChat();
+                //await ClearChat();
                 if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.BossFrostWolfPackLeader, 5);
                 else if (genType == 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.BossIceDragon, 5);
                 else if (genType > 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.FrostKnight, 5);
@@ -221,7 +232,7 @@ namespace RPG_Bot.Commands
             else if (Context.Channel.Name == "lv30-40")
             {
                 //Lava theme
-                await ClearChat();
+                //await ClearChat();
                 if (genType < 10) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.HarpyCaster, 6);
                 else if (genType < 20) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.RoyalPelican, 6);
                 else if (genType == 15) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.BronzePot, 6);
@@ -230,7 +241,7 @@ namespace RPG_Bot.Commands
             }
             else if (Context.Channel.Name == "lv40-50")
             {
-                await ClearChat();
+                //await ClearChat();
                 if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Leviathan, 7);
                 else if (genType == 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.CetusBoss, 7);
                 else if (genType > 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Megaton, 7);
@@ -240,7 +251,7 @@ namespace RPG_Bot.Commands
             }
             else if (Context.Channel.Name == "lv50-60")
             {
-                await ClearChat();
+                //await ClearChat();
                 if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.LavaDragon, 8);
                 else if (genType == 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.SalamanderDragonAdult, 8);
                 else if (genType > 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.SalamanderDragon, 8);
@@ -250,7 +261,7 @@ namespace RPG_Bot.Commands
             }
             else if (Context.Channel.Name == "lv60-70")
             {
-                await ClearChat();
+                //await ClearChat();
                 if (genType == 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Hydra, 9);
                 else if (genType == 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.SeaDragon, 9);
                 else if (genType > 31) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Reaver, 9);
@@ -260,7 +271,7 @@ namespace RPG_Bot.Commands
             }
             else if (Context.Channel.Name == "lv70-80")
             {
-                await ClearChat();
+                //await ClearChat();
                 if (genType < 6) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Phoenix, 10);
                 else if (genType < 12) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Bergelmir, 10);
                 else if (genType < 19) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Hastur, 10);
@@ -273,7 +284,7 @@ namespace RPG_Bot.Commands
             }
             else if (Context.Channel.Name == "lv80-90")
             {
-                await ClearChat();
+                //await ClearChat();
                 if (genType < 6) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Phoenix, 11);
                 else if (genType < 12) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Bergelmir, 11);
                 else if (genType < 19) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Hastur, 11);
@@ -286,7 +297,7 @@ namespace RPG_Bot.Commands
             }
             else if (Context.Channel.Name == "lv90-100")
             {
-                await ClearChat();
+                //await ClearChat();
                 if (genType < 6) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.AbyssDragon, 12);
                 else if (genType < 12) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Yamusichea, 12);
                 else if (genType < 18) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Flare, 12);
@@ -300,32 +311,32 @@ namespace RPG_Bot.Commands
             }
             else if (Context.Channel.Name == "lv100-150")
             {
-                await ClearChat();
+                //await ClearChat();
                 await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Pepe, 14);
             }
             else if (Context.Channel.Name == "lv150-200")
             {
-                await ClearChat();
+                //await ClearChat();
                 await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Pepe, 15);
             }
             else if (Context.Channel.Name == "lv200-400")
             {
-                await ClearChat();
+                //await ClearChat();
                 await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Pepe, 16);
             }
             else if (Context.Channel.Name == "lv400-800")
             {
-                await ClearChat();
+                //await ClearChat();
                 await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Pepe, 17);
             }
             else if (Context.Channel.Name == "lv800-1000")
             {
-                await ClearChat();
+                //await ClearChat();
                 await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Pepe, 18);
             }
             else if (Context.Channel.Name == "the-aurora")
             {
-                await ClearChat();
+                //await ClearChat();
                 if (genType < 3) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Duck, 13);
                 else if (genType < 15) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Masamune, 13);
                 else if (genType < 30) await SpawnEnemy(RPG_Bot.Resources.EnemyTemplates.Rourtu, 13);
@@ -339,7 +350,7 @@ namespace RPG_Bot.Commands
 
                 if (remaining == "eventboss" && (Context.User.Id == 228344819422855168 || Context.User.Id != 409566463658033173))
                 {
-                    await ClearChat();
+                    //await ClearChat();
                     var messages = await Context.Channel.GetMessagesAsync(1).FlattenAsync();
                     await (Context.Channel as SocketTextChannel).DeleteMessagesAsync(messages);
 
@@ -349,7 +360,7 @@ namespace RPG_Bot.Commands
                 else
                 if (remaining == "testboss" && (Context.User.Id == 228344819422855168 || Context.User.Id != 409566463658033173))
                 {
-                    await ClearChat();
+                    //await ClearChat();
                     var messages = await Context.Channel.GetMessagesAsync(1).FlattenAsync();
                     await (Context.Channel as SocketTextChannel).DeleteMessagesAsync(messages);
 
@@ -414,20 +425,20 @@ namespace RPG_Bot.Commands
             await Context.Channel.DeleteMessageAsync(Context.Message.Id);
         }
 
-        public async Task ClearChat()
-        {
-            //[DEPRECATED] - Discord limiter ruins everything
-            //Does what the task says, clears the chat.
-            //var messages = await Context.Channel.GetMessagesAsync(5000).FlattenAsync();
-            //await(Context.Channel as SocketTextChannel).DeleteMessagesAsync(messages);
-        }
+        //public async Task ClearChat()
+        //{
+        //    //[DEPRECATED] - Discord limiter ruins everything
+        //    //Does what the task says, clears the chat.
+        //    //var messages = await Context.Channel.GetMessagesAsync(5000).FlattenAsync();
+        //    //await(Context.Channel as SocketTextChannel).DeleteMessagesAsync(messages);
+        //}
 
         [Command("fight"), Alias("Fight", "F", "f"), Summary("Fight a spawned enemy.")]
         public async Task Fight(int times = 1)
         {
             int serverId = 0;
             bool registered = false;
-
+            
             foreach (SocketGuild guilds in RPG_Bot.Program.Client.Guilds)
             {
                 if (guilds.Id == Context.Guild.Id)
@@ -466,6 +477,7 @@ namespace RPG_Bot.Commands
                 else if (Context.Channel.Name == "lv800-1000") server = 18;
                 else if (Context.Channel.Name == "the-aurora") server = 13;
                 else if (Context.Channel.Name == "event-bosses") server = 35;
+                else if (Context.Channel.Name == "spooktober") server = 125;
                 else if (Context.Channel.Name == "gothkamul")
                 {
                     server = 40;
@@ -579,8 +591,14 @@ namespace RPG_Bot.Commands
                     }
                 }
 
+                if (CurrentSpawn[serverId].currentSpawn[server].IsInCombat) return;
+
+                CurrentSpawn[serverId].currentSpawn[server].IsInCombat = true;
+
                 if (CurrentSpawn[serverId].currentSpawn[server].CurrentHealth > 0)
                 {
+                    if (CurrentSpawn[serverId].currentSpawn[server].IsDead) return;
+
                     uint userdmg = Data.Data.GetData_Damage(Context.User.Id);
 
                     uint currentArmor = 0;
@@ -617,22 +635,42 @@ namespace RPG_Bot.Commands
                         currentRegen += Data.Data.GetBoots(Context.User.Id).HealthGainOnDamage;
                     }
 
-                    await Data.Data.SaveData(Context.User.Id, 0, 0, "", 0, 0, 0, 0, currentRegen);
+                    await Data.Data.SaveData(Context.User.Id, 0, 0, "", 0, 0, 0, 0, (currentRegen / 10) + (Data.Data.GetData_Stability(Context.User.Id) * 10));
 
                     uint dmg = (uint)rng.Next((int)CurrentSpawn[serverId].currentSpawn[server].MinDamage, (int)CurrentSpawn[serverId].currentSpawn[server].MaxDamage);
 
-                    if ((int)dmg - (int)currentArmor <= 0)
+                    bool blocked = false;
+                    bool critical = false;
+                    bool regenerate = false;
+
+                    if ((int)dmg - (int)currentArmor / 10 <= 0)
                         dmg = 0;
                     else
-                        dmg -= currentArmor;
+                        dmg -= currentArmor / 10;
+
+                    Random ran = new Random();
+
+                    int dodge = ran.Next(0, 1000 / ((int)Data.Data.GetData_Dexterity(Context.User.Id) + 1));
+                    int crit = ran.Next(0, 1000 / ((int)Data.Data.GetData_Strength(Context.User.Id) + 1));
+                    int staminaregen = ran.Next(0, 1000 / ((int)Data.Data.GetData_Stamina(Context.User.Id) + 1));
+
+                    if (dodge == 0 || dodge == 1) blocked = true;
+                    if (crit == 0 || crit == 1) critical = true;
+                    if (staminaregen == 0 || staminaregen == 1) regenerate = true;
+
+                    if (regenerate)
+                        await Data.Data.SaveData(Context.User.Id, 0, 0, "", 0, 0, 0, 0, Data.Data.GetData_Health(Context.User.Id) / 4);
 
                     if (Data.Data.GetData_CurrentHealth(Context.User.Id) > dmg)
                     {
-                        if (CurrentSpawn[serverId].currentSpawn[server].CurrentHealth > userdmg)
+                        if (!critical && CurrentSpawn[serverId].currentSpawn[server].CurrentHealth > userdmg)
                             CurrentSpawn[serverId].currentSpawn[server].CurrentHealth -= userdmg;
+                        else if (critical && CurrentSpawn[serverId].currentSpawn[server].CurrentHealth > userdmg * 2)
+                            CurrentSpawn[serverId].currentSpawn[server].CurrentHealth -= userdmg * 2;
                         else CurrentSpawn[serverId].currentSpawn[server].CurrentHealth = 0;
 
-                        await Data.Data.SaveData(Context.User.Id, 0, 0, "", 0, 0, 0, 0, (uint)(-dmg));
+                        if (!blocked)
+                            await Data.Data.SaveData(Context.User.Id, 0, 0, "", 0, 0, 0, 0, (uint)(-dmg));
 
                         if (CurrentSpawn[serverId].currentSpawn[server].CurrentHealth > 0)
                         {
@@ -643,7 +681,9 @@ namespace RPG_Bot.Commands
                             Embed.Color = Color.Red;
 
                             Embed.WithFooter(CurrentSpawn[serverId].currentSpawn[server].Name + "'s Health: " + CurrentSpawn[serverId].currentSpawn[server].CurrentHealth + " / " + CurrentSpawn[serverId].currentSpawn[server].MaxHealth);
-                            Embed.WithDescription("You took " + dmg + " damage.\nYou have " + Data.Data.GetData_CurrentHealth(Context.User.Id) + " health remaining.");
+                            string emplace = blocked == true ? "You dodged the enemies attack!\n" : "You took " + dmg + " damage.\n";
+                            Embed.WithDescription(emplace + "You have " + Data.Data.GetData_CurrentHealth(Context.User.Id) + " health remaining." + (regenerate == true ? "\nYou regenerated 25% health from your Stamina skill!" : "")
+                                + (critical == true ? "\nYou critical striked for an additional " + dmg + " damage" : ""));
 
                             int spot = -1;
 
@@ -686,6 +726,8 @@ namespace RPG_Bot.Commands
                                     ServerMessages[spot].FightMessages[server] = await Context.Channel.SendMessageAsync("", false, Embed.Build());
                                 }
                             }
+
+                            CurrentSpawn[serverId].currentSpawn[server].IsInCombat = false;
                         }
                         else
                         {
@@ -1142,6 +1184,8 @@ namespace RPG_Bot.Commands
                             }
                             else
                             {
+                                if (CurrentSpawn[serverId].currentSpawn[server].IsDead) return;
+
                                 EmbedBuilder Embed = new EmbedBuilder();
                                 Embed.WithAuthor("You defeated " + CurrentSpawn[serverId].currentSpawn[server].Name);
                                 Embed.WithImageUrl(CurrentSpawn[serverId].currentSpawn[server].WebURL);
@@ -1152,17 +1196,63 @@ namespace RPG_Bot.Commands
                                 uint xp = (uint)rng.Next((int)CurrentSpawn[serverId].currentSpawn[server].MinXpDrop, (int)CurrentSpawn[serverId].currentSpawn[server].MaxXpDrop);
 
                                 Embed.WithDescription("You recieved " + gold + " Gold Coins & " + xp + " XP");
+
+                                if (CurrentSpawn[serverId].currentSpawn[server].IsDead) return;
+
                                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
                                 //Set enemy back to an empty.
+
+                                if (CurrentSpawn[serverId].currentSpawn[server].IsDead) return;
 
                                 await Data.Data.SaveData(Context.User.Id, gold, 0, "", 0, 0, 0, xp, Data.Data.GetData_Health(Context.User.Id));
 
                                 //Check level up.
                                 await CheckLevelUp(Context.User.Id);
 
+                                bool LuckLoot = false;
+
+                                if (CurrentSpawn[serverId].currentSpawn[server].IsDead) return;
+
+                                int looted = ran.Next(0, 500 / ((int)Data.Data.GetData_Luck(Context.User.Id) + 1));
+
+                                if (looted == 0 || looted == 1) LuckLoot = true;
+
                                 int EventDrop = rng.Next(1, 25);
                                 int ItemDrop = rng.Next(0, 10);
 
+                                if (server == 125)
+                                {
+                                    int _ItemDrop = rng.Next(0, 5);
+                                    int _CandyDrop = rng.Next(0, 12);
+
+                                    if(CurrentSpawn[serverId].currentSpawn[server].Name == "[EVENT BOSS] Lodaga - Lord of Halloween")
+                                    {
+                                        EmbedBuilder Embeda = new EmbedBuilder();
+                                        Embeda.WithAuthor("You defeated Lodaga, Lord of Halloween!");
+                                        Embeda.WithDescription("You were awarded 10 candies for your valiant efforts by the guild!");
+                                        Embeda.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                                        Embeda.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/637578400730578954/Item_thum_800103.webp");
+                                        Embeda.Color = Color.Orange;
+                                        await Context.Channel.SendMessageAsync("", false, Embeda.Build());
+
+                                        await Data.Data.SaveEventData(Context.User.Id, 0, 10, 0);
+                                    }
+                                    else if (_CandyDrop == 7 || LuckLoot)
+                                    {
+                                        EmbedBuilder Embeda = new EmbedBuilder();
+                                        Embeda.WithAuthor("You found a piece of candy!");
+                                        Embeda.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                                        Embeda.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/637578400730578954/Item_thum_800103.webp");
+                                        Embeda.Color = Color.Orange;
+                                        await Context.Channel.SendMessageAsync("", false, Embeda.Build());
+
+                                        await Data.Data.SaveEventData(Context.User.Id, 0, 1, 0);
+                                    }
+
+                                    if (_ItemDrop == 2 || LuckLoot)
+                                        await LootItem(Context, CurrentSpawn[serverId].currentSpawn[server].Name, rng.Next((int)CurrentSpawn[serverId].currentSpawn[server].MinLevel, (int)CurrentSpawn[serverId].currentSpawn[server].MaxLevel));
+                                }
+                                else
                                 if (server == 35)
                                 {
                                     await FindBossEventItem();
@@ -1173,7 +1263,7 @@ namespace RPG_Bot.Commands
                                     await FindEventItem();
                                     await Data.Data.SaveEventData(Context.User.Id, 1, 0, 0);
                                 }
-                                else if (ItemDrop == 5)
+                                else if (ItemDrop == 5 || LuckLoot)
                                 {
                                     await LootItem(Context, CurrentSpawn[serverId].currentSpawn[server].Name, rng.Next((int)CurrentSpawn[serverId].currentSpawn[server].MinLevel, (int)CurrentSpawn[serverId].currentSpawn[server].MaxLevel));
                                 }
@@ -1193,6 +1283,9 @@ namespace RPG_Bot.Commands
 
                                 ServerMessages[spot].FightMessages[server] = null;
 
+                                if (CurrentSpawn[serverId].currentSpawn[server].IsDead) return;
+                                CurrentSpawn[serverId].currentSpawn[server].IsDead = true;
+
                                 break;
                             } //Double Xpppppppppppppppppppppp
                         }
@@ -1207,6 +1300,7 @@ namespace RPG_Bot.Commands
                         Embed.WithFooter("You lost: " + (uint)Math.Round(Data.Data.GetData_GoldAmount(Context.User.Id) * 0.15) + "Gold & " + (uint)Math.Round(Data.Data.GetData_XP(Context.User.Id) * 0.25) + "XP");
                         Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
                         Embed.WithDescription("You died and lost some Gold and XP. You revive at the guilds holy church to continue your journey...");
+                        CurrentSpawn[serverId].currentSpawn[server].IsInCombat = false;
                         var deathMSG = await Context.Channel.SendMessageAsync("", false, Embed.Build());
                         await Data.Data.SaveData(Context.User.Id, ((uint)Math.Round(Data.Data.GetData_GoldAmount(Context.User.Id) * -0.15)), 0, "", 0, 0, 0, (uint)Math.Round((Data.Data.GetData_XP(Context.User.Id) * -0.25)), Data.Data.GetData_Health(Context.User.Id));
                         await Task.Delay(5000);
@@ -1295,6 +1389,7 @@ namespace RPG_Bot.Commands
                 await Context.Channel.SendMessageAsync("", false, Embed1.Build());
                 //Level up
                 await Data.Data.SaveData(UserId, 0, 0, "", 5 + ((uint)Math.Round(Data.Data.GetData_Level(UserId) * 0.75)), 5 + Data.Data.GetData_Level(UserId), 1, (uint)(Data.Data.GetData_Level(UserId) * Data.Data.GetData_Level(UserId) * -1), 0);
+                await Data.Data.AddSkillPoints(UserId, 1);
             }
         }
 
@@ -1606,7 +1701,7 @@ namespace RPG_Bot.Commands
                 if (roles.Name == "Berserker") Ranks[16] = true;
                 if (roles.Name == "Tamer") Ranks[17] = true;
                 if (roles.Name == "Monk") Ranks[18] = true;
-                if (roles.Name == "Nechromancer") Ranks[19] = true;
+                if (roles.Name == "Necromancer") Ranks[19] = true;
                 if (roles.Name == "Paladin") Ranks[20] = true;
                 if (roles.Name == "Swordsman") Ranks[21] = true;
                 if (roles.Name == "Trickster") Ranks[22] = true;
@@ -1636,7 +1731,7 @@ namespace RPG_Bot.Commands
             if (!Ranks[16]) await Context.Guild.CreateRoleAsync("Berserker", Discord.GuildPermissions.None, new Discord.Color(145, 4, 4));
             if (!Ranks[17]) await Context.Guild.CreateRoleAsync("Tamer", Discord.GuildPermissions.None, new Discord.Color(152, 168, 74));
             if (!Ranks[18]) await Context.Guild.CreateRoleAsync("Monk", Discord.GuildPermissions.None, new Discord.Color(160, 112, 233));
-            if (!Ranks[19]) await Context.Guild.CreateRoleAsync("Nechromancer", Discord.GuildPermissions.None, new Discord.Color(73, 73, 73));
+            if (!Ranks[19]) await Context.Guild.CreateRoleAsync("Necromancer", Discord.GuildPermissions.None, new Discord.Color(73, 73, 73));
             if (!Ranks[20]) await Context.Guild.CreateRoleAsync("Paladin", Discord.GuildPermissions.None, new Discord.Color(10, 146, 153));
             if (!Ranks[21]) await Context.Guild.CreateRoleAsync("Swordsman", Discord.GuildPermissions.None, new Discord.Color(206, 31, 31));
             if (!Ranks[22]) await Context.Guild.CreateRoleAsync("Trickster", Discord.GuildPermissions.None, new Discord.Color(5, 141, 9));
@@ -1714,7 +1809,7 @@ namespace RPG_Bot.Commands
                     if (role.Name == "Berserker") contains[15] = true;
                     if (role.Name == "Tamer") contains[16] = true;
                     if (role.Name == "Monk") contains[17] = true;
-                    if (role.Name == "Nechromancer") contains[18] = true;
+                    if (role.Name == "Necromancer") contains[18] = true;
                     if (role.Name == "Paladin") contains[19] = true;
                     if (role.Name == "Swordsman") contains[20] = true;
                     if (role.Name == "Evangel") contains[21] = true;
@@ -1767,7 +1862,7 @@ namespace RPG_Bot.Commands
                         var Berserker = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Berserker");
                         var Tamer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Tamer");
                         var Monk = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Monk");
-                        var Nechromancer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Nechromancer");
+                        var Necromancer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Necromancer");
                         var Paladin = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Paladin");
                         var Swordsman = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Swordsman");
                         var Evangel = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Evangel");
@@ -1897,10 +1992,10 @@ namespace RPG_Bot.Commands
                                 await user.AddRoleAsync(Monk);
                             }
 
-                        if (Class == "Nechromancer") if (!user.Roles.Contains(Nechromancer))
+                        if (Class == "Necromancer") if (!user.Roles.Contains(Necromancer))
                             {
                                 await RemoveUsersClass(user);
-                                await user.AddRoleAsync(Nechromancer);
+                                await user.AddRoleAsync(Necromancer);
                             }
 
                         if (Class == "Paladin") if (!user.Roles.Contains(Paladin))
@@ -1944,7 +2039,7 @@ namespace RPG_Bot.Commands
             var Berserker = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Berserker");
             var Tamer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Tamer");
             var Monk = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Monk");
-            var Nechromancer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Nechromancer");
+            var Necromancer = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Necromancer");
             var Paladin = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Paladin");
             var Swordsman = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Swordsman");
             var Evangel = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Evangel");
@@ -1959,7 +2054,7 @@ namespace RPG_Bot.Commands
             if (user.Roles.Contains(Berserker)) await user.RemoveRoleAsync(Berserker);
             if (user.Roles.Contains(Tamer)) await user.RemoveRoleAsync(Tamer);
             if (user.Roles.Contains(Monk)) await user.RemoveRoleAsync(Monk);
-            if (user.Roles.Contains(Nechromancer)) await user.RemoveRoleAsync(Nechromancer);
+            if (user.Roles.Contains(Necromancer)) await user.RemoveRoleAsync(Necromancer);
             if (user.Roles.Contains(Paladin)) await user.RemoveRoleAsync(Paladin);
             if (user.Roles.Contains(Swordsman)) await user.RemoveRoleAsync(Swordsman);
             if (user.Roles.Contains(Evangel)) await user.RemoveRoleAsync(Evangel);
@@ -2081,7 +2176,7 @@ namespace RPG_Bot.Commands
                 if (roles.Name == "Berserker") await roles.DeleteAsync();
                 if (roles.Name == "Tamer") await roles.DeleteAsync();
                 if (roles.Name == "Monk") await roles.DeleteAsync();
-                if (roles.Name == "Nechromancer") await roles.DeleteAsync();
+                if (roles.Name == "Necromancer") await roles.DeleteAsync();
                 if (roles.Name == "Paladin") await roles.DeleteAsync();
                 if (roles.Name == "Swordsman") await roles.DeleteAsync();
                 if (roles.Name == "Trickster") await roles.DeleteAsync();
@@ -2759,7 +2854,7 @@ namespace RPG_Bot.Commands
         //    await Context.Channel.SendMessageAsync("", false, Embed.Build());
         //}
 
-        public async Task LootItem(SocketCommandContext Context, string monsterName, int monsterLevel)
+        public async Task LootItem(SocketCommandContext Context, string monsterName, int monsterLevel, int forceLoot = 0)
         {
             var vuser = Context.User as SocketGuildUser;
             Random ran = new Random();
@@ -2776,24 +2871,35 @@ namespace RPG_Bot.Commands
 
                 string Rarity = "Common";
 
-                int roll = rando.Next(0, 10000);
+                if (forceLoot == 0)
+                {
+                    int roll = rando.Next(0, 10000);
 
-                if (roll == 7470)
-                    Rarity = "Godly";
-                else if (roll < 6000)
-                    Rarity = "Common";
-                else if (roll < 9000)
-                    Rarity = "Uncommon";
-                else if (roll < 9300)
-                    Rarity = "Rare";
-                else if (roll < 9500)
-                    Rarity = "Ultra Rare";
-                else if (roll < 9920)
-                    Rarity = "Epic";
-                else if (roll < 9995)
-                    Rarity = "Legendary";
-                else if (roll < 10000)
-                    Rarity = "Godly";
+                    if (roll == 7470)
+                        Rarity = "Godly";
+                    else if (roll < 6000)
+                        Rarity = "Common";
+                    else if (roll < 9000)
+                        Rarity = "Uncommon";
+                    else if (roll < 9300)
+                        Rarity = "Rare";
+                    else if (roll < 9500)
+                        Rarity = "Ultra Rare";
+                    else if (roll < 9920)
+                        Rarity = "Epic";
+                    else if (roll < 9995)
+                        Rarity = "Legendary";
+                    else if (roll < 10000)
+                        Rarity = "Mythical";
+                }
+                else if(forceLoot == 1) Rarity = "Common";
+                else if(forceLoot == 2) Rarity = "Uncommon";
+                else if(forceLoot == 3) Rarity = "Rare";
+                else if(forceLoot == 4) Rarity = "Ultra Rare";
+                else if(forceLoot == 5) Rarity = "Epic";
+                else if(forceLoot == 6) Rarity = "Legendary";
+                else if(forceLoot == 7) Rarity = "Mythical";
+                else if(forceLoot == 8) Rarity = "Godly";
 
                 uint Armor = 0;
                 uint Health = 0;
@@ -2803,79 +2909,79 @@ namespace RPG_Bot.Commands
                 if (Rarity == "Common")
                 {
                     int _roll = rando.Next(1, 8);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
-                    Health = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 3));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
+                    Armor = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(8, 9 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(0, 50) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.LightGrey);
                 }
                 else if (Rarity == "Uncommon")
                 {
                     int _roll = rando.Next(2, 15);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 6));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
+                    Armor = (uint)rando.Next(4, 5 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(3, 4 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(30, 150) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Green);
                 }
                 else if (Rarity == "Rare")
                 {
-                    int _roll = rando.Next(4, 35);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 8));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 5));
+                    int _roll = rando.Next(4, 30);
+                    Armor = (uint)rando.Next(5, 6 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(13, 14 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(8, 9 + (monsterLevel / 3) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(140, 200) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Blue);
                 }
                 else if (Rarity == "Ultra Rare")
                 {
-                    int _roll = rando.Next(8, 60);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 8));
-                    Health = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 17));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(0, 10));
+                    int _roll = rando.Next(8, 48);
+                    Armor = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(16, 17 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(125, 350) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Magenta);
                 }
                 else if (Rarity == "Epic")
                 {
-                    int _roll = rando.Next(10, 100);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(4, 12));
-                    Health = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(3, 18));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(1, 15));
+                    int _roll = rando.Next(10, 70);
+                    Armor = (uint)rando.Next(6, 7 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(14, 15 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(9, 10 + (monsterLevel / 2) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(500, 850) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Purple);
                 }
                 else if (Rarity == "Legendary")
                 {
                     int _roll = rando.Next(40, 180);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 20));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(5, 22));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 18));
+                    Armor = (uint)rando.Next(8, 9 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(2000, 2500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Orange);
                 }
                 else if (Rarity == "Mythical")
                 {
-                    int _roll = rando.Next(50, 400);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(10, 35));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(15, 50));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(7, 50));
+                    int _roll = rando.Next(50, 350);
+                    Armor = (uint)rando.Next(10, 11 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(8000, 12500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Red);
                 }
                 else if (Rarity == "Godly")
                 {
-                    int _roll = rando.Next(300, 8000);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 85));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
+                    int _roll = rando.Next(200, 1250);
+                    Armor = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(25, 26 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(28, 29 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(100000, 112500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Gold);
                 }
 
                 Embed.WithAuthor(monsterName + " dropped a " + itemName, Context.User.GetAvatarUrl());
                 Embed.WithImageUrl(imageURL);
-                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor + "\n" + "Health: " + Health + "\n" + "Health Regeneration: " + HealthRegen);
+                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n" + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 Embed.WithFooter("Type -Equip to wear this armor piece, type -Sell [Armor Piece] to sell your current armor slot to make room for this item. Do -Sell Drop to sell this item.");
 
                 for (int i = 0; i < droppedHelmets.Count; i++)
@@ -2932,7 +3038,7 @@ namespace RPG_Bot.Commands
                     }
                 }
 
-                droppedHelmets.Add(new Helmet(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor, Health, HealthRegen));
+                droppedHelmets.Add(new Helmet(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor / 2, Health / 2, HealthRegen / 2));
 
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
             }
@@ -2947,24 +3053,35 @@ namespace RPG_Bot.Commands
 
                 string Rarity = "Common";
 
-                int roll = rando.Next(0, 1000);
+                if (forceLoot == 0)
+                {
+                    int roll = rando.Next(0, 10000);
 
-                if (roll == 747)
-                    Rarity = "Godly";
-                else if (roll < 650)
-                    Rarity = "Common";
-                else if (roll < 850)
-                    Rarity = "Uncommon";
-                else if (roll < 930)
-                    Rarity = "Rare";
-                else if (roll < 950)
-                    Rarity = "Ultra Rare";
-                else if (roll < 992)
-                    Rarity = "Epic";
-                else if (roll < 998)
-                    Rarity = "Legendary";
-                else if (roll < 1000)
-                    Rarity = "Godly";
+                    if (roll == 7470)
+                        Rarity = "Godly";
+                    else if (roll < 6000)
+                        Rarity = "Common";
+                    else if (roll < 9000)
+                        Rarity = "Uncommon";
+                    else if (roll < 9300)
+                        Rarity = "Rare";
+                    else if (roll < 9500)
+                        Rarity = "Ultra Rare";
+                    else if (roll < 9920)
+                        Rarity = "Epic";
+                    else if (roll < 9995)
+                        Rarity = "Legendary";
+                    else if (roll < 10000)
+                        Rarity = "Mythical";
+                }
+                else if (forceLoot == 1) Rarity = "Common";
+                else if (forceLoot == 2) Rarity = "Uncommon";
+                else if (forceLoot == 3) Rarity = "Rare";
+                else if (forceLoot == 4) Rarity = "Ultra Rare";
+                else if (forceLoot == 5) Rarity = "Epic";
+                else if (forceLoot == 6) Rarity = "Legendary";
+                else if (forceLoot == 7) Rarity = "Mythical";
+                else if (forceLoot == 8) Rarity = "Godly";
 
                 uint Armor = 0;
                 uint Health = 0;
@@ -2974,79 +3091,79 @@ namespace RPG_Bot.Commands
                 if (Rarity == "Common")
                 {
                     int _roll = rando.Next(1, 8);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
-                    Health = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 3));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
+                    Armor = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(8, 9 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(0, 50) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.LightGrey);
                 }
                 else if (Rarity == "Uncommon")
                 {
                     int _roll = rando.Next(2, 15);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 6));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
+                    Armor = (uint)rando.Next(4, 5 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(3, 4 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(30, 150) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Green);
                 }
                 else if (Rarity == "Rare")
                 {
-                    int _roll = rando.Next(4, 35);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 8));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 5));
+                    int _roll = rando.Next(4, 30);
+                    Armor = (uint)rando.Next(5, 6 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(13, 14 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(8, 9 + (monsterLevel / 3) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(140, 200) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Blue);
                 }
                 else if (Rarity == "Ultra Rare")
                 {
-                    int _roll = rando.Next(8, 60);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 8));
-                    Health = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 17));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(0, 10));
+                    int _roll = rando.Next(8, 48);
+                    Armor = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(16, 17 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(125, 350) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Magenta);
                 }
                 else if (Rarity == "Epic")
                 {
-                    int _roll = rando.Next(10, 100);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(4, 12));
-                    Health = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(3, 18));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(1, 15));
+                    int _roll = rando.Next(10, 70);
+                    Armor = (uint)rando.Next(6, 7 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(14, 15 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(9, 10 + (monsterLevel / 2) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(500, 850) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Purple);
                 }
                 else if (Rarity == "Legendary")
                 {
                     int _roll = rando.Next(40, 180);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 20));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(5, 22));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 18));
+                    Armor = (uint)rando.Next(8, 9 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(2000, 2500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Orange);
                 }
                 else if (Rarity == "Mythical")
                 {
-                    int _roll = rando.Next(50, 400);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(10, 35));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(15, 50));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(7, 50));
+                    int _roll = rando.Next(50, 350);
+                    Armor = (uint)rando.Next(10, 11 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(8000, 12500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Red);
                 }
                 else if (Rarity == "Godly")
                 {
-                    int _roll = rando.Next(300, 8000);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 85));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
+                    int _roll = rando.Next(200, 1250);
+                    Armor = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(25, 26 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(28, 29 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(100000, 112500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Gold);
                 }
 
                 Embed.WithAuthor(monsterName + " dropped a " + itemName, Context.User.GetAvatarUrl());
                 Embed.WithImageUrl(imageURL);
-                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor + "\n" + "Health: " + Health + "\n" + "Health Regeneration: " + HealthRegen);
+                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n" + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 Embed.WithFooter("Type -Equip to wear this armor piece, type -Sell [Armor Piece] to sell your current armor slot to make room for this item. Do -Sell Drop to sell this item.");
 
                 for (int i = 0; i < droppedHelmets.Count; i++)
@@ -3103,7 +3220,7 @@ namespace RPG_Bot.Commands
                     }
                 }
 
-                droppedChestplates.Add(new Chestplate(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor, Health, HealthRegen));
+                droppedChestplates.Add(new Chestplate(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor / 2, Health / 2, HealthRegen / 2));
 
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
             }
@@ -3118,24 +3235,35 @@ namespace RPG_Bot.Commands
 
                 string Rarity = "Common";
 
-                int roll = rando.Next(0, 1000);
+                if (forceLoot == 0)
+                {
+                    int roll = rando.Next(0, 10000);
 
-                if (roll == 747)
-                    Rarity = "Godly";
-                else if (roll < 650)
-                    Rarity = "Common";
-                else if (roll < 850)
-                    Rarity = "Uncommon";
-                else if (roll < 930)
-                    Rarity = "Rare";
-                else if (roll < 950)
-                    Rarity = "Ultra Rare";
-                else if (roll < 992)
-                    Rarity = "Epic";
-                else if (roll < 998)
-                    Rarity = "Legendary";
-                else if (roll < 1000)
-                    Rarity = "Godly";
+                    if (roll == 7470)
+                        Rarity = "Godly";
+                    else if (roll < 6000)
+                        Rarity = "Common";
+                    else if (roll < 9000)
+                        Rarity = "Uncommon";
+                    else if (roll < 9300)
+                        Rarity = "Rare";
+                    else if (roll < 9500)
+                        Rarity = "Ultra Rare";
+                    else if (roll < 9920)
+                        Rarity = "Epic";
+                    else if (roll < 9995)
+                        Rarity = "Legendary";
+                    else if (roll < 10000)
+                        Rarity = "Mythical";
+                }
+                else if (forceLoot == 1) Rarity = "Common";
+                else if (forceLoot == 2) Rarity = "Uncommon";
+                else if (forceLoot == 3) Rarity = "Rare";
+                else if (forceLoot == 4) Rarity = "Ultra Rare";
+                else if (forceLoot == 5) Rarity = "Epic";
+                else if (forceLoot == 6) Rarity = "Legendary";
+                else if (forceLoot == 7) Rarity = "Mythical";
+                else if (forceLoot == 8) Rarity = "Godly";
 
                 uint Armor = 0;
                 uint Health = 0;
@@ -3145,79 +3273,79 @@ namespace RPG_Bot.Commands
                 if (Rarity == "Common")
                 {
                     int _roll = rando.Next(1, 8);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
-                    Health = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 3));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
+                    Armor = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(8, 9 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(0, 50) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.LightGrey);
                 }
                 else if (Rarity == "Uncommon")
                 {
                     int _roll = rando.Next(2, 15);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 6));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
+                    Armor = (uint)rando.Next(4, 5 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(3, 4 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(30, 150) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Green);
                 }
                 else if (Rarity == "Rare")
                 {
-                    int _roll = rando.Next(4, 35);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 8));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 5));
+                    int _roll = rando.Next(4, 30);
+                    Armor = (uint)rando.Next(5, 6 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(13, 14 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(8, 9 + (monsterLevel / 3) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(140, 200) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Blue);
                 }
                 else if (Rarity == "Ultra Rare")
                 {
-                    int _roll = rando.Next(8, 60);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 8));
-                    Health = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 17));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(0, 10));
+                    int _roll = rando.Next(8, 48);
+                    Armor = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(16, 17 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(125, 350) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Magenta);
                 }
                 else if (Rarity == "Epic")
                 {
-                    int _roll = rando.Next(10, 100);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(4, 12));
-                    Health = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(3, 18));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(1, 15));
+                    int _roll = rando.Next(10, 70);
+                    Armor = (uint)rando.Next(6, 7 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(14, 15 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(9, 10 + (monsterLevel / 2) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(500, 850) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Purple);
                 }
                 else if (Rarity == "Legendary")
                 {
                     int _roll = rando.Next(40, 180);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 20));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(5, 22));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 18));
+                    Armor = (uint)rando.Next(8, 9 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(2000, 2500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Orange);
                 }
                 else if (Rarity == "Mythical")
                 {
-                    int _roll = rando.Next(50, 400);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(10, 35));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(15, 50));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(7, 50));
+                    int _roll = rando.Next(50, 350);
+                    Armor = (uint)rando.Next(10, 11 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(8000, 12500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Red);
                 }
                 else if (Rarity == "Godly")
                 {
-                    int _roll = rando.Next(300, 8000);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 85));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
+                    int _roll = rando.Next(200, 1250);
+                    Armor = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(25, 26 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(28, 29 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(100000, 112500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Gold);
                 }
 
                 Embed.WithAuthor(monsterName + " dropped a " + itemName, Context.User.GetAvatarUrl());
                 Embed.WithImageUrl(imageURL);
-                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor + "\n" + "Health: " + Health + "\n" + "Health Regeneration: " + HealthRegen);
+                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n" + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 Embed.WithFooter("Type -Equip to wear this armor piece, type -Sell [Armor Piece] to sell your current armor slot to make room for this item. Do -Sell Drop to sell this item.");
 
                 for (int i = 0; i < droppedHelmets.Count; i++)
@@ -3274,7 +3402,7 @@ namespace RPG_Bot.Commands
                     }
                 }
 
-                droppedGauntlets.Add(new Gauntlets(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor, Health, HealthRegen));
+                droppedGauntlets.Add(new Gauntlets(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor / 2, Health / 2, HealthRegen / 2));
 
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
             }
@@ -3289,24 +3417,35 @@ namespace RPG_Bot.Commands
 
                 string Rarity = "Common";
 
-                int roll = rando.Next(0, 1000);
+                if (forceLoot == 0)
+                {
+                    int roll = rando.Next(0, 10000);
 
-                if (roll == 747)
-                    Rarity = "Godly";
-                else if (roll < 650)
-                    Rarity = "Common";
-                else if (roll < 850)
-                    Rarity = "Uncommon";
-                else if (roll < 930)
-                    Rarity = "Rare";
-                else if (roll < 950)
-                    Rarity = "Ultra Rare";
-                else if (roll < 992)
-                    Rarity = "Epic";
-                else if (roll < 998)
-                    Rarity = "Legendary";
-                else if (roll < 1000)
-                    Rarity = "Godly";
+                    if (roll == 7470)
+                        Rarity = "Godly";
+                    else if (roll < 6000)
+                        Rarity = "Common";
+                    else if (roll < 9000)
+                        Rarity = "Uncommon";
+                    else if (roll < 9300)
+                        Rarity = "Rare";
+                    else if (roll < 9500)
+                        Rarity = "Ultra Rare";
+                    else if (roll < 9920)
+                        Rarity = "Epic";
+                    else if (roll < 9995)
+                        Rarity = "Legendary";
+                    else if (roll < 10000)
+                        Rarity = "Mythical";
+                }
+                else if (forceLoot == 1) Rarity = "Common";
+                else if (forceLoot == 2) Rarity = "Uncommon";
+                else if (forceLoot == 3) Rarity = "Rare";
+                else if (forceLoot == 4) Rarity = "Ultra Rare";
+                else if (forceLoot == 5) Rarity = "Epic";
+                else if (forceLoot == 6) Rarity = "Legendary";
+                else if (forceLoot == 7) Rarity = "Mythical";
+                else if (forceLoot == 8) Rarity = "Godly";
 
                 uint Armor = 0;
                 uint Health = 0;
@@ -3316,79 +3455,79 @@ namespace RPG_Bot.Commands
                 if (Rarity == "Common")
                 {
                     int _roll = rando.Next(1, 8);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
-                    Health = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 3));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
+                    Armor = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(8, 9 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(0, 50) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.LightGrey);
                 }
                 else if (Rarity == "Uncommon")
                 {
                     int _roll = rando.Next(2, 15);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 6));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
+                    Armor = (uint)rando.Next(4, 5 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(3, 4 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(30, 150) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Green);
                 }
                 else if (Rarity == "Rare")
                 {
-                    int _roll = rando.Next(4, 35);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 8));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 5));
+                    int _roll = rando.Next(4, 30);
+                    Armor = (uint)rando.Next(5, 6 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(13, 14 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(8, 9 + (monsterLevel / 3) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(140, 200) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Blue);
                 }
                 else if (Rarity == "Ultra Rare")
                 {
-                    int _roll = rando.Next(8, 60);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 8));
-                    Health = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 17));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(0, 10));
+                    int _roll = rando.Next(8, 48);
+                    Armor = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(16, 17 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(125, 350) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Magenta);
                 }
                 else if (Rarity == "Epic")
                 {
-                    int _roll = rando.Next(10, 100);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(4, 12));
-                    Health = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(3, 18));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(1, 15));
+                    int _roll = rando.Next(10, 70);
+                    Armor = (uint)rando.Next(6, 7 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(14, 15 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(9, 10 + (monsterLevel / 2) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(500, 850) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Purple);
                 }
                 else if (Rarity == "Legendary")
                 {
                     int _roll = rando.Next(40, 180);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 20));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(5, 22));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 18));
+                    Armor = (uint)rando.Next(8, 9 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(2000, 2500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Orange);
                 }
                 else if (Rarity == "Mythical")
                 {
-                    int _roll = rando.Next(50, 400);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(10, 35));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(15, 50));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(7, 50));
+                    int _roll = rando.Next(50, 350);
+                    Armor = (uint)rando.Next(10, 11 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(8000, 12500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Red);
                 }
                 else if (Rarity == "Godly")
                 {
-                    int _roll = rando.Next(300, 8000);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 85));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
+                    int _roll = rando.Next(200, 1250);
+                    Armor = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(25, 26 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(28, 29 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(100000, 112500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Gold);
                 }
 
                 Embed.WithAuthor("Rolled a " + itemName, Context.User.GetAvatarUrl());
                 Embed.WithImageUrl(imageURL);
-                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor + "\n" + "Health: " + Health + "\n" + "Health Regeneration: " + HealthRegen);
+                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n" + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 Embed.WithFooter("Type -Equip to wear this armor piece, type -Sell [Armor Piece] to sell your current armor slot to make room for this item. Do -Sell Drop to sell this item.");
 
                 for (int i = 0; i < droppedHelmets.Count; i++)
@@ -3445,7 +3584,7 @@ namespace RPG_Bot.Commands
                     }
                 }
 
-                droppedBelt.Add(new Belt(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor, Health, HealthRegen));
+                droppedBelt.Add(new Belt(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor / 2, Health / 2, HealthRegen / 2));
 
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
             }
@@ -3460,24 +3599,35 @@ namespace RPG_Bot.Commands
 
                 string Rarity = "Common";
 
-                int roll = rando.Next(0, 1000);
+                if (forceLoot == 0)
+                {
+                    int roll = rando.Next(0, 10000);
 
-                if (roll == 747)
-                    Rarity = "Godly";
-                else if (roll < 650)
-                    Rarity = "Common";
-                else if (roll < 850)
-                    Rarity = "Uncommon";
-                else if (roll < 930)
-                    Rarity = "Rare";
-                else if (roll < 950)
-                    Rarity = "Ultra Rare";
-                else if (roll < 992)
-                    Rarity = "Epic";
-                else if (roll < 998)
-                    Rarity = "Legendary";
-                else if (roll < 1000)
-                    Rarity = "Godly";
+                    if (roll == 7470)
+                        Rarity = "Godly";
+                    else if (roll < 6000)
+                        Rarity = "Common";
+                    else if (roll < 9000)
+                        Rarity = "Uncommon";
+                    else if (roll < 9300)
+                        Rarity = "Rare";
+                    else if (roll < 9500)
+                        Rarity = "Ultra Rare";
+                    else if (roll < 9920)
+                        Rarity = "Epic";
+                    else if (roll < 9995)
+                        Rarity = "Legendary";
+                    else if (roll < 10000)
+                        Rarity = "Mythical";
+                }
+                else if (forceLoot == 1) Rarity = "Common";
+                else if (forceLoot == 2) Rarity = "Uncommon";
+                else if (forceLoot == 3) Rarity = "Rare";
+                else if (forceLoot == 4) Rarity = "Ultra Rare";
+                else if (forceLoot == 5) Rarity = "Epic";
+                else if (forceLoot == 6) Rarity = "Legendary";
+                else if (forceLoot == 7) Rarity = "Mythical";
+                else if (forceLoot == 8) Rarity = "Godly";
 
                 uint Armor = 0;
                 uint Health = 0;
@@ -3487,79 +3637,79 @@ namespace RPG_Bot.Commands
                 if (Rarity == "Common")
                 {
                     int _roll = rando.Next(1, 8);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
-                    Health = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 3));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
+                    Armor = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(8, 9 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(0, 50) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.LightGrey);
                 }
                 else if (Rarity == "Uncommon")
                 {
                     int _roll = rando.Next(2, 15);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 6));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
+                    Armor = (uint)rando.Next(4, 5 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(3, 4 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(30, 150) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Green);
                 }
                 else if (Rarity == "Rare")
                 {
-                    int _roll = rando.Next(4, 35);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 8));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 5));
+                    int _roll = rando.Next(4, 30);
+                    Armor = (uint)rando.Next(5, 6 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(13, 14 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(8, 9 + (monsterLevel / 3) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(140, 200) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Blue);
                 }
                 else if (Rarity == "Ultra Rare")
                 {
-                    int _roll = rando.Next(8, 60);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 8));
-                    Health = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 17));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(0, 10));
+                    int _roll = rando.Next(8, 48);
+                    Armor = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(16, 17 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(125, 350) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Magenta);
                 }
                 else if (Rarity == "Epic")
                 {
-                    int _roll = rando.Next(10, 100);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(4, 12));
-                    Health = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(3, 18));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(1, 15));
+                    int _roll = rando.Next(10, 70);
+                    Armor = (uint)rando.Next(6, 7 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(14, 15 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(9, 10 + (monsterLevel / 2) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(500, 850) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Purple);
                 }
                 else if (Rarity == "Legendary")
                 {
                     int _roll = rando.Next(40, 180);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 20));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(5, 22));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 18));
+                    Armor = (uint)rando.Next(8, 9 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(2000, 2500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Orange);
                 }
                 else if (Rarity == "Mythical")
                 {
-                    int _roll = rando.Next(50, 400);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(10, 35));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(15, 50));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(7, 50));
+                    int _roll = rando.Next(50, 350);
+                    Armor = (uint)rando.Next(10, 11 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(8000, 12500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Red);
                 }
                 else if (Rarity == "Godly")
                 {
-                    int _roll = rando.Next(300, 8000);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 85));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
+                    int _roll = rando.Next(200, 1250);
+                    Armor = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(25, 26 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(28, 29 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(100000, 112500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Gold);
                 }
 
                 Embed.WithAuthor(monsterName + " dropped a " + itemName, Context.User.GetAvatarUrl());
                 Embed.WithImageUrl(imageURL);
-                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor + "\n" + "Health: " + Health + "\n" + "Health Regeneration: " + HealthRegen);
+                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n" + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 Embed.WithFooter("Type -Equip to wear this armor piece, type -Sell [Armor Piece] to sell your current armor slot to make room for this item. Do -Sell Drop to sell this item.");
 
                 for (int i = 0; i < droppedHelmets.Count; i++)
@@ -3616,7 +3766,7 @@ namespace RPG_Bot.Commands
                     }
                 }
 
-                droppedLeggings.Add(new Leggings(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor, Health, HealthRegen));
+                droppedLeggings.Add(new Leggings(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor / 2, Health / 2, HealthRegen / 2));
 
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
             }
@@ -3631,24 +3781,35 @@ namespace RPG_Bot.Commands
 
                 string Rarity = "Common";
 
-                int roll = rando.Next(0, 1000);
+                if (forceLoot == 0)
+                {
+                    int roll = rando.Next(0, 10000);
 
-                if (roll == 747)
-                    Rarity = "Godly";
-                else if (roll < 650)
-                    Rarity = "Common";
-                else if (roll < 850)
-                    Rarity = "Uncommon";
-                else if (roll < 930)
-                    Rarity = "Rare";
-                else if (roll < 950)
-                    Rarity = "Ultra Rare";
-                else if (roll < 992)
-                    Rarity = "Epic";
-                else if (roll < 998)
-                    Rarity = "Legendary";
-                else if (roll < 1000)
-                    Rarity = "Godly";
+                    if (roll == 7470)
+                        Rarity = "Godly";
+                    else if (roll < 6000)
+                        Rarity = "Common";
+                    else if (roll < 9000)
+                        Rarity = "Uncommon";
+                    else if (roll < 9300)
+                        Rarity = "Rare";
+                    else if (roll < 9500)
+                        Rarity = "Ultra Rare";
+                    else if (roll < 9920)
+                        Rarity = "Epic";
+                    else if (roll < 9995)
+                        Rarity = "Legendary";
+                    else if (roll < 10000)
+                        Rarity = "Mythical";
+                }
+                else if (forceLoot == 1) Rarity = "Common";
+                else if (forceLoot == 2) Rarity = "Uncommon";
+                else if (forceLoot == 3) Rarity = "Rare";
+                else if (forceLoot == 4) Rarity = "Ultra Rare";
+                else if (forceLoot == 5) Rarity = "Epic";
+                else if (forceLoot == 6) Rarity = "Legendary";
+                else if (forceLoot == 7) Rarity = "Mythical";
+                else if (forceLoot == 8) Rarity = "Godly";
 
                 uint Armor = 0;
                 uint Health = 0;
@@ -3658,79 +3819,79 @@ namespace RPG_Bot.Commands
                 if (Rarity == "Common")
                 {
                     int _roll = rando.Next(1, 8);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
-                    Health = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 3));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 10) * rando.Next(1, _roll) * rando.Next(0, 2));
+                    Armor = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(8, 9 + (monsterLevel / 7) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(1, 2 + (monsterLevel / 7) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(0, 50) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.LightGrey);
                 }
                 else if (Rarity == "Uncommon")
                 {
                     int _roll = rando.Next(2, 15);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 6));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 8) * rando.Next(1, _roll) * rando.Next(0, 4));
+                    Armor = (uint)rando.Next(4, 5 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(3, 4 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(30, 150) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Green);
                 }
                 else if (Rarity == "Rare")
                 {
-                    int _roll = rando.Next(4, 35);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 4));
-                    Health = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 8));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 6) * rando.Next(1, _roll) * rando.Next(0, 5));
+                    int _roll = rando.Next(4, 30);
+                    Armor = (uint)rando.Next(5, 6 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(13, 14 + (monsterLevel / 3) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(8, 9 + (monsterLevel / 3) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(140, 200) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Blue);
                 }
                 else if (Rarity == "Ultra Rare")
                 {
-                    int _roll = rando.Next(8, 60);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 8));
-                    Health = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(1, 17));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 4) * rando.Next(1, _roll) * rando.Next(0, 10));
+                    int _roll = rando.Next(8, 48);
+                    Armor = (uint)rando.Next(7, 8 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(16, 17 + (monsterLevel / 4) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + (monsterLevel / 4) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(125, 350) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Magenta);
                 }
                 else if (Rarity == "Epic")
                 {
-                    int _roll = rando.Next(10, 100);
-                    Armor = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(4, 12));
-                    Health = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(3, 18));
-                    HealthRegen = (uint)rando.Next(0, (monsterLevel / 2) * rando.Next(1, _roll) * rando.Next(1, 15));
+                    int _roll = rando.Next(10, 70);
+                    Armor = (uint)rando.Next(6, 7 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(14, 15 + (monsterLevel / 2) * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(9, 10 + (monsterLevel / 2) * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(500, 850) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Purple);
                 }
                 else if (Rarity == "Legendary")
                 {
                     int _roll = rando.Next(40, 180);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 20));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(5, 22));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(6, 18));
+                    Armor = (uint)rando.Next(8, 9 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(2000, 2500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Orange);
                 }
                 else if (Rarity == "Mythical")
                 {
-                    int _roll = rando.Next(50, 400);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(10, 35));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(15, 50));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(7, 50));
+                    int _roll = rando.Next(50, 350);
+                    Armor = (uint)rando.Next(10, 11 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(20, 21 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(8000, 12500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Red);
                 }
                 else if (Rarity == "Godly")
                 {
-                    int _roll = rando.Next(300, 8000);
-                    Armor = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 85));
-                    Health = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
-                    HealthRegen = (uint)rando.Next(0, monsterLevel * rando.Next(1, _roll) * rando.Next(35, 90));
+                    int _roll = rando.Next(200, 1250);
+                    Armor = (uint)rando.Next(15, 16 + monsterLevel * rando.Next(1, _roll));
+                    Health = (uint)rando.Next(25, 26 + monsterLevel * rando.Next(1, _roll));
+                    HealthRegen = (uint)rando.Next(28, 29 + monsterLevel * rando.Next(1, _roll));
                     SellPrice = (uint)rando.Next(100000, 112500) * (1 + Data.Data.GetData_Charisma(Context.User.Id));
                     Embed.WithColor(Color.Gold);
                 }
 
                 Embed.WithAuthor(monsterName + " dropped a " + itemName, Context.User.GetAvatarUrl());
                 Embed.WithImageUrl(imageURL);
-                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor + "\n" + "Health: " + Health + "\n" + "Health Regeneration: " + HealthRegen);
+                Embed.WithDescription("Rarity: " + Rarity + "\n\n" + "Armor: " + Armor / 2 + "\n" + "Health: " + Health / 2 + "\n" + "Health Regeneration: " + HealthRegen / 2 + "\nSell Price: " + SellPrice);
                 Embed.WithFooter("Type -Equip to wear this armor piece, type -Sell [Armor Piece] to sell your current armor slot to make room for this item. Do -Sell Drop to sell this item.");
 
                 for (int i = 0; i < droppedHelmets.Count; i++)
@@ -3787,7 +3948,7 @@ namespace RPG_Bot.Commands
                     }
                 }
 
-                droppedBoots.Add(new Boots(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor, Health, HealthRegen));
+                droppedBoots.Add(new Boots(Context.User.Id, 0, imageURL, itemName, SellPrice, Rarity, Armor / 2, Health / 2, HealthRegen / 2));
 
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
             }
@@ -4138,7 +4299,7 @@ namespace RPG_Bot.Commands
             //slot to make room for this item. Do -Sell Drop to sell this item.
         }
 
-        [Command("Sell"), Alias("sell", "SellItem", "sellitem"), Summary("Sell a current piece of equipment.")]
+        [Command("Sell"), Alias("sell", "SellItem", "sellitem", "se"), Summary("Sell a current piece of equipment.")]
         public async Task SellEquipment([Remainder]string option = "")
         {
             option = option.ToLower();
@@ -4161,7 +4322,7 @@ namespace RPG_Bot.Commands
                     await Data.Data.DeleteHelmet(Context.User.Id);
                 }
             }
-            else if (option == "chesplate" || option == "chesplates")
+            else if (option == "chestplate" || option == "chestplates")
             {
                 if (Data.Data.GetChestplate(Context.User.Id) != null)
                 {
@@ -4360,14 +4521,14 @@ namespace RPG_Bot.Commands
                 EmbedBuilder Embeda = new EmbedBuilder();
                 Embeda.WithAuthor("Invalid item to sell!");
                 Embeda.WithDescription("To sell a piece of equipment you must use the command like:\n``-Sell Helmet``\n\nThe available slots to sell " +
-                    "are:\nHelmet, Chesplate, Gauntlets, Belt, Leggings & Boots");
+                    "are:\nHelmet, Chestplate, Gauntlets, Belt, Leggings & Boots");
                 Embeda.WithColor(Color.Red);
                 await Context.Channel.SendMessageAsync("", false, Embeda.Build());
                 return;
             }
         }
 
-        [Command("Equipment"), Alias("equipment", "EquipDrop", "equipdrop"), Summary("Equip the last dropped item that is under your Id.")]
+        [Command("Equipment"), Alias("equipment", "EquipDrop", "equipdrop", "e"), Summary("Equip the last dropped item that is under your Id.")]
         public async Task Equipment([Remainder]string option = "")
         {
             option = option.ToLower();
@@ -4381,7 +4542,7 @@ namespace RPG_Bot.Commands
 
                 if (item != null)
                 {
-                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage);
+                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage + "\nSell Price: " + item.ItemCost);
                     Embeda.WithImageUrl(item.WebURL);
 
                     Embeda.WithColor(GetRarityColor(item.ItemRarity));
@@ -4405,7 +4566,8 @@ namespace RPG_Bot.Commands
 
                 if (item != null)
                 {
-                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage);
+
+                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage + "\nSell Price: " + item.ItemCost);
                     Embeda.WithImageUrl(item.WebURL);
 
                     Embeda.WithColor(GetRarityColor(item.ItemRarity));
@@ -4420,7 +4582,7 @@ namespace RPG_Bot.Commands
 
                 return;
             }
-            else if (option == "chesplate" || option == "chesplates")
+            else if (option == "chestplate" || option == "chestplates")
             {
                 Chestplate item = Data.Data.GetChestplate(Context.User.Id);
 
@@ -4429,7 +4591,8 @@ namespace RPG_Bot.Commands
 
                 if (item != null)
                 {
-                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage);
+
+                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage + "\nSell Price: " + item.ItemCost);
                     Embeda.WithImageUrl(item.WebURL);
 
                     Embeda.WithColor(GetRarityColor(item.ItemRarity));
@@ -4441,7 +4604,7 @@ namespace RPG_Bot.Commands
                 }
 
                 await Context.Channel.SendMessageAsync("", false, Embeda.Build());
-                
+
                 return;
             }
             else if (option == "belt" || option == "belts")
@@ -4453,7 +4616,8 @@ namespace RPG_Bot.Commands
 
                 if (item != null)
                 {
-                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage);
+
+                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage + "\nSell Price: " + item.ItemCost);
                     Embeda.WithImageUrl(item.WebURL);
 
                     Embeda.WithColor(GetRarityColor(item.ItemRarity));
@@ -4477,7 +4641,8 @@ namespace RPG_Bot.Commands
 
                 if (item != null)
                 {
-                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage);
+
+                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage + "\nSell Price: " + item.ItemCost);
                     Embeda.WithImageUrl(item.WebURL);
 
                     Embeda.WithColor(GetRarityColor(item.ItemRarity));
@@ -4501,7 +4666,8 @@ namespace RPG_Bot.Commands
 
                 if (item != null)
                 {
-                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage);
+
+                    Embeda.WithDescription(item.ItemName + " - " + item.ItemRarity + "\nArmor: " + item.Armor + "\nHealth: " + item.Health + "\nHealth Regeneration: " + item.HealthGainOnDamage + "\nSell Price: " + item.ItemCost);
                     Embeda.WithImageUrl(item.WebURL);
 
                     Embeda.WithColor(GetRarityColor(item.ItemRarity));
@@ -4520,12 +4686,12 @@ namespace RPG_Bot.Commands
             EmbedBuilder Embed = new EmbedBuilder();
             Embed.WithAuthor("Current Equipment:");
 
-            Helmet      helm = Data.Data.GetHelmet(Context.User.Id);
-            Gauntlets   gaun = Data.Data.GetGauntlet(Context.User.Id);
-            Chestplate  ches = Data.Data.GetChestplate(Context.User.Id);
-            Belt        belt = Data.Data.GetBelt(Context.User.Id);
-            Leggings    legg = Data.Data.GetLeggings(Context.User.Id);
-            Boots       boot = Data.Data.GetBoots(Context.User.Id);
+            Helmet helm = Data.Data.GetHelmet(Context.User.Id);
+            Gauntlets gaun = Data.Data.GetGauntlet(Context.User.Id);
+            Chestplate ches = Data.Data.GetChestplate(Context.User.Id);
+            Belt belt = Data.Data.GetBelt(Context.User.Id);
+            Leggings legg = Data.Data.GetLeggings(Context.User.Id);
+            Boots boot = Data.Data.GetBoots(Context.User.Id);
 
             string helmets;
             string gauntlets;
@@ -4535,27 +4701,27 @@ namespace RPG_Bot.Commands
             string boots;
 
             if (helm != null)
-                helmets = helm.ItemName + " - " + helm.ItemRarity + "\nArmor: " + helm.Armor + "\nHealth: " + helm.Health + "\nHealth Regeneration: " + helm.HealthGainOnDamage;
+                helmets = helm.ItemName + " - " + helm.ItemRarity + "\nArmor: " + helm.Armor + "\nHealth: " + helm.Health + "\nHealth Regeneration: " + helm.HealthGainOnDamage + "\nSell Price: " + helm.ItemCost;
             else helmets = "No helmet equipped...";
 
             if (gaun != null)
-                gauntlets = gaun.ItemName + " - " + gaun.ItemRarity + "\nArmor: " + gaun.Armor + "\nHealth: " + gaun.Health + "\nHealth Regeneration: " + gaun.HealthGainOnDamage;
+                gauntlets = gaun.ItemName + " - " + gaun.ItemRarity + "\nArmor: " + gaun.Armor + "\nHealth: " + gaun.Health + "\nHealth Regeneration: " + gaun.HealthGainOnDamage + "\nSell Price: " + gaun.ItemCost;
             else gauntlets = "No gauntlets equipped...";
 
             if (ches != null)
-                chestplate = ches.ItemName + " - " + ches.ItemRarity + "\nArmor: " + ches.Armor + "\nHealth: " + ches.Health + "\nHealth Regeneration: " + ches.HealthGainOnDamage;
+                chestplate = ches.ItemName + " - " + ches.ItemRarity + "\nArmor: " + ches.Armor + "\nHealth: " + ches.Health + "\nHealth Regeneration: " + ches.HealthGainOnDamage + "\nSell Price: " + ches.ItemCost;
             else chestplate = "No chestplate equipped...";
 
             if (belt != null)
-                belts = belt.ItemName + " - " + belt.ItemRarity + "\nArmor: " + belt.Armor + "\nHealth: " + belt.Health + "\nHealth Regeneration: " + belt.HealthGainOnDamage;
+                belts = belt.ItemName + " - " + belt.ItemRarity + "\nArmor: " + belt.Armor + "\nHealth: " + belt.Health + "\nHealth Regeneration: " + belt.HealthGainOnDamage + "\nSell Price: " + belt.ItemCost;
             else belts = "No belt equipped...";
 
             if (legg != null)
-                leggings = legg.ItemName + " - " + legg.ItemRarity + "\nArmor: " + legg.Armor + "\nHealth: " + legg.Health + "\nHealth Regeneration: " + legg.HealthGainOnDamage;
+                leggings = legg.ItemName + " - " + legg.ItemRarity + "\nArmor: " + legg.Armor + "\nHealth: " + legg.Health + "\nHealth Regeneration: " + legg.HealthGainOnDamage + "\nSell Price: " + legg.ItemCost;
             else leggings = "No leggings equipped...";
 
             if (boot != null)
-                boots = boot.ItemName + " - " + boot.ItemRarity + "\nArmor: " + boot.Armor + "\nHealth: " + boot.Health + "\nHealth Regeneration: " + boot.HealthGainOnDamage;
+                boots = boot.ItemName + " - " + boot.ItemRarity + "\nArmor: " + boot.Armor + "\nHealth: " + boot.Health + "\nHealth Regeneration: " + boot.HealthGainOnDamage + "\nSell Price: " + boot.ItemCost;
             else boots = "No boots equipped...";
 
             Embed.WithDescription("═════════════════════\n" + helmets + "\n═════════════════════\n" + gauntlets + "\n═════════════════════\n" + chestplate + "\n═════════════════════\n" + belts + "\n═════════════════════\n" + leggings + "\n═════════════════════\n" + boots + "\n═════════════════════");
@@ -4584,6 +4750,396 @@ namespace RPG_Bot.Commands
             else if (ItemRarity == "Godly")
                 return Color.Gold;
             else return Color.DarkMagenta;
+        }
+
+        [Command("Skill"), Alias("Skills", "skill", "skills", "SkillPoint", "skillpoint", "sk"), Summary("Display and up skills.")]
+        public async Task LevelUpSkill(string option = "", uint amountOfPoints = 1)
+        {
+            option = option.ToLower();
+
+            if (option == "" || option.Length == 0)
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithTitle("<:Skill:638241457752506368>Skills");
+
+                Embed.WithDescription("Current Skill Points: " + Data.Data.GetData_SkillPoints(Context.User.Id) +
+                                      " <:Skill:638241457752506368>\nTo upgrade a skill do -Skill [Stat].\n\n" +
+                                      "Stamina: " + Data.Data.GetData_Stamina(Context.User.Id) +
+                                      "\nStability: " + Data.Data.GetData_Stability(Context.User.Id) +
+                                      "\nDexterity: " + Data.Data.GetData_Dexterity(Context.User.Id) +
+                                      "\nStrength: " + Data.Data.GetData_Strength(Context.User.Id) +
+                                      "\nCharisma: " + Data.Data.GetData_Charisma(Context.User.Id) +
+                                      "\nLuck: " + Data.Data.GetData_Luck(Context.User.Id));
+
+                Embed.Color = Color.Teal;
+                Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                Embed.WithFooter("Do -Skill Info for a list of what each skill does");
+
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
+            else if (option == "info")
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+
+                Embed.WithTitle("<:Skill:638241457752506368>Skill Info");
+
+                Embed.WithDescription("**Stamina**: Gain a random chance to regain 25% health each turn.\n\n" +
+                                      "**Stability**: Increases how much health you will regain upon it becoming your turn to fight again.\n\n" +
+                                      "**Dexterity**: Increases the chance you will completely dodge an enemy attack.\n\n" +
+                                      "**Strength**: Increases how likely you are to deal a critical blow upon attacking doing 200% extra damage.\n\n" +
+                                      "**Luck**: Increases the chance an item will drop off an enemy.\n\n" +
+                                      "**Charisma**: Increases how much a found item will sell for.\n\n");
+
+                Embed.Color = Color.Teal;
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
+            else if (Data.Data.GetData_SkillPoints(Context.User.Id) >= amountOfPoints)
+            {
+                if (option == "stamina" || option == "stability" || option == "dexterity" || option == "strength" || option == "luck" || option == "charisma")
+                {
+                    if (option == "stamina")
+                    {
+                        await Data.Data.SetSkillPoints(Context.User.Id, Data.Data.GetData_SkillPoints(Context.User.Id) - amountOfPoints);
+                        await Data.Data.AddStaminaPoints(Context.User.Id, amountOfPoints);
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("Stamina increased by " + amountOfPoints + "!");
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        Embed.WithFooter("Remaining skill points: " + Data.Data.GetData_SkillPoints(Context.User.Id));
+                        Embed.Color = Color.Green;
+
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                    }
+                    else if (option == "stability")
+                    {
+                        await Data.Data.SetSkillPoints(Context.User.Id, Data.Data.GetData_SkillPoints(Context.User.Id) - amountOfPoints);
+                        await Data.Data.AddStabilityPoints(Context.User.Id, amountOfPoints);
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("Stability increased by " + amountOfPoints + "!");
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        Embed.WithFooter("Remaining skill points: " + Data.Data.GetData_SkillPoints(Context.User.Id));
+                        Embed.Color = Color.Green;
+
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                    }
+                    else if (option == "dexterity")
+                    {
+                        await Data.Data.SetSkillPoints(Context.User.Id, Data.Data.GetData_SkillPoints(Context.User.Id) - amountOfPoints);
+                        await Data.Data.AddDexterityPoints(Context.User.Id, amountOfPoints);
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("Dexterity increased by " + amountOfPoints + "!");
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        Embed.WithFooter("Remaining skill points: " + Data.Data.GetData_SkillPoints(Context.User.Id));
+                        Embed.Color = Color.Green;
+
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                    }
+                    else if (option == "strength")
+                    {
+                        await Data.Data.SetSkillPoints(Context.User.Id, Data.Data.GetData_SkillPoints(Context.User.Id) - amountOfPoints);
+                        await Data.Data.AddStrengthPoints(Context.User.Id, amountOfPoints);
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("Strength increased by " + amountOfPoints + "!");
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        Embed.WithFooter("Remaining skill points: " + Data.Data.GetData_SkillPoints(Context.User.Id));
+                        Embed.Color = Color.Green;
+
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                    }
+                    else if (option == "luck")
+                    {
+                        await Data.Data.SetSkillPoints(Context.User.Id, Data.Data.GetData_SkillPoints(Context.User.Id) - amountOfPoints);
+                        await Data.Data.AddLuckPoints(Context.User.Id, amountOfPoints);
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("Luck increased by " + amountOfPoints + "!");
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        Embed.WithFooter("Remaining skill points: " + Data.Data.GetData_SkillPoints(Context.User.Id));
+                        Embed.Color = Color.Green;
+
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                    }
+                    else if (option == "charisma")
+                    {
+                        await Data.Data.SetSkillPoints(Context.User.Id, Data.Data.GetData_SkillPoints(Context.User.Id) - amountOfPoints);
+                        await Data.Data.AddCharismaPoints(Context.User.Id, amountOfPoints);
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("Charisma increased by " + amountOfPoints + "!");
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        Embed.WithFooter("Remaining skill points: " + Data.Data.GetData_SkillPoints(Context.User.Id));
+                        Embed.Color = Color.Green;
+
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                    }
+                }
+                else
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("Invalid sub command!");
+                    Embed.WithDescription("The available sub commands are: Stamina, Stability, Dexterity, Strength, Luck & Charisma. You may additionally leave it blank or @ somone.");
+                    Embed.Color = Color.Red;
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                }
+            }
+            else
+            {
+                if (option == "stamina" || option == "stability" || option == "dexterity" || option == "strength" || option == "luck" || option == "charisma")
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+
+                    Embed.WithTitle("<:Skill:638241457752506368>Whoops!<:Skill:638241457752506368>");
+
+                    Embed.WithDescription("You do not have enough skill points to do that!");
+
+                    Embed.Color = Color.Red;
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                }
+                else
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("Invalid sub command!");
+                    Embed.WithDescription("The available sub commands are: Stamina, Stability, Dexterity, Strength, Luck & Charisma. You may additionally leave it blank or @ somone.");
+                    Embed.Color = Color.Red;
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                }
+            }
+        }
+
+        [Command("Skill"), Alias("Skills", "skill", "skills", "SkillPoint", "skillpoint", "sk"), Summary("Display and up skills.")]
+        public async Task LevelUpSkill(IUser User)
+        {
+            if (User == null) return;
+
+            var vuser = User as SocketGuildUser;
+
+            EmbedBuilder Embed = new EmbedBuilder();
+            Embed.WithTitle("<:Skill:638241457752506368>Skills");
+            Embed.WithDescription("Current Skill Points: " + Data.Data.GetData_SkillPoints(vuser.Id) +
+                " <:Skill:638241457752506368>\n\nStamina: " + Data.Data.GetData_Stamina(vuser.Id) +
+                "\nStability: " + Data.Data.GetData_Stability(vuser.Id) +
+                "\nDexterity: " + Data.Data.GetData_Dexterity(vuser.Id) +
+                "\nStrength: " + Data.Data.GetData_Strength(vuser.Id) +
+                "\nCharisma: " + Data.Data.GetData_Charisma(vuser.Id) +
+                "\nLuck: " + Data.Data.GetData_Luck(vuser.Id));
+            Embed.Color = Color.Teal;
+            Embed.WithThumbnailUrl(vuser.GetAvatarUrl());
+            Embed.WithFooter("Do -Skill Info for a list of what each skill does");
+            await Context.Channel.SendMessageAsync("", false, Embed.Build());
+        }
+
+        [Command("lootbox"), Alias("Lootbox", "lootboxes", "Lootboxes", "Lootchest", "Lootchests", "l", "lb"), Summary("Open and look at loot boxes you own.")]
+        public async Task Lootboxes([Remainder]string option = "")
+        {
+            option = option.ToLower();
+
+            if (option == "")
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithTitle("Current Loot Chests");
+                Embed.WithDescription("Common Chests: " + Data.Data.GetData_CommonBoxCount(Context.User.Id) +
+                    "\nUncommon Chests: " + Data.Data.GetData_UncommonBoxCount(Context.User.Id) +
+                    "\nRare Chests: " + Data.Data.GetData_RareBoxCount(Context.User.Id) +
+                    "\nVery Rare Chests: " + Data.Data.GetData_VeryRareBoxCount(Context.User.Id) +
+                    "\nEpic Chests: " + Data.Data.GetData_EpicBoxCount(Context.User.Id) +
+                    "\nLegendary Chests: " + Data.Data.GetData_LegendaryBoxCount(Context.User.Id) +
+                    "\nMythic Chests: " + Data.Data.GetData_MythicBoxCount(Context.User.Id) +
+                    "\nGodly Chests: " + Data.Data.GetData_GodlyBoxCount(Context.User.Id));
+                Embed.Color = Color.Gold;
+                Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                Embed.WithFooter("Do -Lootbox [Type] to open them!");
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
+            else if (option == "common")
+            {
+                if(Data.Data.GetData_CommonBoxCount(Context.User.Id) >= 1)
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("Common Loot Box Opened!");
+                    Embed.Color = Color.LightGrey;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                    await Data.Data.SetCommonBoxCount(Context.User.Id, Data.Data.GetData_CommonBoxCount(Context.User.Id) - 1);
+                    await LootItem(Context, "Common Loot Box", (int)Data.Data.GetData_Level(Context.User.Id), 1);
+                }
+                else
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("You do not have any loot boxes of this type...");
+                    Embed.Color = Color.Red;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                }
+            }
+            else if (option == "uncommon")
+            {
+                if (Data.Data.GetData_UncommonBoxCount(Context.User.Id) >= 1)
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("Uncommon Loot Box Opened!");
+                    Embed.Color = Color.Green;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                    await Data.Data.SetUncommonBoxCount(Context.User.Id, Data.Data.GetData_UncommonBoxCount(Context.User.Id) - 1);
+                    await LootItem(Context, "Uncommon Loot Box", (int)Data.Data.GetData_Level(Context.User.Id), 2);
+                }
+                else
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("You do not have any loot boxes of this type...");
+                    Embed.Color = Color.Red;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                }
+            }
+            else if (option == "rare")
+            {
+                if (Data.Data.GetData_RareBoxCount(Context.User.Id) >= 1)
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("Rare Loot Box Opened!");
+                    Embed.Color = Color.Blue;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                    await Data.Data.SetRareBoxCount(Context.User.Id, Data.Data.GetData_RareBoxCount(Context.User.Id) - 1);
+                    await LootItem(Context, "Rare Loot Box", (int)Data.Data.GetData_Level(Context.User.Id), 3);
+                }
+                else
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("You do not have any loot boxes of this type...");
+                    Embed.Color = Color.Red;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                }
+            }
+            else if (option == "veryrare")
+            {
+                if (Data.Data.GetData_VeryRareBoxCount(Context.User.Id) >= 1)
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("Very Rare Loot Box Opened!");
+                    Embed.Color = Color.Magenta;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                    await Data.Data.SetVeryRareBoxCount(Context.User.Id, Data.Data.GetData_VeryRareBoxCount(Context.User.Id) - 1);
+                    await LootItem(Context, "Very Rare Loot Box", (int)Data.Data.GetData_Level(Context.User.Id), 4);
+                }
+                else
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("You do not have any loot boxes of this type...");
+                    Embed.Color = Color.Red;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                }
+            }
+            else if (option == "epic")
+            {
+                if (Data.Data.GetData_EpicBoxCount(Context.User.Id) >= 1)
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("Epic Loot Box Opened!");
+                    Embed.Color = Color.Purple;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                    await Data.Data.SetEpicBoxCount(Context.User.Id, Data.Data.GetData_EpicBoxCount(Context.User.Id) - 1);
+                    await LootItem(Context, "Epic Loot Box", (int)Data.Data.GetData_Level(Context.User.Id), 5);
+                }
+                else
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("You do not have any loot boxes of this type...");
+                    Embed.Color = Color.Red;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                }
+            }
+            else if (option == "legendary")
+            {
+                if (Data.Data.GetData_LegendaryBoxCount(Context.User.Id) >= 1)
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("Legendary Loot Box Opened!");
+                    Embed.Color = Color.Orange;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                    await Data.Data.SetLegendaryBoxCount(Context.User.Id, Data.Data.GetData_LegendaryBoxCount(Context.User.Id) - 1);
+                    await LootItem(Context, "Legendary Loot Box", (int)Data.Data.GetData_Level(Context.User.Id), 6);
+                }
+                else
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("You do not have any loot boxes of this type...");
+                    Embed.Color = Color.Red;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                }
+            }
+            else if (option == "mythic")
+            {
+                if (Data.Data.GetData_MythicBoxCount(Context.User.Id) >= 1)
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("Mythic Loot Box Opened!");
+                    Embed.Color = Color.Red;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                    await Data.Data.SetMythicBoxCount(Context.User.Id, Data.Data.GetData_MythicBoxCount(Context.User.Id) - 1);
+                    await LootItem(Context, "Mythic Loot Box", (int)Data.Data.GetData_Level(Context.User.Id), 7);
+                }
+                else
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("You do not have any loot boxes of this type...");
+                    Embed.Color = Color.Red;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                }
+            }
+            else if (option == "godly")
+            {
+                if (Data.Data.GetData_GodlyBoxCount(Context.User.Id) >= 1)
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("Godly Loot Box Opened!");
+                    Embed.Color = Color.Teal;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                    await Data.Data.SetGodlyBoxCount(Context.User.Id, Data.Data.GetData_GodlyBoxCount(Context.User.Id) - 1);
+                    await LootItem(Context, "Godly Loot Box", (int)Data.Data.GetData_Level(Context.User.Id), 8);
+                }
+                else
+                {
+                    EmbedBuilder Embed = new EmbedBuilder();
+                    Embed.WithTitle("You do not have any loot boxes of this type...");
+                    Embed.Color = Color.Red;
+                    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                }
+            }
+
+            /*
+                else if(forceLoot == 1) Rarity = "Common";
+                else if(forceLoot == 2) Rarity = "Uncommon";
+                else if(forceLoot == 3) Rarity = "Rare";
+                else if(forceLoot == 4) Rarity = "Ultra Rare";
+                else if(forceLoot == 5) Rarity = "Epic";
+                else if(forceLoot == 6) Rarity = "Legendary";
+                else if(forceLoot == 7) Rarity = "Mythical";
+                else if(forceLoot == 8) Rarity = "Godly"; 
+             */
         }
     }
 }   
