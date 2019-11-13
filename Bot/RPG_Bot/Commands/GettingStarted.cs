@@ -11,6 +11,7 @@ using Discord.WebSocket;
 using Discord.Net;
 using System.Linq;
 using RPG_Bot.Resources;
+using static RPG_Bot.Emojis.Emojis;
 
 namespace RPG_Bot.Commands
 {
@@ -684,27 +685,30 @@ namespace RPG_Bot.Commands
         public async Task GameClassList([Remainder]string Input = "None")
         {
             EmbedBuilder Embed = new EmbedBuilder();
+
             Embed.WithAuthor("There are currently 15 classes available and they are: ");
             Embed.WithColor(40, 200, 150);
             Embed.WithFooter("");
-            Embed.WithDescription("<:Archer:543112389579767828>Archer - High Damage, Very Vulnerable" +
-                                 "\n<:Assassin:543112389109874719>Assassin - Extreme Damage, Very Fragile" +
-                                 "\n<:Knight:543112385498578967>Knight - Low Damage, Very Tanky" +
-                                 "\n<:Rogue:543112385406304257>Rogue - High Damage, Very Vulnerable" +
-                                 "\n<:Witch:543112316745416706>Witch - High Damage, Very Vulnerable" +
-                                 "\n<:Wizard:543112388774199297>Wizard - Medium Damage, Somewhat Durable" +
-                                 "\n<:Trickster:566917752875384834>Trickster - High Damage, Very Vulnerable" +
-                                 "\n<:Swordsman:566917753085362186>Swordsman - Medium Damage, Somewhat Durable" +
-                                 "\n<:Paladin:566917753081036800>Paladin - Low Damage, Very Tanky" +
-                                 "\n<:Nechromancer:566917752640503809>Necromancer - Extreme Damage, Very Fragile" +
-                                 "\n<:Monk:566917753009602570>Monk - Medium Damage, Somewhat Durable" +
-                                 "\n<:Kitsune:566917752380719139>Kitsune - Extreme Damage, Very Fragile" +
-                                 "\n<:Evangel:566917753450266645>Evangel - Medium Damage, Somewhat Durable" +
-                                 "\n<:Berserker:566917750140960768>Berserker - Balanced Damage, Balanced Strength" +
-                                 "\n<:Tamer:566918308218273792>Tamer - Extreme Damage, Very Fragile\n\n" +
+
+            Embed.WithDescription(Archer + "Archer - High Damage, Very Vulnerable\n" +
+                                 Assassin + "Assassin - Extreme Damage, Very Fragile\n" +
+                                 Knight + "Knight - Low Damage, Very Tanky\n" +
+                                 Rogue + "Rogue - High Damage, Very Vulnerable\n" +
+                                 Witch + "Witch - High Damage, Very Vulnerable\n" +
+                                 Wizard + "Wizard - Medium Damage, Somewhat Durable\n" +
+                                 Trickster + "Trickster - High Damage, Very Vulnerable\n" +
+                                 Swordsman + "Swordsman - Medium Damage, Somewhat Durable\n" +
+                                 Paladin + "Paladin - Low Damage, Very Tanky\n" +
+                                 Nechromancer + "Necromancer - Extreme Damage, Very Fragile\n" +
+                                 Monk + "Monk - Medium Damage, Somewhat Durable\n" +
+                                 Kitsune + "Kitsune - Extreme Damage, Very Fragile\n" +
+                                 Evangel + "Evangel - Medium Damage, Somewhat Durable\n" +
+                                 Berserker + "Berserker - Balanced Damage, Balanced Strength\n" +
+                                 Tamer + "Tamer - Extreme Damage, Very Fragile\n\n" +
                                  "Note: Classes each have their own base stats, but after about level 10 the " +
                                  "difference in stats isn't very noticeable and becomes more of a cosmetic." +
                                  "\nYou may switch your class at any time for 500 Gold Coins, see ``-help`` for more info");
+
             Embed.Color = Color.Gold;
 
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
@@ -740,7 +744,7 @@ namespace RPG_Bot.Commands
                     "\n**10.)** Check the guilds gold leaderboard: `-leaderboard` or `-lb`." +
                     "\n**11.)** Go on a quest: `-quest` or `-q`." +
                     "\n**12.)** Fight a spawned monster: `-fight` or `-f`. Additionally you may do -f [x] to simulate x turns.." +
-                    "\n**13.)** Change your class for 500<:Coins:543112388493312000>: `-SwitchClass` or `-ChangeClass`." +
+                    "\n**13.)** Change your class for 500" + Coins + ": `-SwitchClass` or `-ChangeClass`." +
                     "\n**14.)** Preview the starting stats of a class and the profile image of it: `-info [ClassName]`." +
                     "\n**15.)** Preview your current equipment: `-Equipment [Helmet, Gauntlets, Chestplate, Leggings, Boots]`." +
                     "\n**16.)** Equip a dropped item: `-Equip`." +

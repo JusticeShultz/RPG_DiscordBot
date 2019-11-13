@@ -12,6 +12,7 @@ using System.Linq;
 using RPG_Bot.Resources.Database;
 using RPG_Bot.Resources;
 using System.Timers;
+using static RPG_Bot.Emojis.Emojis;
 
 namespace RPG_Bot.Commands
 {
@@ -199,8 +200,8 @@ namespace RPG_Bot.Commands
 
             uint candies = (uint)rng.Next(1, 15);
 
-            Embed.WithDescription(godTitle + " grants you " + coins + " Gold Coins and " + gems + "<:GuildGem:545341213004529725> as a blessing!" +
-                /* Event addition */ "\nAdditionally you are blessed with " + candies + "<:Candy:637578758986924035>!");
+            Embed.WithDescription(godTitle + " grants you " + coins + " Gold Coins and " + gems + GuildGem + " as a blessing!" +
+                /* Event addition */ "\nAdditionally you are blessed with " + candies + Candy + "!");
             Embed.WithColor(40, 200, 150);
             Embed.Color = Color.Gold;
             Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());

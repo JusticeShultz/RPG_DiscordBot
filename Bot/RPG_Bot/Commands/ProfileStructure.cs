@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 using RPG_Bot.Resources.Database;
 using System.Collections.Generic;
-
+using static RPG_Bot.Emojis.Emojis;
 namespace RPG_Bot.Currency
 {
     public class ProfileStructure : ModuleBase<SocketCommandContext>
@@ -47,91 +47,91 @@ namespace RPG_Bot.Currency
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225760748961797/Archer.png");
                 classType = "Archer";
-                classEmoji = "<:Archer:543112389579767828>";
+                classEmoji = Archer;
             }
             else if (UsersClass == "Knight")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767107526676/Knight.png");
                 classType = "Knight";
-                classEmoji = "<:Knight:543112385498578967>";
+                classEmoji = Knight;
             }
             else if (UsersClass == "Witch")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767770095619/Witch.png");
                 classType = "Witch";
-                classEmoji = "<:Witch:543112316745416706>";
+                classEmoji = Witch;
             }
             else if (UsersClass == "Rogue")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767220641792/Rogue.png");
                 classType = "Rogue";
-                classEmoji = "<:Rogue:543112385406304257>";
+                classEmoji = Rogue;
             }
             else if (UsersClass == "Wizard")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225769422913537/Wizard.png");
                 classType = "Wizard";
-                classEmoji = "<:Wizard:543112388774199297>";
+                classEmoji = Wizard;
             }
             else if (UsersClass == "Assassin")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225760619069450/Assassin.png");
                 classType = "Assassin";
-                classEmoji = "<:Assassin:543112389109874719>";
+                classEmoji = Assassin;
             }
             else if (UsersClass == "Berserker")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904669427859456/Berserker.png");
                 classType = "Berserker";
-                classEmoji = "<:Berserker:566917750140960768>";
+                classEmoji = Berserker;
             }
             else if (UsersClass == "Necromancer")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904652009046026/Nechromancer.webp");
                 classType = "Necromancer";
-                classEmoji = "<:Nechromancer:566917752640503809>";
+                classEmoji = Nechromancer;
             }
             else if (UsersClass == "Trickster")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904660275757066/Trickster.png");
                 classType = "Trickster";
-                classEmoji = "<:Trickster:566917752875384834>";
+                classEmoji = Trickster;
             }
             else if (UsersClass == "Kitsune")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904663740252161/Kitsune.webp");
                 classType = "Kitsune";
-                classEmoji = "<:Kitsune:566917752380719139>";
+                classEmoji = Kitsune;
             }
             else if (UsersClass == "Paladin")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904668891119627/Paladin.png");
                 classType = "Paladin";
-                classEmoji = "<:Paladin:566917753081036800>";
+                classEmoji = Paladin;
             }
             else if (UsersClass == "Monk")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904672250626048/Monk.png");
                 classType = "Monk";
-                classEmoji = "<:Monk:566917753009602570>";
+                classEmoji = Monk;
             }
             else if (UsersClass == "Evangel")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904680668725258/Evangel.png");
                 classType = "Evangel";
-                classEmoji = "<:Evangel:566917753450266645>";
+                classEmoji = Evangel;
             }
             else if (UsersClass == "Tamer")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904678713917445/Cat_Tamer.png");
                 classType = "Tamer";
-                classEmoji = "<:Tamer:566918308218273792>";
+                classEmoji = Tamer;
             }
             else if (UsersClass == "Swordsman")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904710016139265/Swordsman.png");
                 classType = "Swordsman";
-                classEmoji = "<:Swordsman:566917753085362186>";
+                classEmoji = Swordsman;
             }
             else
             {
@@ -196,10 +196,10 @@ namespace RPG_Bot.Currency
             Embed.WithAuthor("Profile of: " + user.Username, user.GetAvatarUrl());
             Embed.WithColor(40, 200, 150);
             Embed.WithFooter("XP until level up: " + currentXp + " / " + neededXP);
-            Embed.WithDescription("Class: " + classType + " " + classEmoji + "\nName: " + name + " <:freedomdove:543112388996497419>\nAge: " + age + " <:Age:543112389160337408>\n" + "\nGold Coins: " + coins + " <:Coins:543112388493312000>\n" +
-                "Guild Gems: " + guildGems + " <:GuildGem:545341213004529725>\nEssence (Event Item): " + eventItem + " <:Essence:567480672344866867>\nCandies (Spooktober Event Item): " + eventItem2 + " <:Candy:637578758986924035>\n\n" +
-                "Level: " + level + " <:Level:543112387989995521>\n" + "Health: " + currentHealth + "/" + health + " <:Health:543112384848461832>\nArmor: " + currentArmor + " <:Armor:637402506992812042>\nHealth Regeneration: " + currentRegen + " <:Regeneration:637403443744735253>\nDamage: " + damage + " <:Damage:543112387763503124>\n\n" +
-                "<:Skill:638241457752506368> " + Data.Data.GetData_SkillPoints(vuser.Id) + " Skill Points" + " <:Skill:638241457752506368>\n" +
+            Embed.WithDescription("Class: " + classType + " " + classEmoji + "\nName: " + name + " " + Dove + "\nAge: " + age + " " + Age + "\n" + "\nGold Coins: " + coins + Coins + "\n" +
+                "Guild Gems: " + guildGems + " " + GuildGem + "\nEssence (Event Item): " + eventItem + " " + Essence + "\nCandies (Spooktober Event Item): " + eventItem2 + " " + Candy + "\n\n" +
+                "Level: " + level + " " + Level + "\n" + "Health: " + currentHealth + "/" + health + " " + Health + "\nArmor: " + currentArmor + " " + Armor + "\nHealth Regeneration: " + currentRegen + " " + Regeneration + "\nDamage: " + damage + " " + Damage + "\n\n" +
+                Skill + " " + Data.Data.GetData_SkillPoints(vuser.Id) + " Skill Points" + " " + Skill + "\n" +
                 "Stamina: " + Data.Data.GetData_Stamina(vuser.Id) +
                 "\nStability: " + Data.Data.GetData_Stability(vuser.Id) +
                 "\nDexterity: " + Data.Data.GetData_Dexterity(vuser.Id) +
@@ -414,13 +414,13 @@ namespace RPG_Bot.Currency
                 Embeder.WithAuthor("Error!");
                 Embeder.WithDescription("You must use the command as ``-leaderboard [Sort Method]``!" +
                     "\n\nValid sorting methods:" +
-                    "\n<:Coins:543112388493312000> - **Gold**" +
-                    "\n<:Level:543112387989995521> - **Level**" +
-                    "\n<:Damage:543112387763503124> - **Damage**" +
-                    "\n<:Health:543112384848461832> - **Health**" +
-                    "\n<:GuildGem:545341213004529725> - **Gems**" +
-                    "\n<:Age:543112389160337408> - **Age**" +
-                    "\n<:Essence:567480672344866867> - **Event**");
+                    "\n" + Coins + " - **Gold**" +
+                    "\n" + Level + " - **Level**" +
+                    "\n" + Damage + " - **Damage**" +
+                    "\n" + Health + " - **Health**" +
+                    "\n" + GuildGem + " - **Gems**" +
+                    "\n" + Age + " - **Age**" +
+                    "\n" + Essence + " - **Event**");
                 Embeder.WithColor(40, 200, 150);
                 Embeder.Color = Color.Red;
                 await Context.Channel.SendMessageAsync("", false, Embeder.Build());
@@ -431,65 +431,65 @@ namespace RPG_Bot.Currency
             EmbedBuilder Embed = new EmbedBuilder();
             string output = "";
 
-            if (txt == "Gold" || txt == "gold" || txt == "Coins" || txt == "coins" || txt == "<:Coins:543112388493312000>")
+            if (txt == "Gold" || txt == "gold" || txt == "Coins" || txt == "coins" || txt == Coins)
             {
                 foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, Data.Data.GetData_GoldAmount(users.Id), users.Username, 0, 0, 0, 0, 0, 0));
                 list.Sort((s2, s1) => s1.GoldValue.CompareTo(s2.GoldValue));
-                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Gold: " + list[i].GoldValue + "<:Coins:543112388493312000>";
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Gold: " + list[i].GoldValue + Coins;
                 Embed.WithAuthor("Serverwide Leaderboard by Gold Coins");
                 Embed.Color = Color.Gold;
                 Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
             }
-            else if (txt == "Level" || txt == "level" || txt == "Xp" || txt == "XP" || txt == "xp" || txt == "<:Level:543112387989995521>")
+            else if (txt == "Level" || txt == "level" || txt == "Xp" || txt == "XP" || txt == "xp" || txt == Level)
             {
                 foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, Data.Data.GetData_Level(users.Id), 0, 0, 0, 0, 0));
                 list.Sort((s2, s1) => s1.Level.CompareTo(s2.Level));
-                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Level: " + list[i].Level + "<:Level:543112387989995521>";
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Level: " + list[i].Level + Level;
                 Embed.WithAuthor("Serverwide Leaderboard by Levels");
                 Embed.Color = Color.DarkTeal;
                 Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
             }
-            else if (txt == "Damage" || txt == "damage" || txt == "Strength" || txt == "strength" || txt == "<:Damage:543112387763503124>")
+            else if (txt == "Damage" || txt == "damage" || txt == "Strength" || txt == "strength" || txt == Damage)
             {
                 foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, Data.Data.GetData_Damage(users.Id), 0, 0, 0, 0));
                 list.Sort((s2, s1) => s1.Damage.CompareTo(s2.Damage));
-                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Damage: " + list[i].Damage + "<:Damage:543112387763503124>";
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Damage: " + list[i].Damage + Damage;
                 Embed.WithAuthor("Serverwide Leaderboard by Damage");
                 Embed.Color = Color.DarkRed;
                 Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
             }
-            else if (txt == "Health" || txt == "health" || txt == "Life" || txt == "life" || txt == "<:Health:543112384848461832>")
+            else if (txt == "Health" || txt == "health" || txt == "Life" || txt == "life" || txt == Health)
             {
                 foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, 0, Data.Data.GetData_Health(users.Id), 0, 0, 0));
                 list.Sort((s2, s1) => s1.Health.CompareTo(s2.Health));
-                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Health: " + list[i].Health + "<:Health:543112384848461832>";
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Health: " + list[i].Health + Health;
                 Embed.WithAuthor("Serverwide Leaderboard by Health");
                 Embed.Color = Color.Green;
                 Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
             }
-            else if (txt == "Gems" || txt == "gems" || txt == "GuildGems" || txt == "guildgems" || txt == "<:GuildGem:545341213004529725>")
+            else if (txt == "Gems" || txt == "gems" || txt == "GuildGems" || txt == "guildgems" || txt == GuildGem)
             {
                 foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, 0, 0, Data.Data.GetData_Event3(users.Id), 0, 0));
                 list.Sort((s2, s1) => s1.Gems.CompareTo(s2.Gems));
-                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Guild Gems: " + list[i].Gems + "<:GuildGem:545341213004529725>";
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Guild Gems: " + list[i].Gems + GuildGem;
                 Embed.WithAuthor("Serverwide Leaderboard by Guild Gems");
                 Embed.Color = Color.Purple;
                 Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
             }
-            else if (txt == "Age" || txt == "age" || txt == "<:Age:543112389160337408>")
+            else if (txt == "Age" || txt == "age" || txt == Age)
             {
                 foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, 0, 0, 0, Data.Data.GetData_Age(users.Id), 0));
                 list.Sort((s2, s1) => s1.Age.CompareTo(s2.Age));
-                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Age: " + list[i].Age + "<:Age:543112389160337408>";
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Age: " + list[i].Age + Age;
                 Embed.WithAuthor("Serverwide Leaderboard by Age");
                 Embed.Color = Color.Orange;
                 Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
             }
-            else if (txt == "Event" || txt == "event" || txt == "<:Essence:567480672344866867>")
+            else if (txt == "Event" || txt == "event" || txt == Essence)
             {
                 foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, 0, 0, 0, 0, Data.Data.GetData_Event1(users.Id)));
                 list.Sort((s2, s1) => s1.Event.CompareTo(s2.Event));
-                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Essence: " + list[i].Event + "<:Essence:567480672344866867>";
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Essence: " + list[i].Event + Essence;
                 Embed.WithAuthor("Serverwide Leaderboard by Essence");
                 Embed.Color = Color.DarkGreen;
                 Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
@@ -500,13 +500,13 @@ namespace RPG_Bot.Currency
                 Embeder.WithAuthor("Error!");
                 Embeder.WithDescription("You must use the command as ``-leaderboard [Sort Method]``!" +
                     "\n\nValid sorting methods:" +
-                    "\n<:Coins:543112388493312000> - **Gold**" +
-                    "\n<:Level:543112387989995521> - **Level**" +
-                    "\n<:Damage:543112387763503124> - **Damage**" +
-                    "\n<:Health:543112384848461832> - **Health**" +
-                    "\n<:GuildGem:545341213004529725> - **Gems**" +
-                    "\n<:Age:543112389160337408> - **Age**" +
-                    "\n<:Essence:567480672344866867> - **Event**");
+                    "\n" + Coins + " - **Gold**" +
+                    "\n" + Level + " - **Level**" +
+                    "\n" + Damage + " - **Damage**" +
+                    "\n" + Health + " - **Health**" +
+                    "\n" + GuildGem + " - **Gems**" +
+                    "\n" + Age + " - **Age**" +
+                    "\n" + Essence + " - **Event**");
                 Embeder.WithColor(40, 200, 150);
                 Embeder.Color = Color.Red;
                 await Context.Channel.SendMessageAsync("", false, Embeder.Build());
@@ -523,7 +523,7 @@ namespace RPG_Bot.Currency
         {
             EmbedBuilder Embed = new EmbedBuilder();
             Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544059986582437891/latest.png");
-            Embed.WithTitle("You have " + Data.Data.GetData_Event3(Context.User.Id) + "<:GuildGem:545341213004529725>'s");
+            Embed.WithTitle("You have " + Data.Data.GetData_Event3(Context.User.Id) + GuildGem + "'s");
             Embed.Color = Color.Purple;
             Embed.WithFooter("Use your gems in the shop to rank up!");
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
@@ -569,91 +569,91 @@ namespace RPG_Bot.Currency
             if (check == "Archer" || check == "archer")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225760748961797/Archer.png");
-                classEmoji = "<:Archer:543112389579767828>";
+                classEmoji = Archer;
                 baseStats = "50 Damage, 20 Health";
             }
             else if (check == "Knight" || check == "knight")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767107526676/Knight.png");
-                classEmoji = "<:Knight:543112385498578967>";
+                classEmoji = Knight;
                 baseStats = "20 Damage, 50 Health";
             }
             else if (check == "Witch" || check == "witch")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767770095619/Witch.png");
-                classEmoji = "<:Witch:543112316745416706>";
+                classEmoji = Witch;
                 baseStats = "45 Damage, 25 Health";
             }
             else if (check == "Rogue" || check == "rogue")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225767220641792/Rogue.png");
-                classEmoji = "<:Rogue:543112385406304257>";
+                classEmoji = Rogue;
                 baseStats = "60 Damage, 10 Health";
             }
             else if (check == "Wizard" || check == "wizard")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225769422913537/Wizard.png");
-                classEmoji = "<:Wizard:543112388774199297>";
+                classEmoji = Wizard;
                 baseStats = "48 Damage, 22 Health";
             }
             else if (check == "Assassin" || check == "assassin")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/542225760619069450/Assassin.png");
-                classEmoji = "<:Assassin:543112389109874719>";
+                classEmoji = Assassin;
                 baseStats = "65 Damage, 5 Health";
             }
             else if (check == "Berserker" || check == "berserker" || check == "Berzerker" || check == "berzerker")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904669427859456/Berserker.png");
-                classEmoji = "<:Berserker:566917750140960768>";
+                classEmoji = Berserker;
                 baseStats = "40 Damage, 30 Health";
             }
             else if (check == "Necromancer" || check == "Necromancer")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904652009046026/Nechromancer.webp");
-                classEmoji = "<:Nechromancer:566917752640503809>";
+                classEmoji = Nechromancer;
                 baseStats = "65 Damage, 5 Health";
             }
             else if (check == "Trickster" || check == "trickster")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904660275757066/Trickster.png");
-                classEmoji = "<:Trickster:566917752875384834>";
+                classEmoji = Trickster;
                 baseStats = "55 Damage, 15 Health";
             }
             else if (check == "Kitsune" || check == "kitsune")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904663740252161/Kitsune.webp");
-                classEmoji = "<:Kitsune:566917752380719139>";
+                classEmoji = Kitsune;
                 baseStats = "65 Damage, 5 Health";
             }
             else if (check == "Paladin" || check == "paladin")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904668891119627/Paladin.png");
-                classEmoji = "<:Paladin:566917753081036800>";
+                classEmoji = Paladin;
                 baseStats = "55 Damage, 20 Health";
             }
             else if (check == "Monk" || check == "monk")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904672250626048/Monk.png");
-                classEmoji = "<:Monk:566917753009602570>";
+                classEmoji = Monk;
                 baseStats = "35 Damage, 35 Health";
             }
             else if (check == "Evangel" || check == "evangel")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904680668725258/Evangel.png");
-                classEmoji = "<:Evangel:566917753450266645>";
+                classEmoji = Evangel;
                 baseStats = "65 Damage, 5 Health";
             }
             else if (check == "Tamer" || check == "tamer")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904678713917445/Cat_Tamer.png");
-                classEmoji = "<:Tamer:566918308218273792>";
+                classEmoji = Tamer;
                 baseStats = "65 Damage, 5 Health";
             }
             else if (check == "Swordsman" || check == "swordsman")
             {
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/566904710016139265/Swordsman.png");
-                classEmoji = "<:Swordsman:566917753085362186>";
+                classEmoji = Swordsman;
                 baseStats = "40 Damage, 30 Health";
             }
             else

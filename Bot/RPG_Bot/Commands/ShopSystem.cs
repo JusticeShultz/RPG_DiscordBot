@@ -11,6 +11,7 @@ using Discord.WebSocket;
 using System.Linq;
 using RPG_Bot.Resources.Database;
 using RPG_Bot.Resources;
+using static RPG_Bot.Emojis.Emojis;
 
 namespace RPG_Bot.Commands
 {
@@ -38,27 +39,31 @@ namespace RPG_Bot.Commands
             Embed.WithFooter("You have " + Data.Data.GetData_GoldAmount(Context.User.Id) + " Gold Coins & " + Data.Data.GetData_Event3(Context.User.Id) + " Guild Gem's", Context.User.GetAvatarUrl());
             Embed.WithTitle("How to use:");
 
-            Embed.AddField("\n\n**In Stock:**\n\n**Cheap Items:**", "**[100]** - **1000**<:Coins:543112388493312000> - **Strength Potion** (+2 Damage)\n**[200]** - **600**<:Coins:543112388493312000> - **Toughness Potion** (+3 Health)", false);
+            Embed.AddField("\n\n**In Stock:**\n\n**Cheap Items:**", "**[100]** - **4000**" + Coins + " - **Strength Potion** (+2 Damage)\n**[200]** - **3000**" + Coins + " - **Toughness Potion** (+3 Health)", false);
 
             Embed.AddField("\n\n**Powerful Items**", "" +
-                "\n**[300]** - **8000**<:Coins:543112388493312000> - **Strength Ring** (+18 Damage)" +
-                "\n**[400]** - **6000**<:Coins:543112388493312000> - **Toughness Pendant** (+22 Health)" +
-                "\n**[500]** - **32000**<:Coins:543112388493312000> - **Dragon Potion** (+80 Damage)" +
-                "\n**[600]** - **28000**<:Coins:543112388493312000> - **Viper Potion** (+108 Health)", false);
+                "\n**[300]** - **8000**" + Coins + " - **Strength Ring** (+18 Damage)" +
+                "\n**[400]** - **16000**" + Coins + " - **Toughness Pendant** (+22 Health)" +
+                "\n**[500]** - **32000**" + Coins + " - **Dragon Potion** (+80 Damage)" +
+                "\n**[600]** - **28000**" + Coins + " - **Viper Potion** (+108 Health)", false);
 
             Embed.AddField("\n\n**Rank Upgrade**", "" +
-                "\n**[265]** - **50**<:GuildGem:545341213004529725>(+ Bronze Rank) - **Silver Rank**" +
-                "\n**[266]** - **125**<:GuildGem:545341213004529725>(+ Silver Rank) - **Gold Rank**" +
-                "\n**[267]** - **165**<:GuildGem:545341213004529725>(+ Gold Rank) - **Quartz Rank**" +
-                "\n**[268]** - **200**<:GuildGem:545341213004529725>(+ Quartz Rank) - **Orichalcum Rank**" +
-                "\n**[269]** - **250**<:GuildGem:545341213004529725>(+ Orichalcum Rank) - **Platinum Rank**" +
-                "\n**[270]** - **350**<:GuildGem:545341213004529725>(+ Platinum Rank) - **Master III Rank**" +
-                "\n**[271]** - **450**<:GuildGem:545341213004529725>(+ Master III Rank) - **Master II Rank**" +
-                "\n**[272]** - **500**<:GuildGem:545341213004529725>(+ Master II Rank) - **Master I Rank**", false);
+                "\n**[265]** - **50**" + GuildGem + "(+ Bronze Rank) - **Silver Rank**" +
+                "\n**[266]** - **125**" + GuildGem + "(+ Silver Rank) - **Gold Rank**" +
+                "\n**[267]** - **165**" + GuildGem + "(+ Gold Rank) - **Quartz Rank**" +
+                "\n**[268]** - **200**" + GuildGem + "(+ Quartz Rank) - **Orichalcum Rank**" +
+                "\n**[269]** - **250**" + GuildGem + "(+ Orichalcum Rank) - **Platinum Rank**" +
+                "\n**[270]** - **350**" + GuildGem + "(+ Platinum Rank) - **Master III Rank**" +
+                "\n**[271]** - **450**" + GuildGem + "(+ Master III Rank) - **Master II Rank**" +
+                "\n**[272]** - **500**" + GuildGem + "(+ Master II Rank) - **Master I Rank**", false);
 
             Embed.AddField("\n\n**Loot Boxes**", "" +
-                "\n**[450]** - **285**<:GuildGem:545341213004529725> - **Dragon Chest** - 10 Unique Items" +
-                "\n**[650]** - **8500**<:Coins:543112388493312000> - **Pepe Chest** - 15 Unique Items", false);
+                "\n**[450]** - **325**" + GuildGem + " - **Dragon Accessory Chest** - [Permanent Stat Booster]" +
+                "\n**[450]** - **285**" + GuildGem + " - **Dragon Accessory Chest** - 10 Unique Items" +
+                "\n**[450]** - **285**" + GuildGem + " - **Dragon Accessory Chest** - 10 Unique Items" +
+                "\n**[450]** - **285**" + GuildGem + " - **Dragon Accessory Chest** - 10 Unique Items" +
+                "\n**[450]** - **285**" + GuildGem + " - **Dragon Accessory Chest** - 10 Unique Items" +
+                "\n**[450]** - **285**" + GuildGem + " - **Dragon Accessory Chest** - 10 Unique Items", false);
 
             Embed.WithDescription("To buy items you must type `-buy [ItemID]` - Item ID's are the numbers in [] on each item!");
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
@@ -271,7 +276,7 @@ namespace RPG_Bot.Commands
                 Embed.Color = Color.DarkPurple;
                 Embed.WithFooter("Thanks for your business!");
                 uint health = Data.Data.GetData_Health(Context.User.Id);
-                Embed.WithDescription("You traded the shop keeper 285<:GuildGem:545341213004529725> to open a Dragons Chest");
+                Embed.WithDescription("You traded the shop keeper 285" + GuildGem + " to open a Dragons Chest");
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
                 await Data.Data.TakeEventData(Context.User.Id, 0, 0, 285);
                 await OpenDragonChest();
@@ -283,7 +288,7 @@ namespace RPG_Bot.Commands
                 Embed.Color = Color.Green;
                 Embed.WithFooter("Thanks for your business!");
                 uint health = Data.Data.GetData_Health(Context.User.Id);
-                Embed.WithDescription("You traded the shop keeper **8500**<:Coins:543112388493312000> to open a Pepe Chest, what a loser");
+                Embed.WithDescription("You traded the shop keeper **8500**" + Coins + " to open a Pepe Chest, what a loser");
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
                 await Data.Data.SubtractSaveData(Context.User.Id, 8500, 0, "", 0, 0, 0, 0, 0);
                 await OpenPepeChest();
@@ -294,7 +299,7 @@ namespace RPG_Bot.Commands
                 Embed.WithAuthor("Common Loot Chest Purchased!");
                 Embed.Color = Color.LighterGrey;
                 Embed.WithFooter("Use -lootbox common to open up your new lootbox or -lootbox to see your current loot boxes!");
-                Embed.WithDescription("You traded the shop keeper **3** <:Candy:637578758986924035>");
+                Embed.WithDescription("You traded the shop keeper **3** " + Candy);
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240876719210501/locked-chest.png");
                 await Data.Data.TakeEventData(Context.User.Id, 0, 3, 0);
                 await Data.Data.AddCommonBoxCount(Context.User.Id, 1);
@@ -306,7 +311,7 @@ namespace RPG_Bot.Commands
                 Embed.WithAuthor("Uncommon Loot Chest Purchased!");
                 Embed.Color = Color.Green;
                 Embed.WithFooter("Use -lootbox uncommon to open up your new lootbox or -lootbox to see your current loot boxes!");
-                Embed.WithDescription("You traded the shop keeper **8** <:Candy:637578758986924035>");
+                Embed.WithDescription("You traded the shop keeper **8** " + Candy);
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240878015381516/locked-chest_1.png");
                 await Data.Data.TakeEventData(Context.User.Id, 0, 8, 0);
                 await Data.Data.AddUncommonBoxCount(Context.User.Id, 1);
@@ -318,7 +323,7 @@ namespace RPG_Bot.Commands
                 Embed.WithAuthor("Rare Loot Chest Purchased!");
                 Embed.Color = Color.Blue;
                 Embed.WithFooter("Use -lootbox rare to open up your new lootbox or -lootbox to see current loot boxes!");
-                Embed.WithDescription("You traded the shop keeper **15** <:Candy:637578758986924035>");
+                Embed.WithDescription("You traded the shop keeper **15** " + Candy);
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240879382462475/locked-chest_2.png");
                 await Data.Data.TakeEventData(Context.User.Id, 0, 15, 0);
                 await Data.Data.AddRareBoxCount(Context.User.Id, 1);
@@ -330,7 +335,7 @@ namespace RPG_Bot.Commands
                 Embed.WithAuthor("Very Rare Loot Chest Purchased!");
                 Embed.Color = Color.Magenta;
                 Embed.WithFooter("Use -lootbox veryrare to open up your new lootbox or -lootbox to see current loot boxes!");
-                Embed.WithDescription("You traded the shop keeper **22** <:Candy:637578758986924035>");
+                Embed.WithDescription("You traded the shop keeper **22** " + Candy);
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240880749805568/locked-chest_3.png");
                 await Data.Data.TakeEventData(Context.User.Id, 0, 22, 0);
                 await Data.Data.AddVeryRareBoxCount(Context.User.Id, 1);
@@ -342,7 +347,7 @@ namespace RPG_Bot.Commands
                 Embed.WithAuthor("Epic Loot Chest Purchased!");
                 Embed.Color = Color.Purple;
                 Embed.WithFooter("Use -lootbox epic to open up your new lootbox or -lootbox to see current loot boxes!");
-                Embed.WithDescription("You traded the shop keeper **30** <:Candy:637578758986924035>");
+                Embed.WithDescription("You traded the shop keeper **30** " + Candy);
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240881794449437/locked-chest_4.png");
                 await Data.Data.TakeEventData(Context.User.Id, 0, 30, 0);
                 await Data.Data.AddEpicBoxCount(Context.User.Id, 1);
@@ -354,7 +359,7 @@ namespace RPG_Bot.Commands
                 Embed.WithAuthor("Legendary Loot Chest Purchased!");
                 Embed.Color = Color.Red;
                 Embed.WithFooter("Use -lootbox legendary to open up your new lootbox or -lootbox to see current loot boxes!");
-                Embed.WithDescription("You traded the shop keeper **50** <:Candy:637578758986924035>");
+                Embed.WithDescription("You traded the shop keeper **50** " + Candy);
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240883669172237/locked-chest_5.png");
                 await Data.Data.TakeEventData(Context.User.Id, 0, 50, 0);
                 await Data.Data.AddLegendaryBoxCount(Context.User.Id, 1);
@@ -366,7 +371,7 @@ namespace RPG_Bot.Commands
                 Embed.WithAuthor("Mythic Loot Chest Purchased!");
                 Embed.Color = Color.Teal;
                 Embed.WithFooter("Use -lootbox mythic to open up your new lootbox or -lootbox to see current loot boxes!");
-                Embed.WithDescription("You traded the shop keeper **100** <:Candy:637578758986924035>");
+                Embed.WithDescription("You traded the shop keeper **100** " + Candy);
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240886613704772/locked-chest_6.png");
                 await Data.Data.TakeEventData(Context.User.Id, 0, 100, 0);
                 await Data.Data.AddMythicBoxCount(Context.User.Id, 1);
@@ -378,7 +383,7 @@ namespace RPG_Bot.Commands
                 Embed.WithAuthor("Godly Loot Chest Purchased!");
                 Embed.Color = Color.LighterGrey;
                 Embed.WithFooter("Use -lootbox godly to open up your new lootbox or -lootbox to see current loot boxes!");
-                Embed.WithDescription("You traded the shop keeper **125** <:Candy:637578758986924035>");
+                Embed.WithDescription("You traded the shop keeper **125** " + Candy);
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/639240875452661791/locked-chest_7.png");
                 await Data.Data.TakeEventData(Context.User.Id, 0, 125, 0);
                 await Data.Data.AddGodlyBoxCount(Context.User.Id, 1);
@@ -404,7 +409,7 @@ namespace RPG_Bot.Commands
                     Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545394409580134430/Silver.png");
                     Embed.Color = Color.LightGrey;
                     Embed.WithFooter("The guild applauds your dedication.");
-                    Embed.WithDescription("You traded the shop keeper 50<:GuildGem:545341213004529725> and your previous rank to become a Silver Rank!");
+                    Embed.WithDescription("You traded the shop keeper 50" + GuildGem + "and your previous rank to become a Silver Rank!");
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
                     //await (vuser as IGuildUser).RemoveRoleAsync(bronze);
@@ -419,7 +424,7 @@ namespace RPG_Bot.Commands
                     Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545394412025413632/Gold.png");
                     Embed.Color = Color.Gold;
                     Embed.WithFooter("The guild applauds your dedication.");
-                    Embed.WithDescription("You traded the shop keeper 125<:GuildGem:545341213004529725> and your previous rank to become a Gold Rank!");
+                    Embed.WithDescription("You traded the shop keeper 125" + GuildGem + " and your previous rank to become a Gold Rank!");
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
                     //await (vuser as IGuildUser).RemoveRoleAsync(silver);
@@ -434,7 +439,7 @@ namespace RPG_Bot.Commands
                     Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545394413497745408/Quartz.png");
                     Embed.Color = Color.LighterGrey;
                     Embed.WithFooter("The guild applauds your dedication.");
-                    Embed.WithDescription("You traded the shop keeper 165<:GuildGem:545341213004529725> and your previous rank to become a Quartz Rank!");
+                    Embed.WithDescription("You traded the shop keeper 165" + GuildGem + " and your previous rank to become a Quartz Rank!");
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
                     //await (vuser as IGuildUser).RemoveRoleAsync(gold);
@@ -449,7 +454,7 @@ namespace RPG_Bot.Commands
                     Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545394415645229099/Orichalcum.png");
                     Embed.Color = Color.Teal;
                     Embed.WithFooter("The guild applauds your dedication.");
-                    Embed.WithDescription("You traded the shop keeper 200<:GuildGem:545341213004529725> and your previous rank to become a Orichalcum Rank!");
+                    Embed.WithDescription("You traded the shop keeper 200" + GuildGem + " and your previous rank to become a Orichalcum Rank!");
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
                     //await (vuser as IGuildUser).RemoveRoleAsync(quartz);
@@ -464,7 +469,7 @@ namespace RPG_Bot.Commands
                     Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545394416483958784/Platinum.png");
                     Embed.Color = Color.LighterGrey;
                     Embed.WithFooter("The guild applauds your dedication.");
-                    Embed.WithDescription("You traded the shop keeper 250<:GuildGem:545341213004529725> and your previous rank to become a Platinum Rank!");
+                    Embed.WithDescription("You traded the shop keeper 250" + GuildGem + " and your previous rank to become a Platinum Rank!");
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
                     //await (vuser as IGuildUser).RemoveRoleAsync(orichalcum);
@@ -479,7 +484,7 @@ namespace RPG_Bot.Commands
                     Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545394418690031631/MasterIII.png");
                     Embed.Color = Color.Orange;
                     Embed.WithFooter("Your standing in the guild is well known!");
-                    Embed.WithDescription("You traded the shop keeper 350<:GuildGem:545341213004529725> and your previous rank to become a Master III Adventurer!");
+                    Embed.WithDescription("You traded the shop keeper 350" + GuildGem + " and your previous rank to become a Master III Adventurer!");
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
                     //await (vuser as IGuildUser).RemoveRoleAsync(platinum);
@@ -494,7 +499,7 @@ namespace RPG_Bot.Commands
                     Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545394419898253333/MasterII.png");
                     Embed.Color = Color.Red;
                     Embed.WithFooter("Your standing in the guild is very well known!");
-                    Embed.WithDescription("You traded the shop keeper 450<:GuildGem:545341213004529725> and your previous rank to become a Master II Adventurer!");
+                    Embed.WithDescription("You traded the shop keeper 450" + GuildGem + " and your previous rank to become a Master II Adventurer!");
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
                     //await (vuser as IGuildUser).RemoveRoleAsync(masterIII);
@@ -510,7 +515,7 @@ namespace RPG_Bot.Commands
                     Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/545394421420523520/MasterI.png");
                     Embed.Color = Color.DarkRed;
                     Embed.WithFooter("Your standing in the guild is as high as it will go!");
-                    Embed.WithDescription("You traded the shop keeper 450<:GuildGem:545341213004529725> and your previous rank to become a Master I Adventurer!\nYou are now the max rank!");
+                    Embed.WithDescription("You traded the shop keeper 450" + GuildGem + " and your previous rank to become a Master I Adventurer!\nYou are now the max rank!");
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
                     //await (vuser as IGuildUser).RemoveRoleAsync(masterII);
@@ -706,7 +711,7 @@ namespace RPG_Bot.Commands
             //if (Context.User.Id == 228344819422855168)
             EmbedBuilder Embed = new EmbedBuilder();
             Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544059986582437891/latest.png");
-            Embed.WithTitle(user.Username + " has recieved " + Amount + "<:GuildGem:545341213004529725> from " + Context.User.Username + "(Admin)");
+            Embed.WithTitle(user.Username + " has recieved " + Amount + GuildGem + " from " + Context.User.Username + "(Admin)");
             Embed.Color = Color.Purple;
             Embed.WithThumbnailUrl(user.GetAvatarUrl());
             Embed.WithFooter("This command may only be activated by a Bot Admin.");

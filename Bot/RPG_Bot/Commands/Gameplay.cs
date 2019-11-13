@@ -12,6 +12,7 @@ using System.Linq;
 using RPG_Bot.Resources.Database;
 using RPG_Bot.Resources;
 using RPG_Bot;
+using static RPG_Bot.Emojis.Emojis;
 
 namespace RPG_Bot.Commands
 {
@@ -4760,10 +4761,10 @@ namespace RPG_Bot.Commands
             if (option == "" || option.Length == 0)
             {
                 EmbedBuilder Embed = new EmbedBuilder();
-                Embed.WithTitle("<:Skill:638241457752506368>Skills");
+                Embed.WithTitle(Skill + "Skills");
 
                 Embed.WithDescription("Current Skill Points: " + Data.Data.GetData_SkillPoints(Context.User.Id) +
-                                      " <:Skill:638241457752506368>\nTo upgrade a skill do -Skill [Stat].\n\n" +
+                                      " " + Skill + "\nTo upgrade a skill do -Skill [Stat].\n\n" +
                                       "Stamina: " + Data.Data.GetData_Stamina(Context.User.Id) +
                                       "\nStability: " + Data.Data.GetData_Stability(Context.User.Id) +
                                       "\nDexterity: " + Data.Data.GetData_Dexterity(Context.User.Id) +
@@ -4781,7 +4782,7 @@ namespace RPG_Bot.Commands
             {
                 EmbedBuilder Embed = new EmbedBuilder();
 
-                Embed.WithTitle("<:Skill:638241457752506368>Skill Info");
+                Embed.WithTitle(Skill + "Skill Info");
 
                 Embed.WithDescription("**Stamina**: Gain a random chance to regain 25% health each turn.\n\n" +
                                       "**Stability**: Increases how much health you will regain upon it becoming your turn to fight again.\n\n" +
@@ -4891,7 +4892,7 @@ namespace RPG_Bot.Commands
                 {
                     EmbedBuilder Embed = new EmbedBuilder();
 
-                    Embed.WithTitle("<:Skill:638241457752506368>Whoops!<:Skill:638241457752506368>");
+                    Embed.WithTitle(Skill + "Whoops!" + Skill);
 
                     Embed.WithDescription("You do not have enough skill points to do that!");
 
@@ -4917,9 +4918,9 @@ namespace RPG_Bot.Commands
             var vuser = User as SocketGuildUser;
 
             EmbedBuilder Embed = new EmbedBuilder();
-            Embed.WithTitle("<:Skill:638241457752506368>Skills");
+            Embed.WithTitle(Skill + "Skills");
             Embed.WithDescription("Current Skill Points: " + Data.Data.GetData_SkillPoints(vuser.Id) +
-                " <:Skill:638241457752506368>\n\nStamina: " + Data.Data.GetData_Stamina(vuser.Id) +
+                " " + Skill + "\n\nStamina: " + Data.Data.GetData_Stamina(vuser.Id) +
                 "\nStability: " + Data.Data.GetData_Stability(vuser.Id) +
                 "\nDexterity: " + Data.Data.GetData_Dexterity(vuser.Id) +
                 "\nStrength: " + Data.Data.GetData_Strength(vuser.Id) +
