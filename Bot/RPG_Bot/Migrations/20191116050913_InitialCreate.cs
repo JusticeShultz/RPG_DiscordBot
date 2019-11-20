@@ -101,7 +101,8 @@ namespace RPG_Bot.Migrations
                     EventBoxCount = table.Column<uint>(nullable: false),
                     AmountDonated = table.Column<uint>(nullable: false),
                     WinCount = table.Column<uint>(nullable: false),
-                    LoseCount = table.Column<uint>(nullable: false)
+                    LoseCount = table.Column<uint>(nullable: false),
+                    GodChoice = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

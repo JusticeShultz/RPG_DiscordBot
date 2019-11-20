@@ -656,6 +656,89 @@ namespace RPG_Bot.Currency
                 classEmoji = Swordsman;
                 baseStats = "40 Damage, 30 Health";
             }
+            else if (check == "Aphelion" || check == "aphelion")
+            {
+                Embed.WithTitle("Aphelion - God of Light, Celebration, and Youth");
+                Embed.WithDescription("Aphelion is the God of Light, Celebration and Youth. He blessed Asteria with Sunlight, illuminating the newborn world.\nFollowers of Aphelion are incessant optimists who believe that staying true to one’s self is the key to happiness.They worship Aphelion through life’s bountiful pleasures and joys.");
+                Embed.WithImageUrl("");
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                return;
+            }
+            else if (check == "Istara" || check == "istara")
+            {
+                Embed.WithTitle("Istara - Goddess of Renewal, Nature, and Love");
+                Embed.WithDescription("Istara is the Goddess of Renewal, Nature, and Love. She blessed Asteria with all flora and fauna, populating the infant world.\nFollowers of Istara are forgiving altruists who pursue compassion above all else. They revere all life as aspects of Istara, save the monstrous creatures that threaten Asteria.");
+                Embed.WithImageUrl("");
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                return;
+            }
+            else if (check == "Val" || check == "val")
+            {
+                Embed.WithTitle("Val - God of Justice, Science, and Civilization");
+                Embed.WithDescription("Val is the god of Balance, Justice, and the Sciences. He blessed Asteria with civilization, providing structure to the sapient creatures of the young world.\nFollowers of Val are level - headed and truth - driven, bearing strong moral compasses and wills to protect others.They revere naught but Justice, and seek it at every turn no matter the cost.");
+                Embed.WithImageUrl("");
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                return;
+            }
+            else if (check == "Havi" || check == "havi")
+            {
+                Embed.WithTitle("Havi - Goddess of Commerce, Artisans, and Art");
+                Embed.WithDescription("Havi is the Goddess of Commerce, Artisans, and Wealth. She blessed Asteria with art and luxury, giving meaning to the lives within the maturing world.\nFollowers of Havi are often artists, artisans, or merchants, and they seek not fortune but the betterment of the self.They worship Havi through their crafts, by which they find constant self - improvement.");
+                Embed.WithImageUrl("");
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                return;
+            }
+            else if (check == "Ebben" || check == "ebben")
+            {
+                Embed.WithTitle("Ebben - God of Death, Sleep, and Journeys");
+                Embed.WithDescription("Ebben is the God of Death, Sleep, and Journeys. He blessed Asteria with the home and hearth, allowing a place for people to rest in the aging world.\nFollowers of Ebben are gracious and empathetic, and they either travel frequently or make their homes into safe harbors for others.The value of life’s journeys is immense to them, and they worship Ebben through them.");
+                Embed.WithImageUrl("");
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                return;
+            }
+            else if (check == "Lune" || check == "lune")
+            {
+                Embed.WithTitle("Lune - Goddess of Music, Storytelling, and Dreams");
+                Embed.WithDescription("Lune is the Goddess of Music, the Moon, and Dreams. She blessed Asteria with storytelling, letting them chronicle the great deeds and legacies of the elderly world.\nFollowers of Lune tend to be ambitious rising stars, heroes, or performers.They worship Lune by carving their own mark in history and leaving magnificent stories to tell at every turn.");
+                Embed.WithImageUrl("");
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                return;
+            }
+            else if (check == "Sombri" || check == "sombri")
+            {
+                Embed.WithTitle("Sombri - Deity of Courage, Meditation, and the Unknown");
+                Embed.WithDescription("Sombri is the Deity of Courage, Meditation, and the Unknown. They gave new life to the dying Asteria through a great sacrifice, though the details of the story vary.\nFollowers of Sombri are brave but often troubled, and tend to be adventurers.They worship Sombri through introspection, restraint, and knowing when to throw restraint to the wind.");
+                Embed.WithImageUrl("");
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                return;
+            }
+            else if (check == "Crone" || check == "crone" || check == "TheCrone" || check == "thecrone" || check == "The Crone" || check == "the crone" || check == "Ceras" || check == "ceras")
+            {
+                Embed.WithTitle("The Crone - Deity of Tradition, Knowledge, and Wisdom");
+                Embed.WithDescription("The Crone is the Deity of Tradition, Knowledge, and Wisdom. They blessed Asteria with permanence, allowing the blessings of the other Gods to endure evermore.\nFollowers of The Crone vary in practice by regions of Asteria, but they are all focused on uplifting others, though they themselves are forces to be reckoned with.In Silverkeep, the Crone is known as Ceras, and is female.");
+                Embed.WithImageUrl("");
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                return;
+            }
+            else if (check == "Deity" || check == "deity" || check == "Deities" || check == "deities")
+            {
+                Embed.WithTitle("The deities you may worship are:");
+                Embed.WithDescription("**Aphelion** - God of Light, Celebration, and Youth.\n**Istara** - Goddess of Renewal, Nature, and Love.\n**Val** - God of Justice, Science, and Civilization.\n**Havi** - Goddess of Commerce, Artisans, and Art.\n**Ebben** - God of Death, Sleep, and Journeys.\n**Lune** - Goddess of Music, Storytelling, and Dreams.\n**Sombri** - Deity of Courage, Meditation, and the Unknown.\n**The Crone** - Deity of Tradition, Knowledge, and Wisdom.");
+                Embed.WithImageUrl("");
+                Embed.WithFooter("Use -SwitchDeity [Deity] to switch to one of the following deities.");
+                Embed.WithColor(Color.Purple);
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                return;
+            }
             else
             {
                 Embed = new EmbedBuilder();

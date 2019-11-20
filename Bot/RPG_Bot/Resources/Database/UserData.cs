@@ -118,6 +118,9 @@ namespace RPG_Bot.Resources.Database
         // PvP Data
         public uint WinCount { get; set; }
         public uint LoseCount { get; set; }
+
+        // God Data
+        public string GodChoice { get; set; }
     }
 }
 /*public string Weapon_Name { get; set; }

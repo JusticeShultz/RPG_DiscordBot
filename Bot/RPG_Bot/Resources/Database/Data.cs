@@ -618,6 +618,18 @@ namespace RPG_Bot.Data
                 return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.EventBoxCount).FirstOrDefault();
             }
         }
+
+        public static string GetData_GodChoice(ulong UserID)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                //No data to get.
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                    return "No god";
+
+                return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.GodChoice).FirstOrDefault();
+            }
+        }
         #endregion
 
         #region [SETTERS]
@@ -2444,6 +2456,31 @@ namespace RPG_Bot.Data
                         UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.LoseCount = amount;
+
+                        DbContext.Data.Update(Current);
+                    }
+                }
+
+                await DbContext.SaveChangesAsync();
+            }
+        }
+
+        public static async Task SetGod(ulong UserID, string god)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                var query = DbContext.Data.Where(x => x.UserID == UserID);
+
+                if (query != null && query.Count() < 1)
+                {
+                }
+                else
+                {
+                    if (query != null)
+                    {
+                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+
+                        Current.GodChoice = god;
 
                         DbContext.Data.Update(Current);
                     }

@@ -8,8 +8,8 @@ using RPG_Bot.Resources.Database;
 namespace RPG_Bot.Migrations
 {
     [DbContext(typeof(SqliteDbContext))]
-    [Migration("20191024195155_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20191116051241_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -119,6 +119,8 @@ namespace RPG_Bot.Migrations
                     b.Property<uint>("Gauntlet_Regen");
 
                     b.Property<string>("Gauntlet_URL");
+
+                    b.Property<string>("GodChoice");
 
                     b.Property<uint>("GodlyBoxCount");
 

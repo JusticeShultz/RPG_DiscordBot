@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1/win-x64",
-    "signature": "0c98596a5685a63501c82637f92fca9e11e540f2"
+    "signature": "ea9430c7d59d03565db63756d9b242f74dc48735"
   },
   "compilationOptions": {},
   "targets": {
@@ -14,7 +14,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.2",
           "Microsoft.EntityFrameworkCore.Sqlite.Design": "1.1.6",
           "Microsoft.EntityFrameworkCore.Tools": "2.2.2",
-          "Microsoft.NETCore.App": "2.1.6"
+          "Microsoft.NETCore.App": "2.1.8"
         },
         "runtime": {
           "RPG_Bot.dll": {}
@@ -359,30 +359,30 @@
           }
         }
       },
-      "Microsoft.NETCore.App/2.1.6": {
+      "Microsoft.NETCore.App/2.1.8": {
         "dependencies": {
-          "Microsoft.NETCore.DotNetHostPolicy": "2.1.6",
+          "Microsoft.NETCore.DotNetHostPolicy": "2.1.8",
           "Microsoft.NETCore.Platforms": "2.1.2",
           "Microsoft.NETCore.Targets": "2.0.0",
           "NETStandard.Library": "2.0.3",
-          "runtime.win-x64.Microsoft.NETCore.App": "2.1.6"
+          "runtime.win-x64.Microsoft.NETCore.App": "2.1.8"
         }
       },
-      "Microsoft.NETCore.DotNetAppHost/2.1.6": {
+      "Microsoft.NETCore.DotNetAppHost/2.1.8": {
         "dependencies": {
-          "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": "2.1.6"
+          "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": "2.1.8"
         }
       },
-      "Microsoft.NETCore.DotNetHostPolicy/2.1.6": {
+      "Microsoft.NETCore.DotNetHostPolicy/2.1.8": {
         "dependencies": {
-          "Microsoft.NETCore.DotNetHostResolver": "2.1.6",
-          "runtime.win-x64.Microsoft.NETCore.DotNetHostPolicy": "2.1.6"
+          "Microsoft.NETCore.DotNetHostResolver": "2.1.8",
+          "runtime.win-x64.Microsoft.NETCore.DotNetHostPolicy": "2.1.8"
         }
       },
-      "Microsoft.NETCore.DotNetHostResolver/2.1.6": {
+      "Microsoft.NETCore.DotNetHostResolver/2.1.8": {
         "dependencies": {
-          "Microsoft.NETCore.DotNetAppHost": "2.1.6",
-          "runtime.win-x64.Microsoft.NETCore.DotNetHostResolver": "2.1.6"
+          "Microsoft.NETCore.DotNetAppHost": "2.1.8",
+          "runtime.win-x64.Microsoft.NETCore.DotNetHostResolver": "2.1.8"
         }
       },
       "Microsoft.NETCore.Platforms/2.1.2": {},
@@ -427,627 +427,627 @@
           "Microsoft.NETCore.Targets": "2.0.0"
         }
       },
-      "runtime.win-x64.Microsoft.NETCore.App/2.1.6": {
+      "runtime.win-x64.Microsoft.NETCore.App/2.1.8": {
         "runtime": {
           "runtimes/win-x64/lib/netcoreapp2.1/Microsoft.CSharp.dll": {
             "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/Microsoft.VisualBasic.dll": {
             "assemblyVersion": "10.0.4.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/Microsoft.Win32.Primitives.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/Microsoft.Win32.Registry.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/SOS.NETCore.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "4.6.27019.6"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.AppContext.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Buffers.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Collections.Concurrent.dll": {
             "assemblyVersion": "4.0.14.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Collections.Immutable.dll": {
             "assemblyVersion": "1.2.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Collections.NonGeneric.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Collections.Specialized.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Collections.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.ComponentModel.Annotations.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.ComponentModel.DataAnnotations.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.ComponentModel.EventBasedAsync.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.ComponentModel.Primitives.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.ComponentModel.TypeConverter.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.ComponentModel.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Configuration.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Console.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Core.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Data.Common.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Data.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Diagnostics.Contracts.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Diagnostics.Debug.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Diagnostics.DiagnosticSource.dll": {
             "assemblyVersion": "4.0.3.1",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Diagnostics.FileVersionInfo.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Diagnostics.Process.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Diagnostics.StackTrace.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Diagnostics.TextWriterTraceListener.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Diagnostics.Tools.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Diagnostics.TraceSource.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Diagnostics.Tracing.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Drawing.Primitives.dll": {
             "assemblyVersion": "4.2.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Drawing.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Dynamic.Runtime.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Globalization.Calendars.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Globalization.Extensions.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Globalization.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.Compression.Brotli.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.Compression.FileSystem.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.Compression.ZipFile.dll": {
             "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.Compression.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.FileSystem.AccessControl.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.FileSystem.DriveInfo.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.FileSystem.Primitives.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.FileSystem.Watcher.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.FileSystem.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.IsolatedStorage.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.MemoryMappedFiles.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.Pipes.AccessControl.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.Pipes.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.UnmanagedMemoryStream.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.IO.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Linq.Expressions.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Linq.Parallel.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Linq.Queryable.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Linq.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Memory.dll": {
             "assemblyVersion": "4.1.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.Http.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.HttpListener.dll": {
             "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.Mail.dll": {
             "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.NameResolution.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.NetworkInformation.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.Ping.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.Primitives.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.Requests.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.Security.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.ServicePoint.dll": {
             "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.Sockets.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.WebClient.dll": {
             "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.WebHeaderCollection.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.WebProxy.dll": {
             "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.WebSockets.Client.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.WebSockets.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Net.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Numerics.Vectors.dll": {
             "assemblyVersion": "4.1.4.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Numerics.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.ObjectModel.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Private.DataContractSerialization.dll": {
             "assemblyVersion": "4.1.4.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Private.Uri.dll": {
             "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Private.Xml.Linq.dll": {
             "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Private.Xml.dll": {
             "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Reflection.DispatchProxy.dll": {
             "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Reflection.Emit.ILGeneration.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Reflection.Emit.Lightweight.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Reflection.Emit.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Reflection.Extensions.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Reflection.Metadata.dll": {
             "assemblyVersion": "1.4.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Reflection.Primitives.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Reflection.TypeExtensions.dll": {
             "assemblyVersion": "4.1.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Reflection.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Resources.Reader.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Resources.ResourceManager.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Resources.Writer.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.CompilerServices.VisualC.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.Extensions.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.Handles.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.InteropServices.RuntimeInformation.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.InteropServices.WindowsRuntime.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.InteropServices.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.Loader.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.Numerics.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.Serialization.Formatters.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.Serialization.Json.dll": {
             "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.Serialization.Primitives.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.Serialization.Xml.dll": {
             "assemblyVersion": "4.1.4.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.Serialization.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Runtime.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.AccessControl.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.Claims.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.Cryptography.Algorithms.dll": {
             "assemblyVersion": "4.3.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.Cryptography.Cng.dll": {
             "assemblyVersion": "4.3.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.Cryptography.Csp.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.Cryptography.Encoding.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.Cryptography.OpenSsl.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.Cryptography.Primitives.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.Cryptography.X509Certificates.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
             "assemblyVersion": "4.1.1.1",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.Principal.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.SecureString.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Security.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.ServiceModel.Web.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.ServiceProcess.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Text.Encoding.Extensions.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Text.Encoding.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Text.RegularExpressions.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Threading.Overlapped.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Threading.Tasks.Dataflow.dll": {
             "assemblyVersion": "4.6.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Threading.Tasks.Extensions.dll": {
             "assemblyVersion": "4.3.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Threading.Tasks.Parallel.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Threading.Tasks.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Threading.Thread.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Threading.ThreadPool.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Threading.Timer.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Threading.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Transactions.Local.dll": {
             "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Transactions.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.ValueTuple.dll": {
             "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Web.HttpUtility.dll": {
             "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Web.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Windows.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Xml.Linq.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Xml.ReaderWriter.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Xml.Serialization.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Xml.XDocument.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Xml.XPath.XDocument.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Xml.XPath.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Xml.XmlDocument.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Xml.XmlSerializer.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.Xml.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/System.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/WindowsBase.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/mscorlib.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/lib/netcoreapp2.1/netstandard.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           }
         },
         "native": {
@@ -1056,7 +1056,7 @@
           },
           "runtimes/win-x64/native/System.Private.CoreLib.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.27019.6"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/native/api-ms-win-core-console-l1-1-0.dll": {
             "fileVersion": "10.0.17134.12"
@@ -1179,70 +1179,70 @@
             "fileVersion": "10.0.17134.12"
           },
           "runtimes/win-x64/native/clrcompression.dll": {
-            "fileVersion": "4.6.27019.5"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/native/clretwrc.dll": {
-            "fileVersion": "4.6.27019.6"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/native/clrjit.dll": {
-            "fileVersion": "4.6.27019.6"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/native/coreclr.dll": {
-            "fileVersion": "4.6.27019.6"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/native/dbgshim.dll": {
-            "fileVersion": "4.6.27019.6"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/native/mscordaccore.dll": {
-            "fileVersion": "4.6.27019.6"
+            "fileVersion": "4.6.27317.3"
           },
-          "runtimes/win-x64/native/mscordaccore_amd64_amd64_4.6.27019.06.dll": {
-            "fileVersion": "4.6.27019.6"
+          "runtimes/win-x64/native/mscordaccore_amd64_amd64_4.6.27317.03.dll": {
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/native/mscordbi.dll": {
-            "fileVersion": "4.6.27019.6"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/native/mscorrc.debug.dll": {
-            "fileVersion": "4.6.27019.6"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/native/mscorrc.dll": {
-            "fileVersion": "4.6.27019.6"
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/native/sos.dll": {
-            "fileVersion": "4.6.27019.6"
+            "fileVersion": "4.6.27317.3"
           },
-          "runtimes/win-x64/native/sos_amd64_amd64_4.6.27019.06.dll": {
-            "fileVersion": "4.6.27019.6"
+          "runtimes/win-x64/native/sos_amd64_amd64_4.6.27317.03.dll": {
+            "fileVersion": "4.6.27317.3"
           },
           "runtimes/win-x64/native/ucrtbase.dll": {
             "fileVersion": "10.0.17134.12"
           }
         }
       },
-      "runtime.win-x64.Microsoft.NETCore.DotNetAppHost/2.1.6": {
+      "runtime.win-x64.Microsoft.NETCore.DotNetAppHost/2.1.8": {
         "native": {
           "runtimes/win-x64/native/apphost.exe": {
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "runtime.win-x64.Microsoft.NETCore.DotNetHostPolicy/2.1.6": {
+      "runtime.win-x64.Microsoft.NETCore.DotNetHostPolicy/2.1.8": {
         "dependencies": {
-          "Microsoft.NETCore.DotNetHostResolver": "2.1.6"
+          "Microsoft.NETCore.DotNetHostResolver": "2.1.8"
         },
         "native": {
           "runtimes/win-x64/native/hostpolicy.dll": {
-            "fileVersion": "2.1.27019.6"
+            "fileVersion": "2.1.27317.1"
           }
         }
       },
-      "runtime.win-x64.Microsoft.NETCore.DotNetHostResolver/2.1.6": {
+      "runtime.win-x64.Microsoft.NETCore.DotNetHostResolver/2.1.8": {
         "dependencies": {
-          "Microsoft.NETCore.DotNetAppHost": "2.1.6"
+          "Microsoft.NETCore.DotNetAppHost": "2.1.8"
         },
         "native": {
           "runtimes/win-x64/native/hostfxr.dll": {
-            "fileVersion": "2.1.27019.6"
+            "fileVersion": "2.1.27317.1"
           }
         }
       },
@@ -1574,42 +1574,42 @@
     "Discord.Net/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5qE5R//8dAwNdiUk5Npng7vru1CAy1cFSL2V2dAgHa5wrDkQDfIas0Xrn95i4131Jz9NWuOO/B4FRzdtg7pjxQ==",
+      "sha512": "sha512-r/CXx4rFmYuwrLqB4fgvAXHVOH/lQ21/fOMn1HrkxFoAQy309z/RSJWA7mJgPbkGSJYhGwtfr5CzS6rSOtsHyw==",
       "path": "discord.net/2.0.1",
       "hashPath": "discord.net.2.0.1.nupkg.sha512"
     },
     "Discord.Net.Commands/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8QPpvGOuj3NbOgd7ImaWmlW8FY8o3hNjGNkvY75mC8PGogf4i7gJKPFeUyiRXtev9COhFMNEPDhWiGB9AbyLyA==",
+      "sha512": "sha512-4cIoJ/saVJYqfANfgt9OzhC+/PvFhHw+5igEe0eQE3UIfXHS6NspiDV1xuPc7Y/JYMXmV1mt3VNqDs+m0thiJA==",
       "path": "discord.net.commands/2.0.1",
       "hashPath": "discord.net.commands.2.0.1.nupkg.sha512"
     },
     "Discord.Net.Core/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Y6fAICX141Jvnqf8RSjn23LOG7JG31eHpfMCdwTJvapnvgBtb/gcobNPX8itUeIVp0PgESMiwpUFs9xMgAlefw==",
+      "sha512": "sha512-DvmLszJW3Ry1KwiqtWvNMV16sXek/6oievfX/pOiIdECibEARMqVdP2VQi3IpmPPUON5jsc2CPNZ7hJZGHNWRA==",
       "path": "discord.net.core/2.0.1",
       "hashPath": "discord.net.core.2.0.1.nupkg.sha512"
     },
     "Discord.Net.Rest/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UILgimk/4wycNsVTQNUhjGTRY88JaxHH50Ko20MsxIHfSqQTYxApEIkQqIMqBfXlvWvQCEeACLFU2m52cvIrOw==",
+      "sha512": "sha512-45x5FsQjA1jHmVWO1WTOpODDaAqUehHOHQ8A6Zrea2qQijnE6AcBYhvuTuBojD2QbsPolr+sAYvP4JOGpRABIQ==",
       "path": "discord.net.rest/2.0.1",
       "hashPath": "discord.net.rest.2.0.1.nupkg.sha512"
     },
     "Discord.Net.Webhook/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-e3u0u9Z35UvHjVeSqrfFhYsSQth9BYDEfNkZnTznNFSEfXNE9tIc2f28HPXgif1hrrssFfsWz0iaLKaIbiKNQg==",
+      "sha512": "sha512-IiQ/Nw7LFaHjVYS4u03MVlEmlwfFMJi7R46uVNFzZKhX8eNInmMeRTdOpu5b2cUj5/B4jD4CfC72C0h+b4bmtg==",
       "path": "discord.net.webhook/2.0.1",
       "hashPath": "discord.net.webhook.2.0.1.nupkg.sha512"
     },
     "Discord.Net.WebSocket/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RPieOtPNneJeygVNWNedF+k+7+VfnWMOhrD+j5rmlOFN0vdJjcnUN216iJo8vuAIjausL8qlMvFqmJg35uB5ow==",
+      "sha512": "sha512-qxBuN+SMtwo9BkOIYiiZKnTQkhdhaQIuiw+HJJj1Cn34G5PBiFLs2r0aBJvAsFmveWFlz16eoz4DVQG0SP6bVw==",
       "path": "discord.net.websocket/2.0.1",
       "hashPath": "discord.net.websocket.2.0.1.nupkg.sha512"
     },
@@ -1623,7 +1623,7 @@
     "Microsoft.Data.Sqlite.Core/2.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cjhnuXXb8YwJzWCcS8v3eK+TjXnf4QCgtnz243GAJIxfzHBHzC31297QSIEW/crtyLOWTypmCnCTaoW+A4ZRkA==",
+      "sha512": "sha512-Mso8eu0VW4xLKyUPfvs4ndH92ChW11Xsiu6sSNKwvQcrm/lw2aEHZ3KvUqUAzbYCRIaS9LFHwS+Kty0kQfsSLA==",
       "path": "microsoft.data.sqlite.core/2.2.2",
       "hashPath": "microsoft.data.sqlite.core.2.2.2.nupkg.sha512"
     },
@@ -1637,119 +1637,119 @@
     "Microsoft.EntityFrameworkCore/2.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WBQhms1wB9V43TRXB/V8qUw8j8dEI2Ew5LZvqkBYct6khD9QpIuVpzUtUwJATOFC8WKaGgowSA0E0L7pNoLQfw==",
+      "sha512": "sha512-/j1tKR7x0wCnm9oSlfgBuh8n1aTZEVf+Aehi0AVMdDeFOnfvY4YrzIz6lsnApY/GfHUA/qyinb0e53ZpIla73Q==",
       "path": "microsoft.entityframeworkcore/2.2.2",
       "hashPath": "microsoft.entityframeworkcore.2.2.2.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Abstractions/2.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qTR9OSjKEoxxoZ/G/XbSPZsdxueiWUHgWU+XrOfQAm4+dcY0XEenR4BXT5gQeVGzPrLsQb3loQhgjmKKLdI5LA==",
+      "sha512": "sha512-qhT7GxIoMldafNNxPXUKNVtxCGk8mH2MXgGO/yJCsN1bsP1jhkDLVmpLAS0Mz0uGIZvGxuIWF5HQ+lCLwHacCg==",
       "path": "microsoft.entityframeworkcore.abstractions/2.2.2",
       "hashPath": "microsoft.entityframeworkcore.abstractions.2.2.2.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Analyzers/2.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-t+9kW6MwDDrGPPx15c2AIE2f6DM9nbGcHThagg9rcUZz6shmC8LS1Qhd5TSocKHmJafa+hHhBfDNGPyDDeNfHQ==",
+      "sha512": "sha512-0EHbLoFkbjhD/9prSNyvETsRleYNa38QeadLNlaKJSAm8l7sQN451rk/WOKL2BOUO5RfA4IcRqCc2g3wWo06GA==",
       "path": "microsoft.entityframeworkcore.analyzers/2.2.2",
       "hashPath": "microsoft.entityframeworkcore.analyzers.2.2.2.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Design/2.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7Ddkim3KtUhVzE8tkthQjZRyXs1kG1uC6Sil3v/1lijTPmWg+WXHVN5IT1MkE1aGEt4tx+EH676i0bPSVAQpBQ==",
+      "sha512": "sha512-n4Nanuwwae1k98I+W8FgM9E8lx0D70smrpVaHkygh4lG4n+E2eRcZnpgUfhBxqgDRSjXGCHduzLZXU8/jjDe8Q==",
       "path": "microsoft.entityframeworkcore.design/2.2.2",
       "hashPath": "microsoft.entityframeworkcore.design.2.2.2.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/2.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-k0euxFNySwWj6+gdBrQGDRqZTrI685f/0btdMVJxun42fYozYmShxrSQPoT7LfGK6Z80m1R9obWwFWOSHNL9gQ==",
+      "sha512": "sha512-TxEceodhB3WUCi9SLXHQYgCF7sgU1Se1RnJ/RMwW0ETNM1T2s5OUEEP4njfRmXOfInjgy0fkpMjP+0pV6ieKVQ==",
       "path": "microsoft.entityframeworkcore.relational/2.2.2",
       "hashPath": "microsoft.entityframeworkcore.relational.2.2.2.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational.Design/1.1.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UVq94HrsK/eUSo4bkYBYW30UQ/uH2GoXcjTv7oIdeMKnAjLE3jm3C/BmftkQpr9beQCSbbcEySaVDhjlhrcQJQ==",
+      "sha512": "sha512-kz7C0Ddnge16NRf4CU8GygYxOor3+oQ797//eXI+xbKlJr2ighAEkno9gOipDlym4SiFtKNNuOuBI/BDBGD7Kg==",
       "path": "microsoft.entityframeworkcore.relational.design/1.1.6",
       "hashPath": "microsoft.entityframeworkcore.relational.design.1.1.6.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Sqlite/2.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QuUYf3Cdj08EiKB7S9hZgcwrm56Mv4G3tZgI0WSCtm7g0SOc2QdBYklcUpWr4eagDKEw0fwKb9RLnL4dK/GOjw==",
+      "sha512": "sha512-C7KnPVLrHIi/+EjygnPScsSncYO6iQ2jZsCinNfAbNNEaDDfRPDgUSktCtRMSQ5vwA+zm6atXnXdEVG1yeZHoA==",
       "path": "microsoft.entityframeworkcore.sqlite/2.2.2",
       "hashPath": "microsoft.entityframeworkcore.sqlite.2.2.2.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Sqlite.Core/2.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Smd8OkHY5+uluXZ0NSUYJCTEzBzg+nInXVv9IlOYEL1ObufhMz1iEGeX85wC9lfGQcA2X4lbTO+9mbBYu9HHKw==",
+      "sha512": "sha512-dX/jF/zaFFXkXEi+sjZAROJa2HfTIDzZLwZZ1ccl2wNH6kcdEm0kkhJkc3DvNaHWinSZ/oTW1+LLfXXprl0hRA==",
       "path": "microsoft.entityframeworkcore.sqlite.core/2.2.2",
       "hashPath": "microsoft.entityframeworkcore.sqlite.core.2.2.2.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Sqlite.Design/1.1.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uWBy0RXUs3p7XPbj2xsN6NpAsB9UWw6FdgoM31lYYQfZkB2DOV5l5YiTKi1qxIhVzab9ZN2I96uNY2IKvqIwpA==",
+      "sha512": "sha512-EfZa+dhD6KhiVk83d28rGgrcAlPw4d7I1FIA6dZyxqjblQ4VbwNufn1CqZ6XDc9qIUiD5GO53vGS0/Vh9MMM2w==",
       "path": "microsoft.entityframeworkcore.sqlite.design/1.1.6",
       "hashPath": "microsoft.entityframeworkcore.sqlite.design.1.1.6.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Tools/2.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DTLHtxycMrUx4WxhNIe8Wd2lIoREmxJQWdrtj56pliZ2RLLjA4LZ8jTIG0fzv4IJ43ivWpaGGukYHEeTFBDq0A==",
+      "sha512": "sha512-vrgZSdo1tc6gFS7U961KHO/eS8oN+5CdfKDATRfmQgeS8DvyldqRPibw3o+lrpqjolKmGYAMVGu3yPJD4p6nfQ==",
       "path": "microsoft.entityframeworkcore.tools/2.2.2",
       "hashPath": "microsoft.entityframeworkcore.tools.2.2.2.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-L82fEbPUzi8K6+p4olT8BHtV5SWaIbQg/UGFcsq0STRXJ9I4XR2BazCKJF95Crqn0djENa3qC761eTnOuh+u1w==",
+      "sha512": "sha512-spsJkYo8gGJapaxTSQFN/wqA+ghpJMLwB4ZyTB+fSdpd7AmMFP/YSpIcGmczcw4KggpxLGhLk7lCkSIlgvHaqQ==",
       "path": "microsoft.extensions.caching.abstractions/2.2.0",
       "hashPath": "microsoft.extensions.caching.abstractions.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Memory/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-p0IHvn/uCWZNavHf9EqT1kmZByzSbeqBXbn7Yo13RLIZhCVUsdik4v4gMEgAC+nN0zaTuBwLRysAB1+MFmIUng==",
+      "sha512": "sha512-yFs44RzB2Pzfoj4uk+mEz3MTTQKyeWb8gDhv5GyVPfHnLv0eQhGwzbw/5WpxAcVyOgG/H3/0ULY6g0/7/B+r7w==",
       "path": "microsoft.extensions.caching.memory/2.2.0",
       "hashPath": "microsoft.extensions.caching.memory.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0MtJgCZ5tIw7LoxOlXlifwVTwfMd4YdMJ9+DVZyX/fqqXO9zseZ8hH2WxbJzDbBDp45nA8rwHlL4JH/6Z98B4w==",
+      "sha512": "sha512-nOP8R1mVb/6mZtm2qgAJXn/LFm/2kMjHDAg/QJLFG6CuWYJtaD3p1BwQhufBVvRzL9ceJ/xF0SQ0qsI2GkDQAA==",
       "path": "microsoft.extensions.configuration/2.2.0",
       "hashPath": "microsoft.extensions.configuration.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-M6u4cMWXxPtqyJJ03oezyqTORmSgTPpa2gZRKkEGCXXHhyGnM1cHjPTzq5sevYS1VJEMb2TZj60mAc+hDoPPcQ==",
+      "sha512": "sha512-65MrmXCziWaQFrI0UHkQbesrX5wTwf9XPjY5yFm/VkgJKFJ5gqvXRoXjIZcf2wLi5ZlwGz/oMYfyURVCWbM5iw==",
       "path": "microsoft.extensions.configuration.abstractions/2.2.0",
       "hashPath": "microsoft.extensions.configuration.abstractions.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Binder/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6ANwTuQZqIIt0guKAdS9Mn6c+PfhOBpqRm7FslUJqtG000uo0Cd3pAndk92RQq0ygDFRub/ftiRy8DukWXqNzQ==",
+      "sha512": "sha512-vJ9xvOZCnUAIHcGC3SU35r3HKmHTVIeHzo6u/qzlHAqD8m6xv92MLin4oJntTvkpKxVX3vI1GFFkIQtU3AdlsQ==",
       "path": "microsoft.extensions.configuration.binder/2.2.0",
       "hashPath": "microsoft.extensions.configuration.binder.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ASF77AJjnyi9hL7IJU1KCAvnCTgI3JEwkU+D4gnKd53nFIYpibVjR6SW8tdTkkuZ+QkmIx2rPvKdTMNVPfVU9A==",
+      "sha512": "sha512-MZtBIwfDFork5vfjpJdG5g8wuJFt7d/y3LOSVVtDK/76wlbtz6cjltfKHqLx2TKVqTj5/c41t77m1+h20zqtPA==",
       "path": "microsoft.extensions.dependencyinjection/2.2.0",
       "hashPath": "microsoft.extensions.dependencyinjection.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2xMk9LHz1EY+7gVG0lG4qBvkUiVjg8QNPqd2HYmEP5+PL7Ayo96EhBieAhd++Gx4yM+xN8kNqmhZdFMBHeG0HQ==",
+      "sha512": "sha512-f9hstgjVmr6rmrfGSpfsVOl2irKAgr1QjrSi3FgnS7kulxband50f2brRLwySAQTADPZeTdow0mpSMcoAdadCw==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/2.2.0",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.2.2.0.nupkg.sha512"
     },
@@ -1763,70 +1763,70 @@
     "Microsoft.Extensions.Logging/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wa1Uk8sVuEzHtwZPoDNhQiFDjlDe9t74+Iess26uqhIwn02T79v/GB/pLCJ08MOvuM953LfleJW6VPr/wVXCJw==",
+      "sha512": "sha512-Nxqhadc9FCmFHzU+fz3oc8sFlE6IadViYg8dfUdGzJZ2JUxnCsRghBhhOWdM4B2zSZqEc+0BjliBh/oNdRZuig==",
       "path": "microsoft.extensions.logging/2.2.0",
       "hashPath": "microsoft.extensions.logging.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1iYT6BAnJZGebfclQXiM/drK+JUztSikkpT3xcASBQW4og877bsXtjqrMM4EI71nf8UVtvHt6O8pMdYDEE8/Lw==",
+      "sha512": "sha512-B2WqEox8o+4KUOpL7rZPyh6qYjik8tHi2tN8Z9jZkHzED8ElYgZa/h6K+xliB435SqUcWT290Fr2aa8BtZjn8A==",
       "path": "microsoft.extensions.logging.abstractions/2.2.0",
       "hashPath": "microsoft.extensions.logging.abstractions.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Options/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-67zpvElD/YPcfRs1Qm58LSntnSm+kYSA+0PA4+0Abo7NEH4RAvUkV54krspsa0+S4yBZ/m39gUOdn3PSzffazQ==",
+      "sha512": "sha512-UpZLNLBpIZ0GTebShui7xXYh6DmBHjWM8NxGxZbdQh/bPZ5e6YswqI+bru6BnEL5eWiOdodsXtEz3FROcgi/qg==",
       "path": "microsoft.extensions.options/2.2.0",
       "hashPath": "microsoft.extensions.options.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vpH+o7f8obVx65PiEtBXxTwL5RosK60fNIMy/y8WGE4/r4IvAqQGukOzMhxsp//Accvd7kmukyQTVkqVYdaDyA==",
+      "sha512": "sha512-azyQtqbm4fSaDzZHD/J+V6oWMFaf2tWP4WEGIYePLCMw3+b2RQdj9ybgbQyjCshcitQKQ4lEDOZjmSlTTrHxUg==",
       "path": "microsoft.extensions.primitives/2.2.0",
       "hashPath": "microsoft.extensions.primitives.2.2.0.nupkg.sha512"
     },
-    "Microsoft.NETCore.App/2.1.6": {
+    "Microsoft.NETCore.App/2.1.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4KShBFobByVw92OH1mYbXqy10D2AMSYZCjhVjYxDooIpYZPTJJ5ArkLRaoGk1+7+55MiSb52Ys2mDdO2JW7ddA==",
-      "path": "microsoft.netcore.app/2.1.6",
-      "hashPath": "microsoft.netcore.app.2.1.6.nupkg.sha512"
+      "sha512": "sha512-XJEIXuTNsqtxol8ik/O+Fxk7waM6WR9XEEotCEr5CBv4qQpqADqGEUhrOYT9tqqbtXnM/caVt0uEAz1PjJzWUQ==",
+      "path": "microsoft.netcore.app/2.1.8",
+      "hashPath": "microsoft.netcore.app.2.1.8.nupkg.sha512"
     },
-    "Microsoft.NETCore.DotNetAppHost/2.1.6": {
+    "Microsoft.NETCore.DotNetAppHost/2.1.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BbhLwFZNhT9mL6Wa8Me9VQN6kYSqb56G/epwh92x1ZJjcx+nFaf6X8tdpfmhVOGwztR62PEn9GvCJgkelIN6PQ==",
-      "path": "microsoft.netcore.dotnetapphost/2.1.6",
-      "hashPath": "microsoft.netcore.dotnetapphost.2.1.6.nupkg.sha512"
+      "sha512": "sha512-uldsDqAPsLIerLzxenxhsXCQTAQaCx4zfkIuXqNalIhKCjjIzXZwcE7xSmgFf7jXLCXaeWf5Y5HSaHPG15lAvw==",
+      "path": "microsoft.netcore.dotnetapphost/2.1.8",
+      "hashPath": "microsoft.netcore.dotnetapphost.2.1.8.nupkg.sha512"
     },
-    "Microsoft.NETCore.DotNetHostPolicy/2.1.6": {
+    "Microsoft.NETCore.DotNetHostPolicy/2.1.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kx3ZCtbdjnMYOO0nL9vhcgbW/oEPWOkefPm1vqE7ufwChhc/AiRHGY8iYNKQdCRKqE7nDrI6mXyOvIT4+aXrgw==",
-      "path": "microsoft.netcore.dotnethostpolicy/2.1.6",
-      "hashPath": "microsoft.netcore.dotnethostpolicy.2.1.6.nupkg.sha512"
+      "sha512": "sha512-IuG1eRKAys5iywQSmP0TRJ5OYW4hV5WaBeVAe88B/Vz8TPSuD9tBEV8R8DmHJIV3AAF7YF5qulvkl1aQ41bp0w==",
+      "path": "microsoft.netcore.dotnethostpolicy/2.1.8",
+      "hashPath": "microsoft.netcore.dotnethostpolicy.2.1.8.nupkg.sha512"
     },
-    "Microsoft.NETCore.DotNetHostResolver/2.1.6": {
+    "Microsoft.NETCore.DotNetHostResolver/2.1.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0pd2Ts5l4LtCwlDSQMeX9IFdYUdB7cAinGrkMMKzJlyEhoHVHBvlQlDQEugIb70Ls4olG0UJcDtOGOqf38Dzbw==",
-      "path": "microsoft.netcore.dotnethostresolver/2.1.6",
-      "hashPath": "microsoft.netcore.dotnethostresolver.2.1.6.nupkg.sha512"
+      "sha512": "sha512-wJbQi1By94idhJu3bt6rV8QtsEYLFhrEZvU2LLgFmtImc9evC4vxJAU0MYU9h3MPurvkMTCN37nEIHr/f9bqEA==",
+      "path": "microsoft.netcore.dotnethostresolver/2.1.8",
+      "hashPath": "microsoft.netcore.dotnethostresolver.2.1.8.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/2.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7J7veIH7Mu6zc4llWnM7YRgTv9+Ew+JWkkDj0K7cEe8wuFA6HRt6STtwux2g+qjpDXeYeWsK0UQ3uIgRiTYHIg==",
+      "sha512": "sha512-mOJy3M0UN+LUG21dLGMxaWZEP6xYpQEpLuvuEQBaownaX4YuhH6NmNUlN9si+vNkAS6dwJ//N1O4DmLf2CikVg==",
       "path": "microsoft.netcore.platforms/2.1.2",
       "hashPath": "microsoft.netcore.platforms.2.1.2.nupkg.sha512"
     },
     "Microsoft.NETCore.Targets/2.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mJnCMoBfWL0lxxlBFJ/8cZKTfPpI82TekZkUqvSCBtunUaaqr2LVeWl1zQYdanAdk4Ddf1HCwb8+DNYaNFBk1w==",
+      "sha512": "sha512-odP/tJj1z6GylFpNo7pMtbd/xQgTC3Ex2If63dRTL38bBNMwsBnJ+RceUIyHdRBC0oik/3NehYT+oECwBhIM3Q==",
       "path": "microsoft.netcore.targets/2.0.0",
       "hashPath": "microsoft.netcore.targets.2.0.0.nupkg.sha512"
     },
@@ -1858,73 +1858,73 @@
       "path": "runtime.native.system/4.0.0",
       "hashPath": "runtime.native.system.4.0.0.nupkg.sha512"
     },
-    "runtime.win-x64.Microsoft.NETCore.App/2.1.6": {
+    "runtime.win-x64.Microsoft.NETCore.App/2.1.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3e/EurS25c1cYXyfZgAat79Ua+zOtvolnWx4wjWjIcBMf4pfovfqzOt174CRU+hAVyZ/9cNNogUaXBLXUiWmHg==",
-      "path": "runtime.win-x64.microsoft.netcore.app/2.1.6",
-      "hashPath": "runtime.win-x64.microsoft.netcore.app.2.1.6.nupkg.sha512"
+      "sha512": "sha512-pPawtYj+mEu9/G3EA/cIvNfuOGmo4rB3FRitaj+Z3wtERGGQzppMsrZr4pmKybVzDWXPMlCVPYxOtknS+0AJSQ==",
+      "path": "runtime.win-x64.microsoft.netcore.app/2.1.8",
+      "hashPath": "runtime.win-x64.microsoft.netcore.app.2.1.8.nupkg.sha512"
     },
-    "runtime.win-x64.Microsoft.NETCore.DotNetAppHost/2.1.6": {
+    "runtime.win-x64.Microsoft.NETCore.DotNetAppHost/2.1.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/emzHEBKcoH8XnrpsdmpRp4tYhiJsxj2XnKMtzaq/MmcNFFad70RkdDNra8jv0dW4Pdh/LUeMpIZW7p84QjXjA==",
-      "path": "runtime.win-x64.microsoft.netcore.dotnetapphost/2.1.6",
-      "hashPath": "runtime.win-x64.microsoft.netcore.dotnetapphost.2.1.6.nupkg.sha512"
+      "sha512": "sha512-xuye4K2eDcZaXCqVTQwLpZ3OBG8f9GFZN/eSBHJ4lHQHArIJ5scVIUf2rIWKf8sy/6QCDmvdYptDL7+sBG5Cog==",
+      "path": "runtime.win-x64.microsoft.netcore.dotnetapphost/2.1.8",
+      "hashPath": "runtime.win-x64.microsoft.netcore.dotnetapphost.2.1.8.nupkg.sha512"
     },
-    "runtime.win-x64.Microsoft.NETCore.DotNetHostPolicy/2.1.6": {
+    "runtime.win-x64.Microsoft.NETCore.DotNetHostPolicy/2.1.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Hg9+g84cTUunHBmCUF/vmDGU9/y3JOrY0++P2S1oZtqm/lFjv0L2lF0e+WiOqJBdjP6p0+VZ5ssAJJm20FTgPw==",
-      "path": "runtime.win-x64.microsoft.netcore.dotnethostpolicy/2.1.6",
-      "hashPath": "runtime.win-x64.microsoft.netcore.dotnethostpolicy.2.1.6.nupkg.sha512"
+      "sha512": "sha512-DQ7UDplLHxVuHbdhDVyvKa96Unk23VcbCrw0luNA17K0AFu08pIDBBLmMzijDcdet01TT9kytMBn+SRIfjZxIA==",
+      "path": "runtime.win-x64.microsoft.netcore.dotnethostpolicy/2.1.8",
+      "hashPath": "runtime.win-x64.microsoft.netcore.dotnethostpolicy.2.1.8.nupkg.sha512"
     },
-    "runtime.win-x64.Microsoft.NETCore.DotNetHostResolver/2.1.6": {
+    "runtime.win-x64.Microsoft.NETCore.DotNetHostResolver/2.1.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nkeMtVqC+PtxyNqKmeBOpO7T0mnees+5BmnyWa//i1q1uT6fY3mGlArVZz2xb0MTgQfVrkVYR09hTdYsGjf4TA==",
-      "path": "runtime.win-x64.microsoft.netcore.dotnethostresolver/2.1.6",
-      "hashPath": "runtime.win-x64.microsoft.netcore.dotnethostresolver.2.1.6.nupkg.sha512"
+      "sha512": "sha512-NTWQ8tnPJMBpRhBfZCwhD7ChOTWkkjz0i3uf/p6sgANHtr1tJWj9VUA6g6g6nXwJYI3qdDrbFxCwESg9X/SQvg==",
+      "path": "runtime.win-x64.microsoft.netcore.dotnethostresolver/2.1.8",
+      "hashPath": "runtime.win-x64.microsoft.netcore.dotnethostresolver.2.1.8.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_green/1.1.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xbscpnvFQy5JNqcNC5djEVJMANSWuZ/SYFG8eCDLZ81e6lMaBuBPfi5dsm8bnCFmYlealei3eDha+/StW7a8og==",
+      "sha512": "sha512-U5lZv+E0JBCG5uQngaRgyIAlbzIwRczb0m46XJfLGXovtfVOaMNRY/oGyKAJjdexVrfqLRd+JyopGMySpAZRGQ==",
       "path": "sqlitepclraw.bundle_green/1.1.12",
       "hashPath": "sqlitepclraw.bundle_green.1.1.12.nupkg.sha512"
     },
     "SQLitePCLRaw.core/1.1.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-B43HNCk0NmwLgHEqLSRdcsYKFJeqnv8+XWLXl/g2ZrP7htmlPi2JpurZvqnYyVsBsRpaQfLPxhMBo8Na/29mIw==",
+      "sha512": "sha512-S4hr+tE275ran5jyKFW/FYPG6Bz6nsHUp9H8chqKxzk21PxJadLd9LnvLe6LMRP/IqY5+LOIIDQF3m/2iDlZ7Q==",
       "path": "sqlitepclraw.core/1.1.12",
       "hashPath": "sqlitepclraw.core.1.1.12.nupkg.sha512"
     },
     "SQLitePCLRaw.lib.e_sqlite3.linux/1.1.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-c/SFtlLETx3LYsj/IRFvvaf0ji0IwrXVz3aTLlcH5S/cRW/TCcgVVJssUIgLv8hsmS2iZZy139hbLU/x2eysLA==",
+      "sha512": "sha512-Tn/YE1VxWtHa4MQ9KC//ptIw6cLAUh+xXSdpX7MyGINmb4/igqyx0IOEq5WeH/+cuI/EnDtdWAOn98eMQnKsTQ==",
       "path": "sqlitepclraw.lib.e_sqlite3.linux/1.1.12",
       "hashPath": "sqlitepclraw.lib.e_sqlite3.linux.1.1.12.nupkg.sha512"
     },
     "SQLitePCLRaw.lib.e_sqlite3.osx/1.1.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-imLE78LaSu0jdg1p+b8irnMlpMNmAtZ0heXN5Zj2KpF53H8hIVlKnQC1gf9UKxrLvLiGPteaoil80vtDhNWKuA==",
+      "sha512": "sha512-qfl1ljn6NOQDyM2i9JDZc6xekHoC+Fqe4GzuhWFCS6siI7lLInw09HHSZRqyimV36vjdQYnyBBFKSn53rSOYkA==",
       "path": "sqlitepclraw.lib.e_sqlite3.osx/1.1.12",
       "hashPath": "sqlitepclraw.lib.e_sqlite3.osx.1.1.12.nupkg.sha512"
     },
     "SQLitePCLRaw.lib.e_sqlite3.v110_xp/1.1.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-diHgQFQWktc58Ekptk8/hOe7E336M4rU/HMVKLY2QcKWLKK8X3eKYvURYuRBdRcwIDL6p4TCkihEyelj9rAp+w==",
+      "sha512": "sha512-YfmaVhcEyAGU6BZ7NQiYYfCHKsCYjldwsafiFKArzqeM8MHuhfqft1Fjdv7ncukXrvKsHXhCrzJzKEMwPXiSSg==",
       "path": "sqlitepclraw.lib.e_sqlite3.v110_xp/1.1.12",
       "hashPath": "sqlitepclraw.lib.e_sqlite3.v110_xp.1.1.12.nupkg.sha512"
     },
     "SQLitePCLRaw.provider.e_sqlite3.netstandard11/1.1.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GQzL515Ar3BvV2Yx7fXnkszB1j9rKWSWtvXWmq6/ZJ8ueWgLWWF+DbwA2Ux0JobXyhSvVqSmajrck1vhA2cxXw==",
+      "sha512": "sha512-qjz6Ad1Q5hiI8imCiG5Mpa/w8E8+rAk3SRJdX54uEOo5nPywiN1H0jmMZO+ID0nPibQA3yjlAHt5/GcLW9Iftg==",
       "path": "sqlitepclraw.provider.e_sqlite3.netstandard11/1.1.12",
       "hashPath": "sqlitepclraw.provider.e_sqlite3.netstandard11.1.1.12.nupkg.sha512"
     },
@@ -1945,14 +1945,14 @@
     "System.Collections.Immutable/1.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RGxi2aQoXgZ5ge0zxrKqI4PU9LrYYoLC+cnEnWXKsSduCOUhE1GEAAoTexUVT8RZOILQyy1B27HC8Xw/XLGzdQ==",
+      "sha512": "sha512-T5XGQlcHhEO75Qx38GGCUDPdk4n/7yrRmTgy4yczzJV8alPHaxPU55TBC2UFrkQ42bu34sZPfK0dU+nWZUOEJA==",
       "path": "system.collections.immutable/1.5.0",
       "hashPath": "system.collections.immutable.1.5.0.nupkg.sha512"
     },
     "System.ComponentModel.Annotations/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IjDa643EO77A4CL9dhxfZ6zzGu+pM8Ar0NYPRMN3TvDiga4uGDzFHOj/ArpyNxxKyO5IFT2LZ0rK3kUog7g3jA==",
+      "sha512": "sha512-f1ApUHGWq/lJC8PZE7JqbA3tiY7ZngZQO2mbYfCG0JlQVVUqqmVMAy0fMvAwEuG639M47ELdP6PQxc5OIo6i6A==",
       "path": "system.componentmodel.annotations/4.5.0",
       "hashPath": "system.componentmodel.annotations.4.5.0.nupkg.sha512"
     },
@@ -1987,7 +1987,7 @@
     "System.Interactive.Async/3.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-T3nigy9yShklMyVu7I2TvlVMRy2vUn9oQeBaRy0KZcOptyy+rUbekYaXxoa3s0h2tWT3UVtzrGkQC89CBbCtlg==",
+      "sha512": "sha512-C07p0dAA5lGqYUPiPCK3paR709gqS4aMDDsje0v0pvffwzLaxmsn5YQTfZbyNG5qrudPx+BCxTqISnncQ3wIoQ==",
       "path": "system.interactive.async/3.2.0",
       "hashPath": "system.interactive.async.3.2.0.nupkg.sha512"
     },
@@ -2113,7 +2113,7 @@
     "System.Runtime.CompilerServices.Unsafe/4.5.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-x/3d5xb+mc9e4I2GOOT+HPRWMZLbYjNN/kYKsb0fyUKcWizn/t1CIrGRLIBhv7H0ptYEt+WTTztdPmwSUMyKig==",
+      "sha512": "sha512-qUJMNWhbm9oZ3XaMFiEMiYmRPszbnXIkRIi7+4b2Md2xZ6JUOepf0/kY3S85qistRohl9OdMe4PsO+RdG2kTIQ==",
       "path": "system.runtime.compilerservices.unsafe/4.5.1",
       "hashPath": "system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
     },

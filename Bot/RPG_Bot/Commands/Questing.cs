@@ -2,7 +2,6 @@
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-
 using Discord;
 using Discord.Commands;
 using System.Reflection;
@@ -85,6 +84,276 @@ namespace RPG_Bot.Commands
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
                     return;
                 }
+            }
+        }
+
+        [Command("deity"), Alias("deities", "Deity", "Deities"), Summary("Display a player’s chosen deity and basic information on the other Deities.")]
+        public async Task Deity()
+        {
+            string god = Data.Data.GetData_GodChoice(Context.User.Id);
+
+            EmbedBuilder Embed = new EmbedBuilder();
+
+            if (god == "Aphelion" || god == "aphelion")
+            {
+                Embed.WithTitle("Aphelion - God of Light, Celebration, and Youth");
+                Embed.WithDescription("Aphelion is the God of Light, Celebration and Youth. He blessed Asteria with Sunlight, illuminating the newborn world.\nFollowers of Aphelion are incessant optimists who believe that staying true to one’s self is the key to happiness.They worship Aphelion through life’s bountiful pleasures and joys.");
+            }
+            else if (god == "Istara" || god == "istara")
+            {
+                Embed.WithTitle("Istara - Goddess of Renewal, Nature, and Love");
+                Embed.WithDescription("Istara is the Goddess of Renewal, Nature, and Love. She blessed Asteria with all flora and fauna, populating the infant world.\nFollowers of Istara are forgiving altruists who pursue compassion above all else. They revere all life as aspects of Istara, save the monstrous creatures that threaten Asteria.");
+            }
+            else if (god == "Val" || god == "val")
+            {
+                Embed.WithTitle("Val - God of Justice, Science, and Civilization");
+                Embed.WithDescription("Val is the god of Balance, Justice, and the Sciences. He blessed Asteria with civilization, providing structure to the sapient creatures of the young world.\nFollowers of Val are level - headed and truth - driven, bearing strong moral compasses and wills to protect others.They revere naught but Justice, and seek it at every turn no matter the cost.");
+            }
+            else if (god == "Havi" || god == "havi")
+            {
+                Embed.WithTitle("Havi - Goddess of Commerce, Artisans, and Art");
+                Embed.WithDescription("Havi is the Goddess of Commerce, Artisans, and Wealth. She blessed Asteria with art and luxury, giving meaning to the lives within the maturing world.\nFollowers of Havi are often artists, artisans, or merchants, and they seek not fortune but the betterment of the self.They worship Havi through their crafts, by which they find constant self - improvement.");
+            }
+            else if (god == "Ebben" || god == "ebben")
+            {
+                Embed.WithTitle("Ebben - God of Death, Sleep, and Journeys");
+                Embed.WithDescription("Ebben is the God of Death, Sleep, and Journeys. He blessed Asteria with the home and hearth, allowing a place for people to rest in the aging world.\nFollowers of Ebben are gracious and empathetic, and they either travel frequently or make their homes into safe harbors for others.The value of life’s journeys is immense to them, and they worship Ebben through them.");
+            }
+            else if (god == "Lune" || god == "lune")
+            {
+                Embed.WithTitle("Lune - Goddess of Music, Storytelling, and Dreams");
+                Embed.WithDescription("Lune is the Goddess of Music, the Moon, and Dreams. She blessed Asteria with storytelling, letting them chronicle the great deeds and legacies of the elderly world.\nFollowers of Lune tend to be ambitious rising stars, heroes, or performers.They worship Lune by carving their own mark in history and leaving magnificent stories to tell at every turn.");
+            }
+            else if (god == "Sombri" || god == "sombri")
+            {
+                Embed.WithTitle("Sombri - Deity of Courage, Meditation, and the Unknown");
+                Embed.WithDescription("Sombri is the Deity of Courage, Meditation, and the Unknown. They gave new life to the dying Asteria through a great sacrifice, though the details of the story vary.\nFollowers of Sombri are brave but often troubled, and tend to be adventurers.They worship Sombri through introspection, restraint, and knowing when to throw restraint to the wind.");
+            }
+            else if (god == "The Crone" || god == "TheCrone")
+            {
+                Embed.WithTitle("The Crone - Deity of Tradition, Knowledge, and Wisdom");
+                Embed.WithDescription("The Crone is the Deity of Tradition, Knowledge, and Wisdom. They blessed Asteria with permanence, allowing the blessings of the other Gods to endure evermore.\nFollowers of The Crone vary in practice by regions of Asteria, but they are all focused on uplifting others, though they themselves are forces to be reckoned with.In Silverkeep, the Crone is known as Ceras, and is female.");
+            }
+            else if (god == "None")
+            {
+                Embed.WithTitle("You worship no deity!");
+                Embed.WithDescription("You have no faith in any of the gods and walk your path alone...");
+            }
+
+            //Embed.WithImageUrl("");
+            Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+
+            await Context.Channel.SendMessageAsync("", false, Embed.Build());
+        }
+
+        [Command("SwitchDeity"), Alias("switchdeity", "ChangeDeity", "changedeity"), Summary("Switch deities for 500 gold.")]
+        public async Task SwitchDeity([Remainder] string God)
+        {
+            bool failedFromSameGod = false;
+
+            if(Data.Data.GetData_GoldAmount(Context.User.Id) >= 500)
+            {
+                string input = God.ToLower();
+
+                if(input == "aphelion")
+                {
+                    if (Data.Data.GetData_GodChoice(Context.User.Id) == "Aphelion")
+                    {
+                        failedFromSameGod = true;
+                    }
+                    else
+                    {
+                        await Data.Data.SetGod(Context.User.Id, "Aphelion");
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("You now worship Aphelion");
+                        Embed.WithDescription("");
+                        Embed.WithImageUrl("");
+                        Embed.WithColor(Color.Purple);
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                        await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+                    }
+                }
+                else if (input == "istara")
+                {
+                    if (Data.Data.GetData_GodChoice(Context.User.Id) == "Istara")
+                    {
+                        failedFromSameGod = true;
+                    }
+                    else
+                    {
+                        await Data.Data.SetGod(Context.User.Id, "Istara");
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("You now worship Istara");
+                        Embed.WithDescription("");
+                        Embed.WithImageUrl("");
+                        Embed.WithColor(Color.Purple);
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                        await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+                    }
+                }
+                else if (input == "val")
+                {
+                    if (Data.Data.GetData_GodChoice(Context.User.Id) == "Val")
+                    {
+                        failedFromSameGod = true;
+                    }
+                    else
+                    {
+                        await Data.Data.SetGod(Context.User.Id, "Val");
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("You now worship Val");
+                        Embed.WithDescription("");
+                        Embed.WithImageUrl("");
+                        Embed.WithColor(Color.Purple);
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                        await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+                    }
+                }
+                else if (input == "havi")
+                {
+                    if (Data.Data.GetData_GodChoice(Context.User.Id) == "Havi")
+                    {
+                        failedFromSameGod = true;
+                    }
+                    else
+                    {
+                        await Data.Data.SetGod(Context.User.Id, "Havi");
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("You now worship Havi");
+                        Embed.WithDescription("");
+                        Embed.WithImageUrl("");
+                        Embed.WithColor(Color.Purple);
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                        await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+                    }
+                }
+                else if (input == "ebben")
+                {
+                    if (Data.Data.GetData_GodChoice(Context.User.Id) == "Ebben")
+                    {
+                        failedFromSameGod = true;
+                    }
+                    else
+                    {
+                        await Data.Data.SetGod(Context.User.Id, "Ebben");
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("You now worship Ebben");
+                        Embed.WithDescription("");
+                        Embed.WithImageUrl("");
+                        Embed.WithColor(Color.Purple);
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                        await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+                    }
+                }
+                else if (input == "lune")
+                {
+                    if (Data.Data.GetData_GodChoice(Context.User.Id) == "Lune")
+                    {
+                        failedFromSameGod = true;
+                    }
+                    else
+                    {
+                        await Data.Data.SetGod(Context.User.Id, "Lune");
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("You now worship Lune");
+                        Embed.WithDescription("");
+                        Embed.WithImageUrl("");
+                        Embed.WithColor(Color.Purple);
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                        await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+                    }
+                }
+                else if (input == "sombri")
+                {
+                    if (Data.Data.GetData_GodChoice(Context.User.Id) == "Sombri")
+                    {
+                        failedFromSameGod = true;
+                    }
+                    else
+                    {
+                        await Data.Data.SetGod(Context.User.Id, "Sombri");
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("You now worship Sombri");
+                        Embed.WithDescription("");
+                        Embed.WithImageUrl("");
+                        Embed.WithColor(Color.Purple);
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                        await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+                    }
+                }
+                else if (input == "crone" || input == "thecrone" || input == "the crone")
+                {
+                    if (Data.Data.GetData_GodChoice(Context.User.Id) == "The Crone")
+                    {
+                        failedFromSameGod = true;
+                    }
+                    else
+                    {
+                        await Data.Data.SetGod(Context.User.Id, "The Crone");
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("You now worship the Crone");
+                        Embed.WithDescription("");
+                        Embed.WithImageUrl("");
+                        Embed.WithColor(Color.Purple);
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                        await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+                    }
+                }
+                else if (input == "none" || input == "nothing")
+                {
+                    if (Data.Data.GetData_GodChoice(Context.User.Id) == "None")
+                    {
+                        failedFromSameGod = true;
+                    }
+                    else
+                    {
+                        await Data.Data.SetGod(Context.User.Id, "None");
+
+                        EmbedBuilder Embed = new EmbedBuilder();
+                        Embed.WithTitle("You now worship nothing");
+                        Embed.WithDescription("You have no faith in any of the gods and now walk your path alone...");
+                        Embed.WithImageUrl("");
+                        Embed.WithColor(Color.LightOrange);
+                        Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                        await Data.Data.SubtractSaveData(Context.User.Id, 500, 0, "", 0, 0, 0, 0, 0);
+                    }
+                }
+            }
+
+            if (failedFromSameGod)
+            {
+                EmbedBuilder Embeda = new EmbedBuilder();
+                Embeda.WithTitle("Error!");
+                Embeda.WithDescription("You cannot switch to a deity you already worship!");
+                Embeda.WithImageUrl("");
+                Embeda.WithColor(Color.Red);
+                await Context.Channel.SendMessageAsync("", false, Embeda.Build());
             }
         }
 
