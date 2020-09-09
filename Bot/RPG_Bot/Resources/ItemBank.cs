@@ -9,8 +9,6 @@ using System.IO;
 
 namespace RPG_Bot.Resources
 {
-    //NTS, ItemID is 0, other numbers reserved for modifiers like legendary effects down the line :)
-
     public class GenericItem
     {
         public ulong OwnerID { get; set; }
@@ -150,6 +148,22 @@ namespace RPG_Bot.Resources
     public class Boots : WearableItem
     {
         public Boots(ulong ownerID, uint itemID, string url, string itemName, uint itemCost, string itemRarity, uint armor, uint health, uint healthGainOnDamage)
+        {
+            OwnerID = ownerID;
+            ItemID = itemID;
+            WebURL = url;
+            ItemName = itemName;
+            Armor = armor;
+            Health = health;
+            HealthGainOnDamage = healthGainOnDamage;
+            ItemCost = itemCost;
+            ItemRarity = itemRarity;
+        }
+    }
+
+    public class Artifact : WearableItem
+    {
+        public Artifact(ulong ownerID, uint itemID, string url, string itemName, uint itemCost, string itemRarity, uint armor, uint health, uint healthGainOnDamage)
         {
             OwnerID = ownerID;
             ItemID = itemID;

@@ -769,6 +769,84 @@ namespace RPG_Bot.Data
             }
         }
 
+        public static async Task SubtractSkillPoints(ulong UserID, uint stamina, uint stability, uint dexterity, uint strength, uint luck, uint charisma)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                var query = DbContext.Data.Where(x => x.UserID == UserID);
+
+                if (query != null && query.Count() < 1) { return; }
+                else
+                {
+                    if (query != null)
+                    {
+                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+
+                        if ((int)Current.Stamina - (int)stamina < 0)
+                            Current.Stamina = 0;
+                        else Current.Stamina -= stamina;
+
+                        if ((int)Current.Stability - (int)stability < 0)
+                            Current.Stability = 0;
+                        else Current.Stability -= stability;
+
+                        if ((int)Current.Dexterity - (int)dexterity < 0)
+                            Current.Dexterity = 0;
+                        else Current.Dexterity -= dexterity;
+
+                        if ((int)Current.Strength - (int)strength < 0)
+                            Current.Strength = 0;
+                        else Current.Strength -= strength;
+
+                        if ((int)Current.Luck - (int)luck < 0)
+                            Current.Luck = 0;
+                        else Current.Luck -= luck;
+
+                        if ((int)Current.Charisma - (int)charisma < 0)
+                            Current.Charisma = 0;
+                        else Current.Charisma -= charisma;
+
+                        DbContext.Data.Update(Current);
+                    }
+                }
+
+                await DbContext.SaveChangesAsync();
+            }
+        }
+
+        public static async Task AddSkillPoints(ulong UserID, uint stamina, uint stability, uint dexterity, uint strength, uint luck, uint charisma)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                var query = DbContext.Data.Where(x => x.UserID == UserID);
+
+                if (query != null && query.Count() < 1) { return; }
+                else
+                {
+                    if (query != null)
+                    {
+                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+
+                        Current.Stamina += stamina;
+
+                        Current.Stability += stability;
+
+                        Current.Dexterity += dexterity;
+
+                        Current.Strength += strength;
+
+                        Current.Luck += luck;
+
+                        Current.Charisma += charisma;
+
+                        DbContext.Data.Update(Current);
+                    }
+                }
+
+                await DbContext.SaveChangesAsync();
+            }
+        }
+
         public static async Task SaveEventData(ulong UserID, uint E1, uint E2, uint E3)
         {
             using (var DbContext = new SqliteDbContext())
@@ -2481,6 +2559,221 @@ namespace RPG_Bot.Data
                         UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
 
                         Current.GodChoice = god;
+
+                        DbContext.Data.Update(Current);
+                    }
+                }
+
+                await DbContext.SaveChangesAsync();
+            }
+        }
+        #endregion
+
+        #region [DELETER]
+        public static void DeleteSave(ulong UserID)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                //No data to get.
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                    return;
+                else DbContext.Data.Remove(DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault());
+            }
+        }
+        #endregion
+
+        #region EXPLORE
+        public static bool Explored(ulong UserID, string RegionName)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                //No data to get.
+                if (DbContext.Data.Where(x => x.UserID == UserID) == null)
+                    return false;
+
+                if (RegionName == "Training_Forts")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Training_Forts).FirstOrDefault() == 1;
+                else if (RegionName == "Rayels_Terror_Tower")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Rayels_Terror_Tower).FirstOrDefault() == 1;
+                else if (RegionName == "Skeleton_Caves")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Skeleton_Caves).FirstOrDefault() == 1;
+                else if (RegionName == "Forest_Path")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Forest_Path).FirstOrDefault() == 1;
+                else if (RegionName == "Goblin_Outpost")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Goblin_Outpost).FirstOrDefault() == 1;
+                else if (RegionName == "Tomb_of_Heroes")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Tomb_of_Heroes).FirstOrDefault() == 1;
+                else if (RegionName == "Lair_of_Trenthola")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Lair_of_Trenthola).FirstOrDefault() == 1;
+                else if (RegionName == "Snowy_Woods")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Snowy_Woods).FirstOrDefault() == 1;
+                else if (RegionName == "Makkosi_Camp")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Makkosi_Camp).FirstOrDefault() == 1;
+                else if (RegionName == "Frigid_Wastes")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Frigid_Wastes).FirstOrDefault() == 1;
+                else if (RegionName == "Abandoned_Village")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Abandoned_Village).FirstOrDefault() == 1;
+                else if (RegionName == "Frozen_Peaks")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Frozen_Peaks).FirstOrDefault() == 1;
+                else if (RegionName == "Cliffside_Barricade")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Cliffside_Barricade).FirstOrDefault() == 1;
+                else if (RegionName == "Roosting_Crags")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Roosting_Crags).FirstOrDefault() == 1;
+                else if (RegionName == "Taken_Temple")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Taken_Temple).FirstOrDefault() == 1;
+                else if (RegionName == "Undying_Storm")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Undying_Storm).FirstOrDefault() == 1;
+                else if (RegionName == "Crawling_Coastline")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Crawling_Coastline).FirstOrDefault() == 1;
+                else if (RegionName == "Megaton_Cove")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Megaton_Cove).FirstOrDefault() == 1;
+                else if (RegionName == "Lunar_Temple")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Lunar_Temple).FirstOrDefault() == 1;
+                else if (RegionName == "Hms_Reliant")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Hms_Reliant).FirstOrDefault() == 1;
+                else if (RegionName == "Logada_Summits")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Logada_Summits).FirstOrDefault() == 1;
+                else if (RegionName == "Burning_Outcrop")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Burning_Outcrop).FirstOrDefault() == 1;
+                else if (RegionName == "Magma_Pits")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Magma_Pits).FirstOrDefault() == 1;
+                else if (RegionName == "Draconic_Nests")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Draconic_Nests).FirstOrDefault() == 1;
+                else if (RegionName == "Twisted_Riverbed")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Twisted_Riverbed).FirstOrDefault() == 1;
+                else if (RegionName == "Quarantined_Village")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Quarantined_Village).FirstOrDefault() == 1;
+                else if (RegionName == "The_Breach")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_The_Breach).FirstOrDefault() == 1;
+                else if (RegionName == "Within_the_Breach")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Within_the_Breach).FirstOrDefault() == 1;
+                else if (RegionName == "Outer_Blockade")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Outer_Blockade).FirstOrDefault() == 1;
+                else if (RegionName == "Shattered_Streets")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Shattered_Streets).FirstOrDefault() == 1;
+                else if (RegionName == "Catacombs")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Catacombs).FirstOrDefault() == 1;
+                else if (RegionName == "Corrupt_Citadel")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Corrupt_Citadel).FirstOrDefault() == 1;
+                else if (RegionName == "Ruined_Outpost")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Ruined_Outpost).FirstOrDefault() == 1;
+                else if (RegionName == "Sombris_Monument")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Sombris_Monument).FirstOrDefault() == 1;
+                else if (RegionName == "End_of_Asteria")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_End_of_Asteria).FirstOrDefault() == 1;
+                else if (RegionName == "Borealis_Gates")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Borealis_Gates).FirstOrDefault() == 1;
+                else if (RegionName == "Stellar_Fields")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Stellar_Fields).FirstOrDefault() == 1;
+                else if (RegionName == "Astral_Reaches")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Astral_Reaches).FirstOrDefault() == 1;
+                else if (RegionName == "Shifted_Wastes")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Shifted_Wastes).FirstOrDefault() == 1;
+                else if (RegionName == "Fell_Pantheon")
+                    return DbContext.Data.Where(x => x.UserID == UserID).Select(x => x.Explored_Fell_Pantheon).FirstOrDefault() == 1;
+                else
+                {
+                    Console.WriteLine("Error loading result of regions exploration: " + RegionName);
+                    return false;
+                }
+            }
+        }
+
+        public static async Task Explore(ulong UserID, string RegionName)
+        {
+            using (var DbContext = new SqliteDbContext())
+            {
+                var query = DbContext.Data.Where(x => x.UserID == UserID);
+
+                if (query != null && query.Count() < 1)
+                {
+                }
+                else
+                {
+                    if (query != null)
+                    {
+                        UserData Current = DbContext.Data.Where(x => x.UserID == UserID).FirstOrDefault();
+
+                        if (RegionName == "Training_Forts")
+                            Current.Explored_Training_Forts = 1;
+                        else if (RegionName == "Rayels_Terror_Tower")
+                            Current.Explored_Rayels_Terror_Tower = 1;
+                        else if (RegionName == "Skeleton_Caves")
+                            Current.Explored_Skeleton_Caves = 1;
+                        else if (RegionName == "Forest_Path")
+                            Current.Explored_Forest_Path = 1;
+                        else if (RegionName == "Goblin_Outpost")
+                            Current.Explored_Goblin_Outpost = 1;
+                        else if (RegionName == "Tomb_of_Heroes")
+                            Current.Explored_Tomb_of_Heroes = 1;
+                        else if (RegionName == "Lair_of_Trenthola")
+                            Current.Explored_Lair_of_Trenthola = 1;
+                        else if (RegionName == "Snowy_Woods")
+                            Current.Explored_Snowy_Woods = 1;
+                        else if (RegionName == "Makkosi_Camp")
+                            Current.Explored_Makkosi_Camp = 1;
+                        else if (RegionName == "Frigid_Wastes")
+                            Current.Explored_Frigid_Wastes = 1;
+                        else if (RegionName == "Abandoned_Village")
+                            Current.Explored_Abandoned_Village = 1;
+                        else if (RegionName == "Frozen_Peaks")
+                            Current.Explored_Frozen_Peaks = 1;
+                        else if (RegionName == "Cliffside_Barricade")
+                            Current.Explored_Cliffside_Barricade = 1;
+                        else if (RegionName == "Roosting_Crags")
+                            Current.Explored_Roosting_Crags = 1;
+                        else if (RegionName == "Taken_Temple")
+                            Current.Explored_Taken_Temple = 1;
+                        else if (RegionName == "Undying_Storm")
+                            Current.Explored_Undying_Storm = 1;
+                        else if (RegionName == "Crawling_Coastline")
+                            Current.Explored_Crawling_Coastline = 1;
+                        else if (RegionName == "Megaton_Cove")
+                            Current.Explored_Megaton_Cove = 1;
+                        else if (RegionName == "Lunar_Temple")
+                            Current.Explored_Lunar_Temple = 1;
+                        else if (RegionName == "Hms_Reliant")
+                            Current.Explored_Hms_Reliant = 1;
+                        else if (RegionName == "Logada_Summits")
+                            Current.Explored_Logada_Summits = 1;
+                        else if (RegionName == "Burning_Outcrop")
+                            Current.Explored_Burning_Outcrop = 1;
+                        else if (RegionName == "Magma_Pits")
+                            Current.Explored_Magma_Pits = 1;
+                        else if (RegionName == "Draconic_Nests")
+                            Current.Explored_Draconic_Nests = 1;
+                        else if (RegionName == "Twisted_Riverbed")
+                            Current.Explored_Twisted_Riverbed = 1;
+                        else if (RegionName == "Quarantined_Village")
+                            Current.Explored_Quarantined_Village = 1;
+                        else if (RegionName == "The_Breach")
+                            Current.Explored_The_Breach = 1;
+                        else if (RegionName == "Within_the_Breach")
+                            Current.Explored_Within_the_Breach = 1;
+                        else if (RegionName == "Outer_Blockade")
+                            Current.Explored_Outer_Blockade = 1;
+                        else if (RegionName == "Shattered_Streets")
+                            Current.Explored_Shattered_Streets = 1;
+                        else if (RegionName == "Catacombs")
+                            Current.Explored_Catacombs = 1;
+                        else if (RegionName == "Corrupt_Citadel")
+                            Current.Explored_Corrupt_Citadel = 1;
+                        else if (RegionName == "Ruined_Outpost")
+                            Current.Explored_Ruined_Outpost = 1;
+                        else if (RegionName == "Sombris_Monument")
+                            Current.Explored_Sombris_Monument = 1;
+                        else if (RegionName == "End_of_Asteria")
+                            Current.Explored_End_of_Asteria = 1;
+                        else if (RegionName == "Borealis_Gates")
+                            Current.Explored_Borealis_Gates = 1;
+                        else if (RegionName == "Stellar_Fields")
+                            Current.Explored_Stellar_Fields = 1;
+                        else if (RegionName == "Astral_Reaches")
+                            Current.Explored_Astral_Reaches = 1;
+                        else if (RegionName == "Shifted_Wastes")
+                            Current.Explored_Shifted_Wastes = 1;
+                        else if (RegionName == "Fell_Pantheon")
+                            Current.Explored_Fell_Pantheon = 1;
 
                         DbContext.Data.Update(Current);
                     }

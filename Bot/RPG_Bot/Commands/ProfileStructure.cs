@@ -7,6 +7,7 @@ using System.Linq;
 using RPG_Bot.Resources.Database;
 using System.Collections.Generic;
 using static RPG_Bot.Emojis.Emojis;
+
 namespace RPG_Bot.Currency
 {
     public class ProfileStructure : ModuleBase<SocketCommandContext>
@@ -197,7 +198,7 @@ namespace RPG_Bot.Currency
             Embed.WithColor(40, 200, 150);
             Embed.WithFooter("XP until level up: " + currentXp + " / " + neededXP);
             Embed.WithDescription("Class: " + classType + " " + classEmoji + "\nName: " + name + " " + Dove + "\nAge: " + age + " " + Age + "\n" + "\nGold Coins: " + coins + Coins + "\n" +
-                "Guild Gems: " + guildGems + " " + GuildGem + "\nEssence (Event Item): " + eventItem + " " + Essence + "\nCandies (Spooktober Event Item): " + eventItem2 + " " + Candy + "\n\n" +
+                "Guild Gems: " + guildGems + " " + GuildGem + "\nPresents (Event Item): " + eventItem + " " + Present + "\n\n\n" +
                 "Level: " + level + " " + Level + "\n" + "Health: " + currentHealth + "/" + health + " " + Health + "\nArmor: " + currentArmor + " " + Armor + "\nHealth Regeneration: " + currentRegen + " " + Regeneration + "\nDamage: " + damage + " " + Damage + "\n\n" +
                 Skill + " " + Data.Data.GetData_SkillPoints(vuser.Id) + " Skill Points" + " " + Skill + "\n" +
                 "Stamina: " + Data.Data.GetData_Stamina(vuser.Id) +
@@ -216,7 +217,7 @@ namespace RPG_Bot.Currency
             public async Task Me()
             {
                 EmbedBuilder Embed = new EmbedBuilder();
-                Embed.WithAuthor("You have " + Data.Data.GetData_GoldAmount(Context.User.Id) + " Gold Coins");
+                Embed.WithAuthor("You have " + Data.Data.GetData_GoldAmount(Context.User.Id) + " Gold Coins!");
                 Embed.WithColor(40, 200, 150);
                 Embed.Color = Color.Gold;
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
@@ -243,7 +244,7 @@ namespace RPG_Bot.Currency
                 {
                     Embed.WithAuthor("Error!");
                     Embed.WithFooter("Money is worthless to me you filthy mortal...");
-                    Embed.WithDescription("You may not transfer funds to me or any other bot, sorry!");
+                    Embed.WithDescription("You may not transfer funds to me or any other god, sorry!");
                     Embed.Color = Color.Red;
 
                     await Context.Channel.SendMessageAsync("", false, Embed.Build());
@@ -485,12 +486,12 @@ namespace RPG_Bot.Currency
                 Embed.Color = Color.Orange;
                 Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
             }
-            else if (txt == "Event" || txt == "event" || txt == Essence)
+            else if (txt == "Event" || txt == "event" || txt == Present) //Essence
             {
                 foreach (SocketGuildUser users in Context.Guild.Users) list.Add(new SimpleDataContainer(users.Id, 0, users.Username, 0, 0, 0, 0, 0, Data.Data.GetData_Event1(users.Id)));
                 list.Sort((s2, s1) => s1.Event.CompareTo(s2.Event));
-                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Essence: " + list[i].Event + Essence;
-                Embed.WithAuthor("Serverwide Leaderboard by Essence");
+                for (int i = 0; i < 5; ++i) output = output + "\n" + (i + 1) + ".) " + list[i].Name + " - Present: " + list[i].Event + Essence;
+                Embed.WithAuthor("Serverwide Leaderboard by Presents");
                 Embed.Color = Color.DarkGreen;
                 Embed.WithThumbnailUrl(Context.Guild.GetUser(list[0].ID).GetAvatarUrl());
             }
@@ -506,7 +507,7 @@ namespace RPG_Bot.Currency
                     "\n" + Health + " - **Health**" +
                     "\n" + GuildGem + " - **Gems**" +
                     "\n" + Age + " - **Age**" +
-                    "\n" + Essence + " - **Event**");
+                    "\n" + Present + " - **Event**");
                 Embeder.WithColor(40, 200, 150);
                 Embeder.Color = Color.Red;
                 await Context.Channel.SendMessageAsync("", false, Embeder.Build());

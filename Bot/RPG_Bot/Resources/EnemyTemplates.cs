@@ -1,4 +1,22 @@
-﻿//This script is just a simple template for things. All that can be found here is the boundings
+﻿/////////Completely Deprecated/////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////Completely Deprecated///////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////Completely Deprecated/////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////Completely Deprecated/////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////Completely Deprecated/////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////Completely Deprecated///////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////Completely Deprecated/////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////Completely Deprecated//////////////////
+
+
+
+//This script is just a simple template for things. All that can be found here is the boundings
 //for how enemies spawn, such as max health and min health. The actual code behind it all is located
 //under Gameplay.cs
 
@@ -285,7 +303,7 @@ namespace RPG_Bot.Resources
 
         public static Enemy TrainingBot = new Enemy
         (
-            "https://cdn.discordapp.com/attachments/542225685695954945/543140268845694987/giphy_1.gif", //URL
+            "https://cdn.discordapp.com/attachments/542225685695954945/566850419725434881/Unit_ills_full_810124.webp", //URL
             50, //Max Health
             50, //Min Health
             1, //Max Damage
@@ -297,11 +315,11 @@ namespace RPG_Bot.Resources
             1, //Max XP Drop
             1, //Min XP Drop
             "Training Bot" //Unit Name
-        );
+        ); //https://cdn.discordapp.com/attachments/542225685695954945/543140268845694987/giphy_1.gif
 
         public static Enemy LargeTrainingBot = new Enemy
         (
-            "https://cdn.discordapp.com/attachments/542225685695954945/543140269915373588/Crablops.gif", //URL
+            "https://cdn.discordapp.com/attachments/542225685695954945/566850062466940939/Unit_ills_full_10922.webp", //URL
             150, //Max Health
             100, //Min Health
             10, //Max Damage
@@ -313,7 +331,7 @@ namespace RPG_Bot.Resources
             10, //Max XP Drop
             3, //Min XP Drop
             "Upgraded Training Bot" //Unit Name
-        );
+        ); //https://cdn.discordapp.com/attachments/542225685695954945/543140269915373588/Crablops.gif
 
         public static Enemy Skeleton = new Enemy
         (
@@ -333,7 +351,7 @@ namespace RPG_Bot.Resources
 
         public static Enemy BigTrainingBot = new Enemy
         (
-            "https://cdn.discordapp.com/attachments/542225685695954945/543140266589159428/giphy_2.gif", //URL
+            "https://cdn.discordapp.com/attachments/542225685695954945/566850069341667330/Unit_ills_full_10923.webp", //URL
             200, //Max Health
             150, //Min Health
             15, //Max Damage
@@ -345,7 +363,7 @@ namespace RPG_Bot.Resources
             18, //Max XP Drop
             3, //Min XP Drop
             "Armed Training Bot" //Unit Name
-        );
+        ); //https://cdn.discordapp.com/attachments/542225685695954945/543140266589159428/giphy_2.gif
 
         public static Enemy SkeletonFootSoldier = new Enemy
         (
@@ -539,7 +557,8 @@ namespace RPG_Bot.Resources
             "[EVENT BOSS] Trelia the Mystic Tree" //Unit Name
         );*/
 
-        public static Enemy EventTreeBoss = new Enemy
+        /*
+         public static Enemy EventTreeBoss = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/566850213533188135/Unit_ills_full_30515.webp", //URL
             185000, //Max Health
@@ -553,6 +572,23 @@ namespace RPG_Bot.Resources
             554, //Max XP Drop
             280, //Min XP Drop
             "[EVENT BOSS] Essence Dragon Grakuul" //Unit Name
+        );
+         */
+
+        public static Enemy EventTreeBoss = new Enemy
+        (
+            "https://cdn.discordapp.com/attachments/542225685695954945/650264663023550464/Unit_ills_full_20606.webp", //URL
+            250000, //Max Health
+            209500, //Min Health
+            2285, //Max Damage
+            155, //Min Damage
+            200, //Max Level
+            140, //Min Level
+            15000, //Max Gold Drop
+            9500, //Min Gold Drop
+            554, //Max XP Drop
+            280, //Min XP Drop
+            "[EVENT BOSS] Ice Dragon Thragoo" //Unit Name
         );
 
         public static Enemy GothkamulBoss = new Enemy
@@ -576,7 +612,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/544670990957936641/Rakdoro.png", //URL
             145900, //Max Health
             108800, //Min Health
-            3025, //Max Damage
+            3525, //Max Damage
             40, //Min Damage
             500, //Max Level
             400, //Min Level
@@ -592,7 +628,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/544670996356136990/Arkdul.png", //URL
             280000, //Max Health
             230000, //Min Health
-            3500, //Max Damage
+            2300, //Max Damage
             10, //Min Damage
             500, //Max Level
             400, //Min Level
@@ -608,7 +644,7 @@ namespace RPG_Bot.Resources
             "https://cdn.discordapp.com/attachments/542225685695954945/544670999648665600/Kenthros.png", //URL
             189900, //Max Health
             158000, //Min Health
-            5450, //Max Damage
+            2450, //Max Damage
             30, //Min Damage
             500, //Max Level
             400, //Min Level
@@ -1546,6 +1582,88 @@ namespace RPG_Bot.Resources
         );
         #endregion
 
+        #region Frost Legion Event Enemies
+        public static Enemy Snowling = new Enemy
+        (
+           "https://cdn.discordapp.com/attachments/542225685695954945/650402581264334883/Unit_ills_full_820212.webp", //URL
+           60, //Max Health
+           20, //Min Health
+           10, //Max Damage
+           4, //Min Damage
+           5, //Max Level
+           1, //Min Level
+           3, //Max Gold Drop
+           1, //Min Gold Drop
+           13, //Max XP Drop
+           5, //Min XP Drop
+           "Snowling" //Unit Name
+        );
+
+        public static Enemy RedGoblin = new Enemy
+        (
+           "https://cdn.discordapp.com/attachments/542225685695954945/650402574960295977/Unit_ills_full_10051.webp", //URL
+           1895, //Max Health
+           1500, //Min Health
+           165, //Max Damage
+           50, //Min Damage
+           15, //Max Level
+           10, //Min Level
+           200, //Max Gold Drop
+           50, //Min Gold Drop
+           60, //Max XP Drop
+           2, //Min XP Drop
+           "Red Legion Goblin" //Unit Name
+        );
+
+        public static Enemy TabletKeeper = new Enemy
+        (
+           "https://cdn.discordapp.com/attachments/542225685695954945/650402580375011338/Unit_ills_full_50792.webp", //URL
+           3895, //Max Health
+           2500, //Min Health
+           235, //Max Damage
+           100, //Min Damage
+           30, //Max Level
+           25, //Min Level
+           300, //Max Gold Drop
+           250, //Min Gold Drop
+           130, //Max XP Drop
+           10, //Min XP Drop
+           "Frost Tablet Elgif" //Unit Name
+        );
+
+        public static Enemy IceIdol = new Enemy
+        (
+           "https://cdn.discordapp.com/attachments/542225685695954945/650402578215075880/Unit_ills_full_20132.webp", //URL
+           4895, //Max Health
+           3500, //Min Health
+           535, //Max Damage
+           300, //Min Damage
+           40, //Max Level
+           35, //Min Level
+           400, //Max Gold Drop
+           350, //Min Gold Drop
+           280, //Max XP Drop
+           45, //Min XP Drop
+           "Possessed Ice Idol" //Unit Name
+        );
+
+        public static Enemy GreaterWolf = new Enemy
+        (
+           "https://cdn.discordapp.com/attachments/542225685695954945/650402577762091038/Unit_ills_full_20893.webp", //URL
+           14895, //Max Health
+           13500, //Min Health
+           1535, //Max Damage
+           1300, //Min Damage
+           70, //Max Level
+           65, //Min Level
+           1400, //Max Gold Drop
+           1350, //Min Gold Drop
+           480, //Max XP Drop
+           245, //Min XP Drop
+           "Greater Dire Frost Wolf" //Unit Name
+        );
+        #endregion
+
         /*public static Enemy KenthrosBoss = new Enemy
         (
             "https://cdn.discordapp.com/attachments/542225685695954945/544670999648665600/Kenthros.png", //URL
@@ -1561,5 +1679,61 @@ namespace RPG_Bot.Resources
             1, //Min XP Drop
             "[WORLD BOSS] Kenthros the Sea Lord - Nerfed Testing Edition" //Unit Name
         );*/
+    }
+
+    public class DesignedEnemy
+    {
+        public string name = "";
+        public string flavor = "";
+        public string iconURL = "";
+        public int minLevel = 0;
+        public int maxLevel = 0;
+        public float difficulty = 0f;
+        public float tankiness = 0f;
+        public bool valid = false;
+
+        public DesignedEnemy(string _name, string _flavor, string _iconURL, string _minLevel, string _maxLevel, string _difficulty, string _tankiness)
+        {
+            name = _name;
+
+            while (_flavor.Contains("[MonsterName]"))
+            {
+                _flavor = _flavor.Replace("[MonsterName]", _name);
+            }
+
+            flavor = _flavor;
+            iconURL = _iconURL;
+            //Console.WriteLine("_minLevel: " + _minLevel + " for " + _name);
+            //Console.WriteLine("_maxLevel: " + _maxLevel + " for " + _name);
+            //Console.WriteLine("_difficulty: " + _difficulty + " for " + _name);
+            //Console.WriteLine("_tankiness: " + _tankiness + " for " + _name);
+
+            bool parsedMinLevel = int.TryParse(_minLevel, out minLevel);
+            bool parsedMaxLevel = int.TryParse(_maxLevel, out maxLevel);
+            bool parsedDifficulty = float.TryParse(_difficulty, out difficulty);
+            bool parsedTankiness = float.TryParse(_tankiness, out tankiness);
+
+            if (!parsedMinLevel)
+                Console.WriteLine("[Designed Enemy] Error parsing min level for " + _name);
+            if (!parsedMaxLevel)
+                Console.WriteLine("[Designed Enemy] Error parsing max level for " + _name);
+            if (!parsedDifficulty)
+                Console.WriteLine("[Designed Enemy] Error parsing difficulty for " + _name);
+            if (!parsedTankiness)
+                Console.WriteLine("[Designed Enemy] Error parsing tankiness for " + _name);
+
+            if (parsedMinLevel && parsedMaxLevel)
+            {
+                if (minLevel > maxLevel)
+                {
+                    Console.WriteLine("[Designed Enemy] Error, min level is greater than max level for " + _name + ". Min level: " + minLevel + ", Max Level: " + maxLevel);
+                }
+                else if (parsedMinLevel && parsedMaxLevel && parsedDifficulty && parsedTankiness)
+                {
+                    Console.WriteLine("[Designed Enemy] Successfully loaded " + _name);
+                    valid = true;
+                }
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace RPG_Bot.Emojis
         public static string GuildGem = "<:GuildGem:545341213004529725>"; //Guild gems
         public static string Coins = "<:Coins:543112388493312000>"; //Guild coins
         public static string Essence = "<:Essence:567480672344866867>"; //Essence event
+        public static string Present = "<:Present:650246889765076993>"; //Christmas event
         public static string Dove = "<:freedomdove:543112388996497419>"; //Guild peace
         public static string Age = "<:Age:543112389160337408>"; //Age
         public static string Level = "<:Level:543112387989995521>"; //Level

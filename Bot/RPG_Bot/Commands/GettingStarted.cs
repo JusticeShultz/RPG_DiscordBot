@@ -113,8 +113,8 @@ namespace RPG_Bot.Commands
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
                         await Data.Data.SetStaminaPoints(Context.User.Id, 0);
                         await Data.Data.SetStabilityPoints(Context.User.Id, 0);
-                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
-                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 2);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 3);
                         await Data.Data.SetLuckPoints(Context.User.Id, 0);
                         await Data.Data.SetCharismaPoints(Context.User.Id, 0);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
@@ -150,12 +150,12 @@ namespace RPG_Bot.Commands
                         await Data.Data.DeleteLeggings(Context.User.Id);
                         await Data.Data.DeleteBoots(Context.User.Id);
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
-                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
-                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 2);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 1);
                         await Data.Data.SetDexterityPoints(Context.User.Id, 0);
                         await Data.Data.SetStrengthPoints(Context.User.Id, 0);
                         await Data.Data.SetLuckPoints(Context.User.Id, 0);
-                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 2);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
                         await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
                         await Data.Data.SetLargePotionCount(Context.User.Id, 2);
@@ -188,11 +188,11 @@ namespace RPG_Bot.Commands
                         await Data.Data.DeleteLeggings(Context.User.Id);
                         await Data.Data.DeleteBoots(Context.User.Id);
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
-                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 1);
                         await Data.Data.SetStabilityPoints(Context.User.Id, 0);
-                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
-                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
-                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 1);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 1);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 2);
                         await Data.Data.SetCharismaPoints(Context.User.Id, 0);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
                         await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
@@ -226,9 +226,9 @@ namespace RPG_Bot.Commands
                         await Data.Data.DeleteBoots(Context.User.Id);
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
                         await Data.Data.SetStaminaPoints(Context.User.Id, 0);
-                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
-                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
-                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 1);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 3);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 1);
                         await Data.Data.SetLuckPoints(Context.User.Id, 0);
                         await Data.Data.SetCharismaPoints(Context.User.Id, 0);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
@@ -262,11 +262,11 @@ namespace RPG_Bot.Commands
                         await Data.Data.DeleteLeggings(Context.User.Id);
                         await Data.Data.DeleteBoots(Context.User.Id);
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
-                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 1);
                         await Data.Data.SetStabilityPoints(Context.User.Id, 0);
-                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
-                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
-                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 1);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 2);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 1);
                         await Data.Data.SetCharismaPoints(Context.User.Id, 0);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
                         await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
@@ -301,8 +301,8 @@ namespace RPG_Bot.Commands
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
                         await Data.Data.SetStaminaPoints(Context.User.Id, 0);
                         await Data.Data.SetStabilityPoints(Context.User.Id, 0);
-                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
-                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 1);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 4);
                         await Data.Data.SetLuckPoints(Context.User.Id, 0);
                         await Data.Data.SetCharismaPoints(Context.User.Id, 0);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
@@ -337,11 +337,11 @@ namespace RPG_Bot.Commands
                         await Data.Data.DeleteBoots(Context.User.Id);
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
                         await Data.Data.SetStaminaPoints(Context.User.Id, 0);
-                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
-                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 1);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 2);
                         await Data.Data.SetStrengthPoints(Context.User.Id, 0);
-                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
-                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 1);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 1);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
                         await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
                         await Data.Data.SetLargePotionCount(Context.User.Id, 2);
@@ -373,11 +373,11 @@ namespace RPG_Bot.Commands
                         await Data.Data.DeleteLeggings(Context.User.Id);
                         await Data.Data.DeleteBoots(Context.User.Id);
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
-                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
-                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 2);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 1);
                         await Data.Data.SetDexterityPoints(Context.User.Id, 0);
-                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
-                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 1);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 1);
                         await Data.Data.SetCharismaPoints(Context.User.Id, 0);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
                         await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
@@ -410,12 +410,12 @@ namespace RPG_Bot.Commands
                         await Data.Data.DeleteLeggings(Context.User.Id);
                         await Data.Data.DeleteBoots(Context.User.Id);
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
-                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
-                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 2);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 1);
                         await Data.Data.SetDexterityPoints(Context.User.Id, 0);
-                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 1);
                         await Data.Data.SetLuckPoints(Context.User.Id, 0);
-                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 1);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
                         await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
                         await Data.Data.SetLargePotionCount(Context.User.Id, 2);
@@ -448,10 +448,10 @@ namespace RPG_Bot.Commands
                         await Data.Data.DeleteBoots(Context.User.Id);
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
                         await Data.Data.SetStaminaPoints(Context.User.Id, 0);
-                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 2);
                         await Data.Data.SetDexterityPoints(Context.User.Id, 0);
                         await Data.Data.SetStrengthPoints(Context.User.Id, 0);
-                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 3);
                         await Data.Data.SetCharismaPoints(Context.User.Id, 0);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
                         await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
@@ -484,11 +484,11 @@ namespace RPG_Bot.Commands
                         await Data.Data.DeleteLeggings(Context.User.Id);
                         await Data.Data.DeleteBoots(Context.User.Id);
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
-                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
-                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
-                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
-                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
-                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 1);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 1);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 1);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 1);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 1);
                         await Data.Data.SetCharismaPoints(Context.User.Id, 0);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
                         await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
@@ -522,11 +522,11 @@ namespace RPG_Bot.Commands
                         await Data.Data.DeleteBoots(Context.User.Id);
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
                         await Data.Data.SetStaminaPoints(Context.User.Id, 0);
-                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
-                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 1);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 1);
                         await Data.Data.SetStrengthPoints(Context.User.Id, 0);
-                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
-                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 1);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 2);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
                         await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
                         await Data.Data.SetLargePotionCount(Context.User.Id, 2);
@@ -560,10 +560,10 @@ namespace RPG_Bot.Commands
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
                         await Data.Data.SetStaminaPoints(Context.User.Id, 0);
                         await Data.Data.SetStabilityPoints(Context.User.Id, 0);
-                        await Data.Data.SetDexterityPoints(Context.User.Id, 0);
+                        await Data.Data.SetDexterityPoints(Context.User.Id, 1);
                         await Data.Data.SetStrengthPoints(Context.User.Id, 0);
-                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
-                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 1);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 3);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
                         await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
                         await Data.Data.SetLargePotionCount(Context.User.Id, 2);
@@ -595,8 +595,8 @@ namespace RPG_Bot.Commands
                         await Data.Data.DeleteLeggings(Context.User.Id);
                         await Data.Data.DeleteBoots(Context.User.Id);
                         await Data.Data.SetSkillPoints(Context.User.Id, 0);
-                        await Data.Data.SetStaminaPoints(Context.User.Id, 0);
-                        await Data.Data.SetStabilityPoints(Context.User.Id, 0);
+                        await Data.Data.SetStaminaPoints(Context.User.Id, 1);
+                        await Data.Data.SetStabilityPoints(Context.User.Id, 4);
                         await Data.Data.SetDexterityPoints(Context.User.Id, 0);
                         await Data.Data.SetStrengthPoints(Context.User.Id, 0);
                         await Data.Data.SetLuckPoints(Context.User.Id, 0);
@@ -635,9 +635,9 @@ namespace RPG_Bot.Commands
                         await Data.Data.SetStaminaPoints(Context.User.Id, 0);
                         await Data.Data.SetStabilityPoints(Context.User.Id, 0);
                         await Data.Data.SetDexterityPoints(Context.User.Id, 0);
-                        await Data.Data.SetStrengthPoints(Context.User.Id, 0);
-                        await Data.Data.SetLuckPoints(Context.User.Id, 0);
-                        await Data.Data.SetCharismaPoints(Context.User.Id, 0);
+                        await Data.Data.SetStrengthPoints(Context.User.Id, 1);
+                        await Data.Data.SetLuckPoints(Context.User.Id, 1);
+                        await Data.Data.SetCharismaPoints(Context.User.Id, 3);
                         await Data.Data.SetSmallPotionCount(Context.User.Id, 5);
                         await Data.Data.SetMediumPotionCount(Context.User.Id, 3);
                         await Data.Data.SetLargePotionCount(Context.User.Id, 2);
@@ -661,10 +661,39 @@ namespace RPG_Bot.Commands
                     #region Embed
                     Embed.WithAuthor("The Guild has accepted your signup form!", Context.User.GetAvatarUrl());
                     Embed.WithColor(40, 200, 150);
-                    Embed.WithFooter("Congrats adventurer!");
-                    Embed.WithDescription("Class: " + Data.Data.GetClass(Context.User.Id) + "\nName: " + input[1] + "\nAge: " + x + "\n\nNow that you are registered type -help");
-                    await Context.Channel.SendMessageAsync("", false, Embed.Build());
 
+                    SocketTextChannel channel = null;
+
+                    foreach (SocketGuildChannel channelsInServer in Context.Guild.Channels)
+                    {
+                        if(channelsInServer.Name == "entry-exam")
+                            channel = channelsInServer as SocketTextChannel;
+                    }
+
+                    if (channel == null)
+                    {
+                        Embed.WithDescription("Greetings " + input[1] + ", and welcome to the final stage of your journey in joining the Asterian Adventurers’ Guild! As you know, only the best and brightest heroes are accepted to join the Guild. Congratulations on making it this far!\n\n" +
+                            "As a " + Data.Data.GetClass(Context.User.Id) + " within the Guild, your tasks will be many and varied. You may defend innocent citizens from wicked bandits, escort merchants through haunted forests, or even unravel Asteria’s many secrets! Whatever your mission, we expect excellence " +
+                            "from you at every turn, and we in turn will provide excellence for you.\n\nIn order to become a Guild Adventurer, you must pass this final test: " +
+                            "Defeating one of our finely - tuned Training Automatons in single combat!\n\n\nIt looks like your server is missing the channel: entry-exam, you will not be able to continue because of this...");
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+                    }
+                    else
+                    {
+                        Embed.WithDescription("Greetings " + input[1] + ", and welcome to the final stage of your journey in joining the Asterian Adventurers’ Guild! As you know, only the best and brightest heroes are accepted to join the Guild. Congratulations on making it this far!\n\n" +
+                            "As a " + Data.Data.GetClass(Context.User.Id) + " within the Guild, your tasks will be many and varied. You may defend innocent citizens from wicked bandits, escort merchants through haunted forests, or even unravel Asteria’s many secrets! Whatever your mission, we expect excellence " +
+                            "from you at every turn, and we in turn will provide excellence for you.\n\nIn order to become a Guild Adventurer, you must pass this final test: " +
+                            "Defeating one of our finely - tuned Training Automatons in single combat! When you are ready, type - explore in the <#" + channel.Id + "> to begin.");
+                        await Context.Channel.SendMessageAsync("", false, Embed.Build());
+
+                        /*EmbedBuilder Linker = new EmbedBuilder();
+                        var invite = await channel.CreateInviteAsync(300, null, false, false);
+                        Linker.WithTitle("Click here to go to Entry Exams");
+                        Linker.WithUrl(invite.Url);
+                        Linker.WithColor(Color.Blue);
+                        Linker.Color = Color.Red;
+                        await Context.Channel.SendMessageAsync("", false, Linker.Build());*/
+                    }
                     //New user in the database here:
                     #endregion
                 }
@@ -723,6 +752,16 @@ namespace RPG_Bot.Commands
                 Embed.WithAuthor("Using -Spawn");
                 Embed.WithDescription("-Spawn takes no additional text after it. Using this command requires you to be in a channel " +
                     "that allows monsters to spawn. Once a monster spawns you may chose what to do afterwards with what is prompted for you. (`-fight`)");
+                Embed.WithColor(40, 200, 150);
+                Embed.Color = Color.Gold;
+                await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            }
+            else if (Input == "gambling" || Input == "gamble")
+            {
+                EmbedBuilder Embed = new EmbedBuilder();
+                Embed.WithAuthor("Using -Gamble");
+                Embed.WithDescription("Gambling allows you to specify a sum of your gold with a chance to double it or lose it all!" +
+                    "\n\nTo gamble, do `-Gamble [Amount]` in the tavern!");
                 Embed.WithColor(40, 200, 150);
                 Embed.Color = Color.Gold;
                 await Context.Channel.SendMessageAsync("", false, Embed.Build());
@@ -826,6 +865,36 @@ namespace RPG_Bot.Commands
             Embed.WithImageUrl(Input.GetAvatarUrl());
             Embed.Color = Color.Gold;
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
+        }
+
+        [Command("AddRole"), Alias("addrole"), Summary("Role changing.")]
+        public async Task RoleChanger1([Remainder] string role)
+        {
+            foreach (SocketRole guildRole in Context.Guild.Roles)
+            {
+                role = role.ToLower();
+
+                if (role == "news" && guildRole.Name == "News")
+                {
+                    await Context.Channel.SendMessageAsync("Added the `News` role to you!");
+                    await ((SocketGuildUser)Context.User).AddRoleAsync(guildRole);
+                }
+            }
+        }
+
+        [Command("RemoveRole"), Alias("removerole"), Summary("Role changing.")]
+        public async Task RoleChanger2([Remainder] string role)
+        {
+            foreach (SocketRole guildRole in Context.Guild.Roles)
+            {
+                role = role.ToLower();
+
+                if (role == "news" && guildRole.Name == "News")
+                {
+                    await Context.Channel.SendMessageAsync("Removed the `News` role from you!");
+                    await ((SocketGuildUser)Context.User).RemoveRoleAsync(guildRole);
+                }
+            }
         }
     }
 }

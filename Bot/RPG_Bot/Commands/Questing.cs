@@ -359,7 +359,7 @@ namespace RPG_Bot.Commands
 
         public async Task GenerateQuestOutcome()
         {
-            int num = rng.Next(1, 20);
+            int num = rng.Next(1, 17);
 
             if (num == 1)
             {
@@ -491,7 +491,7 @@ namespace RPG_Bot.Commands
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544023180185174143/latest.png");
                 Embed.WithAuthor("-Magical Paste-");
                 Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
-                Embed.WithDescription("You are asked by the guild to deliver an item to a royal manner safely and are rewarded 25 Gold Coins and " + coins + GuildGem + "!");
+                Embed.WithDescription("You are asked by the guild to deliver an item to a royal manor safely and are rewarded 25 Gold Coins and " + coins + GuildGem + "!");
                 Embed.WithColor(40, 200, 150);
                 Embed.Color = Color.Teal;
                 Embed.WithFooter("A new quest will be available in 5 minutes.");
@@ -508,7 +508,7 @@ namespace RPG_Bot.Commands
                 Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/544023069992419338/latest.png");
                 Embed.WithAuthor("-Special Delivery-");
                 Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
-                Embed.WithDescription("You are asked by the guild to deliver an item to a royal manner safely and are rewarded 15 Gold Coins and " + coins + GuildGem + "!");
+                Embed.WithDescription("You are asked by the guild to deliver an item to a royal manor safely and are rewarded 15 Gold Coins and " + coins + GuildGem + "!");
                 Embed.WithColor(40, 200, 150);
                 Embed.Color = Color.Orange;
                 Embed.WithFooter("A new quest will be available in 5 minutes.");
@@ -619,7 +619,7 @@ namespace RPG_Bot.Commands
                 await Data.Data.SaveEventData(Context.User.Id, 0, 0, (uint)coins);
             }
 
-            if (num == 16)
+            if (num == 16 || num == 17)
             {
                 int coins = rng.Next(3, 25);
 
@@ -636,55 +636,55 @@ namespace RPG_Bot.Commands
                 await Data.Data.SaveEventData(Context.User.Id, 0, 0, (uint)coins);
             }
 
-            if (num == 17)
-            {
-                int coins = rng.Next(3, 25);
+            //if (num == 17)
+            //{
+            //    int coins = rng.Next(3, 25);
 
-                Gauntlets gaunts = Data.Data.GetGauntlet(Context.User.Id);
-                EmbedBuilder Embed = new EmbedBuilder();
-                Embed.WithImageUrl(gaunts == null ? "" : gaunts.WebURL);
-                Embed.WithAuthor("-Pumpkin Patch Genocide-");
-                Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
-                string result = gaunts == null ? "your bare hands" : "your " + gaunts.ItemName + " on";
-                Embed.WithDescription("You recieve a quest from the guild to go squash all of the pumpkinlings in the pumpkin patches. You brutally murder tons of them with " + result + ". You are awarded 85 coins, " + coins + GuildGem + " and 3" + Candy);
-                Embed.WithColor(Color.DarkRed);
-                Embed.WithFooter("A new quest will be available in 5 minutes.");
-                await Context.Channel.SendMessageAsync("", false, Embed.Build());
-                await Data.Data.SaveData(Context.User.Id, 85, 0, "", 0, 0, 0, 0, 0);
-                await Data.Data.SaveEventData(Context.User.Id, 0, 3, (uint)coins);
-            }
+            //    Gauntlets gaunts = Data.Data.GetGauntlet(Context.User.Id);
+            //    EmbedBuilder Embed = new EmbedBuilder();
+            //    Embed.WithImageUrl(gaunts == null ? "" : gaunts.WebURL);
+            //    Embed.WithAuthor("-Pumpkin Patch Genocide-");
+            //    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+            //    string result = gaunts == null ? "your bare hands" : "your " + gaunts.ItemName + " on";
+            //    Embed.WithDescription("You recieve a quest from the guild to go squash all of the pumpkinlings in the pumpkin patches. You brutally murder tons of them with " + result + ". You are awarded 85 coins, " + coins + GuildGem + " and 3" + Candy);
+            //    Embed.WithColor(Color.DarkRed);
+            //    Embed.WithFooter("A new quest will be available in 5 minutes.");
+            //    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            //    await Data.Data.SaveData(Context.User.Id, 85, 0, "", 0, 0, 0, 0, 0);
+            //    await Data.Data.SaveEventData(Context.User.Id, 0, 3, (uint)coins);
+            //}
 
-            if (num == 18)
-            {
-                int coins = rng.Next(3, 25);
+            //if (num == 18)
+            //{
+            //    int coins = rng.Next(3, 25);
 
-                EmbedBuilder Embed = new EmbedBuilder();
-                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/637578438735036426/Unit_ills_full_50802.webp");
-                Embed.WithAuthor("-Phantom Problem-");
-                Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
-                Embed.WithDescription("You are sent out to slay a phantom and are awarded 85 Gold Coins and " + coins + GuildGem + ". The guild also awards you 1" + Candy + " for your effort.");
-                Embed.WithColor(Color.DarkBlue);
-                Embed.WithFooter("A new quest will be available in 5 minutes.");
-                await Context.Channel.SendMessageAsync("", false, Embed.Build());
-                await Data.Data.SaveData(Context.User.Id, 85, 0, "", 0, 0, 0, 0, 0);
-                await Data.Data.SaveEventData(Context.User.Id, 0, 0, (uint)coins);
-            }
+            //    EmbedBuilder Embed = new EmbedBuilder();
+            //    Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/637578438735036426/Unit_ills_full_50802.webp");
+            //    Embed.WithAuthor("-Phantom Problem-");
+            //    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+            //    Embed.WithDescription("You are sent out to slay a phantom and are awarded 85 Gold Coins and " + coins + GuildGem + ". The guild also awards you 1" + Candy + " for your effort.");
+            //    Embed.WithColor(Color.DarkBlue);
+            //    Embed.WithFooter("A new quest will be available in 5 minutes.");
+            //    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            //    await Data.Data.SaveData(Context.User.Id, 85, 0, "", 0, 0, 0, 0, 0);
+            //    await Data.Data.SaveEventData(Context.User.Id, 0, 0, (uint)coins);
+            //}
 
-            if (num == 19 || num == 20)
-            {
-                int coins = rng.Next(3, 25);
+            //if (num == 19 || num == 20)
+            //{
+            //    int coins = rng.Next(3, 25);
 
-                EmbedBuilder Embed = new EmbedBuilder();
-                Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/543139937948532778/Unit_ills_full_10050.png");
-                Embed.WithAuthor("-Free Candy-");
-                Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
-                Embed.WithDescription("You start to go on a quest to slay some goblins but you end up finding 5" + Candy + " on a pumpkin statue. You continue on your quest and successfully slay the goblins, returning back to the guild for a reward of 25 Gold Coins and " + coins + GuildGem + ".");
-                Embed.WithColor(Color.LightOrange);
-                Embed.WithFooter("A new quest will be available in 5 minutes.");
-                await Context.Channel.SendMessageAsync("", false, Embed.Build());
-                await Data.Data.SaveData(Context.User.Id, 25, 0, "", 0, 0, 0, 0, 0);
-                await Data.Data.SaveEventData(Context.User.Id, 0, 5, (uint)coins);
-            }
+            //    EmbedBuilder Embed = new EmbedBuilder();
+            //    Embed.WithImageUrl("https://cdn.discordapp.com/attachments/542225685695954945/543139937948532778/Unit_ills_full_10050.png");
+            //    Embed.WithAuthor("-Free Candy-");
+            //    Embed.WithThumbnailUrl(Context.User.GetAvatarUrl());
+            //    Embed.WithDescription("You start to go on a quest to slay some goblins but you end up finding 5" + Candy + " on a pumpkin statue. You continue on your quest and successfully slay the goblins, returning back to the guild for a reward of 25 Gold Coins and " + coins + GuildGem + ".");
+            //    Embed.WithColor(Color.LightOrange);
+            //    Embed.WithFooter("A new quest will be available in 5 minutes.");
+            //    await Context.Channel.SendMessageAsync("", false, Embed.Build());
+            //    await Data.Data.SaveData(Context.User.Id, 25, 0, "", 0, 0, 0, 0, 0);
+            //    await Data.Data.SaveEventData(Context.User.Id, 0, 5, (uint)coins);
+            //}
         }
     }
 }
